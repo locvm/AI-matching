@@ -46,6 +46,7 @@
   - [13.6 Testing Expectations](#136-testing-expectations)
   - [13.7 Notes on Production Integration](#137-notes-on-production-integration)
 - [14. Final Goal](#14-final-goal)
+- [15. Runtime & Compatibility Requirements](#15-runtime--compatibility-requirements)
 
 
 <img width="1545" height="1999" alt="Beige Professional Company Brand Values List Flyer A4-2" src="https://github.com/user-attachments/assets/0902e089-7fb9-4da5-928a-e0c5a5396b07" />
@@ -718,4 +719,16 @@ You are building a foundational system that will directly impact how physicians 
 
 Treat this as production-grade software.
 
+# 15. Runtime & Compatibility Requirements
+
+LOCVM runs on *Node.js v24* in a native ESM environment ("type": "module"). This repository must therefore use:
+
+- ES module syntax (import / export)
+- Plain .js files (no TypeScript)
+- No CommonJS (require, module.exports)
+- No framework coupling (this must remain a standalone library)
+
+You may use modern JavaScript features supported in Node 24 (async/await, top-level await, optional chaining, nullish coalescing, native fetch, etc.). Keep dependencies minimal and ensure the module exports a clean public API that LOCVM can import directly.
+
+All public interfaces must be documented using JSDoc types with // @ts-check enabled to preserve type safety within a JavaScript-only codebase.
 ---
