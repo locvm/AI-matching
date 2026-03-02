@@ -7,9 +7,9 @@ import { physicianToDomain, locumJobToDomain, reservationToDomain } from '../../
 import { geocodeBatch } from '../../../src/normalization/geocodeBatch.js'
 
 /**
- * @typedef {import('./types.js').LocumJob} LocumJob
- * @typedef {import('./types.js').Physician} Physician
- * @typedef {import('./types.js').Reservation} Reservation
+ * @typedef {import('../../../src/interfaces/index.js').LocumJob} LocumJob
+ * @typedef {import('../../../src/interfaces/index.js').Physician} Physician
+ * @typedef {import('../../../src/interfaces/index.js').Reservation} Reservation
  * @typedef {import('./types.js').FixtureData} FixtureData
  */
 

@@ -2,18 +2,6 @@
 
 export {}
 
-// ── Domain types (from interfaces) ──────────────────────────────────────────
-/** @typedef {import('../../../src/interfaces/core/models.js').LocumJob} LocumJob */
-/** @typedef {import('../../../src/interfaces/core/models.js').Physician} Physician */
-/** @typedef {import('../../../src/interfaces/core/models.js').Reservation} Reservation */
-/** @typedef {import('../../../src/interfaces/core/models.js').ReservationApplicant} ReservationApplicant */
-/** @typedef {import('../../../src/interfaces/matching/matching.js').SearchResult} SearchResult */
-/** @typedef {import('../../../src/interfaces/matching/matching.js').ScoreBreakdown} ScoreBreakdown */
-/** @typedef {import('../../../src/interfaces/matching/matching.js').ScoreJobFn} ScoreJobFn */
-/** @typedef {import('../../../src/interfaces/matching/matching.js').ScorePhysicianFn} ScorePhysicianFn */
-
-// ── Harness-specific types ──────────────────────────────────────────────────
-
 /**
  * Sampling controls for deterministic job/user selection.
  *
@@ -41,8 +29,8 @@ export {}
  * Single job's top matches + stats, written as one CSV group.
  *
  * @typedef {object} HarnessJobResult
- * @property {LocumJob} job
- * @property {SearchResult[]} topResults
+ * @property {import('../../../src/interfaces/index.js').LocumJob} job
+ * @property {import('../../../src/interfaces/index.js').SearchResult[]} topResults
  * @property {JobSummaryStats} stats
  */
 
@@ -85,9 +73,9 @@ export {}
  * Combined fixtures loaded from disk for the harness.
  *
  * @typedef {object} FixtureData
- * @property {LocumJob[]} jobs
- * @property {Physician[]} physicians
- * @property {Reservation[]} reservations
+ * @property {import('../../../src/interfaces/index.js').LocumJob[]} jobs
+ * @property {import('../../../src/interfaces/index.js').Physician[]} physicians
+ * @property {import('../../../src/interfaces/index.js').Reservation[]} reservations
  */
 
 // ── Physician-centric harness types ─────────────────────────────────────────
@@ -109,9 +97,9 @@ export {}
  * Single physician's top job matches + stats, written as one CSV group.
  *
  * @typedef {object} HarnessPhysicianResult
- * @property {Physician} physician
- * @property {SearchResult[]} topResults
- * @property {PhysicianSummaryStats} stats
+ * @property {import('../../../src/interfaces/index.js').Physician} physician
+ * @property {import('../../../src/interfaces/index.js').SearchResult[]} topResults
+ * @property {import('./types.js').PhysicianSummaryStats} stats
  */
 
 /**
