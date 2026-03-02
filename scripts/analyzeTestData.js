@@ -42,14 +42,14 @@ function topByFrequency(freq, limit = 30) {
     .slice(0, limit);
 }
 
-/** Label for value type (used to surface non-string / unexpected types). */
+/** Label for value type (used to surface non-string / unexpected types). Arrays get array(n) for coords/date-style checks. */
 function getTypeLabel(value) {
   if (value === undefined) return 'undefined';
   if (value === null) return 'null';
   if (typeof value === 'string') return value.trim() === '' ? 'string(empty)' : 'string';
   if (typeof value === 'number') return 'number';
   if (typeof value === 'boolean') return 'boolean';
-  if (Array.isArray(value)) return 'array';
+  if (Array.isArray(value)) return `array(${value.length})`;
   if (typeof value === 'object') {
     if ('$oid' in value) return 'object($oid)';
     if ('$date' in value) return 'object($date)';
@@ -68,6 +68,17 @@ function countTypeBreakdown(users, path) {
       const label = getTypeLabel(item);
       counts[label] = (counts[label] || 0) + 1;
     }
+  }
+  return counts;
+}
+
+/** One type per item (for job level fields like location.coordinates, dateRange.from). */
+function countTypeBreakdownScalar(items, path) {
+  const counts = {};
+  for (const item of items) {
+    const value = getByPath(item, path);
+    const label = getTypeLabel(value);
+    counts[label] = (counts[label] || 0) + 1;
   }
   return counts;
 }
@@ -106,6 +117,26 @@ const RESERVATION_FIELDS = [
   { path: 'status', kind: 'string' },
   { path: 'applicants', kind: 'nonEmptyArray' },
 ];
+
+// Job fields we show frequency for (excludes coords and dates – too specific)
+const JOB_FREQUENCY_FIELDS = [
+  { path: 'medProfession', label: 'medProfession' },
+  { path: 'medSpeciality', label: 'medSpeciality' },
+  { path: 'fullAddress.city', label: 'fullAddress.city' },
+  { path: 'fullAddress.province', label: 'fullAddress.province' },
+  { path: 'facilityInfo.emr', label: 'facilityInfo.emr' },
+  { path: 'practiceType', label: 'practiceType' },
+  { path: 'patientType', label: 'patientType' },
+];
+
+/** Valid type labels per kind for wrong/weird (jobs). */
+function isValidJobType(typeLabel, kind) {
+  if (kind === 'string') return typeLabel === 'string';
+  if (kind === 'coords') return typeLabel === 'array(2)';
+  if (kind === 'date') return typeLabel === 'object($date)';
+  if (kind === 'nonEmptyArray') return typeLabel.startsWith('array(') && typeLabel !== 'array(0)';
+  return false;
+}
 
 // What users actually enter: preferences & profile (frequency of inputs)
 const PREFERENCE_FREQUENCY_FIELDS = [
@@ -162,8 +193,8 @@ async function analyzeUsers() {
     md.push(`| ${path} | ${r.present} (${percentageOfTotal(r.present)}%) | ${r.missing} (${percentageOfTotal(r.missing)}%) |`);
   }
 
-  console.log('\n----- User preferences & profile – frequency of inputs -----');
-  md.push('\n## User preferences & profile – frequency of inputs\n');
+  console.log('\n----- User preferences & profile - frequency of inputs -----');
+  md.push('\n## User preferences & profile - frequency of inputs\n');
   for (const { path, label } of PREFERENCE_FREQUENCY_FIELDS) {
     const freq = countValueFrequencies(users, path);
     const top = topByFrequency(freq, 25);
@@ -210,11 +241,68 @@ async function analyzeUsers() {
 async function analyzeJobs() {
   const jsonString = await fs.readFile('./locum.locumjobs.formatted.json', 'utf8');
   const jobs = JSON.parse(jsonString);
+
   console.log('\n----- Jobs -----');
   console.log('Number of entries:', jobs.length);
-  if (jobs.length > 0) {
-    console.log(Object.keys(jobs[0]));
+  if (jobs.length > 0) console.log('data[0] keys:', Object.keys(jobs[0]));
+
+  const results = {};
+  for (const { path } of JOB_FIELDS) {
+    results[path] = { present: 0, missing: 0 };
   }
+
+  function isPresent(value, kind) {
+    if (value == null) return false;
+    if (kind === 'string') return typeof value === 'string' && value.trim() !== '';
+    if (kind === 'coords') return Array.isArray(value) && value.length === 2;
+    if (kind === 'date') return typeof value === 'object' && value !== null && '$date' in value;
+    if (kind === 'nonEmptyArray') return Array.isArray(value) && value.length > 0;
+    return false;
+  }
+
+  for (const job of jobs) {
+    for (const { path, kind } of JOB_FIELDS) {
+      const value = getByPath(job, path);
+      if (isPresent(value, kind)) results[path].present++;
+      else results[path].missing++;
+    }
+  }
+
+  const total = jobs.length;
+  const pct = (n) => (total === 0 ? '0.0' : ((n / total) * 100).toFixed(1));
+
+  console.log('\n----- Job field completeness (missingness) -----');
+  for (const { path } of JOB_FIELDS) {
+    const r = results[path];
+    console.log(`${path}: present ${r.present} (${pct(r.present)}%), missing ${r.missing} (${pct(r.missing)}%)`);
+  }
+
+  console.log('\n----- Job frequency of inputs (selected fields only) -----');
+  for (const { path, label } of JOB_FREQUENCY_FIELDS) {
+    const freq = countValueFrequencies(jobs, path);
+    const top = topByFrequency(freq, 25);
+    console.log(`\n${label}:`);
+    if (top.length === 0) console.log('  (no values)');
+    else for (const [value, count] of top) console.log(`  "${value}": ${count}`);
+  }
+
+  const SKIP_WRONG = new Set(['undefined', 'null']);
+  console.log('\n----- Job wrong or weird input (when something was provided) -----');
+  for (const { path, kind } of JOB_FIELDS) {
+    const typeCounts = countTypeBreakdownScalar(jobs, path);
+    const wrongOrWeird = Object.entries(typeCounts).filter(
+      ([type]) => !SKIP_WRONG.has(type) && !isValidJobType(type, kind)
+    );
+    if (wrongOrWeird.length === 0) {
+      console.log(`${path}: (none – only missing or valid type)`);
+    } else {
+      console.log(`${path}:`);
+      for (const [type, count] of wrongOrWeird.sort((a, b) => b[1] - a[1])) {
+        console.log(`  [${type}]: ${count}`);
+      }
+    }
+  }
+
   const keys = jobs.length > 0 ? Object.keys(jobs[0]).join(', ') : '(none)';
   return `## Jobs\n\n- **Entries:** ${jobs.length}\n- **data[0] keys:** ${keys}\n`;
 }
