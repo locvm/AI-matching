@@ -1,5 +1,6 @@
 // @ts-check
 
+<<<<<<< HEAD
 import { searchPhysicians as searchPhysiciansStub, searchJobs as searchJobsStub } from './matching-engine-stub.js'
 import { Sampler } from './sampler.js'
 import { SummaryStatsCollector } from './summary-stats-collector.js'
@@ -23,18 +24,49 @@ import { OUTPUT, PATHS } from '../harness.config.js'
 
 // ── Job-centric harness (1 job → all physicians) ───────────────────────────
 
+=======
+import { MatchingEngineStub } from './matching-engine-stub.js'
+import { Sampler } from './Sampler.js'
+import { SummaryStatsCollector } from './summary-stats-collector.js'
+import { CsvReportWriter } from './csv-report-writer.js'
+import { OUTPUT, PATHS } from '../harness.config.js'
+  
+/**
+ * @typedef {import('./types.js').LocumJob} LocumJob
+ * @typedef {import('./types.js').User} User
+ * @typedef {import('./types.js').Reservation} Reservation
+ * @typedef {import('./types.js').SearchCriteria} SearchCriteria
+ * @typedef {import('./types.js').SearchResult} SearchResult
+ * @typedef {import('./types.js').HarnessJobResult} HarnessJobResult
+ * @typedef {import('./types.js').SamplerConfig} SamplerConfig
+ * @typedef {import('./types.js').HarnessConfig} HarnessConfig
+ * @typedef {import('./types.js').HarnessRunResult} HarnessRunResult
+ * @typedef {import('./types.js').MatchingEngine} MatchingEngine
+ */
+
+>>>>>>> 078b545 (feat: add matching engine stub, sampler, and output writers)
 export class MatchingTestHarness {
   /** @type {LocumJob[]} */
   #jobs
 
+<<<<<<< HEAD
   /** @type {Physician[]} */
   #physicians
+=======
+  /** @type {User[]} */
+  #users
+>>>>>>> 078b545 (feat: add matching engine stub, sampler, and output writers)
 
   /** @type {Reservation[]} */
   #reservations
 
+<<<<<<< HEAD
   /** @type {ScoreJobFn} */
   #searchPhysicians
+=======
+  /** @type {MatchingEngine} */
+  #engine
+>>>>>>> 078b545 (feat: add matching engine stub, sampler, and output writers)
 
   /** @type {HarnessConfig} */
   #config
@@ -42,16 +74,28 @@ export class MatchingTestHarness {
   /**
    * @param {object} data
    * @param {LocumJob[]} data.jobs
+<<<<<<< HEAD
    * @param {Physician[]} data.physicians
    * @param {Reservation[]} data.reservations
    * @param {ScoreJobFn} [data.searchPhysicians] - The matching function. Defaults to stub.
+=======
+   * @param {User[]} data.users
+   * @param {Reservation[]} data.reservations
+   * @param {MatchingEngine} [data.engine]
+>>>>>>> 078b545 (feat: add matching engine stub, sampler, and output writers)
    * @param {HarnessConfig} [config]
    */
   constructor(data, config = {}) {
     this.#jobs = data.jobs
+<<<<<<< HEAD
     this.#physicians = data.physicians
     this.#reservations = data.reservations
     this.#searchPhysicians = data.searchPhysicians ?? searchPhysiciansStub
+=======
+    this.#users = data.users
+    this.#reservations = data.reservations
+    this.#engine = data.engine ?? new MatchingEngineStub()
+>>>>>>> 078b545 (feat: add matching engine stub, sampler, and output writers)
     this.#config = {
       topK: config.topK ?? OUTPUT.TOP_K,
       outputDir: config.outputDir ?? PATHS.OUTPUT_DIR,
@@ -64,11 +108,19 @@ export class MatchingTestHarness {
     const sampler = new Sampler(this.#config.sampling)
 
     const jobs = sampler.sampleJobs(this.#jobs)
+<<<<<<< HEAD
     const physicians = sampler.sampleUsers(this.#physicians)
 
     console.log(`[Harness:Job] Seed: ${sampler.seed}`)
     console.log(`[Harness:Job] Jobs: ${jobs.length} sampled from ${this.#jobs.length}`)
     console.log(`[Harness:Job] Physicians: ${physicians.length} sampled from ${this.#physicians.length}`)
+=======
+    const users = sampler.sampleUsers(this.#users)
+
+    console.log(`[Harness] Seed: ${sampler.seed}`)
+    console.log(`[Harness] Jobs: ${jobs.length} sampled from ${this.#jobs.length}`)
+    console.log(`[Harness] Users: ${users.length} sampled from ${this.#users.length}`)
+>>>>>>> 078b545 (feat: add matching engine stub, sampler, and output writers)
 
     const statsCollector = new SummaryStatsCollector()
     /** @type {HarnessJobResult[]} */
@@ -76,9 +128,15 @@ export class MatchingTestHarness {
     let totalMatches = 0
 
     for (const job of jobs) {
+<<<<<<< HEAD
       const reservation = this.#reservations.find((r) => r.locumJobId === job._id) ?? undefined
 
       const results = await this.#searchPhysicians(job, physicians, reservation)
+=======
+      const reservation = this.#reservations.find((r) => r.locumJobId === job._id) ?? null
+
+      const results = await this.#engine.searchPhysicians({ job, reservation: reservation ?? undefined }, users)
+>>>>>>> 078b545 (feat: add matching engine stub, sampler, and output writers)
 
       const topResults = results.slice(0, this.#config.topK)
       const stats = statsCollector.computeForJob(job._id, results)
@@ -94,8 +152,13 @@ export class MatchingTestHarness {
       maxUsers: this.#config.sampling?.maxUsers,
     })
 
+<<<<<<< HEAD
     console.log(`[Harness:Job] Processed ${jobs.length} jobs, ${totalMatches} total matches`)
     console.log(`[Harness:Job] Output: ${outputPath}`)
+=======
+    console.log(`[Harness] Processed ${jobs.length} jobs, ${totalMatches} total matches`)
+    console.log(`[Harness] Output: ${outputPath}`)
+>>>>>>> 078b545 (feat: add matching engine stub, sampler, and output writers)
 
     return {
       outputPath,
@@ -106,6 +169,7 @@ export class MatchingTestHarness {
     }
   }
 }
+<<<<<<< HEAD
 
 // ── Physician-centric harness (1 physician → all jobs) ──────────────────────
 
@@ -190,3 +254,5 @@ export class PhysicianTestHarness {
     }
   }
 }
+=======
+>>>>>>> 078b545 (feat: add matching engine stub, sampler, and output writers)
