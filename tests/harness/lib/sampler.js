@@ -4,12 +4,8 @@ import { createSeededRandom, seededShuffle } from './random-seeder.js'
 import { SAMPLING, JOB_FILTERS } from '../harness.config.js'
 
 /**
- * @typedef {import('./types.js').LocumJob} LocumJob
-<<<<<<< HEAD
- * @typedef {import('./types.js').Physician} Physician
-=======
- * @typedef {import('./types.js').User} User
->>>>>>> 078b545 (feat: add matching engine stub, sampler, and output writers)
+ * @typedef {import('../../../src/interfaces/index.js').LocumJob} LocumJob
+ * @typedef {import('../../../src/interfaces/index.js').Physician} Physician
  * @typedef {import('./types.js').SamplerConfig} SamplerConfig
  */
 
@@ -47,7 +43,6 @@ export class Sampler {
   }
 
   /**
-<<<<<<< HEAD
    * @param {Physician[]} physicians
    * @returns {Physician[]}
    */
@@ -55,15 +50,6 @@ export class Sampler {
     if (physicians.length <= this._config.maxUsers) return physicians
 
     const shuffled = seededShuffle(physicians, this._rng)
-=======
-   * @param {User[]} users
-   * @returns {User[]}
-   */
-  sampleUsers(users) {
-    if (users.length <= this._config.maxUsers) return users
-
-    const shuffled = seededShuffle(users, this._rng)
->>>>>>> 078b545 (feat: add matching engine stub, sampler, and output writers)
     return shuffled.slice(0, this._config.maxUsers)
   }
 
@@ -85,11 +71,6 @@ export class Sampler {
         return days <= JOB_FILTERS.SHORT_TERM_MAX_DAYS
       })
     }
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 078b545 (feat: add matching engine stub, sampler, and output writers)
     if (key === 'long-term') {
       return jobs.filter((job) => {
         if (!job.dateRange?.from || !job.dateRange?.to) return false
