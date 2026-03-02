@@ -113,7 +113,6 @@ const JOB_FIELDS = [
 
 // Expected reservation fields
 const RESERVATION_FIELDS = [
-  { path: 'locumJobId', kind: 'oid' },
   { path: 'status', kind: 'string' },
   { path: 'applicants', kind: 'nonEmptyArray' },
 ];
@@ -134,6 +133,13 @@ function isValidJobType(typeLabel, kind) {
   if (kind === 'string') return typeLabel === 'string';
   if (kind === 'coords') return typeLabel === 'array(2)';
   if (kind === 'date') return typeLabel === 'object($date)';
+  if (kind === 'nonEmptyArray') return typeLabel.startsWith('array(') && typeLabel !== 'array(0)';
+  return false;
+}
+
+/** Valid type labels per kind for wrong/weird (reservations). */
+function isValidReservationType(typeLabel, kind) {
+  if (kind === 'string') return typeLabel === 'string';
   if (kind === 'nonEmptyArray') return typeLabel.startsWith('array(') && typeLabel !== 'array(0)';
   return false;
 }
@@ -274,7 +280,7 @@ async function analyzeJobs() {
   const md = [];
   const keys = jobs.length > 0 ? Object.keys(jobs[0]).join(', ') : '(none)';
   md.push('## Jobs\n');
-  md.push(`- **Entries:** ${jobs.length}\n- **data[0] keys:** ${keys}\n`);
+  md.push(`- **Entries:** ${jobs.length}\n`);
 
   console.log('\n----- Job field completeness (missingness) -----');
   md.push('## Job field completeness (missingness)\n');
@@ -336,11 +342,67 @@ async function analyzeJobs() {
 async function analyzeReservations() {
   const jsonString = await fs.readFile('./locum.reservations.formatted.json', 'utf8');
   const reservations = JSON.parse(jsonString);
+
   console.log('\n----- Reservations -----');
   console.log('Number of entries:', reservations.length);
   if (reservations.length > 0) {
     console.log(Object.keys(reservations[0]));
   }
+
+  const results = {};
+  for (const { path } of RESERVATION_FIELDS) {
+    results[path] = { present: 0, missing: 0 };
+  }
+
+  function isPresent(value, kind) {
+    if (value == null) return false;
+    if (kind === 'string') return typeof value === 'string' && value.trim() !== '';
+    if (kind === 'nonEmptyArray') return Array.isArray(value) && value.length > 0;
+    return false;
+  }
+
+  for (const res of reservations) {
+    for (const { path, kind } of RESERVATION_FIELDS) {
+      const value = getByPath(res, path);
+      if (isPresent(value, kind)) results[path].present++;
+      else results[path].missing++;
+    }
+  }
+
+  const total = reservations.length;
+  const percentageOfTotal = (n) => (total === 0 ? '0.0' : ((n / total) * 100).toFixed(1));
+
+  console.log('\n----- Reservation field completeness (missingness) -----');
+  for (const { path } of RESERVATION_FIELDS) {
+    const r = results[path];
+    console.log(`${path}: present ${r.present} (${percentageOfTotal(r.present)}%), missing ${r.missing} (${percentageOfTotal(r.missing)}%)`);
+  }
+
+  // Only status has useful frequency (oid = IDs, applicants = array of objects)
+  console.log('\n----- Reservation frequency of inputs (status only) -----');
+  const statusFreq = countValueFrequencies(reservations, 'status');
+  const statusTop = topByFrequency(statusFreq, 15);
+  console.log('status:');
+  if (statusTop.length === 0) console.log('(no values)');
+  else for (const [value, count] of statusTop) console.log(`  "${value}": ${count}`);
+
+  const SKIP_WRONG = new Set(['undefined', 'null']);
+  console.log('\n----- Reservation wrong or weird input (when something was provided) -----');
+  for (const { path, kind } of RESERVATION_FIELDS) {
+    const typeCounts = countTypeBreakdownScalar(reservations, path);
+    const wrongOrWeird = Object.entries(typeCounts).filter(
+      ([type]) => !SKIP_WRONG.has(type) && !isValidReservationType(type, kind)
+    );
+    if (wrongOrWeird.length === 0) {
+      console.log(`${path}: (none - only missing or valid type)`);
+    } else {
+      console.log(`${path}:`);
+      for (const [type, count] of wrongOrWeird.sort((a, b) => b[1] - a[1])) {
+        console.log(`[${type}]: ${count}`);
+      }
+    }
+  }
+
   const keys = reservations.length > 0 ? Object.keys(reservations[0]).join(', ') : '(none)';
   return `## Reservations\n\n- **Entries:** ${reservations.length}\n- **data[0] keys:** ${keys}\n`;
 }
