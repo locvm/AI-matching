@@ -6,7 +6,7 @@
 // The matching engine produces SearchResult[], this module defines how those results get turned into a human-readable report (CSV/JSON)
 
 /** @typedef {import("../matching/matching.js").SearchResult} SearchResult */
-/** @typedef {import("../matching/matching.js").matchingCriteria} matchingCriteria */
+/** @typedef {import("../core/models.js").LocumJob} LocumJob */
 
 /**
  * Settings for the matching report output
@@ -23,7 +23,7 @@
  * Per-job section of the report, grouping results by the job that was matched
  *
  * @typedef {Object} ReportJobSection
- * @property {matchingCriteria} criteria - The criteria used for this jobs matching run
+ * @property {LocumJob} job - The job used for this matching run
  * @property {SearchResult[]} topResults - Top K results for this job, sorted by score descending
  * @property {Object} stats - Summary stats for this jobs full result set (not just top K)
  * @property {number} stats.totalQualified - Total physicians that passed hard filters
@@ -55,7 +55,7 @@
  * - Summary row: qualified physicians, min/median/max scores, missing-data flags
  *
  * Steps:
- * 1) For each job section (criteria + results pair):
+ * 1) For each job section (job + results pair):
  *    a) Sort results by score descending
  *    b) Take the top K results (from options.topK, default 10)
  *    c) Calculate summary stats across ALL results (not just top K): qualified physician count, min/max/median/mean scores, missing-data flags (for example "no physician location available" with percentage)
@@ -64,7 +64,7 @@
  * 4) Return a MatchingReport object with the formatted content and metadata
  *
  * @callback GenerateMatchingReportFn
- * @param {{ criteria: matchingCriteria, results: SearchResult[] }[]} sections - array of job sections
+ * @param {{ job: LocumJob, results: SearchResult[] }[]} sections - array of job sections
  * @param {ReportOptions} [options] - settings for the report
  * @returns {MatchingReport} a structured report object containing the formatted output
  */

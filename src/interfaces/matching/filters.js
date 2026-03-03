@@ -6,7 +6,7 @@
 
 /** @typedef {import("../core/models.js").Physician} Physician */
 /** @typedef {import("../core/models.js").LocumJob} LocumJob */
-/** @typedef {import("./matching.js").matchingCriteria} matchingCriteria */
+/** @typedef {import("../core/models.js").Reservation} Reservation */
 
 /**
  * Checks whether a physician passes all hard filters and should be scored
@@ -14,17 +14,18 @@
  * This is the first gate in the pipeline. Only physicians passing this function move on to scoring
  *
  * Steps:
- * 1) Check medProfession: physician.medProfession must match criteria.medProfession (case-insensitive). If not, return false
- * 2) Check medSpeciality: physician.medSpeciality must match criteria.medSpeciality (case-insensitive). If not, return false
+ * 1) Check medProfession: physician.medProfession must match job.medProfession (case-insensitive). If not, return false
+ * 2) Check medSpeciality: physician.medSpeciality must match job.medSpeciality (case-insensitive). If not, return false
  * 3) Check isLookingForLocums: if false, return false. (Missing values are cleaned to true before this so its always a boolean)
- * 4) Optionally check for scheduling conflicts: if the physician has an active reservation whose dates overlap with criteria.dateRange, return false
+ * 4) Optionally check for scheduling conflicts: if the physician has an active reservation whose dates overlap with job.dateRange, return false
  * 5) Return true if all checks pass
  *
  * The isLookingForLocums check should be something you can turn on/off in case we want to match non-looking physicians in the future (per README §7.1)
  *
  * @callback IsEligiblePhysicianFn
  * @param {Physician} physician - the clean physician profile
- * @param {matchingCriteria} criteria - the search criteria
+ * @param {LocumJob} job - the locum job to match against
+ * @param {Reservation} [reservation] - optional reservation for scheduling conflict checks
  * @returns {boolean} true if the physician should be scored, false if excluded
  */
 

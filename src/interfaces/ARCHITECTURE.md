@@ -4,17 +4,15 @@
 
 This is the **JavaScript version** of the interface definitions, using JSDoc `@typedef` and `@callback` annotations with `// @ts-check` for type safety without TypeScript
 
-The TypeScript version lives in `src/interfaces-ts/`. Both versions are the same thing, same data shapes, same function contracts, same step-by-step skeleton comments. The only difference is syntax
-
 These files define the **data shapes** and **function contracts** for the matching engine. Nothing here computes anything. The data shapes describe "this is what a Physician looks like". The function contracts describe "this function takes X and returns Y, and heres what it must do step-by-step"
 
 ```
-src/interfaces-js/
+src/interfaces/
 ├── core/                # domain models and shared types
 │   ├── models.js        # Physician, LocumJob, Reservation, GeoCoordinates, Address, etc
 │   └── index.js
 ├── matching/            # search input/output shapes + function contracts
-│   ├── matching.js      # matchingCriteria, SearchResult, SearchPhysiciansFn
+│   ├── matching.js      # SearchResult, SearchPhysiciansFn
 │   ├── filters.js       # IsEligiblePhysicianFn, IsShortTermJobFn
 │   └── index.js
 ├── scoring/             # individual scoring contracts
@@ -66,10 +64,9 @@ This gives you full type checking in VS Code / any editor that supports TypeScri
 
 | Type | What it is |
 |------|-----------|
-| `matchingCriteria` | "What are we looking for", specialty, location, dates, EMR, thresholds |
 | `SearchResult` | "What came back", physician ID + total score + per-category breakdown |
-| `SearchPhysiciansFn` | **Function contract** the core matching function |
-| `IsEligiblePhysicianFn` | **Function contract** hard filter check |
+| `SearchPhysiciansFn` | **Function contract** takes a LocumJob + Physician[] + optional Reservation, returns ranked results |
+| `IsEligiblePhysicianFn` | **Function contract** hard filter check, takes Physician + LocumJob |
 | `IsShortTermJobFn` | **Function contract** short-term job check |
 
 ### Scoring (`/scoring`) - Scorers
@@ -105,7 +102,7 @@ This gives you full type checking in VS Code / any editor that supports TypeScri
 | Type | What it is |
 |------|-----------|
 | `ReportOptions` | Settings for report output |
-| `ReportJobSection` | Per-job section with criteria, top results, and summary stats |
+| `ReportJobSection` | Per-job section with job, top results, and summary stats |
 | `MatchingReport` | The full report object |
 | `GenerateMatchingReportFn` | **Function contract** produces CSV/JSON report |
 
@@ -117,10 +114,10 @@ This gives you full type checking in VS Code / any editor that supports TypeScri
 // @ts-check
 
 // Import specific types from a module
-/** @typedef {import("./interfaces-js/core/models.js").Physician} Physician */
-/** @typedef {import("./interfaces-js/core/models.js").LocumJob} LocumJob */
-/** @typedef {import("./interfaces-js/matching/matching.js").SearchPhysiciansFn} SearchPhysiciansFn */
-/** @typedef {import("./interfaces-js/scoring/scorers.js").ScoreLocationFn} ScoreLocationFn */
+/** @typedef {import("./interfaces/core/models.js").Physician} Physician */
+/** @typedef {import("./interfaces/core/models.js").LocumJob} LocumJob */
+/** @typedef {import("./interfaces/matching/matching.js").SearchPhysiciansFn} SearchPhysiciansFn */
+/** @typedef {import("./interfaces/scoring/scorers.js").ScoreLocationFn} ScoreLocationFn */
 
 // Then use them in your code:
 /** @type {ScoreLocationFn} */

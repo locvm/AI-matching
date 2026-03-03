@@ -4,7 +4,7 @@
 //
 // All types are defined via JSDoc @typedef and @callback annotations.
 // Import types in consuming files using:
-//   /** @typedef {import("./interfaces-js/index.js").Physician} Physician */
+//   /** @typedef {import("./interfaces/index.js").Physician} Physician */
 
 export * from "./core/index.js";
 export * from "./matching/index.js";

@@ -22,11 +22,11 @@
  *   Steps:
  *   1) Load the job by jobId from the data source
  *   2) Make sure the job passes the isShortTermJob check
- *   3) Build a matchingCriteria object from the jobs fields: medProfession, medSpeciality, location, dateRange, emr, province. Set isShortTerm = true
+ *   3) Load the reservation tied to this job (if any)
  *   4) Create a new MatchRun record with type "SHORT_TERM", status "PENDING"
  *   5) Update run status to "RUNNING"
  *   6) Load all physicians from the data source
- *   7) Call searchPhysicians(criteria, physicians) to get ranked results
+ *   7) Call searchPhysicians(job, physicians, reservation, { isShortTerm: true }) to get ranked results
  *   8) Filter results above the configured score threshold
  *   9) Save results via MatchRunResultRepository.saveResults()
  *   10) Create OutboxItem entries (type "SHORT_TERM_MATCH") for each qualifying physician and add them to the queue via NotificationOutboxRepository.enqueue(). Payload should include { jobId, score, jobTitle, ... }
@@ -54,7 +54,7 @@
  *   2) Update run status to "RUNNING"
  *   3) Load all active, unfilled jobs from the data source. Active = reservation status is "Pending" or "Awaiting Payment" (per README §7.1)
  *   4) Load all physicians from the data source
- *   5) For each job: build matchingCriteria from the jobs fields, call searchPhysicians(criteria, physicians)
+ *   5) For each job: load its reservation (if any), call searchPhysicians(job, physicians, reservation)
  *   6) Combine results per physician: for each physician, collect their top N job matches across all jobs (no duplicate jobIds)
  *   7) Save all results via MatchRunResultRepository.saveResults()
  *   8) For each physician with at least one qualifying match, create a single OutboxItem of type "WEEKLY_DIGEST" with payload containing the list of matching jobs: { matches: [{ jobId, score, jobTitle, ... }] }
