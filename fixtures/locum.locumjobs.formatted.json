@@ -30,10 +30,7 @@
     "jobId": "EuXagtm",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.3131156,
-        43.8901489
-      ],
+      "coordinates": [-79.3131156, 43.8901489],
       "type": "Point"
     },
     "locumCreator": {
@@ -81,10 +78,7 @@
     "jobId": "08aKU0s",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.3995231,
-        43.6483567
-      ],
+      "coordinates": [-79.3995231, 43.6483567],
       "type": "Point"
     },
     "locumCreator": {
@@ -132,10 +126,7 @@
     "jobId": "PNcH2Px",
     "jobType": "PT",
     "location": {
-      "coordinates": [
-        -75.7084792,
-        45.4170934
-      ],
+      "coordinates": [-75.7084792, 45.4170934],
       "type": "Point"
     },
     "locumCreator": {
@@ -183,10 +174,7 @@
     "jobId": "L0gJOLK",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.3995231,
-        43.6483567
-      ],
+      "coordinates": [-79.3995231, 43.6483567],
       "type": "Point"
     },
     "locumCreator": {
@@ -234,10 +222,7 @@
     "jobId": "6UkWB4m",
     "jobType": "PT",
     "location": {
-      "coordinates": [
-        -79.3995231,
-        43.6483567
-      ],
+      "coordinates": [-79.3995231, 43.6483567],
       "type": "Point"
     },
     "locumCreator": {
@@ -285,10 +270,7 @@
     "jobId": "skjodEs",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.3995231,
-        43.6483567
-      ],
+      "coordinates": [-79.3995231, 43.6483567],
       "type": "Point"
     },
     "locumCreator": {
@@ -336,10 +318,7 @@
     "jobId": "owI8lD_",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -75.7084792,
-        45.4170934
-      ],
+      "coordinates": [-75.7084792, 45.4170934],
       "type": "Point"
     },
     "locumCreator": {
@@ -387,10 +366,7 @@
     "jobId": "q564uOF",
     "jobType": "PT",
     "location": {
-      "coordinates": [
-        -79.6802258,
-        44.3986572
-      ],
+      "coordinates": [-79.6802258, 44.3986572],
       "type": "Point"
     },
     "locumCreator": {
@@ -438,10 +414,7 @@
     "jobId": "ThlW4za",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -83.0784234,
-        42.2921421
-      ],
+      "coordinates": [-83.0784234, 42.2921421],
       "type": "Point"
     },
     "locumCreator": {
@@ -489,10 +462,7 @@
     "jobId": "b3CHGzD",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.28034989999999,
-        43.0824327
-      ],
+      "coordinates": [-79.28034989999999, 43.0824327],
       "type": "Point"
     },
     "locumCreator": {
@@ -540,10 +510,7 @@
     "jobId": "YUx7fXk",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.5116404,
-        43.5988134
-      ],
+      "coordinates": [-79.5116404, 43.5988134],
       "type": "Point"
     },
     "locumCreator": {
@@ -591,10 +558,7 @@
     "jobId": "a1HtrBG",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -80.0943113,
-        43.9199788
-      ],
+      "coordinates": [-80.0943113, 43.9199788],
       "type": "Point"
     },
     "locumCreator": {
@@ -642,10 +606,7 @@
     "jobId": "ptvx9Ef",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.5596415,
-        43.708921
-      ],
+      "coordinates": [-79.5596415, 43.708921],
       "type": "Point"
     },
     "locumCreator": {
@@ -693,10 +654,7 @@
     "jobId": "rJe-Fw0",
     "jobType": "PT",
     "location": {
-      "coordinates": [
-        -79.2994168,
-        43.6826959
-      ],
+      "coordinates": [-79.2994168, 43.6826959],
       "type": "Point"
     },
     "locumCreator": {
@@ -744,10 +702,7 @@
     "jobId": "FrnqNqv",
     "jobType": "PT",
     "location": {
-      "coordinates": [
-        -79.5596415,
-        43.708921
-      ],
+      "coordinates": [-79.5596415, 43.708921],
       "type": "Point"
     },
     "locumCreator": {
@@ -795,10 +750,7 @@
     "jobId": "VqtwgnF",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -80.0675419,
-        43.8594788
-      ],
+      "coordinates": [-80.0675419, 43.8594788],
       "type": "Point"
     },
     "locumCreator": {
@@ -847,10 +799,7 @@
     "jobId": "QKkRbxh",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.3995231,
-        43.6483567
-      ],
+      "coordinates": [-79.3995231, 43.6483567],
       "type": "Point"
     },
     "locumCreator": {
@@ -899,10 +848,7 @@
     "jobId": "pj1U6B3",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.3995231,
-        43.6483567
-      ],
+      "coordinates": [-79.3995231, 43.6483567],
       "type": "Point"
     },
     "locumCreator": {
@@ -951,10 +897,7 @@
     "jobId": "o4vNL2d",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.3995231,
-        43.6483567
-      ],
+      "coordinates": [-79.3995231, 43.6483567],
       "type": "Point"
     },
     "locumCreator": {
@@ -1003,10 +946,7 @@
     "jobId": "gb2DoLg",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -75.6450182,
-        45.4255526
-      ],
+      "coordinates": [-75.6450182, 45.4255526],
       "type": "Point"
     },
     "locumCreator": {
@@ -1055,10 +995,7 @@
     "jobId": "8d75zHQ",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.4041936,
-        43.7316571
-      ],
+      "coordinates": [-79.4041936, 43.7316571],
       "type": "Point"
     },
     "locumCreator": {
@@ -1107,10 +1044,7 @@
     "jobId": "tlkJbpR",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.3995231,
-        43.6483567
-      ],
+      "coordinates": [-79.3995231, 43.6483567],
       "type": "Point"
     },
     "locumCreator": {
@@ -1159,10 +1093,7 @@
     "jobId": "hof37wu",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.3995231,
-        43.6483567
-      ],
+      "coordinates": [-79.3995231, 43.6483567],
       "type": "Point"
     },
     "locumCreator": {
@@ -1211,10 +1142,7 @@
     "jobId": "zQdlOMB",
     "jobType": "PT",
     "location": {
-      "coordinates": [
-        -79.8210821,
-        47.7128125
-      ],
+      "coordinates": [-79.8210821, 47.7128125],
       "type": "Point"
     },
     "locumCreator": {
@@ -1263,10 +1191,7 @@
     "jobId": "9au2C6c",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -75.67331999999999,
-        45.4004889
-      ],
+      "coordinates": [-75.67331999999999, 45.4004889],
       "type": "Point"
     },
     "locumCreator": {
@@ -1315,10 +1240,7 @@
     "jobId": "y_rS0QG",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.2980967,
-        43.6790048
-      ],
+      "coordinates": [-79.2980967, 43.6790048],
       "type": "Point"
     },
     "locumCreator": {
@@ -1367,10 +1289,7 @@
     "jobId": "bxZGTr3",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -74.74100109999999,
-        45.0353848
-      ],
+      "coordinates": [-74.74100109999999, 45.0353848],
       "type": "Point"
     },
     "locumCreator": {
@@ -1419,10 +1338,7 @@
     "jobId": "hTKQKol",
     "jobType": "FTE",
     "location": {
-      "coordinates": [
-        -79.6802258,
-        44.3986572
-      ],
+      "coordinates": [-79.6802258, 44.3986572],
       "type": "Point"
     },
     "locumCreator": {
@@ -1471,10 +1387,7 @@
     "jobId": "OyHTu2L",
     "jobType": "PT",
     "location": {
-      "coordinates": [
-        -79.4519885,
-        43.8159379
-      ],
+      "coordinates": [-79.4519885, 43.8159379],
       "type": "Point"
     },
     "locumCreator": {
@@ -1524,10 +1437,7 @@
     "jobId": "UlwuHy6",
     "jobType": "PT",
     "location": {
-      "coordinates": [
-        -83.67906339999999,
-        49.685309
-      ],
+      "coordinates": [-83.67906339999999, 49.685309],
       "type": "Point"
     },
     "locumCreator": {
@@ -1577,10 +1487,7 @@
     "isUsingJetpay": true,
     "jobId": "JUqMKaj",
     "location": {
-      "coordinates": [
-        -79.3995231,
-        43.6483567
-      ],
+      "coordinates": [-79.3995231, 43.6483567],
       "type": "Point"
     },
     "locumCreator": {
@@ -1630,10 +1537,7 @@
     "isUsingJetpay": false,
     "jobId": "UNR-_wW",
     "location": {
-      "coordinates": [
-        -79.3831843,
-        43.653226
-      ],
+      "coordinates": [-79.3831843, 43.653226],
       "type": "Point"
     },
     "locumCreator": {
@@ -1683,10 +1587,7 @@
     "isUsingJetpay": false,
     "jobId": "f_MMRxc",
     "location": {
-      "coordinates": [
-        -80.07396250000001,
-        43.9197402
-      ],
+      "coordinates": [-80.07396250000001, 43.9197402],
       "type": "Point"
     },
     "locumCreator": {
@@ -1736,10 +1637,7 @@
     "isUsingJetpay": false,
     "jobId": "eEmIf8P",
     "location": {
-      "coordinates": [
-        -79.3545149,
-        43.6332593
-      ],
+      "coordinates": [-79.3545149, 43.6332593],
       "type": "Point"
     },
     "locumCreator": {
@@ -1789,10 +1687,7 @@
     "isUsingJetpay": true,
     "jobId": "Ee9ppm0",
     "location": {
-      "coordinates": [
-        -75.7552098,
-        45.3776777
-      ],
+      "coordinates": [-75.7552098, 45.3776777],
       "type": "Point"
     },
     "locumCreator": {
@@ -1842,10 +1737,7 @@
     "isUsingJetpay": false,
     "jobId": "FZmLaUw",
     "location": {
-      "coordinates": [
-        -75.6259977,
-        45.34759589999999
-      ],
+      "coordinates": [-75.6259977, 45.34759589999999],
       "type": "Point"
     },
     "locumCreator": {
@@ -1895,10 +1787,7 @@
     "isUsingJetpay": false,
     "jobId": "zpMDLnx",
     "location": {
-      "coordinates": [
-        -75.674641,
-        45.2339435
-      ],
+      "coordinates": [-75.674641, 45.2339435],
       "type": "Point"
     },
     "locumCreator": {
@@ -1948,10 +1837,7 @@
     "isUsingJetpay": false,
     "jobId": "zSxyBbQ",
     "location": {
-      "coordinates": [
-        0,
-        0
-      ],
+      "coordinates": [0, 0],
       "type": "Point"
     },
     "locumCreator": {
@@ -2001,10 +1887,7 @@
     "isUsingJetpay": false,
     "jobId": "8OYSubV",
     "location": {
-      "coordinates": [
-        -79.28770779999999,
-        43.6807153
-      ],
+      "coordinates": [-79.28770779999999, 43.6807153],
       "type": "Point"
     },
     "locumCreator": {
@@ -2054,10 +1937,7 @@
     "isUsingJetpay": false,
     "jobId": "jiI-NB3",
     "location": {
-      "coordinates": [
-        -79.8854525,
-        43.5063701
-      ],
+      "coordinates": [-79.8854525, 43.5063701],
       "type": "Point"
     },
     "locumCreator": {
@@ -2107,10 +1987,7 @@
     "isUsingJetpay": false,
     "jobId": "Q3k-yti",
     "location": {
-      "coordinates": [
-        -79.57570840000001,
-        43.6308387
-      ],
+      "coordinates": [-79.57570840000001, 43.6308387],
       "type": "Point"
     },
     "locumCreator": {
@@ -2160,10 +2037,7 @@
     "isUsingJetpay": false,
     "jobId": "WVP8cp6",
     "location": {
-      "coordinates": [
-        -79.475876,
-        43.651013
-      ],
+      "coordinates": [-79.475876, 43.651013],
       "type": "Point"
     },
     "locumCreator": {
@@ -2213,10 +2087,7 @@
     "isUsingJetpay": false,
     "jobId": "G1R_su5",
     "location": {
-      "coordinates": [
-        -92.8377324,
-        49.76969649999999
-      ],
+      "coordinates": [-92.8377324, 49.76969649999999],
       "type": "Point"
     },
     "locumCreator": {
@@ -2266,10 +2137,7 @@
     "isUsingJetpay": false,
     "jobId": "z2wgWt3",
     "location": {
-      "coordinates": [
-        -92.8377324,
-        49.76969649999999
-      ],
+      "coordinates": [-92.8377324, 49.76969649999999],
       "type": "Point"
     },
     "locumCreator": {
@@ -2319,10 +2187,7 @@
     "isUsingJetpay": false,
     "jobId": "uZd-bZz",
     "location": {
-      "coordinates": [
-        -79.87348879999999,
-        43.2568448
-      ],
+      "coordinates": [-79.87348879999999, 43.2568448],
       "type": "Point"
     },
     "locumCreator": {
@@ -2372,10 +2237,7 @@
     "isUsingJetpay": false,
     "jobId": "ZibO0HE",
     "location": {
-      "coordinates": [
-        -79.87348879999999,
-        43.2568448
-      ],
+      "coordinates": [-79.87348879999999, 43.2568448],
       "type": "Point"
     },
     "locumCreator": {
@@ -2425,10 +2287,7 @@
     "isUsingJetpay": false,
     "jobId": "qAGDW3B",
     "location": {
-      "coordinates": [
-        -79.87348879999999,
-        43.2568448
-      ],
+      "coordinates": [-79.87348879999999, 43.2568448],
       "type": "Point"
     },
     "locumCreator": {
@@ -2478,10 +2337,7 @@
     "isUsingJetpay": false,
     "jobId": "KhcV71w",
     "location": {
-      "coordinates": [
-        -79.7702143,
-        43.354244
-      ],
+      "coordinates": [-79.7702143, 43.354244],
       "type": "Point"
     },
     "locumCreator": {
@@ -2531,10 +2387,7 @@
     "isUsingJetpay": false,
     "jobId": "Rg0ge_p",
     "location": {
-      "coordinates": [
-        -79.87348879999999,
-        43.2568448
-      ],
+      "coordinates": [-79.87348879999999, 43.2568448],
       "type": "Point"
     },
     "locumCreator": {
@@ -2584,10 +2437,7 @@
     "isUsingJetpay": true,
     "jobId": "MSe9B2v",
     "location": {
-      "coordinates": [
-        0,
-        0
-      ],
+      "coordinates": [0, 0],
       "type": "Point"
     },
     "locumCreator": {
@@ -2637,10 +2487,7 @@
     "isUsingJetpay": false,
     "jobId": "pVbyxrc",
     "location": {
-      "coordinates": [
-        -79.87348879999999,
-        43.2568448
-      ],
+      "coordinates": [-79.87348879999999, 43.2568448],
       "type": "Point"
     },
     "locumCreator": {
@@ -2690,10 +2537,7 @@
     "isUsingJetpay": false,
     "jobId": "OfPZowP",
     "location": {
-      "coordinates": [
-        -82.43709439999999,
-        42.2629972
-      ],
+      "coordinates": [-82.43709439999999, 42.2629972],
       "type": "Point"
     },
     "locumCreator": {
@@ -2743,10 +2587,7 @@
     "isUsingJetpay": true,
     "jobId": "T7AaI8E",
     "location": {
-      "coordinates": [
-        -79.38283919999999,
-        43.6617516
-      ],
+      "coordinates": [-79.38283919999999, 43.6617516],
       "type": "Point"
     },
     "locumCreator": {
@@ -2796,10 +2637,7 @@
     "isUsingJetpay": false,
     "jobId": "ctwa4Aw",
     "location": {
-      "coordinates": [
-        -79.87348879999999,
-        43.2568448
-      ],
+      "coordinates": [-79.87348879999999, 43.2568448],
       "type": "Point"
     },
     "locumCreator": {
@@ -2849,10 +2687,7 @@
     "isUsingJetpay": false,
     "jobId": "LQOKvfy",
     "location": {
-      "coordinates": [
-        -92.8377324,
-        49.76969649999999
-      ],
+      "coordinates": [-92.8377324, 49.76969649999999],
       "type": "Point"
     },
     "locumCreator": {
@@ -2902,10 +2737,7 @@
     "isUsingJetpay": false,
     "jobId": "df7Vu0o",
     "location": {
-      "coordinates": [
-        -92.8377324,
-        49.76969649999999
-      ],
+      "coordinates": [-92.8377324, 49.76969649999999],
       "type": "Point"
     },
     "locumCreator": {
@@ -2955,10 +2787,7 @@
     "isUsingJetpay": false,
     "jobId": "eAtFhi-",
     "location": {
-      "coordinates": [
-        -79.87348879999999,
-        43.2568448
-      ],
+      "coordinates": [-79.87348879999999, 43.2568448],
       "type": "Point"
     },
     "locumCreator": {
@@ -3008,10 +2837,7 @@
     "isUsingJetpay": false,
     "jobId": "Zhw8COe",
     "location": {
-      "coordinates": [
-        -79.46498609999999,
-        46.3283965
-      ],
+      "coordinates": [-79.46498609999999, 46.3283965],
       "type": "Point"
     },
     "locumCreator": {
@@ -3061,10 +2887,7 @@
     "isUsingJetpay": false,
     "jobId": "1fo4l6m",
     "location": {
-      "coordinates": [
-        -79.87348879999999,
-        43.2568448
-      ],
+      "coordinates": [-79.87348879999999, 43.2568448],
       "type": "Point"
     },
     "locumCreator": {
@@ -3114,10 +2937,7 @@
     "isUsingJetpay": false,
     "jobId": "o5p-9GO",
     "location": {
-      "coordinates": [
-        -79.3827503,
-        43.6616746
-      ],
+      "coordinates": [-79.3827503, 43.6616746],
       "type": "Point"
     },
     "locumCreator": {
@@ -3170,10 +2990,7 @@
     "isUsingJetpay": false,
     "jobId": "palfSvH",
     "location": {
-      "coordinates": [
-        -79.0186815,
-        43.8825785
-      ],
+      "coordinates": [-79.0186815, 43.8825785],
       "type": "Point"
     },
     "locumCreator": {
@@ -3226,10 +3043,7 @@
     "isUsingJetpay": false,
     "jobId": "ngKaWw8",
     "location": {
-      "coordinates": [
-        -79.77166439999999,
-        43.6950799
-      ],
+      "coordinates": [-79.77166439999999, 43.6950799],
       "type": "Point"
     },
     "locumCreator": {
@@ -3241,9 +3055,7 @@
     "modifiedAt": null,
     "notes": "Practice size of approximately 1200\nCan be mix of virtual (phone) and in person appointments\nDaily on call MD to take care of urgent issues when you are not in office\nEMR: Accuro (with ability for remote access)\nOn site pharmacy (Shoppers Drug Mart) and in office lab\nProcedure room available for minor procedures with dedicated\nXray/ultrasound/lab in the same plaza\nSupportive staff with nursing access available for vaccinations, shots and collaborative diabetes visits\n18 other supportive physicians in the office\nUse of 2 office exam rooms available\nFHT interdisciplinary team including NPs, RNs, RPNs, Social Workers, Pharmacist, Chiropodist, Phlebotomist, Dietitian\nOpportunity for women’s health consults (ex. IUD insertions, nexplanon insertions, endometrial biopsies) obstetrics, resident and medical student supervision if interested but not required",
     "postTitle": "Maternity Leave Locum In Brampton January 2026 - January 2027",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "68c2fce1536bd06e8d0d77c6"
     },
@@ -3285,10 +3097,7 @@
     "isUsingJetpay": false,
     "jobId": "uuw7d5m",
     "location": {
-      "coordinates": [
-        -79.1262029,
-        44.1028452
-      ],
+      "coordinates": [-79.1262029, 44.1028452],
       "type": "Point"
     },
     "locumCreator": {
@@ -3342,10 +3151,7 @@
     "isUsingJetpay": false,
     "jobId": "zn7Kf-e",
     "location": {
-      "coordinates": [
-        -79.383489,
-        43.6614799
-      ],
+      "coordinates": [-79.383489, 43.6614799],
       "type": "Point"
     },
     "locumCreator": {
@@ -3400,10 +3206,7 @@
     "isUsingJetpay": false,
     "jobId": "gvZHEWe",
     "location": {
-      "coordinates": [
-        -94.5025703,
-        49.7669498
-      ],
+      "coordinates": [-94.5025703, 49.7669498],
       "type": "Point"
     },
     "locumCreator": {
@@ -3414,13 +3217,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Family Physician Locum",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "68d316409f785562240980b3"
     },
@@ -3462,10 +3261,7 @@
     "isUsingJetpay": false,
     "jobId": "DeRsXjb",
     "location": {
-      "coordinates": [
-        -79.3866889,
-        45.7734396
-      ],
+      "coordinates": [-79.3866889, 45.7734396],
       "type": "Point"
     },
     "locumCreator": {
@@ -3520,10 +3316,7 @@
     "isUsingJetpay": false,
     "jobId": "zhiBwAF",
     "location": {
-      "coordinates": [
-        -79.3866889,
-        45.7734396
-      ],
+      "coordinates": [-79.3866889, 45.7734396],
       "type": "Point"
     },
     "locumCreator": {
@@ -3578,10 +3371,7 @@
     "isUsingJetpay": false,
     "jobId": "QjhyG9H",
     "location": {
-      "coordinates": [
-        -79.3866889,
-        45.7734396
-      ],
+      "coordinates": [-79.3866889, 45.7734396],
       "type": "Point"
     },
     "locumCreator": {
@@ -3636,10 +3426,7 @@
     "isUsingJetpay": false,
     "jobId": "zGPcn8-",
     "location": {
-      "coordinates": [
-        -74.7183251,
-        45.0299121
-      ],
+      "coordinates": [-74.7183251, 45.0299121],
       "type": "Point"
     },
     "locumCreator": {
@@ -3650,13 +3437,9 @@
     "medSpeciality": "Other",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Anaesthesiologist",
-    "practiceType": [
-      "Other"
-    ],
+    "practiceType": ["Other"],
     "reservationId": {
       "$oid": "68d5d72c37b86cc9491b79b2"
     },
@@ -3698,10 +3481,7 @@
     "isUsingJetpay": false,
     "jobId": "QlxrgvJ",
     "location": {
-      "coordinates": [
-        -79.662353,
-        44.4151876
-      ],
+      "coordinates": [-79.662353, 44.4151876],
       "type": "Point"
     },
     "locumCreator": {
@@ -3712,13 +3492,9 @@
     "medSpeciality": "Other",
     "modifiedAt": null,
     "notes": "Qualifications: •\tMedical degree and valid license to practice as an Endocrinologist or Internist in the province of Ontario, Canada. •\tBoard certification in Endocrinology and/or Internal Medicine. •\tExperience and expertise in the management of diabetes, including both type 1, type 2 diabetes and diabetes in pregnancy.  •\tExcellent interpersonal and communication skills, with the ability to effectively collaborate with a multidisciplinary team. •\tCommitment to providing exceptional patient-centered care",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Endocrinologist - Hospital Based Diabetes Clinic",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "68dc1fbef2ff07d0ac8c70aa"
     },
@@ -3760,10 +3536,7 @@
     "isUsingJetpay": false,
     "jobId": "2mZKEl2",
     "location": {
-      "coordinates": [
-        -84.7721993,
-        48.000819
-      ],
+      "coordinates": [-84.7721993, 48.000819],
       "type": "Point"
     },
     "locumCreator": {
@@ -3774,13 +3547,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "For additional information about our LOCUM program please contact Physician Recruiter Thea Desgagne (in-app messaging).",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Wawa Family Health Team - Locum -  URGENT COVERAGE NEEDED",
-    "practiceType": [
-      "Comprehensive"
-    ],
+    "practiceType": ["Comprehensive"],
     "reservationId": {
       "$oid": "68e0114f8139d7144370a384"
     },
@@ -3822,10 +3591,7 @@
     "isUsingJetpay": false,
     "jobId": "NdQL9C9",
     "location": {
-      "coordinates": [
-        -79.384393,
-        43.6494793
-      ],
+      "coordinates": [-79.384393, 43.6494793],
       "type": "Point"
     },
     "locumCreator": {
@@ -3836,9 +3602,7 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Family Physician",
     "practiceType": [],
     "reservationId": {
@@ -3882,10 +3646,7 @@
     "isUsingJetpay": false,
     "jobId": "jnyiLZf",
     "location": {
-      "coordinates": [
-        -81.25394849999999,
-        42.9961522
-      ],
+      "coordinates": [-81.25394849999999, 42.9961522],
       "type": "Point"
     },
     "locumCreator": {
@@ -3896,13 +3657,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Looking for a locum to cover approximately 4 month leave 6-7 half days per week, with option to potentially extend for another 2 months at part time. Well managed practice of approximately 800 patients. ",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "4 Month Locum (opportunity To Extend Longer At Part Time)",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "68e5b410c16c7056187e048b"
     },
@@ -3944,10 +3701,7 @@
     "isUsingJetpay": false,
     "jobId": "6sGzv8R",
     "location": {
-      "coordinates": [
-        -79.3598193,
-        43.7074174
-      ],
+      "coordinates": [-79.3598193, 43.7074174],
       "type": "Point"
     },
     "locumCreator": {
@@ -3958,13 +3712,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Dates of locum are flexible. The latest start would be March 2, 2025.",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Locum Opportunity – Maternity Leave Coverage At Unify FHO (Leaside, Toronto)",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "68e81481b15b7b819ca2937d"
     },
@@ -4006,10 +3756,7 @@
     "isUsingJetpay": false,
     "jobId": "LFG_DQu",
     "location": {
-      "coordinates": [
-        -79.906125,
-        44.7514848
-      ],
+      "coordinates": [-79.906125, 44.7514848],
       "type": "Point"
     },
     "locumCreator": {
@@ -4020,13 +3767,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Well-established community family medicine practice. Roster size 800-900. Part of North Simcoe Family Health Organization (FHO). Supported by North Simcoe Family Health Team (Immunizations, Diabetes Education, Psychotherapy, Dietitian, etc.)\n\nDigital health enabled - online booking and apt reminders (OCEAN), AI scribe, fully digital records (EMR Accuro QHR), efficient clinical work-flows with well-trained, highly-experienced MOA.\n\nNew clinic building (established 2023) Georgian Winds -  shared space with other family physicians, physiotherapy, sportsmed etc. Website: essentialmd.ca\n\nMinimum 1-full day (2-half days) per week on-site. 15-30 minute appointments. Flexible duration (minimum 1 month). Additional options include: long-term locum, practice-sharing, new practice depending on your interest and goals. Also: flexibility and optionality for ED, hospitalist, teaching. \n\nCompensation: competitive and negotiable: starting $600+ per half day + OHIP billings/shadow billings + uninsured services. +additional for inbox management and/or after-hours.\n\nI’m looking for a dedicated family physician comfortable with broad-scope community medicine to provide care for my patient panel during paternity leave. Experience and interest in digital health tools is a plus.",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Flexible Family Medicine Locum Part-Time Midland, ON FHO+FHT ($1200+/d)",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "68ec39c46fe5d7c292afe670"
     },
@@ -4068,10 +3811,7 @@
     "isUsingJetpay": false,
     "jobId": "I1GrI96",
     "location": {
-      "coordinates": [
-        -79.6518771,
-        43.90010179999999
-      ],
+      "coordinates": [-79.6518771, 43.90010179999999],
       "type": "Point"
     },
     "locumCreator": {
@@ -4082,13 +3822,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "FHO MATERNITY LEAVE LOCUM OPPORTUNITY",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "68fffa15527480bae27a0bef"
     },
@@ -4130,10 +3866,7 @@
     "isUsingJetpay": false,
     "jobId": "UPc7tjW",
     "location": {
-      "coordinates": [
-        -79.4301747,
-        44.02649599999999
-      ],
+      "coordinates": [-79.4301747, 44.02649599999999],
       "type": "Point"
     },
     "locumCreator": {
@@ -4144,13 +3877,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Contact person: Dr Beth Russell: Family MD\n",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Family Physician 4-6 Month Locum To Cover Medical Leave, Aurora",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "690812ec17b14ce40e5fa0a2"
     },
@@ -4192,10 +3921,7 @@
     "isUsingJetpay": false,
     "jobId": "FbyA0gE",
     "location": {
-      "coordinates": [
-        -79.6556987,
-        43.5449107
-      ],
+      "coordinates": [-79.6556987, 43.5449107],
       "type": "Point"
     },
     "locumCreator": {
@@ -4206,14 +3932,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "All Ages",
-      "Pediatric"
-    ],
+    "patientType": ["All Ages", "Pediatric"],
     "postTitle": "Looking For: P/T Mat Leave Locum",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "69168ca4e21c99f9a6c3bb7c"
     },
@@ -4255,10 +3976,7 @@
     "isUsingJetpay": false,
     "jobId": "mTy1VCU",
     "location": {
-      "coordinates": [
-        -80.20025009999999,
-        44.0759838
-      ],
+      "coordinates": [-80.20025009999999, 44.0759838],
       "type": "Point"
     },
     "locumCreator": {
@@ -4269,13 +3987,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Family Medicine Locum",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "691d4acc5d551c4ec05c6c8c"
     },
@@ -4317,10 +4031,7 @@
     "isUsingJetpay": false,
     "jobId": "mIpnSbR",
     "location": {
-      "coordinates": [
-        -80.20349999999999,
-        44.4997215
-      ],
+      "coordinates": [-80.20349999999999, 44.4997215],
       "type": "Point"
     },
     "locumCreator": {
@@ -4331,13 +4042,9 @@
     "medSpeciality": "Obstetrician/Gynecologist (OB/GYN)",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "General Obstetrics And Gynecology Locum",
-    "practiceType": [
-      "Comprehensive"
-    ],
+    "practiceType": ["Comprehensive"],
     "reservationId": {
       "$oid": "692088ea59ed2f044d9dd430"
     },
@@ -4379,10 +4086,7 @@
     "isUsingJetpay": false,
     "jobId": "OjNaVRc",
     "location": {
-      "coordinates": [
-        -79.4189506,
-        43.6377057
-      ],
+      "coordinates": [-79.4189506, 43.6377057],
       "type": "Point"
     },
     "locumCreator": {
@@ -4395,9 +4099,7 @@
     "notes": "",
     "patientType": [],
     "postTitle": "Family Physician Locum In Toronto Community FHT",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "6921f9b3472801230e6fb8df"
     },
@@ -4439,10 +4141,7 @@
     "isUsingJetpay": false,
     "jobId": "RwDgLqb",
     "location": {
-      "coordinates": [
-        -79.3923973,
-        43.6707918
-      ],
+      "coordinates": [-79.3923973, 43.6707918],
       "type": "Point"
     },
     "locumCreator": {
@@ -4453,9 +4152,7 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Locum pays 25% of clinic overhead costs and keeps 100% of 3rd party billings for service.",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Beautiful Yorkville Family Practice Clinic",
     "practiceType": [],
     "reservationId": {
@@ -4499,10 +4196,7 @@
     "isUsingJetpay": true,
     "jobId": "HwlCHuf",
     "location": {
-      "coordinates": [
-        -80.23749,
-        43.4994328
-      ],
+      "coordinates": [-80.23749, 43.4994328],
       "type": "Point"
     },
     "locumCreator": {
@@ -4513,13 +4207,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Contact person: Dr. Shannon Hutton: Physician\nContact title: Physician",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Family Physician Locum",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "692ca1c6576e34b8cdcd93cb"
     },
@@ -4561,10 +4251,7 @@
     "isUsingJetpay": false,
     "jobId": "ay8YQ3O",
     "location": {
-      "coordinates": [
-        -79.68782999999999,
-        43.53726
-      ],
+      "coordinates": [-79.68782999999999, 43.53726],
       "type": "Point"
     },
     "locumCreator": {
@@ -4575,13 +4262,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Looking for a locum to cover my mat leave from mid-March to September 2026! Located in Mississauga, Clinic Name: Glen Erin Commons Medical EMR Is Accuro FHG practice, roster size ~1700 Overhead is 25% Coverage: 4 days per week but flexible! Practice is very well managed with excellent admin and clinical supports. Option for additional walk-in coverage on top of that if you would like to. New grads welcome! I am a new grad myself - finished residency in 2024!\nClinic is located in West Mississauga. Free parking available. Will have access to 3 rooms - one office and two patient rooms.",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "FHG Locum In Mississauga For Mat Leave Coverage - Mar-Sep 2026 - Mississauga Mar",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "6934c209a49d5647ebc91db2"
     },
@@ -4623,10 +4306,7 @@
     "isUsingJetpay": false,
     "jobId": "Q_4g7Fc",
     "location": {
-      "coordinates": [
-        -81.01974489999999,
-        46.4769053
-      ],
+      "coordinates": [-81.01974489999999, 46.4769053],
       "type": "Point"
     },
     "locumCreator": {
@@ -4637,13 +4317,9 @@
     "medSpeciality": "Cardiologist",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "Adult"
-    ],
+    "patientType": ["Adult"],
     "postTitle": "Cardiology Clinic Practice",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "6938ed0f78cab68761f8ef52"
     },
@@ -4685,10 +4361,7 @@
     "isUsingJetpay": false,
     "jobId": "QC8p1rj",
     "location": {
-      "coordinates": [
-        -79.5927817,
-        43.6630812
-      ],
+      "coordinates": [-79.5927817, 43.6630812],
       "type": "Point"
     },
     "locumCreator": {
@@ -4699,13 +4372,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Locum Physician For Maternity Leave",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "693a2dfb99b0c2b26e519201"
     },
@@ -4747,10 +4416,7 @@
     "isUsingJetpay": false,
     "jobId": "NtDz_25",
     "location": {
-      "coordinates": [
-        -79.384393,
-        43.6494793
-      ],
+      "coordinates": [-79.384393, 43.6494793],
       "type": "Point"
     },
     "locumCreator": {
@@ -4761,13 +4427,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "This locum opportunity is for a maternity leave with the opportunity to become a permanent Medcan physician running your own rostered practice or supporting our other services in urgent/preventative care.\n\nYou will take on a relatively small roster of ~400 patients.",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Locum Physician (12 Month Contract)",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "69430296e0c005a919b9ebfa"
     },
@@ -4809,10 +4471,7 @@
     "isUsingJetpay": false,
     "jobId": "dLC6T7e",
     "location": {
-      "coordinates": [
-        -89.2738281,
-        48.423676
-      ],
+      "coordinates": [-89.2738281, 48.423676],
       "type": "Point"
     },
     "locumCreator": {
@@ -4823,13 +4482,9 @@
     "medSpeciality": "Pediatrician",
     "modifiedAt": null,
     "notes": "Thunder Bay Paediatrician Full Time Coverage for 6 month Locum\n\nWe are looking for a full time locum to cover a maternity leave from May 1 to October 31, 2026. We would be happy to also consider candidates who are able to cover for a shorter time commitment as well. \n\nAs a member of our team, you will assist in the provision of Pediatric Care in the following program components;\n• Level IIC NICU\n• Paediatric inpatient care including on call coverage \n• Outpatient paediatric clinic including diabetes care, complex care, development, mental health, and all aspects of general paediatrics\n\nThe position includes:\n• Opportunity to join an established group practice (Thunder Bay Paediatrics)\n• Participation in On-Call at the Thunder Bay Regional Health Sciences Centre (1:10)\n• Generously funded via an Alternate Payment Plan (APP)\n• Outpatient clinic space \n• Opportunity for Academic Affiliation with NOSM University\n\nApplicants should be:\n• Eligible for licensure in Ontario and a Royal College certified Paediatrician\n• Interested in teaching medical students & residents\n\nAbout our Practice:\nThe paediatrics group in Thunder Bay includes ten paediatricians who serve the children of Northwestern Ontario from just past Sault Ste Marie to the Manitoba border including the fly in Indigenous reserve communities and split inpatient work evenly. Our regional hospital, Thunder Bay Regional Health Sciences Centre, has a 14 bed Level 2C NICU, a 12 bed inpatient paediatrics unit, a new neonatal/paediatric transport team, provides inpatient on call coverage, and each have our own outpatient paediatric practice, located at Thunder Bay Paediatrics. We are a friendly and supportive team who are happy to provide guidance. Our program features numerous subspecialty clinics, including diabetes, autism, gender affirming care, eating disorders, complex care, hematology, allergy, transport medicine, and a Paediatric Oncology Group of Ontario satellite clinic. This role offers a unique opportunity for academic scholarship, including teaching undergraduate and postgraduate medical learners from NOSM University including our paediatric residents.\n\nCommunity:\nThunder Bay is a city of approximately 110 000 in Northwestern, Ontario located on the beautiful shores of Lake Superior. Thunder Bay is known as one of Canada’s greatest outdoor cities with great cuisine, easy access to hiking and other outdoor pursuits, and cultural events. \n\nApplications will be accepted until the position is filled. Please contact sfernandez@nosm.ca to apply or for additional details. Thanks\n",
-    "patientType": [
-      "Pediatric"
-    ],
+    "patientType": ["Pediatric"],
     "postTitle": "Pediatric Locum For 6 Month Maternity Leave",
-    "practiceType": [
-      "Comprehensive"
-    ],
+    "practiceType": ["Comprehensive"],
     "reservationId": {
       "$oid": "6944a44d1c3ba06bd50d8a2c"
     },
@@ -4871,10 +4526,7 @@
     "isUsingJetpay": false,
     "jobId": "S_qMUN-",
     "location": {
-      "coordinates": [
-        -79.3862389,
-        43.6604402
-      ],
+      "coordinates": [-79.3862389, 43.6604402],
       "type": "Point"
     },
     "locumCreator": {
@@ -4885,13 +4537,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Lovely well located office close to downtown hospitals.\n3 other lovely family doctors work in our office with 2 admins and clinic manager  with experience (10 years with us).\nMy roster is around 1800 patients that have been with me for 10 years.",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Mat Leave Locum March 2026 (12 Months)",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "69457d0a3330dbc87955c898"
     },
@@ -4933,10 +4581,7 @@
     "isUsingJetpay": false,
     "jobId": "ANoUeb3",
     "location": {
-      "coordinates": [
-        -79.9582707,
-        43.2668612
-      ],
+      "coordinates": [-79.9582707, 43.2668612],
       "type": "Point"
     },
     "locumCreator": {
@@ -4947,13 +4592,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "As part of the FHT you will have access to dietitians, mental health counsellors, pharmacist, Psychiatry and patient groups run by the Hamilton FHT. ",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "FHO/FHT Locum July-Sept In Dundas, ON",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "69544072edec477173f766fc"
     },
@@ -4996,10 +4637,7 @@
     "isUsingJetpay": false,
     "jobId": "vT2AhVB",
     "location": {
-      "coordinates": [
-        -79.3931532,
-        43.6685903
-      ],
+      "coordinates": [-79.3931532, 43.6685903],
       "type": "Point"
     },
     "locumCreator": {
@@ -5010,13 +4648,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Contact person: Naila Kassam: Doctor\nContact title: Doctor",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Looking For 4 Half Days Over The Week Of August (flexible)",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "69568b793105d2ea27f8b0ad"
     },
@@ -5059,10 +4693,7 @@
     "isUsingJetpay": false,
     "jobId": "QUC0C85",
     "location": {
-      "coordinates": [
-        -113.4503738,
-        53.4722788
-      ],
+      "coordinates": [-113.4503738, 53.4722788],
       "type": "Point"
     },
     "locumCreator": {
@@ -5073,13 +4704,9 @@
     "medSpeciality": "Radiologist",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Radiologist",
-    "practiceType": [
-      "Other"
-    ],
+    "practiceType": ["Other"],
     "reservationId": {
       "$oid": "696555a3529eefbbb3c0fe70"
     },
@@ -5122,10 +4749,7 @@
     "isUsingJetpay": true,
     "jobId": "rT9Nukl",
     "location": {
-      "coordinates": [
-        -113.4503738,
-        53.4722788
-      ],
+      "coordinates": [-113.4503738, 53.4722788],
       "type": "Point"
     },
     "locumCreator": {
@@ -5136,13 +4760,9 @@
     "medSpeciality": "Other",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "Adult"
-    ],
+    "patientType": ["Adult"],
     "postTitle": "Physician – Pain Management / Injections",
-    "practiceType": [
-      "Other"
-    ],
+    "practiceType": ["Other"],
     "reservationId": {
       "$oid": "69655878d4ae8b73ea6f2e4c"
     },
@@ -5185,10 +4805,7 @@
     "isUsingJetpay": false,
     "jobId": "0OK4ULH",
     "location": {
-      "coordinates": [
-        -79.8726372,
-        44.1534659
-      ],
+      "coordinates": [-79.8726372, 44.1534659],
       "type": "Point"
     },
     "locumCreator": {
@@ -5199,13 +4816,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Family Physician Locum - Alliston, Ontario",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "696e6e75613db870369b8b21"
     },
@@ -5248,10 +4861,7 @@
     "isUsingJetpay": true,
     "jobId": "RrIYYYO",
     "location": {
-      "coordinates": [
-        -81.0058885,
-        43.3509794
-      ],
+      "coordinates": [-81.0058885, 43.3509794],
       "type": "Point"
     },
     "locumCreator": {
@@ -5262,13 +4872,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "This role is part of a mobile occupational health clinic delivering on-site medical care directly at industrial workplaces. By bringing care to workers, the mobile clinic reduces time away from work, improves access to timely assessments, and supports early identification of work-related issues. Physicians practice in a focused, low-acuity environment with an emphasis on functional assessment, injury prevention, and workplace health, helping workers stay safe and productive while minimizing disruption to operations.",
-    "patientType": [
-      "Adult"
-    ],
+    "patientType": ["Adult"],
     "postTitle": "Family Physician – Occupational / Industrial Medicine (on-site, daily guarantee)",
-    "practiceType": [
-      "Other"
-    ],
+    "practiceType": ["Other"],
     "reservationId": {
       "$oid": "6970249b23fa25a8075079c6"
     },
@@ -5311,10 +4917,7 @@
     "isUsingJetpay": true,
     "jobId": "A3ZkXX4",
     "location": {
-      "coordinates": [
-        -80.8358116,
-        43.8347113
-      ],
+      "coordinates": [-80.8358116, 43.8347113],
       "type": "Point"
     },
     "locumCreator": {
@@ -5325,13 +4928,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "This role is part of a mobile occupational health clinic delivering on-site medical care directly at industrial workplaces. By bringing care to workers, the mobile clinic reduces time away from work, improves access to timely assessments, and supports early identification of work-related issues. Physicians practice in a focused, low-acuity environment with an emphasis on functional assessment, injury prevention, and workplace health, helping workers stay safe and productive while minimizing disruption to operations.",
-    "patientType": [
-      "Adult"
-    ],
+    "patientType": ["Adult"],
     "postTitle": "Family Physician – Occupational / Industrial Medicine (on-site, Daily Guarantee)",
-    "practiceType": [
-      "Other"
-    ],
+    "practiceType": ["Other"],
     "reservationId": {
       "$oid": "6970257634a927eb44c97385"
     },
@@ -5374,10 +4973,7 @@
     "isUsingJetpay": false,
     "jobId": "wvQmQ12",
     "location": {
-      "coordinates": [
-        -79.384393,
-        43.6494793
-      ],
+      "coordinates": [-79.384393, 43.6494793],
       "type": "Point"
     },
     "locumCreator": {
@@ -5388,13 +4984,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Available locums at all Medcan locations: Downtown Toronto (150 York)\nOakville (2275 Upper Middle Road E.)\nEtobicoke (Bloor/Islington)\nNorth York (Yonge/York Mills)",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Urgent Care Physician",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "697a338da8fda96aa029abec"
     },
@@ -5437,10 +5029,7 @@
     "isUsingJetpay": false,
     "jobId": "NpbMQoy",
     "location": {
-      "coordinates": [
-        -79.3435276,
-        43.7077392
-      ],
+      "coordinates": [-79.3435276, 43.7077392],
       "type": "Point"
     },
     "locumCreator": {
@@ -5451,13 +5040,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Contact person: Tahir Majeed: Director\nContact title: Director",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Family Physician 4  Month Locum -Toronto",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "697c08c9eced3a4778193e11"
     },
@@ -5500,10 +5085,7 @@
     "isUsingJetpay": false,
     "jobId": "G9gdgff",
     "location": {
-      "coordinates": [
-        -79.4110159,
-        43.704327
-      ],
+      "coordinates": [-79.4110159, 43.704327],
       "type": "Point"
     },
     "locumCreator": {
@@ -5514,13 +5096,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Start and end dates are flexible, open to discussion",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Locum Physician Needed In Midtown Toronto FHO",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "697fb7fdaf652711ea482e72"
     },
@@ -5563,10 +5141,7 @@
     "isUsingJetpay": false,
     "jobId": "tj48jqi",
     "location": {
-      "coordinates": [
-        -79.42669570000001,
-        44.604645
-      ],
+      "coordinates": [-79.42669570000001, 44.604645],
       "type": "Point"
     },
     "locumCreator": {
@@ -5577,14 +5152,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Why Locum in Orillia? \n🚗 Commute times measured in minutes \n🌊 Located on Lake Couchiching and Lake Simcoe \n🏙️ Only 90 minutes north of Toronto \n🏡 A relaxed, physician friendly community friendly community \n⛷️ Easy access to winter recreation, trails, and waterfront \nOn March Break, when traffic is heading north — you’re already here. ",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Family Physician – March Break Locum Coverage ",
-    "practiceType": [
-      "Comprehensive",
-      "Clinic only"
-    ],
+    "practiceType": ["Comprehensive", "Clinic only"],
     "reservationId": {
       "$oid": "6984efdfd61e66a4ff417279"
     },
@@ -5627,10 +5197,7 @@
     "isUsingJetpay": false,
     "jobId": "KxPqBUo",
     "location": {
-      "coordinates": [
-        -79.42669570000001,
-        44.604645
-      ],
+      "coordinates": [-79.42669570000001, 44.604645],
       "type": "Point"
     },
     "locumCreator": {
@@ -5641,14 +5208,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Why Orillia? \n🚗 Minutes long commute — no traffic, no stress \n🌊 Located on Lake Couchiching & Lake Simcoe \n🏙️ Just 90 minutes north of Toronto with easy access to Highway 400 \n🏡 Ideal for families, outdoor enthusiasts, and physicians seeking balance \n🛶 While others head north on Fridays — you’re already here \n\nHOSPITAL AFFILIATION: Orillia Soldiers’ Memorial Hospital (OSMH) offers a full range of services including\n-Emergency, medical, and surgical care \n-Regional programs in: \n--Orthopedics \n--Kidney care \n--Mental health \n--Senior's care \n--Sexual assault & domestic violence care \n--Pediatrics & Neonatal ICU ",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Family Physician Opportunity ",
-    "practiceType": [
-      "Comprehensive",
-      "Clinic only"
-    ],
+    "practiceType": ["Comprehensive", "Clinic only"],
     "reservationId": {
       "$oid": "69850a48914e6d649ed3c8f6"
     },
@@ -5691,10 +5253,7 @@
     "isUsingJetpay": false,
     "jobId": "sLSv1qB",
     "location": {
-      "coordinates": [
-        -79.42669570000001,
-        44.604645
-      ],
+      "coordinates": [-79.42669570000001, 44.604645],
       "type": "Point"
     },
     "locumCreator": {
@@ -5705,14 +5264,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "Why Choose Orillia & Lake Country? \n🚗 Commutes measured in minutes, not hours \n🌊 Located on the shores of Lake Couchiching and Lake Simcoe \n🏙️ Only 90 minutes north of Toronto with easy highway access \n🏡 Ideal for families, outdoor enthusiasts, and physicians seeking balance \n⛷️ Skiing, cycling, waterfront parks, arts, and culture at your doorstep \nOn Fridays, when others are heading north — you’re already home. \n\nDISCOVER LIFE IN ORILLIA\n-Five waterfront parks \n-State-of-the-art library and entertainment centre \n-60 alpine ski runs & 82 km of trails \n-Vibrant arts community including: \n--Orillia Opera House \n--Leacock Museum \n--Museum of Art & History \n-Home to major employers including OPP Headquarters, Casino Rama, Georgian College, and Lakehead University ",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Family Physician – Incentives Available ",
-    "practiceType": [
-      "Comprehensive",
-      "Clinic only"
-    ],
+    "practiceType": ["Comprehensive", "Clinic only"],
     "reservationId": {
       "$oid": "6985124aac61209ae47f1e33"
     },
@@ -5755,10 +5309,7 @@
     "isUsingJetpay": false,
     "jobId": "atYvBes",
     "location": {
-      "coordinates": [
-        -78.9444249,
-        43.8796683
-      ],
+      "coordinates": [-78.9444249, 43.8796683],
       "type": "Point"
     },
     "locumCreator": {
@@ -5769,13 +5320,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "MOA present on site. ",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Whitby Family Medicine FHO Locum",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "6992661963f1f5cab16e4f6e"
     },
@@ -5818,10 +5365,7 @@
     "isUsingJetpay": true,
     "jobId": "nN0jjYi",
     "location": {
-      "coordinates": [
-        -80.30693169999999,
-        43.5357942
-      ],
+      "coordinates": [-80.30693169999999, 43.5357942],
       "type": "Point"
     },
     "locumCreator": {
@@ -5832,13 +5376,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "This role is part of a mobile occupational health clinic delivering on-site medical care directly at industrial workplaces. \n\nBy bringing care to workers, the mobile clinic reduces time away from work, improves access to timely assessments, and supports early identification of work-related issues. Physicians practice in a focused, low-acuity environment with an emphasis on functional assessment, injury prevention, and workplace health, helping workers stay safe and productive while minimizing disruption to operations.",
-    "patientType": [
-      "Adult"
-    ],
+    "patientType": ["Adult"],
     "postTitle": "Family Physician – Occupational / Industrial Medicine (on-site, Daily Guarantee)",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "699887ecda015611f4f886f2"
     },
@@ -5881,10 +5421,7 @@
     "isUsingJetpay": true,
     "jobId": "xPvR8PG",
     "location": {
-      "coordinates": [
-        -82.9965563,
-        42.3031521
-      ],
+      "coordinates": [-82.9965563, 42.3031521],
       "type": "Point"
     },
     "locumCreator": {
@@ -5895,13 +5432,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "This role is part of a mobile occupational health clinic delivering on-site medical care directly at industrial workplaces. \n\nBy bringing care to workers, the mobile clinic reduces time away from work, improves access to timely assessments, and supports early identification of work-related issues. Physicians practice in a focused, low-acuity environment with an emphasis on functional assessment, injury prevention, and workplace health, helping workers stay safe and productive while minimizing disruption to operations.",
-    "patientType": [
-      "Adult"
-    ],
+    "patientType": ["Adult"],
     "postTitle": "Family Physician – Occupational / Industrial Medicine (on-site, Daily Guarantee)",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "6998890e71b5fa2802b90b92"
     },
@@ -5944,10 +5477,7 @@
     "isUsingJetpay": false,
     "jobId": "YWaVMH0",
     "location": {
-      "coordinates": [
-        -84.7721993,
-        48.000819
-      ],
+      "coordinates": [-84.7721993, 48.000819],
       "type": "Point"
     },
     "locumCreator": {
@@ -5958,13 +5488,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Wawa Family Health Team - Locum -  URGENT COVERAGE NEEDED March 26 To 31, 2026",
-    "practiceType": [
-      "Clinic & ED"
-    ],
+    "practiceType": ["Clinic & ED"],
     "reservationId": {
       "$oid": "6998899a8db97607e0684816"
     },
@@ -6007,10 +5533,7 @@
     "isUsingJetpay": true,
     "jobId": "Bsb5FsR",
     "location": {
-      "coordinates": [
-        -80.284922,
-        43.1329986
-      ],
+      "coordinates": [-80.284922, 43.1329986],
       "type": "Point"
     },
     "locumCreator": {
@@ -6021,13 +5544,9 @@
     "medSpeciality": "Family Medicine",
     "modifiedAt": null,
     "notes": "This role is part of a mobile occupational health clinic delivering on-site medical care directly at industrial workplaces. \n\nBy bringing care to workers, the mobile clinic reduces time away from work, improves access to timely assessments, and supports early identification of work-related issues. Physicians practice in a focused, low-acuity environment with an emphasis on functional assessment, injury prevention, and workplace health, helping workers stay safe and productive while minimizing disruption to operations.",
-    "patientType": [
-      "Adult"
-    ],
+    "patientType": ["Adult"],
     "postTitle": "Family Physician – Occupational / Industrial Medicine (On-Site, Daily Guarantee)",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "699889b56beb5010438383aa"
     },
@@ -6070,10 +5589,7 @@
     "isUsingJetpay": false,
     "jobId": "zlsX-wE",
     "location": {
-      "coordinates": [
-        -78.15391149999999,
-        43.9630417
-      ],
+      "coordinates": [-78.15391149999999, 43.9630417],
       "type": "Point"
     },
     "locumCreator": {
@@ -6084,13 +5600,9 @@
     "medSpeciality": "Other",
     "modifiedAt": null,
     "notes": "",
-    "patientType": [
-      "All Ages"
-    ],
+    "patientType": ["All Ages"],
     "postTitle": "Family Physicians And Specialists ",
-    "practiceType": [
-      "Clinic only"
-    ],
+    "practiceType": ["Clinic only"],
     "reservationId": {
       "$oid": "6998b824d7fe308af88635c6"
     },
