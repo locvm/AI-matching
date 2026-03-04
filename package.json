@@ -1,0 +1,8 @@
+{
+  "name": "ai-matching",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "analyze-data": "node scripts/analyzeTestData.js"
+  }
+}
