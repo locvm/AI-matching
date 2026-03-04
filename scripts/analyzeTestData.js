@@ -400,7 +400,7 @@ async function analyzeReservations() {
   const md = [];
   const keys = reservations.length > 0 ? Object.keys(reservations[0]).join(', ') : '(none)';
   md.push('## Reservations\n');
-  md.push(`- **Entries:** ${reservations.length}\n- **data[0] keys:** ${keys}\n`);
+  md.push(`- **Entries:** ${reservations.length}\n`);
 
   md.push('## Reservation field completeness (missingness)\n');
   md.push('| Field | Present | Missing |');

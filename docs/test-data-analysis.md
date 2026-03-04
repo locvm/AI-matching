@@ -299,7 +299,6 @@ Excludes undefined/null. Invalid type or empty for coords, date, string, nonEmpt
 ## Reservations
 
 - **Entries:** 110
-- **data[0] keys:** __v, _id, createdAt, createdBy, dateModified, locumJobId, reservationDate, reservationDetails, reservedBy, reviewId, reviewsCompleted, simpleJobIdForUser, status
 
 ## Reservation field completeness (missingness)
 
