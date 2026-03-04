@@ -8,7 +8,7 @@ import { OUTPUT, PATHS } from '../harness.config.js'
   
 /**
  * @typedef {import('./types.js').LocumJob} LocumJob
- * @typedef {import('./types.js').User} User
+ * @typedef {import('./types.js').Physician} Physician
  * @typedef {import('./types.js').Reservation} Reservation
  * @typedef {import('./types.js').SearchCriteria} SearchCriteria
  * @typedef {import('./types.js').SearchResult} SearchResult
@@ -23,8 +23,8 @@ export class MatchingTestHarness {
   /** @type {LocumJob[]} */
   #jobs
 
-  /** @type {User[]} */
-  #users
+  /** @type {Physician[]} */
+  #physicians
 
   /** @type {Reservation[]} */
   #reservations
@@ -38,14 +38,14 @@ export class MatchingTestHarness {
   /**
    * @param {object} data
    * @param {LocumJob[]} data.jobs
-   * @param {User[]} data.users
+   * @param {Physician[]} data.physicians
    * @param {Reservation[]} data.reservations
    * @param {MatchingEngine} [data.engine]
    * @param {HarnessConfig} [config]
    */
   constructor(data, config = {}) {
     this.#jobs = data.jobs
-    this.#users = data.users
+    this.#physicians = data.physicians
     this.#reservations = data.reservations
     this.#engine = data.engine ?? new MatchingEngineStub()
     this.#config = {
@@ -60,11 +60,11 @@ export class MatchingTestHarness {
     const sampler = new Sampler(this.#config.sampling)
 
     const jobs = sampler.sampleJobs(this.#jobs)
-    const users = sampler.sampleUsers(this.#users)
+    const physicians = sampler.sampleUsers(this.#physicians)
 
     console.log(`[Harness] Seed: ${sampler.seed}`)
     console.log(`[Harness] Jobs: ${jobs.length} sampled from ${this.#jobs.length}`)
-    console.log(`[Harness] Users: ${users.length} sampled from ${this.#users.length}`)
+    console.log(`[Harness] Physicians: ${physicians.length} sampled from ${this.#physicians.length}`)
 
     const statsCollector = new SummaryStatsCollector()
     /** @type {HarnessJobResult[]} */
@@ -74,7 +74,7 @@ export class MatchingTestHarness {
     for (const job of jobs) {
       const reservation = this.#reservations.find((r) => r.locumJobId === job._id) ?? null
 
-      const results = await this.#engine.searchPhysicians({ job, reservation: reservation ?? undefined }, users)
+      const results = await this.#engine.searchPhysicians({ job, reservation: reservation ?? undefined }, physicians)
 
       const topResults = results.slice(0, this.#config.topK)
       const stats = statsCollector.computeForJob(job._id, results)

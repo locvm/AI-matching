@@ -8,26 +8,28 @@
 
 /** @typedef {import("../core/models.js").Physician} Physician */
 /** @typedef {import("../core/models.js").GeoCoordinates} GeoCoordinates */
+/** @typedef {import("../core/models.js").Address} Address */
 /** @typedef {import("../core/models.js").ProvinceCode} ProvinceCode */
 
 /**
  * Scores how close a physician is to the job location
  *
- * Steps:
- * 1) If physician.location is null, return middle score (0.5). 43% of physicians have no location data so dont penalize them
- * 2) Calculate the distance between physician.location and jobLocation using the Haversine formula (great-circle distance)
- * 3) Apply a distance drop-off function (Gaussian or inverse-linear, up to you):
- *    - 1.0 when distance is 0 km
- *    - ~0.5 at a midpoint you can set (for example 100 km)
- *    - goes toward 0 as distance grows
- * 4) Clamp the result to [0, 1]
+ * Uses a reverse sigmoid on Haversine distance when GPS coords are available,
+ * with a multi-tier fallback chain when they are not:
  *
- * No hard travel radius in v1, use smooth drop-off instead of cutoffs
- * Eves current algo uses lat/lng distance scoring for those who have it
+ * Tier 1: GPS coordinates → reverse sigmoid: score(d) = 1 / (1 + exp(k * (d - midpoint)))
+ * Tier 2: specificRegions → free-text region matching against job city (0.85 match / 0.15 mismatch)
+ * Tier 3: preferredProvinces → province match (0.70 match / 0.20 mismatch)
+ * Tier 4: workAddress.province → province match (0.55 match / 0.40 mismatch)
+ * Tier 5: medicalProvince → province match (0.50 match / 0.45 mismatch)
+ * Tier 6: no data → 0.50 neutral
+ *
+ * Implementation: src/scoring/location/scoreLocation.js
  *
  * @callback ScoreLocationFn
  * @param {Physician} physician - the clean physician profile
  * @param {GeoCoordinates} jobLocation - the jobs geographic coordinates
+ * @param {Address} [jobAddress] - optional full address of the job, used for province/region fallback when physician has no GPS coords
  * @returns {number} score between 0 and 1 where 1 = same spot, 0 = super far
  */
 

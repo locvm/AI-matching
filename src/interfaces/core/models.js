@@ -56,7 +56,8 @@
 /**
  * Clean physician for the matching engine
  *
- * NOT a 1:1 mirror of the users collection, we only pull whats relevant for matching. The raw collection has like 30+ fields, most of them irrelevant here
+ * All fields are flat and top-level — no nested preferences object.
+ * The fixture loader flattens preferences.* from the raw DB into these fields.
  *
  * Some context on the data (stuff I found digging through it):
  *   - 180 doctors have isLookingForLocums completely missing (not true, not false, just gone). We treat missing as true. Max call, signing up implies interest
@@ -65,27 +66,32 @@
  *   - preferredProvinces has all the messy variants. Cleaned to ProvinceCode[]
  *
  * @typedef {Object} Physician
- * @property {string} id - MongoDB ObjectId as string
- * @property {string} firstName
- * @property {string} lastName
+ * @property {string} _id - MongoDB ObjectId as string
  * @property {string} medProfession - "Physician", "Recruiter" - only Physicians get matched
  * @property {string} medSpeciality - like "Family Medicine", "Emergency Medicine", "Radiologist"
  * @property {boolean} isLookingForLocums - Whether the doctor is actively looking. Missing values -> true during cleanup
  * @property {GeoCoordinates | null} location - Doctors anchor location. Null for 43% of physicians. When null, location scoring returns middle score (0.5)
- * @property {Address | null} workAddress - Clean work address
+ * @property {Address | null} workAddress - Work address
  * @property {ProvinceCode} [medicalProvince] - Province where the doctor is medically licensed. Currently almost everyone is "ON" (Ontario)
- * @property {ProvinceCode[]} preferredProvinces - Provinces the doctor prefers to work in
+ * @property {ProvinceCode[]} preferredProvinces - Provinces the doctor prefers to work in. Flattened from preferences.preferredProvinces
+ * @property {string[]} specificRegions - Free-text region preferences like "downtown toronto", "GTA", "Barrie". Flattened from preferences.specificRegions
  * @property {string[]} emrSystems - EMR systems the doctor knows. Only 42/410 have this
- * @property {string[]} languages - Languages spoken, like ["English", "French"]
- * @property {AvailabilityWindow[]} availability - Availability windows the doctor declared
- * @property {string[]} locumDurations - Preferred locum duration categories like "1-3 months", "1 day to 2 weeks"
- * @property {string[]} availabilityTypes - Availability type preferences like "Weekdays", "Weekends", "Evenings"
- * @property {boolean} isProfileComplete - Whether the doctors profile is complete
- * @property {boolean} isOnboardingCompleted - Whether onboarding is done
+ * @property {string} [facilityEMR] - EMR system at the doctor's facility
+ * @property {string} [firstName]
+ * @property {string} [lastName]
+ * @property {string} [role]
+ * @property {string[]} [languages] - Languages spoken, like ["English", "French"]
+ * @property {string[]} [locumDurations] - Preferred locum duration categories like "1-3 months", "1 day to 2 weeks". Flattened from preferences.locumDurations
+ * @property {string[]} [availabilityTypes] - Availability type preferences like "Weekdays", "Weekends", "Evenings". Flattened from preferences.availabilityTypes
+ * @property {boolean} [isProfileComplete] - Whether the doctors profile is complete
+ * @property {boolean} [isOnboardingCompleted] - Whether onboarding is done
  */
 
 /**
  * Clean locum job posting
+ *
+ * All fields are flat and top-level. The fixture loader converts GeoJSON coordinates
+ * to {lng, lat} and cleans province strings to 2-letter codes.
  *
  * Jobs are way cleaner than users tbh, all 108 have coordinates, all have date ranges, all have specialty
  *
@@ -93,22 +99,24 @@
  * Until then, EMR scoring treats missing job EMR as middle score (0.5)
  *
  * @typedef {Object} LocumJob
- * @property {string} id - MongoDB ObjectId as string
- * @property {string} jobId - Human-readable short ID like "EuXagtm"
- * @property {string} postTitle
+ * @property {string} _id - MongoDB ObjectId as string
+ * @property {string} [jobId] - Human-readable short ID like "EuXagtm"
+ * @property {string} [postTitle]
  * @property {string} medProfession
  * @property {string} medSpeciality
- * @property {GeoCoordinates} location - Job location as coords, all current jobs have this
- * @property {Address} fullAddress - Clean full address
+ * @property {GeoCoordinates | null} location - Job location as {lng, lat}. Flattened from GeoJSON coordinates [lng, lat]
+ * @property {Address} fullAddress - Clean full address, province normalized to 2-letter code
  * @property {{ from: Date, to: Date }} dateRange - When the locum needs to be filled
- * @property {string} jobType - "FTE" or "PT"
- * @property {string} [emr] - EMR system at this facility. Currently not on ANY job document. Future field
+ * @property {string} [jobType] - "FTE" or "PT"
+ * @property {{ emr?: string }} [facilityInfo] - Facility info including EMR system
  * @property {string} [experience] - Experience level, free text, pretty messy. Needs future cleanup
  * @property {string} [locumPay] - Pay amount as string like "8000". Future: clean up to number
  * @property {string} [schedule] - Work schedule description
- * @property {string} locumCreatorId - Who created this job posting
+ * @property {string} [locumCreatorId] - Who created this job posting
  * @property {string} [reservationId] - Associated reservation ID if any
  * @property {string} [facilityName] - Facility name
+ * @property {string[]} [practiceType]
+ * @property {string[]} [patientType]
  */
 
 /**
@@ -121,15 +129,25 @@
  * A reservation = a doctor booked for a locum job
  * We need this to check for scheduling conflicts, dont want to match someone whos already booked for overlapping dates
  *
+ * The fixture loader flattens applicants[].userId from {$oid: "..."} to plain strings.
+ *
+ * @typedef {Object} ReservationApplicant
+ * @property {string} _id
+ * @property {string} [userId]
+ * @property {Array<{ status?: string, at?: Date }>} [applicationLog]
+ */
+
+/**
  * @typedef {Object} Reservation
- * @property {string} id
+ * @property {string} _id
  * @property {string} locumJobId
- * @property {string} createdBy
- * @property {string} [reservedBy]
  * @property {ReservationStatus} status
- * @property {{ from: Date, to: Date }} reservationDate
- * @property {Date} createdAt
- * @property {Date} dateModified
+ * @property {ReservationApplicant[]} [applicants]
+ * @property {{ from: Date, to: Date }} [reservationDate]
+ * @property {string} [createdBy]
+ * @property {string} [reservedBy]
+ * @property {Date} [createdAt]
+ * @property {Date} [dateModified]
  */
 
 export {};
