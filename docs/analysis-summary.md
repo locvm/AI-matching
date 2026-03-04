@@ -48,7 +48,7 @@ This page answers the questions from the test-data-analysis task using the data 
 
 - **High missingness (users):** Preference and EMR fields often empty, so it's important to not over weight them. Use workAddress when preferences are missing.
 - **Fallback logic:** Needed for missing preferredProvinces/specificRegions, missing EMR, empty practiceType/patientType, and availabilityDateRanges (only 6.8% present).
-- **Normalisation:** Location (case, abbreviations) and EMR (aliases) needed for scoring.
+- **Normalisation:** Location fields such as specificRegions (case, abbreviations) and EMR (aliases) need normalisation for scoring.
 - **v1 suitability:** Job coords and dates are reliable, with 100% present on jobs. User preference fields are sparse but still usable with fallbacks. Applicants on reservations is only 17% present, so use it for "already applied" only when it is populated.
 
 ---
