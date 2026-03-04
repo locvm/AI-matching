@@ -194,8 +194,7 @@ async function analyzeUsers() {
   md.push('|-------|---------|---------|');
   for (const { path } of USER_FIELDS) {
     const r = results[path];
-    const line = `${path}: present ${r.present} (${percentageOfTotal(r.present)}%), missing ${r.missing} (${percentageOfTotal(r.missing)}%)`;
-    console.log(line);
+    console.log(`${path}: present ${r.present} (${percentageOfTotal(r.present)}%), missing ${r.missing} (${percentageOfTotal(r.missing)}%)`);
     md.push(`| ${path} | ${r.present} (${percentageOfTotal(r.present)}%) | ${r.missing} (${percentageOfTotal(r.missing)}%) |`);
   }
 
@@ -275,7 +274,7 @@ async function analyzeJobs() {
   }
 
   const total = jobs.length;
-  const pct = (n) => (total === 0 ? '0.0' : ((n / total) * 100).toFixed(1));
+  const percentageOfTotal = (n) => (total === 0 ? '0.0' : ((n / total) * 100).toFixed(1));
 
   const md = [];
   const keys = jobs.length > 0 ? Object.keys(jobs[0]).join(', ') : '(none)';
@@ -288,8 +287,8 @@ async function analyzeJobs() {
   md.push('|-------|---------|---------|');
   for (const { path } of JOB_FIELDS) {
     const r = results[path];
-    console.log(`${path}: present ${r.present} (${pct(r.present)}%), missing ${r.missing} (${pct(r.missing)}%)`);
-    md.push(`| ${path} | ${r.present} (${pct(r.present)}%) | ${r.missing} (${pct(r.missing)}%) |`);
+    console.log(`${path}: present ${r.present} (${percentageOfTotal(r.present)}%), missing ${r.missing} (${percentageOfTotal(r.missing)}%)`);
+    md.push(`| ${path} | ${r.present} (${percentageOfTotal(r.present)}%) | ${r.missing} (${percentageOfTotal(r.missing)}%) |`);
   }
 
   console.log('\n----- Job frequency of inputs (selected fields only) -----');
@@ -372,39 +371,63 @@ async function analyzeReservations() {
   const total = reservations.length;
   const percentageOfTotal = (n) => (total === 0 ? '0.0' : ((n / total) * 100).toFixed(1));
 
+  const md = [];
+  const keys = reservations.length > 0 ? Object.keys(reservations[0]).join(', ') : '(none)';
+  md.push('## Reservations\n');
+  md.push(`- **Entries:** ${reservations.length}\n- **data[0] keys:** ${keys}\n`);
+
   console.log('\n----- Reservation field completeness (missingness) -----');
+  md.push('## Reservation field completeness (missingness)\n');
+  md.push('| Field | Present | Missing |');
+  md.push('|-------|---------|---------|');
   for (const { path } of RESERVATION_FIELDS) {
     const r = results[path];
     console.log(`${path}: present ${r.present} (${percentageOfTotal(r.present)}%), missing ${r.missing} (${percentageOfTotal(r.missing)}%)`);
+    md.push(`| ${path} | ${r.present} (${percentageOfTotal(r.present)}%) | ${r.missing} (${percentageOfTotal(r.missing)}%) |`);
   }
 
-  // Only status has useful frequency (oid = IDs, applicants = array of objects)
   console.log('\n----- Reservation frequency of inputs (status only) -----');
+  md.push('\n## Reservation frequency of inputs (status)\n');
   const statusFreq = countValueFrequencies(reservations, 'status');
   const statusTop = topByFrequency(statusFreq, 15);
   console.log('status:');
-  if (statusTop.length === 0) console.log('(no values)');
-  else for (const [value, count] of statusTop) console.log(`  "${value}": ${count}`);
+  md.push('| Value | Count |');
+  md.push('|-------|-------|');
+  if (statusTop.length === 0) {
+    console.log('  (no values)');
+    md.push('(no values)\n');
+  } else {
+    for (const [value, count] of statusTop) {
+      console.log(`  "${value}": ${count}`);
+      md.push(`| ${value.replace(/\|/g, '\\|')} | ${count} |`);
+    }
+    md.push('');
+  }
 
   const SKIP_WRONG = new Set(['undefined', 'null']);
   console.log('\n----- Reservation wrong or weird input (when something was provided) -----');
+  md.push('## Reservation wrong or weird input (when something was provided)\n');
+  md.push('Excludes undefined/null.\n');
   for (const { path, kind } of RESERVATION_FIELDS) {
     const typeCounts = countTypeBreakdownScalar(reservations, path);
     const wrongOrWeird = Object.entries(typeCounts).filter(
       ([type]) => !SKIP_WRONG.has(type) && !isValidReservationType(type, kind)
     );
     if (wrongOrWeird.length === 0) {
-      console.log(`${path}: (none - only missing or valid type)`);
+      console.log(`${path}: (none – only missing or valid type)`);
+      md.push(`- **${path}**: (none – only missing or valid type)\n`);
     } else {
       console.log(`${path}:`);
+      md.push(`- **${path}**:`);
       for (const [type, count] of wrongOrWeird.sort((a, b) => b[1] - a[1])) {
-        console.log(`[${type}]: ${count}`);
+        console.log(`  [${type}]: ${count}`);
+        md.push(`  - [${type}]: ${count}`);
       }
+      md.push('');
     }
   }
 
-  const keys = reservations.length > 0 ? Object.keys(reservations[0]).join(', ') : '(none)';
-  return `## Reservations\n\n- **Entries:** ${reservations.length}\n- **data[0] keys:** ${keys}\n`;
+  return md.join('\n');
 }
 
 async function main() {
@@ -418,7 +441,7 @@ Generated by \`node scripts/analyzeTestData.js\`.
 
 ## Executive summary
 
-User and job analysis: missingness, frequency of inputs, and wrong/weird input (when something was provided). Reservations: entry count and field keys only.
+User, job, and reservation analysis: missingness, frequency of inputs, and wrong/weird input (when something was provided).
 
 ---
 
