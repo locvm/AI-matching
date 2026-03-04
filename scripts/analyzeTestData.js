@@ -1,11 +1,18 @@
 /**
  * LOCVM Test Data Analysis Script
  * Analyzes users, jobs, reservations: missingness and frequency of user inputs (e.g. location preference).
+ * @module scripts/analyzeTestData
  */
-
+// @ts-check
 
 import fs from 'fs/promises';
 
+/**
+ * Get a nested value from an object using dot-notation path.
+ * @param {object | null | undefined} obj - Source object.
+ * @param {string} path - Dot-separated path (e.g. "preferences.preferredProvinces").
+ * @returns {*} The value at path, or undefined if any segment is null/undefined or not an object.
+ */
 function getByPath(obj, path) {
   if (obj == null) return undefined;
   const parts = path.split('.'); 
@@ -18,16 +25,22 @@ function getByPath(obj, path) {
   return currentObj;
 }
 
-/** Count how often each string value appears; arrays are flattened (each element counted). */
-function countValueFrequencies(users, path) {
+/**
+ * Count how often each string value appears; arrays are flattened (each element counted).
+ * @param {Array<object>} collection - Array of objects (e.g. users or jobs).
+ * @param {string} path - Dot-separated path to the field.
+ * @returns {Record<string, number>} Map of value string -> count.
+ */
+function countValueFrequencies(collection, path) {
+  /** @type {Record<string, number>} */
   const freq = {};
-  for (const user of users) {
-    const value = getByPath(user, path);
+  for (const item of collection) {
+    const value = getByPath(item, path);
     if (value == null) continue;
     const items = Array.isArray(value) ? value : [value];
-    for (const item of items) {
-      if (typeof item !== 'string') continue;
-      const s = item.trim();
+    for (const el of items) {
+      if (typeof el !== 'string') continue;
+      const s = el.trim();
       if (s === '') continue;
       freq[s] = (freq[s] || 0) + 1;
     }
@@ -35,14 +48,23 @@ function countValueFrequencies(users, path) {
   return freq;
 }
 
-/** Sort by count descending, return top N [ [value, count] ]. */
+/**
+ * Sort by count descending, return top N entries.
+ * @param {Record<string, number>} freq - Map of value -> count.
+ * @param {number} [limit=30] - Max number of entries to return.
+ * @returns {Array<[string, number]>} Array of [value, count] pairs.
+ */
 function topByFrequency(freq, limit = 30) {
   return Object.entries(freq)
     .sort((a, b) => b[1] - a[1])
     .slice(0, limit);
 }
 
-/** Label for value type (used to surface non-string / unexpected types). Arrays get array(n) for coords/date-style checks. */
+/**
+ * Return a string label for the value's type (for diagnostics and wrong/weird checks).
+ * @param {*} value - Any value.
+ * @returns {string} Label such as 'string', 'string(empty)', 'array(2)', 'object($date)'.
+ */
 function getTypeLabel(value) {
   if (value === undefined) return 'undefined';
   if (value === null) return 'null';
@@ -58,22 +80,34 @@ function getTypeLabel(value) {
   return 'unknown';
 }
 
-/** Count occurrences by type for values at path. For arrays, counts each element's type. */
-function countTypeBreakdown(users, path) {
+/**
+ * Count occurrences by type for values at path. For arrays, counts each element's type.
+ * @param {Array<object>} collection - Array of objects.
+ * @param {string} path - Dot-separated path to the field.
+ * @returns {Record<string, number>} Map of type label -> count.
+ */
+function countTypeBreakdown(collection, path) {
+  /** @type {Record<string, number>} */
   const counts = {};
-  for (const user of users) {
-    const value = getByPath(user, path);
+  for (const item of collection) {
+    const value = getByPath(item, path);
     const items = Array.isArray(value) ? value : [value];
-    for (const item of items) {
-      const label = getTypeLabel(item);
+    for (const el of items) {
+      const label = getTypeLabel(el);
       counts[label] = (counts[label] || 0) + 1;
     }
   }
   return counts;
 }
 
-/** One type per item (for job level fields like location.coordinates, dateRange.from). */
+/**
+ * One type per item (for job-level fields like location.coordinates, dateRange.from).
+ * @param {Array<object>} items - Array of objects.
+ * @param {string} path - Dot-separated path to the field.
+ * @returns {Record<string, number>} Map of type label -> count.
+ */
 function countTypeBreakdownScalar(items, path) {
+  /** @type {Record<string, number>} */
   const counts = {};
   for (const item of items) {
     const value = getByPath(item, path);
@@ -129,6 +163,12 @@ const JOB_FREQUENCY_FIELDS = [
 ];
 
 /** Valid type labels per kind for wrong/weird (jobs). */
+/**
+ * Whether the type label is valid for the given job field kind.
+ * @param {string} typeLabel - Label from getTypeLabel (e.g. 'array(2)', 'object($date)').
+ * @param {string} kind - Field kind: 'string', 'coords', 'date', 'nonEmptyArray'.
+ * @returns {boolean}
+ */
 function isValidJobType(typeLabel, kind) {
   if (kind === 'string') return typeLabel === 'string';
   if (kind === 'coords') return typeLabel === 'array(2)';
@@ -138,6 +178,12 @@ function isValidJobType(typeLabel, kind) {
 }
 
 /** Valid type labels per kind for wrong/weird (reservations). */
+/**
+ * Whether the type label is valid for the given reservation field kind.
+ * @param {string} typeLabel - Label from getTypeLabel.
+ * @param {string} kind - Field kind: 'string', 'nonEmptyArray'.
+ * @returns {boolean}
+ */
 function isValidReservationType(typeLabel, kind) {
   if (kind === 'string') return typeLabel === 'string';
   if (kind === 'nonEmptyArray') return typeLabel.startsWith('array(') && typeLabel !== 'array(0)';
@@ -155,7 +201,12 @@ const PREFERENCE_FREQUENCY_FIELDS = [
   { path: 'facilityEMR', label: 'facilityEMR (primary EMR)' },
 ];
 
-// Analyzers
+// --- Analyzers ---
+
+/**
+ * Analyze users JSON: missingness, frequency of inputs, wrong/weird types.
+ * @returns {Promise<string>} Markdown section for the report.
+ */
 async function analyzeUsers() {
   const jsonString = await fs.readFile('./fixtures/locum.users.formatted.json', 'utf8');
   const users = JSON.parse(jsonString);
@@ -230,6 +281,10 @@ async function analyzeUsers() {
   return md.join('\n');
 }
 
+/**
+ * Analyze locum jobs JSON: missingness, frequency of inputs, wrong/weird types.
+ * @returns {Promise<string>} Markdown section for the report.
+ */
 async function analyzeJobs() {
   const jsonString = await fs.readFile('./fixtures/locum.locumjobs.formatted.json', 'utf8');
   const jobs = JSON.parse(jsonString);
@@ -311,6 +366,10 @@ async function analyzeJobs() {
   return md.join('\n');
 }
 
+/**
+ * Analyze reservations JSON: missingness, frequency (status), wrong/weird types.
+ * @returns {Promise<string>} Markdown section for the report.
+ */
 async function analyzeReservations() {
   const jsonString = await fs.readFile('./fixtures/locum.reservations.formatted.json', 'utf8');
   const reservations = JSON.parse(jsonString);
@@ -387,6 +446,10 @@ async function analyzeReservations() {
   return md.join('\n');
 }
 
+/**
+ * Run all analyzers and write combined report to docs/test-data-analysis.md.
+ * @returns {Promise<void>}
+ */
 async function main() {
   const userMd = await analyzeUsers();
   const jobsMd = await analyzeJobs();
