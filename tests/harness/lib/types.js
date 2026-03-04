@@ -2,6 +2,18 @@
 
 export {}
 
+// Domain types (from interfaces)
+/** @typedef {import('../../../src/interfaces/core/models.js').LocumJob} LocumJob */
+/** @typedef {import('../../../src/interfaces/core/models.js').Physician} Physician */
+/** @typedef {import('../../../src/interfaces/core/models.js').Reservation} Reservation */
+/** @typedef {import('../../../src/interfaces/core/models.js').ReservationApplicant} ReservationApplicant */
+/** @typedef {import('../../../src/interfaces/matching/matching.js').SearchResult} SearchResult */
+/** @typedef {import('../../../src/interfaces/matching/matching.js').ScoreBreakdown} ScoreBreakdown */
+/** @typedef {import('../../../src/interfaces/matching/matching.js').SearchCriteria} SearchCriteria */
+/** @typedef {import('../../../src/interfaces/matching/matching.js').MatchingEngine} MatchingEngine */
+
+// Harness-specific types
+
 /**
  * Sampling controls for deterministic job/user selection.
  *
@@ -78,7 +90,7 @@ export {}
  * @property {import('../../../src/interfaces/index.js').Reservation[]} reservations
  */
 
-// ── Physician-centric harness types ─────────────────────────────────────────
+// Physician-centric harness types
 
 /**
  * Per-physician score distribution and data-quality summary.
