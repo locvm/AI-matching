@@ -1,8 +1,34 @@
 {
-  "name": "ai-matching",
-  "version": "1.0.0",
+  "name": "@locvm/matching-service",
+  "version": "0.1.0",
+  "description": "LOCVM matching service",
   "type": "module",
+  "bin": {
+    "matching-harness": "scripts/matching-harness.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
-    "analyze-data": "node scripts/analyzeTestData.js"
+    "clean": "rimraf artifacts ./*.tsbuildinfo",
+    "clean:all": "rimraf node_modules artifacts ./*.tsbuildinfo",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:harness": "node scripts/matching-harness.js"
+  },
+  "keywords": [
+    "locvm",
+    "matching",
+    "physician",
+    "locum"
+  ],
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "commander": "^13.0.0",
+    "csv-stringify": "^6.5.0",
+    "rimraf": "^6.1.3",
+    "vitest": "^3.0.0",
+    "zod": "^4.3.6"
   }
 }

@@ -255,7 +255,7 @@ We divide fields into:
 
 ## 7.1 Exclusions
 
-- Only jobs that are active and not filled should be scored
+- Only jobs that are active and not filled should be scored (In Reservation > "status" = "Pending" or "Awaiting Payment")
 - Only users that have not yet applied to the job posting should be scored
 - Only users who are looking for locums should be scored (make this a parameter in case we even want to match others as well)
 

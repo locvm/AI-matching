@@ -28,9 +28,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Carter",
     "linkedInUrl": "https://www.linkedin.com/in/levi-carter-1",
     "medicalCertification": "867642",
@@ -45,20 +43,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": false,
-      "locumDurations": [
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["1–3 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Levi Carter",
@@ -191,10 +180,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Korean"
-    ],
+    "languages": ["English", "Korean"],
     "lastName": "Hughes",
     "medicalCertification": "402758",
     "medProfession": "Physician",
@@ -345,9 +331,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Hamilton",
     "medicalCertification": "353759",
     "medProfession": "Physician",
@@ -409,9 +393,7 @@
     },
     "dateOfBirth": "01-01-1974",
     "email": "hunter.roman+u0005@example.com",
-    "emrSystems": [
-      "PS Suite EMR"
-    ],
+    "emrSystems": ["PS Suite EMR"],
     "facilityEMR": "PS Suite EMR",
     "facilityName": "Rexdale Medcal Centre",
     "faxNumber": "+16175554548",
@@ -421,9 +403,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Hunter",
     "medicalCertification": "801918",
     "medicalStudentCheck": false,
@@ -849,9 +829,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Long",
     "medicalCertification": "645990",
     "medProfession": "Physician",
@@ -1001,22 +979,12 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekends"
-      ],
-      "availabilityYears": [
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Weekends"],
+      "availabilityYears": ["Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "toronto"
-      ]
+      "locumDurations": ["Less than a month"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["toronto"]
     },
     "primaryContact": "Dr. Chloe Fisher",
     "privacyConsent": true,
@@ -1128,9 +1096,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Bennett",
     "medicalCertification": "569035",
     "medProfession": "Physician",
@@ -1192,9 +1158,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Mendoza",
     "medicalCertification": "810344",
     "medProfession": "Physician",
@@ -1316,9 +1280,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "West",
     "medicalCertification": "952496",
     "medProfession": "Physician",
@@ -1384,10 +1346,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Brock",
     "linkedInUrl": "https://www.linkedin.com/in/skylar-brock-20",
     "medicalCertification": "728669",
@@ -1453,10 +1412,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Arabic"
-    ],
+    "languages": ["English", "Arabic"],
     "lastName": "Sanders",
     "medicalCertification": "443295",
     "medProfession": "Physician",
@@ -1782,9 +1738,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Harper",
     "medicalCertification": "912630",
     "medProfession": "Physician",
@@ -1906,11 +1860,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "French",
-      "Arabic"
-    ],
+    "languages": ["English", "French", "Arabic"],
     "lastName": "Arnold",
     "medicalCertification": "513177",
     "medProfession": "Physician",
@@ -2479,11 +2429,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Polish",
-      "Yoruba"
-    ],
+    "languages": ["English", "Polish", "Yoruba"],
     "lastName": "Kelley",
     "medicalCertification": "813290",
     "medProfession": "Physician",
@@ -2842,9 +2788,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Fleming",
     "medicalCertification": "852994",
     "medProfession": "Physician",
@@ -3137,9 +3081,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Gibson",
     "medicalCertification": "824277",
     "medProfession": "Physician",
@@ -3267,9 +3209,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Hayes",
     "medicalCertification": "390534",
     "medProfession": "Physician",
@@ -3505,10 +3445,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Freeman",
     "medicalCertification": "149909",
     "medProfession": "Physician",
@@ -3608,9 +3545,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Webb",
     "medicalCertification": "405365",
     "medProfession": "Physician",
@@ -3782,11 +3717,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Urdu",
-      "Punjabi"
-    ],
+    "languages": ["English", "Urdu", "Punjabi"],
     "lastName": "Barnes",
     "medicalCertification": "814626",
     "medProfession": "Physician",
@@ -3855,9 +3786,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Ballard",
     "medicalCertification": "207538",
     "medProfession": "Physician",
@@ -4028,10 +3957,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Persian (Farsi)"
-    ],
+    "languages": ["English", "Persian (Farsi)"],
     "lastName": "Jenkins",
     "medicalCertification": "251313",
     "medProfession": "Physician",
@@ -4042,33 +3968,12 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Full-time",
-        "Part-time",
-        "Weekends",
-        "Weekdays",
-        "On-call or short notice"
-      ],
-      "availabilityYears": [
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Full-time", "Part-time", "Weekends", "Weekdays", "On-call or short notice"],
+      "availabilityYears": ["Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months",
-        "3–6 months",
-        "6+ months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "Gta",
-        "vaughn",
-        "northyork",
-        "richmondhill"
-      ]
+      "locumDurations": ["A few days", "Less than a month", "1–3 months", "3–6 months", "6+ months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["Gta", "vaughn", "northyork", "richmondhill"]
     },
     "primaryContact": "Dr. Elise Jenkins",
     "privacyConsent": true,
@@ -4120,9 +4025,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Peters",
     "medicalCertification": "519348",
     "medProfession": "Physician",
@@ -4261,11 +4164,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "French",
-      "Arabic"
-    ],
+    "languages": ["English", "French", "Arabic"],
     "lastName": "Patel",
     "medicalCertification": "299021",
     "medProfession": "Physician",
@@ -4287,21 +4186,10 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekends",
-        "Part-time",
-        "On-call or short notice"
-      ],
+      "availabilityTypes": ["Weekends", "Part-time", "On-call or short notice"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ]
+      "locumDurations": ["A few days", "Less than a month", "1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario"]
     },
     "primaryContact": "Dr. Aurora Patel",
     "privacyConsent": true,
@@ -4378,9 +4266,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Carr",
     "medicalCertification": "867864",
     "medProfession": "Physician",
@@ -4391,30 +4277,11 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Part-time",
-        "Full-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Part-time", "Full-time"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month",
-        "A few days",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "Ottawa",
-        "Sault ",
-        "Richards Landing",
-        "Perth",
-        "Winchester",
-        "Renfrew",
-        "Lanark"
-      ]
+      "locumDurations": ["Less than a month", "A few days", "1–3 months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["Ottawa", "Sault ", "Richards Landing", "Perth", "Winchester", "Renfrew", "Lanark"]
     },
     "primaryContact": "Dr. John Carr",
     "privacyConsent": true,
@@ -4469,12 +4336,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "French",
-      "Arabic",
-      "english"
-    ],
+    "languages": ["English", "French", "Arabic", "english"],
     "lastName": "Moore",
     "medicalCertification": "478541",
     "medProfession": "Physician",
@@ -4485,18 +4347,10 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Full-time"
-      ],
-      "availabilityYears": [
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Full-time"],
+      "availabilityYears": ["Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "3–6 months",
-        "6+ months",
-        "1–3 months"
-      ]
+      "locumDurations": ["3–6 months", "6+ months", "1–3 months"]
     },
     "primaryContact": "Dr. Naomi Moore",
     "privacyConsent": true,
@@ -4644,10 +4498,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Mandarin"
-    ],
+    "languages": ["English", "Mandarin"],
     "lastName": "Adams",
     "medicalCertification": "147926",
     "medProfession": "Physician",
@@ -4797,30 +4648,11 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Part-time",
-        "Full-time"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Part-time", "Full-time"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "3–6 months",
-        "6+ months",
-        "Less than a month",
-        "A few days"
-      ],
-      "preferredProvinces": [
-        "British Columbia",
-        "Ontario",
-        "Northwest Territories",
-        "Prince Edward Island"
-      ]
+      "locumDurations": ["1–3 months", "3–6 months", "6+ months", "Less than a month", "A few days"],
+      "preferredProvinces": ["British Columbia", "Ontario", "Northwest Territories", "Prince Edward Island"]
     },
     "primaryContact": "Dr. Charlotte Fleming",
     "privacyConsent": true,
@@ -4921,9 +4753,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Barrett",
     "medicalCertification": "628406",
     "medProfession": "Physician",
@@ -4934,21 +4764,10 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekends",
-        "Weekdays",
-        "Part-time"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekends", "Weekdays", "Part-time"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "preferredProvinces": [
-        "Ontario",
-        "Alberta",
-        "British Columbia"
-      ]
+      "preferredProvinces": ["Ontario", "Alberta", "British Columbia"]
     },
     "primaryContact": "Dr. Melanie Barrett",
     "privacyConsent": true,
@@ -5069,9 +4888,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Keller",
     "linkedInUrl": "https://www.linkedin.com/in/kinsley-keller-90",
     "medProfession": "Recruiter",
@@ -5179,10 +4996,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "French",
-      "English"
-    ],
+    "languages": ["French", "English"],
     "lastName": "Morrison",
     "medicalCertification": "156788",
     "medProfession": "Physician",
@@ -5672,9 +5486,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Benson",
     "linkedInUrl": "https://www.linkedin.com/in/jaxon-benson-103",
     "medProfession": "Recruiter",
@@ -5684,21 +5496,11 @@
     "officeDetails": "Suite 1",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Full-time",
-        "Part-time"
-      ],
-      "availabilityYears": [
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Weekdays", "Full-time", "Part-time"],
+      "availabilityYears": ["Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "6+ months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ]
+      "locumDurations": ["6+ months"],
+      "preferredProvinces": ["Ontario"]
     },
     "primaryContact": "Dr. Jaxon Benson",
     "privacyConsent": true,
@@ -5795,9 +5597,7 @@
     "gender": "Prefer not to say",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Payne",
     "medicalCertification": "875636",
     "medProfession": "Physician",
@@ -5863,9 +5663,7 @@
     "gender": "Prefer not to say",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Mills",
     "linkedInUrl": "https://www.linkedin.com/in/paisley-mills-106",
     "medProfession": "Recruiter",
@@ -6009,10 +5807,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Arabic"
-    ],
+    "languages": ["English", "Arabic"],
     "lastName": "Jenkins",
     "medicalCertification": "285307",
     "medProfession": "Physician",
@@ -6023,27 +5818,11 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Part-time",
-        "On-call or short notice"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Part-time", "On-call or short notice"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months",
-        "3–6 months",
-        "6+ months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ]
+      "locumDurations": ["A few days", "Less than a month", "1–3 months", "3–6 months", "6+ months"],
+      "preferredProvinces": ["Ontario"]
     },
     "primaryContact": "Dr. Aria Jenkins",
     "privacyConsent": true,
@@ -6140,26 +5919,11 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "On-call or short notice"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "On-call or short notice"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "3–6 months",
-        "6+ months",
-        "Less than a month",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ]
+      "locumDurations": ["A few days", "3–6 months", "6+ months", "Less than a month", "1–3 months"],
+      "preferredProvinces": ["Ontario"]
     },
     "primaryContact": "Dr. Amelia Watson",
     "privacyConsent": true,
@@ -6268,27 +6032,11 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Part-time",
-        "On-call or short notice",
-        "Full-time",
-        "Weekends",
-        "Weekdays"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Part-time", "On-call or short notice", "Full-time", "Weekends", "Weekdays"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "Less than a month",
-        "A few days"
-      ],
-      "preferredProvinces": [
-        "Ontario",
-        "Manitoba"
-      ]
+      "locumDurations": ["1–3 months", "Less than a month", "A few days"],
+      "preferredProvinces": ["Ontario", "Manitoba"]
     },
     "primaryContact": "Dr. Laila Nguyen",
     "privacyConsent": true,
@@ -6512,9 +6260,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Snyder",
     "medicalCertification": "155550",
     "medProfession": "Physician",
@@ -6525,22 +6271,11 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time"
-      ],
-      "availabilityYears": [
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time"],
+      "availabilityYears": ["Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ]
+      "locumDurations": ["A few days", "Less than a month", "1–3 months"],
+      "preferredProvinces": ["Ontario"]
     },
     "primaryContact": "Dr. Autumn Snyder",
     "privacyConsent": true,
@@ -6611,25 +6346,11 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Full-time",
-        "Part-time"
-      ],
-      "availabilityYears": [
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Full-time", "Part-time"],
+      "availabilityYears": ["Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month",
-        "A few days",
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ]
+      "locumDurations": ["Less than a month", "A few days", "1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario"]
     },
     "primaryContact": "Dr. Luke Cruz",
     "privacyConsent": true,
@@ -6715,9 +6436,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Richardson",
     "medicalCertification": "869174",
     "medProfession": "Physician",
@@ -6728,19 +6447,11 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "On-call or short notice",
-        "Part-time",
-        "Full-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "On-call or short notice", "Part-time", "Full-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ]
+      "preferredProvinces": ["Ontario"]
     },
     "primaryContact": "Dr. Wyatt Richardson",
     "privacyConsent": true,
@@ -6800,9 +6511,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Barrett",
     "medicalCertification": "598505",
     "medProfession": "Physician",
@@ -7006,11 +6715,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Hindi",
-      "Urdu"
-    ],
+    "languages": ["English", "Hindi", "Urdu"],
     "lastName": "Mason",
     "medicalCertification": "203898",
     "medProfession": "Physician",
@@ -7021,17 +6726,10 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Full-time"
-      ],
-      "availabilityYears": [
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Full-time"],
+      "availabilityYears": ["Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month"
-      ],
+      "locumDurations": ["A few days", "Less than a month"],
       "preferredProvinces": [
         "British Columbia",
         "Nova Scotia",
@@ -7243,31 +6941,12 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Full-time",
-        "Part-time",
-        "On-call or short notice"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Full-time", "Part-time", "On-call or short notice"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "Toronto",
-        "burlington",
-        "brampton",
-        "peel",
-        "Oakville",
-        "milton"
-      ]
+      "locumDurations": ["1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["Toronto", "burlington", "brampton", "peel", "Oakville", "milton"]
     },
     "primaryContact": "Dr. Logan Nash",
     "privacyConsent": true,
@@ -7353,22 +7032,11 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ]
+      "locumDurations": ["A few days", "Less than a month", "1–3 months"],
+      "preferredProvinces": ["Ontario"]
     },
     "primaryContact": "Dr. Violet Owens",
     "privacyConsent": true,
@@ -7486,27 +7154,12 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Full-time"
-      ],
-      "availabilityYears": [
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Full-time"],
+      "availabilityYears": ["Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "3–6 months",
-        "6+ months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "Ottawa",
-        "Guelph",
-        "Fergus"
-      ]
+      "locumDurations": ["3–6 months", "6+ months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["Ottawa", "Guelph", "Fergus"]
     },
     "primaryContact": "Dr. Hannah Bryant",
     "privacyConsent": true,
@@ -7636,9 +7289,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Bell",
     "medicalCertification": "427238",
     "medProfession": "Physician",
@@ -7649,22 +7300,11 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Full-time"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Full-time"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month",
-        "A few days"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ]
+      "locumDurations": ["Less than a month", "A few days"],
+      "preferredProvinces": ["Ontario"]
     },
     "primaryContact": "Dr. Olivia Bell",
     "privacyConsent": true,
@@ -7721,9 +7361,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Hoffman",
     "medicalCertification": "370324",
     "medProfession": "Physician",
@@ -7931,10 +7569,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Tamil"
-    ],
+    "languages": ["English", "Tamil"],
     "lastName": "Lawson",
     "medicalCertification": "258541",
     "medProfession": "Physician",
@@ -7945,22 +7580,10 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Full-time",
-        "Part-time",
-        "On-call or short notice"
-      ],
-      "availabilityYears": [
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Full-time", "Part-time", "On-call or short notice"],
+      "availabilityYears": ["Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months"
-      ]
+      "locumDurations": ["A few days", "Less than a month", "1–3 months"]
     },
     "primaryContact": "Dr. Charles Lawson",
     "privacyConsent": true,
@@ -8020,11 +7643,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Hindi",
-      "Punjabi"
-    ],
+    "languages": ["English", "Hindi", "Punjabi"],
     "lastName": "Powell",
     "medicalCertification": "845355",
     "medProfession": "Physician",
@@ -8035,23 +7654,11 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Part-time"
-      ],
-      "availabilityYears": [
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Part-time"],
+      "availabilityYears": ["Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Ontario",
-        "Prince Edward Island",
-        "Yukon",
-        "Nunavut"
-      ]
+      "locumDurations": ["A few days", "Less than a month"],
+      "preferredProvinces": ["Ontario", "Prince Edward Island", "Yukon", "Nunavut"]
     },
     "primaryContact": "Dr. Ivy Powell",
     "privacyConsent": true,
@@ -8171,10 +7778,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Persian (Farsi)"
-    ],
+    "languages": ["English", "Persian (Farsi)"],
     "lastName": "Sullivan",
     "medicalCertification": "952330",
     "medProfession": "Physician",
@@ -8249,9 +7853,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Stone",
     "medicalCertification": "112216",
     "medProfession": "Physician",
@@ -8262,24 +7864,11 @@
     "officeDetails": "",
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Full-time",
-        "Weekdays"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Full-time", "Weekdays"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ]
+      "locumDurations": ["A few days", "Less than a month", "1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario"]
     },
     "primaryContact": "Dr. Julian Stone",
     "privacyConsent": true,
@@ -8518,25 +8107,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Full-time",
-        "Part-time"
-      ],
-      "availabilityYears": [
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Weekdays", "Full-time", "Part-time"],
+      "availabilityYears": ["Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months",
-        "3–6 months",
-        "6+ months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["A few days", "Less than a month", "1–3 months", "3–6 months", "6+ months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Theo Hamilton",
@@ -8584,9 +8159,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Bradley",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -8655,32 +8228,12 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "On-call or short notice",
-        "Part-time",
-        "Weekends",
-        "Weekdays"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["On-call or short notice", "Part-time", "Weekends", "Weekdays"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month",
-        "A few days",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "North York",
-        "Toronto",
-        "Scarborough",
-        "Richmond Hill",
-        "Midtown"
-      ]
+      "locumDurations": ["Less than a month", "A few days", "1–3 months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["North York", "Toronto", "Scarborough", "Richmond Hill", "Midtown"]
     },
     "primaryContact": "Dr. Robert Barnett",
     "privacyConsent": true,
@@ -8778,9 +8331,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Bailey",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -8871,9 +8422,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Graham",
     "medicalCertification": "150529",
     "medProfession": "Physician",
@@ -8940,9 +8489,7 @@
     "gender": "Other",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Walton",
     "linkedInUrl": "https://www.linkedin.com/in/sophie-walton-154",
     "medProfession": "Recruiter",
@@ -8999,18 +8546,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityTypes": [],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "Toronto"
-      ]
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["Toronto"]
     },
     "privacyConsent": true,
     "recruiterStatus": "None",
@@ -9062,11 +8602,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Cantonese",
-      "Mandarin"
-    ],
+    "languages": ["English", "Cantonese", "Mandarin"],
     "lastName": "Mason",
     "medicalCertification": "263347",
     "medProfession": "Physician",
@@ -9295,9 +8831,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Myers",
     "medicalCertification": "970095",
     "medProfession": "Physician",
@@ -9369,11 +8903,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Hindi",
-      "Bengali"
-    ],
+    "languages": ["English", "Hindi", "Bengali"],
     "lastName": "Clements",
     "medicalCertification": "833515",
     "medProfession": "Physician",
@@ -9384,21 +8914,10 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Full-time"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Full-time"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "3–6 months",
-        "1–3 months",
-        "6+ months"
-      ],
+      "locumDurations": ["3–6 months", "1–3 months", "6+ months"],
       "preferredProvinces": [],
       "specificRegions": []
     },
@@ -9482,10 +9001,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Arabic"
-    ],
+    "languages": ["English", "Arabic"],
     "lastName": "Maxwell",
     "linkedInUrl": "https://www.linkedin.com/in/ezra-maxwell-163",
     "medProfession": "Recruiter",
@@ -9551,9 +9067,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Butler",
     "medicalCertification": "643127",
     "medProfession": "Physician",
@@ -9621,9 +9135,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Horton",
     "medicalCertification": "815725",
     "medProfession": "Physician",
@@ -9687,10 +9199,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Wardle",
     "medicalCertification": "823013",
     "medProfession": "Physician",
@@ -9701,32 +9210,12 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Full-time",
-        "Part-time",
-        "On-call or short notice"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Full-time", "Part-time", "On-call or short notice"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "3–6 months",
-        "1–3 months",
-        "Less than a month",
-        "A few days"
-      ],
+      "locumDurations": ["3–6 months", "1–3 months", "Less than a month", "A few days"],
       "preferredProvinces": [],
-      "specificRegions": [
-        "Ottawa",
-        "Gatineau ",
-        "Kanata",
-        "Orleans",
-        "Rockland "
-      ]
+      "specificRegions": ["Ottawa", "Gatineau ", "Kanata", "Orleans", "Rockland "]
     },
     "privacyConsent": true,
     "recruiterStatus": "None",
@@ -9777,24 +9266,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Full-time",
-        "Part-time"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Full-time", "Part-time"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario",
-        "Northwest Territories"
-      ],
+      "locumDurations": ["1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario", "Northwest Territories"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -9835,9 +9311,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Stewart",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -9951,9 +9425,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Shah",
     "medicalCertification": "438741",
     "medProfession": "Physician",
@@ -10030,9 +9502,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Harper",
     "medicalCertification": "395707",
     "medProfession": "Physician",
@@ -10043,24 +9513,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "Full-time"
-      ],
-      "availabilityYears": [
-        "Available in 2026",
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "Full-time"],
+      "availabilityYears": ["Available in 2026", "Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "3–6 months",
-        "6+ months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["1–3 months", "3–6 months", "6+ months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Micah Harper",
@@ -10130,18 +9587,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Part-time",
-        "Weekdays"
-      ],
-      "availabilityYears": [
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Part-time", "Weekdays"],
+      "availabilityYears": ["Available in 2026"],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Elena Murphy",
@@ -10194,9 +9644,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Lucas",
     "linkedInUrl": "https://www.linkedin.com/in/jonathan-lucas-173",
     "medProfession": "Recruiter",
@@ -10286,17 +9734,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays"
-      ],
+      "availabilityTypes": ["Weekdays"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["1–3 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": [
         "London",
         "Guelph",
@@ -10366,9 +9808,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Black",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -10414,11 +9854,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Urdu",
-      "Punjabi"
-    ],
+    "languages": ["English", "Urdu", "Punjabi"],
     "lastName": "Carter",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -10538,10 +9974,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Chandler",
     "linkedInUrl": "https://www.linkedin.com/in/stella-chandler-178",
     "medProfession": "Recruiter",
@@ -10675,24 +10108,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Full-time",
-        "On-call or short notice"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Full-time", "On-call or short notice"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["A few days", "Less than a month", "1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Scarlett Bradley",
@@ -10743,12 +10163,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Urdu",
-      "Hindi",
-      "Punjabi"
-    ],
+    "languages": ["English", "Urdu", "Hindi", "Punjabi"],
     "lastName": "Barnett",
     "medicalCertification": "203978",
     "medProfession": "Physician",
@@ -10840,10 +10255,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "French",
-      "English"
-    ],
+    "languages": ["French", "English"],
     "lastName": "Cooper",
     "medicalCertification": "366110",
     "medProfession": "Physician",
@@ -10854,22 +10266,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Part-time",
-        "Weekdays",
-        "Weekends",
-        "On-call or short notice"
-      ],
-      "availabilityYears": [
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Part-time", "Weekdays", "Weekends", "On-call or short notice"],
+      "availabilityYears": ["Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["A few days"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Xavier Cooper",
@@ -10924,9 +10325,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Holland",
     "linkedInUrl": "https://www.linkedin.com/in/leah-holland-184",
     "medProfession": "Recruiter",
@@ -10997,11 +10396,7 @@
     },
     "dateOfBirth": "01-01-1974",
     "email": "baker.nolan+u0185@example.com",
-    "emrSystems": [
-      "Accuro EMR",
-      "PS Suite EMR",
-      "Other"
-    ],
+    "emrSystems": ["Accuro EMR", "PS Suite EMR", "Other"],
     "facilityEMR": "Accuro EMR",
     "facilityName": "Dr. Swati Singh Medicine Professional Corporation",
     "faxNumber": "+16175559208",
@@ -11011,10 +10406,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Hindi"
-    ],
+    "languages": ["English", "Hindi"],
     "lastName": "Baker",
     "medicalCertification": "341105",
     "medicalStudentCheck": false,
@@ -11026,25 +10418,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Full-time",
-        "Part-time",
-        "On-call or short notice"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Full-time", "Part-time", "On-call or short notice"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["A few days", "Less than a month"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": [
         "guelph",
         "waterloo",
@@ -11276,9 +10654,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Fisher",
     "medicalCertification": "929933",
     "medProfession": "Physician",
@@ -11333,9 +10709,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Hanson",
     "medicalCertification": "208354",
     "medProfession": "Physician",
@@ -11346,21 +10720,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Part-time"
-      ],
-      "availabilityYears": [
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Part-time"],
+      "availabilityYears": ["Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["1–3 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Avery Hanson",
@@ -11410,10 +10774,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Portuguese"
-    ],
+    "languages": ["English", "Portuguese"],
     "lastName": "Bennett",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -11458,11 +10819,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "French",
-      "English",
-      "Italian"
-    ],
+    "languages": ["French", "English", "Italian"],
     "lastName": "Myers",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -11507,9 +10864,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Clements",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -11555,10 +10910,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "French",
-      "English"
-    ],
+    "languages": ["French", "English"],
     "lastName": "West",
     "medicalCertification": "508756",
     "medProfession": "Physician",
@@ -11569,24 +10921,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Part-time",
-        "On-call or short notice"
-      ],
-      "availabilityYears": [
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Part-time", "On-call or short notice"],
+      "availabilityYears": ["Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Ontario",
-        "Prince Edward Island"
-      ],
+      "locumDurations": ["A few days", "Less than a month"],
+      "preferredProvinces": ["Ontario", "Prince Edward Island"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -11670,9 +11009,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Sanders",
     "medicalCertification": "348899",
     "medProfession": "Physician",
@@ -11683,20 +11020,10 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Part-time",
-        "On-call or short notice",
-        "Weekends"
-      ],
-      "availabilityYears": [
-        "Available in 2026",
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Part-time", "On-call or short notice", "Weekends"],
+      "availabilityYears": ["Available in 2026", "Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month"
-      ],
+      "locumDurations": ["A few days", "Less than a month"],
       "preferredProvinces": [],
       "specificRegions": []
     },
@@ -11886,24 +11213,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time"
-      ],
-      "availabilityYears": [
-        "Available in 2026",
-        "Available in 2025"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time"],
+      "availabilityYears": ["Available in 2026", "Available in 2025"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Ontario",
-        "Nunavut",
-        "Nova Scotia"
-      ],
+      "locumDurations": ["A few days", "Less than a month"],
+      "preferredProvinces": ["Ontario", "Nunavut", "Nova Scotia"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Aiden Franklin",
@@ -11966,10 +11280,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "ukrainian"
-    ],
+    "languages": ["English", "ukrainian"],
     "lastName": "Armstrong",
     "medicalCertification": "755352",
     "medProfession": "Physician",
@@ -11980,27 +11291,12 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "3–6 months",
-        "Less than a month",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "toronto"
-      ]
+      "locumDurations": ["A few days", "3–6 months", "Less than a month", "1–3 months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["toronto"]
     },
     "primaryContact": "Dr. Alice Armstrong",
     "privacyConsent": true,
@@ -12174,21 +11470,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "Weekends"
-      ],
-      "availabilityYears": [
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "Weekends"],
+      "availabilityYears": ["Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["1–3 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Penelope Shah",
@@ -12334,9 +11620,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Murphy",
     "medicalCertification": "401191",
     "medProfession": "Physician",
@@ -12411,10 +11695,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Lucas",
     "medicalCertification": "359468",
     "medProfession": "Physician",
@@ -12429,11 +11710,7 @@
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario",
-        "Quebec",
-        "Alberta"
-      ],
+      "preferredProvinces": ["Ontario", "Quebec", "Alberta"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Emma Lucas",
@@ -12566,9 +11843,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Tran",
     "medicalCertification": "109806",
     "medProfession": "Physician",
@@ -12580,22 +11855,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends"
-      ],
-      "availabilityYears": [
-        "Available in 2025",
-        "Available in 2026"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends"],
+      "availabilityYears": ["Available in 2025", "Available in 2026"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Ontario",
-        "Manitoba"
-      ]
+      "locumDurations": ["Less than a month"],
+      "preferredProvinces": ["Ontario", "Manitoba"]
     },
     "primaryContact": "Dr. Dominic Tran",
     "privacyConsent": true,
@@ -12660,9 +11924,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Delgado",
     "medicalCertification": "820483",
     "medProfession": "Physician",
@@ -12740,9 +12002,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Gray",
     "medicalCertification": "499308",
     "medProfession": "Physician",
@@ -12857,9 +12117,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Griffin",
     "medicalCertification": "850274",
     "medProfession": "Physician",
@@ -12938,12 +12196,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Hindi",
-      "Punjabi",
-      "Urdu"
-    ],
+    "languages": ["English", "Hindi", "Punjabi", "Urdu"],
     "lastName": "Hunter",
     "medicalCertification": "747244",
     "medProfession": "Physician",
@@ -12965,18 +12218,11 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "Full-time",
-        "Weekends"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "Full-time", "Weekends"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Naomi Hunter",
@@ -13040,9 +12286,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Wood",
     "medicalCertification": "367744",
     "medProfession": "Physician",
@@ -13126,12 +12370,8 @@
       "availabilityTypes": [],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Quebec"
-      ],
+      "locumDurations": ["1–3 months"],
+      "preferredProvinces": ["Quebec"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -13182,9 +12422,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Cooper",
     "medicalCertification": "629008",
     "medProfession": "Physician",
@@ -13196,16 +12434,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays",
-        "Full-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Full-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -13325,10 +12558,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Baker",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -13377,9 +12607,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Burgess",
     "medicalCertification": "243344",
     "medProfession": "Physician",
@@ -13410,21 +12638,11 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "Full-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "Full-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "3–6 months",
-        "6+ months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["1–3 months", "3–6 months", "6+ months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -13466,10 +12684,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Price",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -13517,10 +12732,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Kelley",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -13581,9 +12793,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Parker",
     "medicalCertification": "425358",
     "medProfession": "Physician",
@@ -13645,9 +12855,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Perkins",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -13696,9 +12904,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Morgan",
     "medicalCertification": "821149",
     "medProfession": "Physician",
@@ -13709,15 +12915,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Part-time"
-      ],
+      "availabilityTypes": ["Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -13888,11 +13090,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "French",
-      "Persian (Farsi)"
-    ],
+    "languages": ["English", "French", "Persian (Farsi)"],
     "lastName": "Brock",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -13953,9 +13151,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Sanders",
     "medicalCertification": "566879",
     "medProfession": "Physician",
@@ -13967,22 +13163,9 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "Full-time",
-        "Weekends",
-        "On-call or short notice"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "Full-time", "Weekends", "On-call or short notice"],
       "isLookingForLocums": true,
-      "preferredProvinces": [
-        "British Columbia",
-        "Nova Scotia",
-        "Ontario",
-        "Northwest Territories",
-        "Nunavut",
-        "Yukon"
-      ]
+      "preferredProvinces": ["British Columbia", "Nova Scotia", "Ontario", "Northwest Territories", "Nunavut", "Yukon"]
     },
     "primaryContact": "Dr. Mia Sanders",
     "privacyConsent": true,
@@ -14178,23 +13361,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "Full-time",
-        "Weekends"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "Full-time", "Weekends"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario",
-        "Northwest Territories",
-        "Yukon"
-      ],
+      "locumDurations": ["1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario", "Northwest Territories", "Yukon"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Colton Wagner",
@@ -14257,10 +13428,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Mandarin"
-    ],
+    "languages": ["English", "Mandarin"],
     "lastName": "Russell",
     "medicalCertification": "563890",
     "medProfession": "Physician",
@@ -14271,26 +13439,12 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Full-time",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Full-time", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "6+ months",
-        "Less than a month",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "Toronto",
-        "Etobicoke"
-      ]
+      "locumDurations": ["1–3 months", "6+ months", "Less than a month", "3–6 months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["Toronto", "Etobicoke"]
     },
     "primaryContact": "Dr. Kennedy Russell",
     "privacyConsent": true,
@@ -14429,10 +13583,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Kim",
     "medicalCertification": "117445",
     "medProfession": "Physician",
@@ -14448,12 +13599,8 @@
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "ottawa"
-      ]
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["ottawa"]
     },
     "primaryContact": "Dr. Willow Kim",
     "privacyConsent": true,
@@ -14515,9 +13662,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Gibson",
     "medicalCertification": "346841",
     "medProfession": "Physician",
@@ -14706,9 +13851,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Hayes",
     "medicalCertification": "967409",
     "medProfession": "Physician",
@@ -14730,24 +13873,11 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekends",
-        "Weekdays",
-        "On-call or short notice",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekends", "Weekdays", "On-call or short notice", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "6+ months",
-        "A few days",
-        "Less than a month",
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["6+ months", "A few days", "Less than a month", "1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Aria Hayes",
@@ -14824,9 +13954,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Tran",
     "medicalCertification": "475016",
     "medProfession": "Physician",
@@ -14842,9 +13970,7 @@
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Daniel Tran",
@@ -14907,9 +14033,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Delgado",
     "medicalCertification": "809783",
     "medProfession": "Physician",
@@ -14932,21 +14056,11 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Part-time",
-        "Weekdays"
-      ],
+      "availabilityTypes": ["Part-time", "Weekdays"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "Ottawa"
-      ]
+      "locumDurations": ["1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["Ottawa"]
     },
     "primaryContact": "Dr. Amelia Delgado",
     "privacyConsent": true,
@@ -15008,11 +14122,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Urdu",
-      "Hindi"
-    ],
+    "languages": ["English", "Urdu", "Hindi"],
     "lastName": "Reynolds",
     "medicalCertification": "352026",
     "medProfession": "Physician",
@@ -15023,21 +14133,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Full-time",
-        "Part-time",
-        "On-call or short notice"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Full-time", "Part-time", "On-call or short notice"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["1–3 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Dean Reynolds",
@@ -15132,9 +14232,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Alexander",
     "medicalCertification": "723533",
     "medProfession": "Physician",
@@ -15156,29 +14254,12 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "London",
-        "strathroy",
-        "st thomas",
-        "ilderton",
-        "lambeth"
-      ]
+      "locumDurations": ["A few days", "Less than a month", "1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["London", "strathroy", "st thomas", "ilderton", "lambeth"]
     },
     "primaryContact": "Dr. Jordan Alexander",
     "privacyConsent": true,
@@ -15239,12 +14320,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Japanese",
-      "French",
-      "Mandarin"
-    ],
+    "languages": ["English", "Japanese", "French", "Mandarin"],
     "lastName": "Webb",
     "medicalCertification": "390781",
     "medProfession": "Physician",
@@ -15256,18 +14332,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays"
-      ],
+      "availabilityTypes": ["Weekdays"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "3–6 months",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["3–6 months", "1–3 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -15314,9 +14383,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Simmons",
     "medicalCertification": "493350",
     "medProfession": "Physician",
@@ -15328,15 +14395,10 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays"
-      ],
+      "availabilityTypes": ["Weekdays"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month",
-        "1–3 months"
-      ],
+      "locumDurations": ["Less than a month", "1–3 months"],
       "preferredProvinces": [],
       "specificRegions": []
     },
@@ -15418,21 +14480,11 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekends",
-        "Full-time",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekends", "Full-time", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "3–6 months",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["A few days", "3–6 months", "1–3 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -15526,22 +14578,11 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Full-time",
-        "Part-time",
-        "On-call or short notice"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Full-time", "Part-time", "On-call or short notice"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["1–3 months", "Less than a month"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -15594,12 +14635,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Urdu",
-      "Hindi",
-      "Punjabi"
-    ],
+    "languages": ["English", "Urdu", "Hindi", "Punjabi"],
     "lastName": "Ballard",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -15647,10 +14683,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "French",
-      "English"
-    ],
+    "languages": ["French", "English"],
     "lastName": "Ellis",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -15714,15 +14747,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays"
-      ],
+      "availabilityTypes": ["Weekdays"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Lily Burgess",
@@ -15808,20 +14837,10 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Part-time",
-        "On-call or short notice"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Part-time", "On-call or short notice"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ]
+      "locumDurations": ["1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario"]
     },
     "primaryContact": "Dr. Alexander Price",
     "privacyConsent": true,
@@ -15913,10 +14932,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Tagalog"
-    ],
+    "languages": ["English", "Tagalog"],
     "lastName": "Kelley",
     "medicalCertification": "853423",
     "medProfession": "Physician",
@@ -15968,9 +14984,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Watson",
     "medProfession": "Recruiter",
     "modifiedAt": {
@@ -16053,27 +15067,12 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "On-call or short notice",
-        "Weekends",
-        "Full-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "On-call or short notice", "Weekends", "Full-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "toronto"
-      ]
+      "locumDurations": ["A few days", "Less than a month", "1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["toronto"]
     },
     "primaryContact": "Dr. Serena Hawkins",
     "privacyConsent": true,
@@ -16127,9 +15126,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Patel",
     "medicalCertification": "584048",
     "medProfession": "Physician",
@@ -16212,21 +15209,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "Full-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "Full-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "6+ months",
-        "3–6 months",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["6+ months", "3–6 months", "1–3 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Hazel Carr",
@@ -16341,9 +15328,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Woods",
     "medicalCertification": "676582",
     "medProfession": "Physician",
@@ -16449,9 +15434,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Flores",
     "linkedInUrl": "https://www.linkedin.com/in/violet-flores-260",
     "medProfession": "Recruiter",
@@ -16527,9 +15510,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Fleming",
     "medicalCertification": "159219",
     "medProfession": "Physician",
@@ -16615,17 +15596,9 @@
       "availabilityTypes": [],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "Less than a month",
-        "A few days"
-      ],
+      "locumDurations": ["1–3 months", "Less than a month", "A few days"],
       "preferredProvinces": [],
-      "specificRegions": [
-        "Toronto",
-        "Ottawa ",
-        "Montreal"
-      ]
+      "specificRegions": ["Toronto", "Ottawa ", "Montreal"]
     },
     "privacyConsent": true,
     "recruiterStatus": "None",
@@ -16679,9 +15652,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Wagner",
     "medicalCertification": "794849",
     "medProfession": "Physician",
@@ -16799,9 +15770,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Keller",
     "medicalCertification": "651055",
     "medProfession": "Physician",
@@ -16875,9 +15844,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Diaz",
     "medicalCertification": "735570",
     "medProfession": "Physician",
@@ -16942,9 +15909,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Morrison",
     "medProfession": "Recruiter",
     "modifiedAt": {
@@ -16993,9 +15958,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Ward",
     "medicalCertification": "792978",
     "medProfession": "Physician",
@@ -17053,10 +16016,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Pearson",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -17117,9 +16077,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Foster",
     "medicalCertification": "279843",
     "medProfession": "Physician",
@@ -17194,9 +16152,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Bishop",
     "medicalCertification": "990685",
     "medProfession": "Physician",
@@ -17263,9 +16219,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Lambert",
     "medicalCertification": "145506",
     "medProfession": "Physician",
@@ -17370,9 +16324,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Freeman",
     "medicalCertification": "834434",
     "medProfession": "Physician",
@@ -17444,10 +16396,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Alexander",
     "medicalCertification": "195595",
     "medProfession": "Physician",
@@ -17459,15 +16408,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays"
-      ],
+      "availabilityTypes": ["Weekdays"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -17628,9 +16573,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Benson",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -17722,22 +16665,12 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "On-call or short notice"
-      ],
+      "availabilityTypes": ["Weekdays", "On-call or short notice"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "Toronto"
-      ]
+      "locumDurations": ["A few days", "Less than a month"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["Toronto"]
     },
     "primaryContact": "Dr. Robert Henderson",
     "privacyConsent": true,
@@ -17877,9 +16810,7 @@
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Connor Mills",
@@ -18112,9 +17043,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Watson",
     "medicalCertification": "747440",
     "medProfession": "Physician",
@@ -18188,9 +17117,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Hawkins",
     "medicalCertification": "331257",
     "medProfession": "Physician",
@@ -18264,9 +17191,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Patel",
     "medicalCertification": "799061",
     "medProfession": "Physician",
@@ -18282,9 +17207,7 @@
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Benjamin Patel",
@@ -18347,10 +17270,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Arabic"
-    ],
+    "languages": ["English", "Arabic"],
     "lastName": "Carr",
     "linkedInUrl": "https://www.linkedin.com/in/ava-carr-288",
     "medicalCertification": "660230",
@@ -18424,9 +17344,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Chapman",
     "medicalCertification": "950181",
     "medProfession": "Physician",
@@ -18550,9 +17468,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Snyder",
     "medicalCertification": "717909",
     "medProfession": "Physician",
@@ -18690,10 +17606,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Grant",
     "medicalCertification": "145840",
     "medicalStudentCheck": false,
@@ -18772,9 +17685,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Richardson",
     "medicalCertification": "936624",
     "medicalStudentCheck": false,
@@ -18898,10 +17809,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Polish"
-    ],
+    "languages": ["English", "Polish"],
     "lastName": "Rivera",
     "medicalCertification": "985861",
     "medicalStudentCheck": false,
@@ -18924,19 +17832,11 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["Less than a month", "1–3 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Audrey Rivera",
@@ -19004,9 +17904,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Keller",
     "medicalCertification": "373232",
     "medicalStudentCheck": false,
@@ -19029,24 +17927,11 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Full-time",
-        "Part-time",
-        "On-call or short notice"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Full-time", "Part-time", "On-call or short notice"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month",
-        "A few days",
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["Less than a month", "A few days", "1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": [
         "Markham",
         "Unionville",
@@ -19122,10 +18007,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Urdu"
-    ],
+    "languages": ["English", "Urdu"],
     "lastName": "Diaz",
     "medicalCertification": "498088",
     "medicalStudentCheck": false,
@@ -19195,9 +18077,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Morrison",
     "linkedInUrl": "https://www.linkedin.com/in/ethan-morrison-299",
     "medProfession": "Recruiter",
@@ -19369,23 +18249,10 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Full-time",
-        "Part-time",
-        "Weekends",
-        "Weekdays"
-      ],
+      "availabilityTypes": ["Full-time", "Part-time", "Weekends", "Weekdays"],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "3–6 months",
-        "6+ months",
-        "A few days",
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ]
+      "locumDurations": ["1–3 months", "3–6 months", "6+ months", "A few days", "Less than a month"],
+      "preferredProvinces": ["Ontario"]
     },
     "primaryContact": "Dr. Micah Spencer",
     "privacyConsent": true,
@@ -19435,9 +18302,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Reed",
     "medicalCertification": "154683",
     "medicalStudentCheck": false,
@@ -19553,10 +18418,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Nash",
     "medicalCertification": "771285",
     "medicalStudentCheck": false,
@@ -19636,10 +18498,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Cantonese"
-    ],
+    "languages": ["English", "Cantonese"],
     "lastName": "Owens",
     "medicalCertification": "294506",
     "medicalStudentCheck": false,
@@ -19709,10 +18568,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Italian"
-    ],
+    "languages": ["English", "Italian"],
     "lastName": "Wells",
     "linkedInUrl": "https://www.linkedin.com/in/quinn-wells-306",
     "medProfession": "Physician",
@@ -19804,9 +18660,7 @@
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. David Bryant",
@@ -20024,9 +18878,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Henderson",
     "medicalCertification": "356493",
     "medicalStudentCheck": false,
@@ -20145,10 +18997,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Hindi"
-    ],
+    "languages": ["English", "Hindi"],
     "lastName": "Chambers",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -20209,10 +19058,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Lawson",
     "medicalCertification": "615105",
     "medicalStudentCheck": false,
@@ -20274,9 +19120,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Powell",
     "medProfession": "Recruiter",
     "modifiedAt": {
@@ -20329,10 +19173,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Ramsey",
     "medicalCertification": "162581",
     "medicalStudentCheck": false,
@@ -20412,10 +19253,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Spanish"
-    ],
+    "languages": ["English", "Spanish"],
     "lastName": "Sullivan",
     "medicalCertification": "797876",
     "medicalStudentCheck": false,
@@ -20477,11 +19315,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "French",
-      "Arabic"
-    ],
+    "languages": ["English", "French", "Arabic"],
     "lastName": "Stone",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -20543,9 +19377,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Nguyen",
     "medicalCertification": "453859",
     "medicalStudentCheck": false,
@@ -20678,9 +19510,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Chapman",
     "medicalCertification": "598589",
     "medicalStudentCheck": false,
@@ -20819,9 +19649,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Snyder",
     "medicalCertification": "759375",
     "medicalStudentCheck": false,
@@ -20834,22 +19662,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekends",
-        "Weekdays",
-        "On-call or short notice"
-      ],
+      "availabilityTypes": ["Weekends", "Weekdays", "On-call or short notice"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Ontario",
-        "Nunavut",
-        "Northwest Territories",
-        "Yukon"
-      ],
+      "locumDurations": ["Less than a month"],
+      "preferredProvinces": ["Ontario", "Nunavut", "Northwest Territories", "Yukon"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -20892,10 +19709,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Tamil"
-    ],
+    "languages": ["English", "Tamil"],
     "lastName": "Barnett",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -20948,9 +19762,7 @@
     },
     "dateOfBirth": "01-01-1994",
     "email": "fuller.jason+u0325@example.com",
-    "emrSystems": [
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)"
-    ],
+    "emrSystems": ["OSCAR McMaster - Professional Edition (OSCAR Pro)"],
     "facilityEMR": "OSCAR McMaster - Professional Edition (OSCAR Pro)",
     "facilityName": "Petawawa Centennial Family Health Centre",
     "faxNumber": "+19175558388",
@@ -20960,9 +19772,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Fuller",
     "medicalCertification": "301829",
     "medicalStudentCheck": false,
@@ -21025,10 +19835,7 @@
     },
     "dateOfBirth": "01-01-1995",
     "email": "ariana.bailey+u0326@example.com",
-    "emrSystems": [
-      "Accuro EMR",
-      "PS Suite EMR"
-    ],
+    "emrSystems": ["Accuro EMR", "PS Suite EMR"],
     "fellowCheck": false,
     "firebaseUid": "anon_uid_000326",
     "firstName": "Ariana",
@@ -21048,21 +19855,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Part-time",
-        "Full-time",
-        "Weekdays"
-      ],
+      "availabilityTypes": ["Part-time", "Full-time", "Weekdays"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "3–6 months",
-        "1–3 months",
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["3–6 months", "1–3 months", "Less than a month"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -21150,10 +19947,7 @@
     },
     "dateOfBirth": "01-01-1997",
     "email": "igraham+u0328@example.com",
-    "emrSystems": [
-      "PS Suite EMR",
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)"
-    ],
+    "emrSystems": ["PS Suite EMR", "OSCAR McMaster - Professional Edition (OSCAR Pro)"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+12135558799",
@@ -21186,25 +19980,11 @@
           "toYear": "2027"
         }
       ],
-      "availabilityTypes": [
-        "Part-time",
-        "On-call or short notice",
-        "Full-time",
-        "Weekends",
-        "Weekdays"
-      ],
+      "availabilityTypes": ["Part-time", "On-call or short notice", "Full-time", "Weekends", "Weekdays"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months",
-        "3–6 months",
-        "6+ months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["A few days", "Less than a month", "1–3 months", "3–6 months", "6+ months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Isla Graham",
@@ -21261,12 +20041,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "French",
-      "English",
-      "Arabic",
-      "Spanish"
-    ],
+    "languages": ["French", "English", "Arabic", "Spanish"],
     "lastName": "Walton",
     "medicalCertification": "750360",
     "medicalStudentCheck": false,
@@ -21279,11 +20054,7 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Part-time",
-        "Weekends",
-        "Weekdays"
-      ],
+      "availabilityTypes": ["Part-time", "Weekends", "Weekdays"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
@@ -21334,11 +20105,7 @@
     },
     "dateOfBirth": "01-01-1999",
     "email": "ross.alice+u0330@example.com",
-    "emrSystems": [
-      "Wolfe",
-      "PS Suite EMR",
-      "Cerner"
-    ],
+    "emrSystems": ["Wolfe", "PS Suite EMR", "Cerner"],
     "facilityEMR": "",
     "facilityName": "Kingston Health sciences Center",
     "faxNumber": "+13125559073",
@@ -21348,9 +20115,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Ross",
     "medicalCertification": "418827",
     "medicalStudentCheck": false,
@@ -21366,15 +20131,8 @@
       "availabilityTypes": [],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Prince Edward Island",
-        "Northwest Territories",
-        "Nunavut",
-        "Yukon"
-      ],
+      "locumDurations": ["Less than a month"],
+      "preferredProvinces": ["Prince Edward Island", "Northwest Territories", "Nunavut", "Yukon"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Alice Ross",
@@ -21429,10 +20187,7 @@
     },
     "dateOfBirth": "01-01-1970",
     "email": "isaac.mason+u0331@example.com",
-    "emrSystems": [
-      "Accuro EMR",
-      "PS Suite EMR"
-    ],
+    "emrSystems": ["Accuro EMR", "PS Suite EMR"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+13475559210",
@@ -21442,9 +20197,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Mason",
     "medicalCertification": "770130",
     "medicalStudentCheck": false,
@@ -21461,9 +20214,7 @@
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Isaac Mason",
@@ -21563,20 +20314,11 @@
           "toYear": "2027"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "Full-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "Full-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -21623,9 +20365,7 @@
     },
     "dateOfBirth": "01-01-1972",
     "email": "lspencer+u0333@example.com",
-    "emrSystems": [
-      "PS Suite EMR"
-    ],
+    "emrSystems": ["PS Suite EMR"],
     "facilityEMR": "PS Suite EMR",
     "facilityName": "Trafalgar medical clinic",
     "faxNumber": "+14155559484",
@@ -21635,9 +20375,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Spencer",
     "medicalCertification": "692576",
     "medicalStudentCheck": false,
@@ -21719,10 +20457,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Persian (Farsi)"
-    ],
+    "languages": ["English", "Persian (Farsi)"],
     "lastName": "Reed",
     "medicalCertification": "276418",
     "medicalStudentCheck": false,
@@ -21745,21 +20480,11 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "Full-time",
-        "On-call or short notice",
-        "Weekends"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "Full-time", "On-call or short notice", "Weekends"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["Less than a month"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Harper Reed",
@@ -21816,9 +20541,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Castillo",
     "linkedInUrl": "https://www.linkedin.com/in/emma-castillo-335",
     "medProfession": "Recruiter",
@@ -21938,9 +20661,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Jordan",
     "medicalCertification": "261573",
     "medicalStudentCheck": false,
@@ -21963,21 +20684,11 @@
           "toYear": "2027"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Full-time",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Full-time", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "3–6 months",
-        "6+ months",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["3–6 months", "6+ months", "1–3 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Dominic Jordan",
@@ -22030,18 +20741,14 @@
     },
     "dateOfBirth": "01-01-1977",
     "email": "mmaxwell+u0338@example.com",
-    "emrSystems": [
-      "Avaros EMR"
-    ],
+    "emrSystems": ["Avaros EMR"],
     "fellowCheck": true,
     "firebaseUid": "anon_uid_000338",
     "firstName": "Maya",
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Maxwell",
     "medicalCertification": "606665",
     "medicalStudentCheck": false,
@@ -22064,21 +20771,11 @@
           "toYear": "2027"
         }
       ],
-      "availabilityTypes": [
-        "Weekends",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekends", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["A few days", "Less than a month", "1–3 months", "3–6 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -22131,9 +20828,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Butler",
     "linkedInUrl": "https://www.linkedin.com/in/adam-butler-339",
     "medProfession": "Recruiter",
@@ -22242,10 +20937,7 @@
     },
     "dateOfBirth": "01-01-1980",
     "email": "john.wardle+u0341@example.com",
-    "emrSystems": [
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)",
-      "Collaborative Health Record (CHR)"
-    ],
+    "emrSystems": ["OSCAR McMaster - Professional Edition (OSCAR Pro)", "Collaborative Health Record (CHR)"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+12015550580",
@@ -22255,9 +20947,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Wardle",
     "medicalCertification": "195094",
     "medicalStudentCheck": false,
@@ -22270,25 +20960,12 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "3–6 months",
-        "Less than a month",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "Oakville",
-        "remote"
-      ]
+      "locumDurations": ["A few days", "3–6 months", "Less than a month", "1–3 months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["Oakville", "remote"]
     },
     "primaryContact": "Dr. John Wardle",
     "privacyConsent": true,
@@ -22460,10 +21137,7 @@
     },
     "dateOfBirth": "01-01-1983",
     "email": "zoes+u0344@example.com",
-    "emrSystems": [
-      "PS Suite EMR",
-      "Collaborative Health Record (CHR)"
-    ],
+    "emrSystems": ["PS Suite EMR", "Collaborative Health Record (CHR)"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+13055550991",
@@ -22473,9 +21147,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Stephens",
     "medicalCertification": "541839",
     "medicalStudentCheck": false,
@@ -22498,21 +21170,11 @@
           "toYear": "2027"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month",
-        "1–3 months",
-        "3–6 months",
-        "6+ months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["Less than a month", "1–3 months", "3–6 months", "6+ months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Zoe Stephens",
@@ -22647,16 +21309,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -22695,9 +21352,7 @@
     },
     "dateOfBirth": "01-01-1986",
     "email": "noah_powell+u0347@example.com",
-    "emrSystems": [
-      "Accuro EMR"
-    ],
+    "emrSystems": ["Accuro EMR"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+14045551402",
@@ -22771,9 +21426,7 @@
     },
     "dateOfBirth": "01-01-1987",
     "email": "mlucas+u0348@example.com",
-    "emrSystems": [
-      "Accuro EMR"
-    ],
+    "emrSystems": ["Accuro EMR"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+14155551539",
@@ -22783,9 +21436,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Lucas",
     "medicalCertification": "660006",
     "medicalStudentCheck": false,
@@ -22857,9 +21508,7 @@
     },
     "dateOfBirth": "01-01-1988",
     "email": "iant+u0349@example.com",
-    "emrSystems": [
-      "Other"
-    ],
+    "emrSystems": ["Other"],
     "facilityEMR": "Collaborative Health Record (CHR)",
     "facilityName": "BayWest Medical Center ",
     "faxNumber": "+15035551676",
@@ -22869,11 +21518,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Urdu",
-      "Hindi"
-    ],
+    "languages": ["English", "Urdu", "Hindi"],
     "lastName": "Turner",
     "medicalCertification": "408729",
     "medicalStudentCheck": false,
@@ -22982,9 +21627,7 @@
     },
     "dateOfBirth": "01-01-1990",
     "email": "adrian.carter+u0351@example.com",
-    "emrSystems": [
-      "Collaborative Health Record (CHR)"
-    ],
+    "emrSystems": ["Collaborative Health Record (CHR)"],
     "facilityEMR": "Collaborative Health Record (CHR)",
     "facilityName": "Ruby Medical Clinic",
     "faxNumber": "+16465551950",
@@ -22994,10 +21637,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "French",
-      "English"
-    ],
+    "languages": ["French", "English"],
     "lastName": "Carter",
     "medicalCertification": "835669",
     "medicalStudentCheck": false,
@@ -23061,9 +21701,7 @@
     },
     "dateOfBirth": "01-01-1991",
     "email": "eleanor_hughes+u0352@example.com",
-    "emrSystems": [
-      "Avaros EMR"
-    ],
+    "emrSystems": ["Avaros EMR"],
     "facilityEMR": "Avaros EMR",
     "facilityName": "Grace Health Centre",
     "faxNumber": "+17025552087",
@@ -23073,9 +21711,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Hughes",
     "medicalCertification": "389783",
     "medicalStudentCheck": false,
@@ -23181,9 +21817,7 @@
     },
     "dateOfBirth": "01-01-1993",
     "email": "rubyh+u0354@example.com",
-    "emrSystems": [
-      "PS Suite EMR"
-    ],
+    "emrSystems": ["PS Suite EMR"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+17865552361",
@@ -23193,9 +21827,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Hamilton",
     "medicalCertification": "966079",
     "medicalStudentCheck": false,
@@ -23208,23 +21840,12 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "On-call or short notice"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "On-call or short notice"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "toronto"
-      ]
+      "locumDurations": ["Less than a month", "1–3 months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["toronto"]
     },
     "primaryContact": "Dr. Ruby Hamilton",
     "privacyConsent": true,
@@ -23363,10 +21984,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Barnett",
     "medicalCertification": "252059",
     "medicalStudentCheck": false,
@@ -23389,19 +22007,11 @@
           "toYear": "2027"
         }
       ],
-      "availabilityTypes": [
-        "Part-time",
-        "Full-time"
-      ],
+      "availabilityTypes": ["Part-time", "Full-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "6+ months",
-        "3–6 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["6+ months", "3–6 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -23440,9 +22050,7 @@
     },
     "dateOfBirth": "01-01-1996",
     "email": "henry_fuller+u0357@example.com",
-    "emrSystems": [
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)"
-    ],
+    "emrSystems": ["OSCAR McMaster - Professional Edition (OSCAR Pro)"],
     "facilityEMR": "OSCAR McMaster - Professional Edition (OSCAR Pro)",
     "facilityName": "Mimico medical clinic ",
     "faxNumber": "+12125552772",
@@ -23452,9 +22060,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Fuller",
     "medicalCertification": "860680",
     "medicalStudentCheck": false,
@@ -23516,21 +22122,14 @@
     },
     "dateOfBirth": "01-01-1997",
     "email": "mbailey+u0358@example.com",
-    "emrSystems": [
-      "Accuro EMR",
-      "Med Access EMR",
-      "PS Suite EMR",
-      "Other"
-    ],
+    "emrSystems": ["Accuro EMR", "Med Access EMR", "PS Suite EMR", "Other"],
     "fellowCheck": false,
     "firebaseUid": "anon_uid_000358",
     "firstName": "Mia",
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Bailey",
     "medicalCertification": "180340",
     "medicalStudentCheck": false,
@@ -23543,17 +22142,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Alberta"
-      ],
+      "preferredProvinces": ["Alberta"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -23641,9 +22234,7 @@
     },
     "dateOfBirth": "01-01-1999",
     "email": "baker.reagan+u0360@example.com",
-    "emrSystems": [
-      "PS Suite EMR"
-    ],
+    "emrSystems": ["PS Suite EMR"],
     "facilityEMR": "PS Suite EMR",
     "facilityName": "Millpond Medical Clinic",
     "faxNumber": "+13125553183",
@@ -23653,9 +22244,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Baker",
     "medicalCertification": "873742",
     "medicalStudentCheck": false,
@@ -23729,10 +22318,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Arabic"
-    ],
+    "languages": ["English", "Arabic"],
     "lastName": "Schultz",
     "medicalCertification": "797394",
     "medicalStudentCheck": false,
@@ -23755,21 +22341,11 @@
           "toYear": "2027"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month",
-        "A few days"
-      ],
-      "preferredProvinces": [
-        "Alberta",
-        "Ontario"
-      ],
+      "locumDurations": ["Less than a month", "A few days"],
+      "preferredProvinces": ["Alberta", "Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -23808,9 +22384,7 @@
     },
     "dateOfBirth": "01-01-1971",
     "email": "kennedy_long+u0362@example.com",
-    "emrSystems": [
-      "PS Suite EMR"
-    ],
+    "emrSystems": ["PS Suite EMR"],
     "facilityEMR": "PS Suite EMR",
     "facilityName": "Pulse Family Practice",
     "faxNumber": "+14045553457",
@@ -23882,11 +22456,7 @@
     },
     "dateOfBirth": "01-01-1972",
     "email": "jwallace+u0363@example.com",
-    "emrSystems": [
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)",
-      "Accuro EMR",
-      "PS Suite EMR"
-    ],
+    "emrSystems": ["OSCAR McMaster - Professional Edition (OSCAR Pro)", "Accuro EMR", "PS Suite EMR"],
     "fellowCheck": false,
     "firebaseUid": "anon_uid_000363",
     "firstName": "Jaxon",
@@ -23916,23 +22486,11 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "On-call or short notice"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "On-call or short notice"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months",
-        "3–6 months",
-        "6+ months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["A few days", "Less than a month", "1–3 months", "3–6 months", "6+ months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -24016,10 +22574,7 @@
     },
     "dateOfBirth": "01-01-1974",
     "email": "hanson.anthony+u0365@example.com",
-    "emrSystems": [
-      "PS Suite EMR",
-      "Accuro EMR"
-    ],
+    "emrSystems": ["PS Suite EMR", "Accuro EMR"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+16175553868",
@@ -24029,9 +22584,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Hanson",
     "medicalCertification": "236072",
     "medicalStudentCheck": false,
@@ -24054,29 +22607,11 @@
           "toYear": "2027"
         }
       ],
-      "availabilityTypes": [
-        "On-call or short notice",
-        "Full-time",
-        "Weekends",
-        "Weekdays",
-        "Part-time"
-      ],
+      "availabilityTypes": ["On-call or short notice", "Full-time", "Weekends", "Weekdays", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "3–6 months",
-        "Less than a month",
-        "1–3 months",
-        "A few days",
-        "6+ months"
-      ],
-      "preferredProvinces": [
-        "Ontario",
-        "Alberta",
-        "Yukon",
-        "Nova Scotia",
-        "New Brunswick"
-      ],
+      "locumDurations": ["3–6 months", "Less than a month", "1–3 months", "A few days", "6+ months"],
+      "preferredProvinces": ["Ontario", "Alberta", "Yukon", "Nova Scotia", "New Brunswick"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Anthony Hanson",
@@ -24172,19 +22707,14 @@
     },
     "dateOfBirth": "01-01-1976",
     "email": "gabriel_myers+u0367@example.com",
-    "emrSystems": [
-      "Med Access EMR"
-    ],
+    "emrSystems": ["Med Access EMR"],
     "fellowCheck": false,
     "firebaseUid": "anon_uid_000367",
     "firstName": "Gabriel",
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Urdu"
-    ],
+    "languages": ["English", "Urdu"],
     "lastName": "Myers",
     "medicalCertification": "408085",
     "medicalStudentCheck": false,
@@ -24207,20 +22737,11 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Part-time",
-        "Weekdays"
-      ],
+      "availabilityTypes": ["Part-time", "Weekdays"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month",
-        "1–3 months",
-        "A few days"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["Less than a month", "1–3 months", "A few days"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -24457,16 +22978,8 @@
       "availabilityTypes": [],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "Less than a month",
-        "A few days",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "British Columbia",
-        "Nova Scotia",
-        "Ontario"
-      ],
+      "locumDurations": ["Less than a month", "A few days", "1–3 months"],
+      "preferredProvinces": ["British Columbia", "Nova Scotia", "Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -24546,22 +23059,11 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "Weekends"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "Weekends"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "3–6 months",
-        "1–3 months",
-        "Less than a month",
-        "A few days"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["3–6 months", "1–3 months", "Less than a month", "A few days"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Laila Silva",
@@ -24712,10 +23214,7 @@
     },
     "dateOfBirth": "01-01-1984",
     "email": "armstrong.christopher+u0375@example.com",
-    "emrSystems": [
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)",
-      "Other"
-    ],
+    "emrSystems": ["OSCAR McMaster - Professional Edition (OSCAR Pro)", "Other"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+13125555238",
@@ -24725,10 +23224,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "German"
-    ],
+    "languages": ["English", "German"],
     "lastName": "Armstrong",
     "medicalCertification": "173480",
     "medicalStudentCheck": false,
@@ -24741,17 +23237,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays",
-        "Full-time",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Full-time", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Christopher Armstrong",
@@ -24816,10 +23306,7 @@
     "gender": "Prefer not to say",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Cunningham",
     "medicalCertification": "840042",
     "medicalStudentCheck": false,
@@ -24832,19 +23319,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Full-time",
-        "Part-time",
-        "On-call or short notice"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Full-time", "Part-time", "On-call or short notice"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Autumn Cunningham",
@@ -24890,21 +23369,14 @@
     },
     "dateOfBirth": "01-01-1986",
     "email": "luke_shah+u0377@example.com",
-    "emrSystems": [
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)",
-      "PS Suite EMR",
-      "Accuro EMR"
-    ],
+    "emrSystems": ["OSCAR McMaster - Professional Edition (OSCAR Pro)", "PS Suite EMR", "Accuro EMR"],
     "fellowCheck": false,
     "firebaseUid": "anon_uid_000377",
     "firstName": "Luke",
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Tamil"
-    ],
+    "languages": ["English", "Tamil"],
     "lastName": "Shah",
     "medicalCertification": "131147",
     "medicalStudentCheck": false,
@@ -24927,20 +23399,11 @@
           "toYear": "2026"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["A few days", "1–3 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -24988,11 +23451,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Urdu",
-      "Punjabi"
-    ],
+    "languages": ["English", "Urdu", "Punjabi"],
     "lastName": "Harper",
     "linkedInUrl": "https://www.linkedin.com/in/lucy-harper-378",
     "medProfession": "Recruiter",
@@ -25064,9 +23523,7 @@
     },
     "dateOfBirth": "01-01-1988",
     "email": "wyattm+u0379@example.com",
-    "emrSystems": [
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)"
-    ],
+    "emrSystems": ["OSCAR McMaster - Professional Edition (OSCAR Pro)"],
     "facilityEMR": "OSCAR McMaster - Professional Edition (OSCAR Pro)",
     "facilityName": "Whitby FHO",
     "faxNumber": "+15035555786",
@@ -25076,9 +23533,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Murphy",
     "medicalCertification": "102729",
     "medicalProvince": "Ontario",
@@ -25157,9 +23612,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Lucas",
     "linkedInUrl": "https://www.linkedin.com/in/lily-lucas-380",
     "medProfession": "Recruiter",
@@ -25227,11 +23680,7 @@
     },
     "dateOfBirth": "01-01-1990",
     "email": "alexander.turner+u0381@example.com",
-    "emrSystems": [
-      "Accuro EMR",
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)",
-      "PS Suite EMR"
-    ],
+    "emrSystems": ["Accuro EMR", "OSCAR McMaster - Professional Edition (OSCAR Pro)", "PS Suite EMR"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+16465556060",
@@ -25264,23 +23713,12 @@
           "toYear": "2027"
         }
       ],
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "On-call or short notice",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "On-call or short notice", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "toronto"
-      ]
+      "locumDurations": ["1–3 months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["toronto"]
     },
     "primaryContact": "Dr. Alexander Turner",
     "privacyConsent": true,
@@ -25335,9 +23773,7 @@
     },
     "dateOfBirth": "01-01-1991",
     "email": "sophia_black+u0382@example.com",
-    "emrSystems": [
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)"
-    ],
+    "emrSystems": ["OSCAR McMaster - Professional Edition (OSCAR Pro)"],
     "facilityEMR": "OSCAR McMaster - Professional Edition (OSCAR Pro)",
     "facilityName": "Magenta Health Midtown",
     "faxNumber": "+17025556197",
@@ -25347,9 +23783,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Black",
     "medicalCertification": "647939",
     "medicalProvince": "Ontario",
@@ -25514,9 +23948,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Porter",
     "linkedInUrl": "https://www.linkedin.com/in/eli-porter-385",
     "medProfession": "Recruiter",
@@ -25586,9 +24018,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Griffin",
     "linkedInUrl": "https://www.linkedin.com/in/hazel-griffin-386",
     "medProfession": "Recruiter",
@@ -25700,9 +24130,7 @@
     },
     "dateOfBirth": "01-01-1997",
     "email": "jwood+u0388@example.com",
-    "emrSystems": [
-      "Accuro EMR"
-    ],
+    "emrSystems": ["Accuro EMR"],
     "facilityEMR": "Accuro EMR",
     "facilityName": "Family Medicine Practice",
     "faxNumber": "+12135557019",
@@ -25712,10 +24140,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Wood",
     "medicalCertification": "739640",
     "medicalProvince": "Ontario",
@@ -25828,10 +24253,7 @@
     "gender": "Female",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Tagalog"
-    ],
+    "languages": ["English", "Tagalog"],
     "lastName": "Cooper",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -25885,9 +24307,7 @@
     },
     "dateOfBirth": "01-01-1970",
     "email": "levi.holland+u0391@example.com",
-    "emrSystems": [
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)"
-    ],
+    "emrSystems": ["OSCAR McMaster - Professional Edition (OSCAR Pro)"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+13475557430",
@@ -25911,18 +24331,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays",
-        "Weekends",
-        "Part-time",
-        "On-call or short notice"
-      ],
+      "availabilityTypes": ["Weekdays", "Weekends", "Part-time", "On-call or short notice"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Levi Holland",
@@ -25978,10 +24391,7 @@
     },
     "dateOfBirth": "01-01-1971",
     "email": "hannah_baker+u0392@example.com",
-    "emrSystems": [
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)",
-      "Avaros EMR"
-    ],
+    "emrSystems": ["OSCAR McMaster - Professional Edition (OSCAR Pro)", "Avaros EMR"],
     "facilityEMR": "Avaros EMR",
     "facilityName": "Credit Valley Health Center",
     "faxNumber": "+14045557567",
@@ -25991,11 +24401,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Arabic",
-      "Urdu"
-    ],
+    "languages": ["English", "Arabic", "Urdu"],
     "lastName": "Baker",
     "medicalCertification": "184483",
     "medicalProvince": "Ontario",
@@ -26069,10 +24475,7 @@
     },
     "dateOfBirth": "01-01-1972",
     "email": "jschultz+u0393@example.com",
-    "emrSystems": [
-      "PS Suite EMR",
-      "Other"
-    ],
+    "emrSystems": ["PS Suite EMR", "Other"],
     "facilityEMR": "PS Suite EMR",
     "facilityName": "Guelph General Hospital",
     "faxNumber": "+14155557704",
@@ -26082,10 +24485,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Urdu"
-    ],
+    "languages": ["English", "Urdu"],
     "lastName": "Schultz",
     "medicalCertification": "744886",
     "medicalProvince": "Ontario",
@@ -26099,19 +24499,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays",
-        "Part-time",
-        "On-call or short notice",
-        "Weekends",
-        "Full-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Part-time", "On-call or short notice", "Weekends", "Full-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. James Schultz",
@@ -26157,9 +24549,7 @@
     },
     "dateOfBirth": "01-01-1973",
     "email": "olivial+u0394@example.com",
-    "emrSystems": [
-      "Accuro EMR"
-    ],
+    "emrSystems": ["Accuro EMR"],
     "fellowCheck": false,
     "firebaseUid": "anon_uid_000394",
     "firstName": "Olivia",
@@ -26183,13 +24573,8 @@
       "availabilityTypes": [],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["A few days", "Less than a month"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "privacyConsent": true,
@@ -26237,11 +24622,7 @@
     },
     "dateOfBirth": "01-01-1974",
     "email": "kelley.roman+u0395@example.com",
-    "emrSystems": [
-      "Accuro EMR",
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)",
-      "PS Suite EMR"
-    ],
+    "emrSystems": ["Accuro EMR", "OSCAR McMaster - Professional Edition (OSCAR Pro)", "PS Suite EMR"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+16175557978",
@@ -26251,9 +24632,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Kelley",
     "medicalCertification": "629057",
     "medicalProvince": "Ontario",
@@ -26266,23 +24645,11 @@
     "onboardingStep": 5,
     "paymentDataConfirmation": true,
     "preferences": {
-      "availabilityTypes": [
-        "Weekdays",
-        "On-call or short notice",
-        "Weekends"
-      ],
+      "availabilityTypes": ["Weekdays", "On-call or short notice", "Weekends"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "3–6 months",
-        "6+ months",
-        "Less than a month",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["A few days", "3–6 months", "6+ months", "Less than a month", "1–3 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Roman Kelley",
@@ -26380,10 +24747,7 @@
     },
     "dateOfBirth": "01-01-1976",
     "email": "jeremiah_perkins+u0397@example.com",
-    "emrSystems": [
-      "PS Suite EMR",
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)"
-    ],
+    "emrSystems": ["PS Suite EMR", "OSCAR McMaster - Professional Edition (OSCAR Pro)"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+17025558252",
@@ -26407,28 +24771,12 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekends",
-        "Weekdays",
-        "Part-time",
-        "On-call or short notice",
-        "Full-time"
-      ],
+      "availabilityTypes": ["Weekends", "Weekdays", "Part-time", "On-call or short notice", "Full-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "3–6 months",
-        "6+ months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
-      "specificRegions": [
-        "Toronto ",
-        "Etobicoke ",
-        "Mississauga ",
-        "Brampton "
-      ]
+      "locumDurations": ["3–6 months", "6+ months"],
+      "preferredProvinces": ["Ontario"],
+      "specificRegions": ["Toronto ", "Etobicoke ", "Mississauga ", "Brampton "]
     },
     "primaryContact": "Dr. Jeremiah Perkins",
     "privacyConsent": true,
@@ -26567,9 +24915,7 @@
     },
     "dateOfBirth": "01-01-1979",
     "email": "young.ivy+u0400@example.com",
-    "emrSystems": [
-      "Avaros EMR"
-    ],
+    "emrSystems": ["Avaros EMR"],
     "facilityEMR": "Avaros EMR",
     "facilityName": "Bayview Medical North",
     "faxNumber": "+19175558663",
@@ -26649,11 +24995,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "Hindi",
-      "Punjabi"
-    ],
+    "languages": ["English", "Hindi", "Punjabi"],
     "lastName": "West",
     "medProfession": "Physician",
     "modifiedAt": {
@@ -26699,12 +25041,7 @@
     },
     "dateOfBirth": "01-01-1981",
     "email": "claire_brock+u0402@example.com",
-    "emrSystems": [
-      "Accuro EMR",
-      "Collaborative Health Record (CHR)",
-      "Juno EMR",
-      "PS Suite EMR"
-    ],
+    "emrSystems": ["Accuro EMR", "Collaborative Health Record (CHR)", "Juno EMR", "PS Suite EMR"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+12125558937",
@@ -26714,9 +25051,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Brock",
     "medicalCertification": "420879",
     "medicalProvince": "Ontario",
@@ -26730,17 +25065,11 @@
     "paymentDataConfirmation": true,
     "preferences": {
       "availabilityDateRanges": [],
-      "availabilityTypes": [
-        "Weekdays",
-        "Full-time",
-        "Part-time"
-      ],
+      "availabilityTypes": ["Weekdays", "Full-time", "Part-time"],
       "availabilityYears": [],
       "isLookingForLocums": true,
       "locumDurations": [],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Claire Brock",
@@ -26788,9 +25117,7 @@
     },
     "dateOfBirth": "01-01-1982",
     "email": "jsanders+u0403@example.com",
-    "emrSystems": [
-      "PS Suite EMR"
-    ],
+    "emrSystems": ["PS Suite EMR"],
     "facilityEMR": "",
     "facilityName": "",
     "faxNumber": "+12135559074",
@@ -26867,9 +25194,7 @@
     },
     "dateOfBirth": "01-01-1983",
     "email": "chloes+u0404@example.com",
-    "emrSystems": [
-      "Avaros EMR"
-    ],
+    "emrSystems": ["Avaros EMR"],
     "facilityEMR": "Avaros EMR",
     "facilityName": "Credit Valley Health Centre ",
     "faxNumber": "+13055559211",
@@ -26879,9 +25204,7 @@
     "gender": "Male",
     "isOnboardingCompleted": true,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Silva",
     "medicalCertification": "364948",
     "medicalProvince": "Ontario",
@@ -26957,9 +25280,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Howard",
     "linkedInUrl": "https://www.linkedin.com/in/elijah-howard-405",
     "medProfession": "Recruiter",
@@ -27035,10 +25356,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English",
-      "French"
-    ],
+    "languages": ["English", "French"],
     "lastName": "Franklin",
     "medicalCertification": "901699",
     "medicalProvince": "Ontario",
@@ -27113,12 +25431,7 @@
     "dateOfBirth": "01-01-1986",
     "discoverySource": "Colleague or friend",
     "email": "theo_russell+u0407@example.com",
-    "emrSystems": [
-      "Accuro EMR",
-      "OSCAR McMaster - Professional Edition (OSCAR Pro)",
-      "PS Suite EMR",
-      "Avaros EMR"
-    ],
+    "emrSystems": ["Accuro EMR", "OSCAR McMaster - Professional Edition (OSCAR Pro)", "PS Suite EMR", "Avaros EMR"],
     "facilityEMR": "Avaros EMR",
     "facilityName": "Medical Arts Family Practice",
     "faxNumber": "+14045559622",
@@ -27128,11 +25441,7 @@
     "gender": "Female",
     "isOnboardingCompleted": true,
     "isProfileComplete": true,
-    "languages": [
-      "English",
-      "Punjabi",
-      "Hindi"
-    ],
+    "languages": ["English", "Punjabi", "Hindi"],
     "lastName": "Russell",
     "medicalCertification": "968075",
     "medicalProvince": "Ontario",
@@ -27234,14 +25543,8 @@
       "availabilityTypes": [],
       "availabilityYears": [],
       "isLookingForLocums": true,
-      "locumDurations": [
-        "A few days",
-        "Less than a month",
-        "1–3 months"
-      ],
-      "preferredProvinces": [
-        "Ontario"
-      ],
+      "locumDurations": ["A few days", "Less than a month", "1–3 months"],
+      "preferredProvinces": ["Ontario"],
       "specificRegions": []
     },
     "primaryContact": "Dr. Samantha Dawson",
@@ -27344,9 +25647,7 @@
     "gender": "Male",
     "isOnboardingCompleted": false,
     "isProfileComplete": false,
-    "languages": [
-      "English"
-    ],
+    "languages": ["English"],
     "lastName": "Gibson",
     "medProfession": "Physician",
     "modifiedAt": {
