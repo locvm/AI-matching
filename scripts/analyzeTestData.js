@@ -157,7 +157,7 @@ const PREFERENCE_FREQUENCY_FIELDS = [
 
 // Analyzers
 async function analyzeUsers() {
-  const jsonString = await fs.readFile('./locum.users.formatted.json', 'utf8');
+  const jsonString = await fs.readFile('./fixtures/locum.users.formatted.json', 'utf8');
   const users = JSON.parse(jsonString);
 
   const results = {};
@@ -231,7 +231,7 @@ async function analyzeUsers() {
 }
 
 async function analyzeJobs() {
-  const jsonString = await fs.readFile('./locum.locumjobs.formatted.json', 'utf8');
+  const jsonString = await fs.readFile('./fixtures/locum.locumjobs.formatted.json', 'utf8');
   const jobs = JSON.parse(jsonString);
 
   const results = {};
@@ -312,7 +312,7 @@ async function analyzeJobs() {
 }
 
 async function analyzeReservations() {
-  const jsonString = await fs.readFile('./locum.reservations.formatted.json', 'utf8');
+  const jsonString = await fs.readFile('./fixtures/locum.reservations.formatted.json', 'utf8');
   const reservations = JSON.parse(jsonString);
 
   const results = {};

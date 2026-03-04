@@ -152,7 +152,7 @@ Empty string, wrong type, etc. Excludes undefined/null (see missingness for thos
 - **emrSystems**: (none - only missing or valid string)
 
 - **facilityEMR**:
-[string(empty)]: 26
+  - [string(empty)]: 26
 
 
 ---
