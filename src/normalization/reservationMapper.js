@@ -81,8 +81,8 @@ function normalizeApplicant(raw) {
 
   const applicationLog = Array.isArray(raw.applicationLog)
     ? raw.applicationLog
-        .filter((entry) => entry && typeof entry === 'object')
-        .map((entry) => ({
+        .filter((/** @type {any} */ entry) => entry && typeof entry === 'object')
+        .map((/** @type {any} */ entry) => ({
           event: validateStage(entry.event) ?? trimString(entry.event),
           at: ensureDate(entry.at) ?? undefined,
           note: trimString(entry.note) || undefined,
