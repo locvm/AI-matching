@@ -38,6 +38,10 @@
       "Thu",
       "Fri"
     ],
+    "availabilityYears": [
+      2025,
+      2026
+    ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -349,6 +353,9 @@
     "availableDays": [
       "Sat",
       "Sun"
+    ],
+    "availabilityYears": [
+      2025
     ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
@@ -1704,6 +1711,9 @@
       "part-time",
       "on-call"
     ],
+    "availabilityYears": [
+      2025
+    ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -1922,6 +1932,9 @@
     "commitmentTypes": [
       "full-time"
     ],
+    "availabilityYears": [
+      2025
+    ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -2056,6 +2069,10 @@
       "part-time",
       "full-time"
     ],
+    "availabilityYears": [
+      2025,
+      2026
+    ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -2112,6 +2129,10 @@
     ],
     "commitmentTypes": [
       "part-time"
+    ],
+    "availabilityYears": [
+      2025,
+      2026
     ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
@@ -2449,6 +2470,9 @@
       "full-time",
       "part-time"
     ],
+    "availabilityYears": [
+      2025
+    ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -2604,6 +2628,10 @@
       "part-time",
       "on-call"
     ],
+    "availabilityYears": [
+      2025,
+      2026
+    ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -2677,6 +2705,10 @@
       "part-time",
       "on-call"
     ],
+    "availabilityYears": [
+      2025,
+      2026
+    ],
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -2745,6 +2777,10 @@
       "part-time",
       "on-call",
       "full-time"
+    ],
+    "availabilityYears": [
+      2025,
+      2026
     ],
     "isProfileComplete": false,
     "isOnboardingCompleted": true
@@ -2859,6 +2895,9 @@
     "commitmentTypes": [
       "part-time"
     ],
+    "availabilityYears": [
+      2025
+    ],
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -2911,6 +2950,9 @@
     "commitmentTypes": [
       "full-time",
       "part-time"
+    ],
+    "availabilityYears": [
+      2026
     ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
@@ -3103,6 +3145,9 @@
     "commitmentTypes": [
       "full-time"
     ],
+    "availabilityYears": [
+      2025
+    ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -3219,6 +3264,10 @@
       "part-time",
       "on-call"
     ],
+    "availabilityYears": [
+      2025,
+      2026
+    ],
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -3261,6 +3310,10 @@
       "Wed",
       "Thu",
       "Fri"
+    ],
+    "availabilityYears": [
+      2025,
+      2026
     ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
@@ -3333,6 +3386,9 @@
     "commitmentTypes": [
       "full-time"
     ],
+    "availabilityYears": [
+      2026
+    ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -3394,6 +3450,10 @@
     ],
     "commitmentTypes": [
       "full-time"
+    ],
+    "availabilityYears": [
+      2025,
+      2026
     ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
@@ -3526,6 +3586,9 @@
       "part-time",
       "on-call"
     ],
+    "availabilityYears": [
+      2025
+    ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -3569,6 +3632,9 @@
     ],
     "commitmentTypes": [
       "part-time"
+    ],
+    "availabilityYears": [
+      2025
     ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
@@ -3671,6 +3737,10 @@
     ],
     "commitmentTypes": [
       "full-time"
+    ],
+    "availabilityYears": [
+      2025,
+      2026
     ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
@@ -3779,6 +3849,9 @@
       "full-time",
       "part-time"
     ],
+    "availabilityYears": [
+      2025
+    ],
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -3853,6 +3926,10 @@
     "commitmentTypes": [
       "on-call",
       "part-time"
+    ],
+    "availabilityYears": [
+      2025,
+      2026
     ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
@@ -3980,6 +4057,10 @@
     "role": "User",
     "languages": [],
     "locumDurations": [],
+    "availabilityYears": [
+      2025,
+      2026
+    ],
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -4139,6 +4220,10 @@
     "commitmentTypes": [
       "full-time"
     ],
+    "availabilityYears": [
+      2025,
+      2026
+    ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -4285,6 +4370,10 @@
       "part-time",
       "on-call"
     ],
+    "availabilityYears": [
+      2025,
+      2026
+    ],
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -4325,6 +4414,10 @@
     "commitmentTypes": [
       "full-time",
       "part-time"
+    ],
+    "availabilityYears": [
+      2025,
+      2026
     ],
     "isProfileComplete": false,
     "isOnboardingCompleted": true
@@ -4443,6 +4536,10 @@
       "part-time",
       "full-time"
     ],
+    "availabilityYears": [
+      2025,
+      2026
+    ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -4472,6 +4569,9 @@
     ],
     "commitmentTypes": [
       "part-time"
+    ],
+    "availabilityYears": [
+      2026
     ],
     "isProfileComplete": false,
     "isOnboardingCompleted": true
@@ -4697,6 +4797,10 @@
       "full-time",
       "on-call"
     ],
+    "availabilityYears": [
+      2025,
+      2026
+    ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -4778,6 +4882,9 @@
     "commitmentTypes": [
       "part-time",
       "on-call"
+    ],
+    "availabilityYears": [
+      2025
     ],
     "isProfileComplete": false,
     "isOnboardingCompleted": true
@@ -4880,6 +4987,10 @@
       "full-time",
       "part-time",
       "on-call"
+    ],
+    "availabilityYears": [
+      2025,
+      2026
     ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
@@ -4994,6 +5105,9 @@
     "commitmentTypes": [
       "part-time"
     ],
+    "availabilityYears": [
+      2025
+    ],
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -5103,6 +5217,9 @@
       "part-time",
       "on-call"
     ],
+    "availabilityYears": [
+      2026
+    ],
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -5157,6 +5274,10 @@
     "commitmentTypes": [
       "part-time",
       "on-call"
+    ],
+    "availabilityYears": [
+      2025,
+      2026
     ],
     "isProfileComplete": false,
     "isOnboardingCompleted": true
@@ -5243,6 +5364,10 @@
     "commitmentTypes": [
       "part-time"
     ],
+    "availabilityYears": [
+      2025,
+      2026
+    ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -5294,6 +5419,10 @@
     ],
     "commitmentTypes": [
       "part-time"
+    ],
+    "availabilityYears": [
+      2025,
+      2026
     ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
@@ -5357,6 +5486,9 @@
     ],
     "commitmentTypes": [
       "part-time"
+    ],
+    "availabilityYears": [
+      2026
     ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true
@@ -5502,6 +5634,10 @@
       "Fri",
       "Sat",
       "Sun"
+    ],
+    "availabilityYears": [
+      2025,
+      2026
     ],
     "isProfileComplete": true,
     "isOnboardingCompleted": true

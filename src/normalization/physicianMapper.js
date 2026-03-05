@@ -28,6 +28,7 @@
 //   role                               becomes  role                 (trimString)
 //   languages                          becomes  languages            (ensureStringArray)
 //   preferences.availabilityDateRanges  becomes  availabilityWindows  (normalizeAvailabilityDateRanges, month/year strings become Date objects)
+//   preferences.availabilityYears       becomes  availabilityYears    (normalizeAvailabilityYears, "Available in 2025" becomes 2025)
 //   isProfileComplete                  becomes  isProfileComplete    (passthrough)
 //   isOnboardingCompleted              becomes  isOnboardingCompleted (passthrough)
 
@@ -38,6 +39,7 @@ import { normalizeProvince } from "./normalizeProvince.js";
 import { normalizeLocumDuration } from "./normalizeLocumDuration.js";
 import { normalizeAvailability } from "./normalizeAvailability.js";
 import { normalizeAvailabilityDateRanges } from "./normalizeAvailabilityDateRange.js";
+import { normalizeAvailabilityYears } from "./normalizeAvailabilityYears.js";
 
 /**
  * Takes a raw User doc from Mongo and gives back a clean Physician.
@@ -63,6 +65,9 @@ export function toDomain(raw) {
   // Convert month/year date ranges into real Date objects
   const availabilityWindows = normalizeAvailabilityDateRanges(prefs.availabilityDateRanges);
 
+  // Extract years from strings like "Available in 2025"
+  const availabilityYears = normalizeAvailabilityYears(prefs.availabilityYears);
+
   return {
     _id: coerceObjectId(raw._id),
     medProfession: trimString(raw.medProfession),
@@ -86,6 +91,7 @@ export function toDomain(raw) {
     availableDays: availability.availableDays.length > 0 ? availability.availableDays : undefined,
     commitmentTypes: availability.commitmentTypes.length > 0 ? availability.commitmentTypes : undefined,
     availabilityWindows: availabilityWindows.length > 0 ? availabilityWindows : undefined,
+    availabilityYears: availabilityYears.length > 0 ? availabilityYears : undefined,
     isProfileComplete: raw.isProfileComplete ?? undefined,
     isOnboardingCompleted: raw.isOnboardingCompleted ?? undefined,
   };

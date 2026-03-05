@@ -119,6 +119,7 @@
  * @property {DayOfWeek[]} [availableDays] - Which days they can work. Comes from "Weekdays"/"Weekends".
  * @property {CommitmentType[]} [commitmentTypes] - Full time, part time, or on call.
  * @property {AvailabilityWindow[]} [availabilityWindows] - Specific date ranges when they can work. Like "Jan 2025 to Mar 2025".
+ * @property {number[]} [availabilityYears] - Which years they are available. "Available in 2025" becomes 2025. Used to filter out jobs in years the doctor cant work.
  *
  * Facility
  * @property {string} [facilityName] - Name of the doctors facility.
@@ -143,7 +144,7 @@
 //   Verification: CPSOProof (status, filePath, fileName, verifiedAt, verifiedBy)
 //   Payment: paymentDataConfirmation, discoverySource
 //   Reservations: reservationsList (createdLocums, reservedLocums, appliedLocums, completedLocums, savedLocums, matchedLocums)
-//   Preferences: preferences.availabilityYears
+//   Preferences: (none remaining, all wired up)
 //   Account: onboardingStep, firebaseUid, privacyConsent, reviews, createdAt, modifiedAt
 
 // LocumJob

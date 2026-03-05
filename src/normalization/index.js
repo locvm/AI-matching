@@ -12,4 +12,5 @@ export { normalizeProvince } from "./normalizeProvince.js";
 export { normalizeLocumDuration } from "./normalizeLocumDuration.js";
 export { normalizeAvailability } from "./normalizeAvailability.js";
 export { normalizeAvailabilityDateRange, normalizeAvailabilityDateRanges } from "./normalizeAvailabilityDateRange.js";
+export { normalizeAvailabilityYears } from "./normalizeAvailabilityYears.js";
 export { coerceObjectId, ensureDate, trimString, ensureStringArray, normalizeAddress } from "./primitives.js";
