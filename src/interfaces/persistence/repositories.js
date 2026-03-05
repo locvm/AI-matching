@@ -7,7 +7,6 @@
 
 /** @typedef {import("./records.js").MatchRun} MatchRun */
 /** @typedef {import("./records.js").MatchRunResult} MatchRunResult */
-/** @typedef {import("./records.js").OutboxItem} OutboxItem */
 
 /**
  * Repository for managing match run records
@@ -67,40 +66,6 @@
  *   1) Query storage for all results where runId matches
  *   2) Sort by score descending (highest first)
  *   3) Return the array
- */
-
-/**
- * Repository for the notification outbox (passes notifications to the communications module)
- *
- * Outbox pattern: matching engine writes notifications here, a separate process picks them up and sends emails/push/in-app
- *
- * @typedef {Object} NotificationOutboxRepository
- *
- * @property {(items: OutboxItem[]) => Promise<void>} enqueue
- *   Adds one or more outbox items to the queue for sending later
- *
- *   Steps:
- *   1) For each item, ensure id is set and unique
- *   2) Set createdAt to now if not already set
- *   3) Set attempts to 0 if not already set
- *   4) Write all items to storage in one go
- *
- * @property {(type?: OutboxItem["type"]) => Promise<OutboxItem[]>} getPending
- *   Gets all unsent outbox items, optionally filtered by type
- *
- *   Steps:
- *   1) Query storage for items where sentAt is null/undefined
- *   2) If type is provided, filter to that notification type
- *   3) Return results ordered by createdAt ascending
- *
- * @property {(outboxId: string) => Promise<void>} markSent
- *   Marks an outbox item as sent
- *
- *   Steps:
- *   1) Find the item by outboxId. Throw if not found
- *   2) Set sentAt to now
- *   3) Add 1 to attempts
- *   4) Save the update
  */
 
 export {};

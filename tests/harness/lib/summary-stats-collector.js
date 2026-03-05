@@ -3,6 +3,7 @@
 /**
  * @typedef {import('./types.js').SearchResult} SearchResult
  * @typedef {import('./types.js').JobSummaryStats} JobSummaryStats
+ * @typedef {import('./types.js').PhysicianSummaryStats} PhysicianSummaryStats
  */
 
 /**
@@ -33,6 +34,38 @@ export class SummaryStatsCollector {
     return {
       jobId,
       eligibleCandidates: results.length,
+      totalResults: results.length,
+      minScore: scores[0],
+      medianScore: this.#median(scores),
+      maxScore: scores[scores.length - 1],
+      missingDataFlags: Object.entries(flagCounts).map(([flag, count]) => `${flag} (${count})`),
+    }
+  }
+
+  /**
+   * @param {string} physicianId
+   * @param {SearchResult[]} results
+   * @returns {PhysicianSummaryStats}
+   */
+  computeForPhysician(physicianId, results) {
+    if (results.length === 0) {
+      return {
+        physicianId,
+        eligibleJobs: 0,
+        totalResults: 0,
+        minScore: 0,
+        medianScore: 0,
+        maxScore: 0,
+        missingDataFlags: [],
+      }
+    }
+
+    const scores = results.map((r) => r.score).sort((a, b) => a - b)
+    const flagCounts = this.#aggregateFlags(results)
+
+    return {
+      physicianId,
+      eligibleJobs: results.length,
       totalResults: results.length,
       minScore: scores[0],
       medianScore: this.#median(scores),

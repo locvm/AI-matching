@@ -9,8 +9,8 @@ export {}
 /** @typedef {import('../../../src/interfaces/core/models.js').ReservationApplicant} ReservationApplicant */
 /** @typedef {import('../../../src/interfaces/matching/matching.js').SearchResult} SearchResult */
 /** @typedef {import('../../../src/interfaces/matching/matching.js').ScoreBreakdown} ScoreBreakdown */
-/** @typedef {import('../../../src/interfaces/matching/matching.js').SearchCriteria} SearchCriteria */
-/** @typedef {import('../../../src/interfaces/matching/matching.js').MatchingEngine} MatchingEngine */
+/** @typedef {import('../../../src/interfaces/matching/matching.js').ScoreJobFn} ScoreJobFn */
+/** @typedef {import('../../../src/interfaces/matching/matching.js').ScorePhysicianFn} ScorePhysicianFn */
 
 // ── Harness-specific types ──────────────────────────────────────────────────
 
@@ -88,4 +88,39 @@ export {}
  * @property {LocumJob[]} jobs
  * @property {Physician[]} physicians
  * @property {Reservation[]} reservations
+ */
+
+// ── Physician-centric harness types ─────────────────────────────────────────
+
+/**
+ * Per-physician score distribution and data-quality summary.
+ *
+ * @typedef {object} PhysicianSummaryStats
+ * @property {string} physicianId
+ * @property {number} eligibleJobs
+ * @property {number} totalResults
+ * @property {number} minScore
+ * @property {number} medianScore
+ * @property {number} maxScore
+ * @property {string[]} missingDataFlags
+ */
+
+/**
+ * Single physician's top job matches + stats, written as one CSV group.
+ *
+ * @typedef {object} HarnessPhysicianResult
+ * @property {Physician} physician
+ * @property {SearchResult[]} topResults
+ * @property {PhysicianSummaryStats} stats
+ */
+
+/**
+ * Return value of PhysicianTestHarness.run().
+ *
+ * @typedef {object} PhysicianHarnessRunResult
+ * @property {string} outputPath
+ * @property {number} physiciansProcessed
+ * @property {number} totalMatches
+ * @property {number} seed
+ * @property {HarnessPhysicianResult[]} results
  */
