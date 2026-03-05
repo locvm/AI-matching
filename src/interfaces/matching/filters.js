@@ -49,4 +49,30 @@
  * @returns {boolean} true if the job should trigger an immediate short-term matching run
  */
 
+/**
+ * Filters the full physician pool down to only those eligible for a given job
+ *
+ * This is the job-centric entry to Stage 1 of the pipeline
+ * Loops all physicians, calls IsEligiblePhysicianFn on each, returns only those that pass
+ *
+ * @callback FilterPhysiciansForJobFn
+ * @param {LocumJob} job - the job to filter physicians against
+ * @param {Physician[]} physicians - the full pool of physicians
+ * @param {Reservation} [reservation] - optional reservation for scheduling conflict checks
+ * @returns {Physician[]} only the physicians that pass all hard filters
+ */
+
+/**
+ * Filters the full job pool down to only those a given physician qualifies for
+ *
+ * This is the physician-centric entry to Stage 1 of the pipeline
+ * Loops all jobs, calls IsEligiblePhysicianFn (with args flipped) on each, returns only those that pass
+ *
+ * @callback FilterJobsForPhysicianFn
+ * @param {Physician} physician - the physician to filter jobs for
+ * @param {LocumJob[]} jobs - the full pool of active jobs
+ * @param {Reservation[]} [reservations] - optional array of reservations (one per job, matched by locumJobId)
+ * @returns {LocumJob[]} only the jobs this physician qualifies for
+ */
+
 export {};
