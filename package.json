@@ -10,6 +10,7 @@
     "node": ">=22.0.0"
   },
   "scripts": {
+    "analyze-data": "node scripts/analyzeTestData.js",
     "clean": "rimraf artifacts ./*.tsbuildinfo",
     "clean:all": "rimraf node_modules artifacts ./*.tsbuildinfo",
     "test": "vitest run",
