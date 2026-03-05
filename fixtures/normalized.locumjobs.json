@@ -1,0 +1,3431 @@
+[
+  {
+    "_id": "673fc5d5d655a0fe5f7dd1ff",
+    "jobId": "EuXagtm",
+    "postTitle": "test 1 in production",
+    "medProfession": "Physician",
+    "medSpeciality": "Emergency Medicine",
+    "location": {
+      "lng": -79.3131156,
+      "lat": 43.8901489
+    },
+    "fullAddress": {
+      "streetNumber": "90",
+      "streetName": "Bur Oak Ave",
+      "city": "Markham",
+      "postalCode": "L6C 2E6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2024-12-15T05:00:00.000Z",
+      "to": "2024-12-19T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "experience": "Low Level",
+    "locumPay": "8000",
+    "schedule": "Monday - Friday",
+    "locumCreatorId": "673fc55ac323f7c0990df561",
+    "reservationId": "673fc5d6d655a0fe5f7dd202",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "6748fc5e05bcdac8ee951dca",
+    "jobId": "08aKU0s",
+    "postTitle": "test with new photos",
+    "medProfession": "Physician",
+    "medSpeciality": "Radiologist",
+    "location": {
+      "lng": -79.3995231,
+      "lat": 43.6483567
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Toronto",
+      "postalCode": "Ontario",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2024-11-29T05:00:00.000Z",
+      "to": "2024-12-02T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "experience": "Intermediate",
+    "locumPay": "2300",
+    "locumCreatorId": "673fc55ac323f7c0990df561",
+    "reservationId": "6748fc5e05bcdac8ee951dcc",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "6750e116eb14caf950af3445",
+    "jobId": "PNcH2Px",
+    "postTitle": "Last Minute Locum for dec 5",
+    "medProfession": "Physician",
+    "medSpeciality": "Radiologist",
+    "location": {
+      "lng": -75.7084792,
+      "lat": 45.4170934
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Ottawa",
+      "postalCode": "Ontario",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2024-12-05T05:00:00.000Z",
+      "to": "2024-12-06T05:00:00.000Z"
+    },
+    "jobType": "PT",
+    "experience": "Low Level",
+    "locumPay": "1000",
+    "schedule": "Monday Mornings",
+    "locumCreatorId": "673fc55ac323f7c0990df561",
+    "reservationId": "6750e116eb14caf950af3447",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "6751ec4969043dbc597384e2",
+    "jobId": "L0gJOLK",
+    "postTitle": "Last Minutes test",
+    "medProfession": "Physician",
+    "medSpeciality": "Radiologist",
+    "location": {
+      "lng": -79.3995231,
+      "lat": 43.6483567
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Toronto",
+      "postalCode": "Ontario",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2024-12-06T05:00:00.000Z",
+      "to": "2024-12-07T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "locumPay": "8000",
+    "locumCreatorId": "673fc55ac323f7c0990df561",
+    "reservationId": "6751ec4969043dbc597384e4",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "6751ec6a69043dbc597384f1",
+    "jobId": "6UkWB4m",
+    "postTitle": "Last Minute Locum!",
+    "medProfession": "Physician",
+    "medSpeciality": "Radiologist",
+    "location": {
+      "lng": -79.3995231,
+      "lat": 43.6483567
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Toronto",
+      "postalCode": "Ontario",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2024-12-24T05:00:00.000Z",
+      "to": "2025-01-05T05:00:00.000Z"
+    },
+    "jobType": "PT",
+    "locumPay": "8000",
+    "locumCreatorId": "673fc55ac323f7c0990df561",
+    "reservationId": "6751ec6a69043dbc597384f3",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "675318e26219ec5c03ecd3df",
+    "jobId": "skjodEs",
+    "postTitle": "tommorow",
+    "medProfession": "Physician",
+    "medSpeciality": "Cardiologist",
+    "location": {
+      "lng": -79.3995231,
+      "lat": 43.6483567
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Toronto",
+      "postalCode": "M1N1N1",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2024-12-07T05:00:00.000Z",
+      "to": "2024-12-08T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "experience": "Low Level",
+    "locumPay": "2300",
+    "locumCreatorId": "6743681ab3f85c072aa9d064",
+    "reservationId": "675318e26219ec5c03ecd3e1",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "6754edabde50b6ccb9f52f91",
+    "jobId": "owI8lD_",
+    "postTitle": "Full-Time Pediatrician for Busy Clinic",
+    "medProfession": "Physician",
+    "medSpeciality": "Radiologist",
+    "location": {
+      "lng": -75.7084792,
+      "lat": 45.4170934
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Ottawa",
+      "postalCode": "Ontario",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2024-12-19T05:00:00.000Z",
+      "to": "2024-12-26T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "experience": "Minimum 3 years in family medicine",
+    "locumPay": "8000",
+    "schedule": "Monday, Wednesday, Friday, 7 AM - 3 PM",
+    "locumCreatorId": "673fc55ac323f7c0990df561",
+    "reservationId": "6754edabde50b6ccb9f52f93",
+    "facilityName": "Northwest Medical Center"
+  },
+  {
+    "_id": "6754edefde50b6ccb9f52f9e",
+    "jobId": "q564uOF",
+    "postTitle": "Urgent Care Physician - Immediate Start",
+    "medProfession": "Physician",
+    "medSpeciality": "Radiologist",
+    "location": {
+      "lng": -79.6802258,
+      "lat": 44.3986572
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Barrie",
+      "postalCode": "L6C 2E6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2024-12-09T05:00:00.000Z",
+      "to": "2024-12-23T05:00:00.000Z"
+    },
+    "jobType": "PT",
+    "locumPay": "8234",
+    "schedule": "Monday, Wednesday, Friday, 7 AM - 3 PM",
+    "locumCreatorId": "673fc55ac323f7c0990df561",
+    "reservationId": "6754edefde50b6ccb9f52fa0",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "6754ee3411186d83bc4f048d",
+    "jobId": "ThlW4za",
+    "postTitle": "Pediatrician Needed for Southside Clinic",
+    "medProfession": "Physician",
+    "medSpeciality": "Pediatrician",
+    "location": {
+      "lng": -83.0784234,
+      "lat": 42.2921421
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Windsor",
+      "postalCode": "Ontario",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-01-13T05:00:00.000Z",
+      "to": "2025-01-27T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "experience": "Low Level",
+    "locumPay": "2300",
+    "schedule": "Monday - Friday, 9 AM - 5 PM",
+    "locumCreatorId": "673fc55ac323f7c0990df561",
+    "reservationId": "6754ee3411186d83bc4f048f",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "6755bdb8f61235fed10a8cf5",
+    "jobId": "b3CHGzD",
+    "postTitle": "Holiday Replacement Needed in Small Town",
+    "medProfession": "Physician",
+    "medSpeciality": "Cardiologist",
+    "location": {
+      "lng": -79.28034989999999,
+      "lat": 43.0824327
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Street Main",
+      "city": "St. Catharines",
+      "postalCode": "L0S1E0",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2024-12-22T05:00:00.000Z",
+      "to": "2025-01-05T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "experience": "Intermediate",
+    "locumPay": "20067.76",
+    "schedule": "Mon-Tues and Wed-Thursday",
+    "locumCreatorId": "6743681ab3f85c072aa9d064",
+    "reservationId": "6755bdb8f61235fed10a8cf7",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "6756098bbe367b7ffbe07c90",
+    "jobId": "YUx7fXk",
+    "postTitle": "Family Medicine Locum",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.5116404,
+      "lat": 43.5988134
+    },
+    "fullAddress": {
+      "streetNumber": "13",
+      "streetName": "Test Street",
+      "city": "Toronto",
+      "postalCode": "M5J2J7",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-01-02T05:00:00.000Z",
+      "to": "2025-02-25T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "experience": "Medium",
+    "locumPay": "6000",
+    "schedule": "Monday, Wed, Friday 9-2",
+    "locumCreatorId": "675606356ae990041aa8441f",
+    "reservationId": "6756098bbe367b7ffbe07c92",
+    "facilityName": "MH Test Clinic"
+  },
+  {
+    "_id": "6756099bbe367b7ffbe07c9a",
+    "jobId": "a1HtrBG",
+    "postTitle": "Community Plastic Surgeon",
+    "medProfession": "Physician",
+    "medSpeciality": "Surgeon",
+    "location": {
+      "lng": -80.0943113,
+      "lat": 43.9199788
+    },
+    "fullAddress": {
+      "streetNumber": "123",
+      "streetName": "Test",
+      "city": "Orangeville",
+      "postalCode": "L4F3D2",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-01-01T05:00:00.000Z",
+      "to": "2025-01-31T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "experience": "Entry level to Experienced",
+    "locumPay": "30000",
+    "schedule": "Flexible",
+    "locumCreatorId": "67560667a0087c337a0f8a39",
+    "reservationId": "6756099bbe367b7ffbe07c9c",
+    "facilityName": "Headwaters"
+  },
+  {
+    "_id": "675609aabe367b7ffbe07ca4",
+    "jobId": "ptvx9Ef",
+    "postTitle": "Amazing Family Med Clinic in Rexdale",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.5596415,
+      "lat": 43.708921
+    },
+    "fullAddress": {
+      "streetNumber": "123",
+      "streetName": "alskjdf st.",
+      "city": "toronto",
+      "postalCode": "m9w 1p1",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2024-12-09T05:00:00.000Z",
+      "to": "2024-12-28T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "experience": "entry",
+    "locumPay": "100000",
+    "schedule": "Monday 9-5 pm, Wed 1-4pm",
+    "locumCreatorId": "67560650a0087c337a0f8a29",
+    "reservationId": "675609aabe367b7ffbe07ca6",
+    "facilityName": "laksfkljs"
+  },
+  {
+    "_id": "675609c34ce2a9097792b4e1",
+    "jobId": "rJe-Fw0",
+    "postTitle": "Part time family med",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.2994168,
+      "lat": 43.6826959
+    },
+    "fullAddress": {
+      "streetNumber": "123",
+      "streetName": "main street",
+      "city": "toronto",
+      "postalCode": "m5j2z3",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2024-12-09T05:00:00.000Z",
+      "to": "2025-01-14T05:00:00.000Z"
+    },
+    "jobType": "PT",
+    "locumPay": "10000",
+    "schedule": "monday-wed 9-5",
+    "locumCreatorId": "6756065ea0087c337a0f8a32",
+    "reservationId": "675609c34ce2a9097792b4e3",
+    "facilityName": "ABC clinic"
+  },
+  {
+    "_id": "67560dec4ce2a9097792b59d",
+    "jobId": "FrnqNqv",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.5596415,
+      "lat": 43.708921
+    },
+    "fullAddress": {
+      "streetNumber": "123",
+      "streetName": "alskjdf st.",
+      "city": "toronto",
+      "postalCode": "m9w 1p1",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-01-05T05:00:00.000Z",
+      "to": "2025-01-31T05:00:00.000Z"
+    },
+    "jobType": "PT",
+    "locumPay": "8888",
+    "schedule": "mondays half day",
+    "locumCreatorId": "67560650a0087c337a0f8a29",
+    "reservationId": "67560dec4ce2a9097792b59f",
+    "facilityName": "laksfkljs"
+  },
+  {
+    "_id": "67561096d56ddb64d62d5abb",
+    "jobId": "VqtwgnF",
+    "postTitle": "Part time plastic surgeon",
+    "medProfession": "Physician",
+    "medSpeciality": "Plastic Surgeon",
+    "location": {
+      "lng": -80.0675419,
+      "lat": 43.8594788
+    },
+    "fullAddress": {
+      "streetNumber": "142",
+      "streetName": "Main St",
+      "city": "Alton",
+      "postalCode": "L4F3D2",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-02-03T05:00:00.000Z",
+      "to": "2025-02-28T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "experience": "\"Year of medical school graduation\"",
+    "locumPay": "5000",
+    "schedule": "M-F 7-4pm, OR Tuesdays, Clinic Thursdays",
+    "locumCreatorId": "67560667a0087c337a0f8a39",
+    "reservationId": "67561096d56ddb64d62d5abd",
+    "facilityName": "Headwaters"
+  },
+  {
+    "_id": "679ba8c6e4b569f5b9c3aaba",
+    "jobId": "QKkRbxh",
+    "postTitle": "Last minute: Locum needed Cardiology",
+    "medProfession": "Physician",
+    "medSpeciality": "Pediatrician",
+    "location": {
+      "lng": -79.3995231,
+      "lat": 43.6483567
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Toronto",
+      "postalCode": "M1N1N1",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-02-17T05:00:00.000Z",
+      "to": "2025-02-19T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "locumPay": "1200",
+    "locumCreatorId": "673fc55ac323f7c0990df561",
+    "reservationId": "679ba8c6e4b569f5b9c3aabc",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "679fcd73a5deca68fe495960",
+    "jobId": "pj1U6B3",
+    "postTitle": "A Great Locum!",
+    "medProfession": "Physician",
+    "medSpeciality": "Pediatrician",
+    "location": {
+      "lng": -79.3995231,
+      "lat": 43.6483567
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Toronto",
+      "postalCode": "M1N1N1",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-02-03T05:00:00.000Z",
+      "to": "2025-03-17T04:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "locumPay": "8000",
+    "locumCreatorId": "679fbe12bc04569b0933cc44",
+    "reservationId": "679fcd73a5deca68fe495962",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "67a1388c11220e2d691380a4",
+    "jobId": "o4vNL2d",
+    "postTitle": "This is an exemple for the Beta",
+    "medProfession": "Physician",
+    "medSpeciality": "Pediatrician",
+    "location": {
+      "lng": -79.3995231,
+      "lat": 43.6483567
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Toronto",
+      "postalCode": "M1N1N1",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-02-05T05:00:00.000Z",
+      "to": "2025-02-18T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "locumPay": "8000",
+    "locumCreatorId": "679fbe12bc04569b0933cc44",
+    "reservationId": "67a1388c11220e2d691380a6",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "67a138c111220e2d691380b3",
+    "jobId": "gb2DoLg",
+    "postTitle": "This is an exemple for the Beta",
+    "medProfession": "Physician",
+    "medSpeciality": "Pediatrician",
+    "location": {
+      "lng": -75.6450182,
+      "lat": 45.4255526
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Ottawa",
+      "postalCode": "M1N1N1",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-03-27T04:00:00.000Z",
+      "to": "2025-04-27T04:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "locumPay": "8000",
+    "schedule": "Monday-Friday",
+    "locumCreatorId": "679fbe12bc04569b0933cc44",
+    "reservationId": "67a138c111220e2d691380b5",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "67a2d5073a6e82e951858127",
+    "jobId": "8d75zHQ",
+    "postTitle": "Test Locum for beta",
+    "medProfession": "Physician",
+    "medSpeciality": "Surgeon",
+    "location": {
+      "lng": -79.4041936,
+      "lat": 43.7316571
+    },
+    "fullAddress": {
+      "streetNumber": "45",
+      "streetName": "Test Street",
+      "city": "Toronto",
+      "postalCode": "M4F 2E5",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-03-01T05:00:00.000Z",
+      "to": "2025-03-08T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "locumPay": "500",
+    "schedule": "Every day for the listed days, 8AM - 8PM.",
+    "locumCreatorId": "67967ee770433abe4941e08f",
+    "reservationId": "67a2d5073a6e82e951858129",
+    "facilityName": "Hospital for the Elite"
+  },
+  {
+    "_id": "67aa0af8a13ce8fe263d5450",
+    "jobId": "tlkJbpR",
+    "postTitle": "This is an Exemple for the Beta",
+    "medProfession": "Physician",
+    "medSpeciality": "Radiologist",
+    "location": {
+      "lng": -79.3995231,
+      "lat": 43.6483567
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Toronto",
+      "postalCode": "Ontario",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-05-05T04:00:00.000Z",
+      "to": "2025-05-26T04:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "locumPay": "8000",
+    "schedule": "Mondays Only",
+    "locumCreatorId": "673fc55ac323f7c0990df561",
+    "reservationId": "67aa0af8a13ce8fe263d5452",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "67abe7064f54c5eefc289711",
+    "jobId": "hof37wu",
+    "postTitle": "Beta Exemple",
+    "medProfession": "Physician",
+    "medSpeciality": "Radiologist",
+    "location": {
+      "lng": -79.3995231,
+      "lat": 43.6483567
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Toronto",
+      "postalCode": "Ontario",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-02-12T05:00:00.000Z",
+      "to": "2025-02-15T05:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "locumPay": "8000",
+    "locumCreatorId": "673fc55ac323f7c0990df561",
+    "reservationId": "67abe7064f54c5eefc289713",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "67ac06cc5d353815eefbc653",
+    "jobId": "zQdlOMB",
+    "postTitle": "Exemple: Toronto Clinic",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.8210821,
+      "lat": 47.7128125
+    },
+    "fullAddress": {
+      "streetNumber": "12",
+      "streetName": "Street",
+      "city": "Toronto",
+      "postalCode": "M5a4T7",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-02-17T05:00:00.000Z",
+      "to": "2025-02-28T05:00:00.000Z"
+    },
+    "jobType": "PT",
+    "locumPay": "2500",
+    "schedule": "Morning",
+    "locumCreatorId": "67ac04656dd63f991e160110",
+    "reservationId": "67ac06cc5d353815eefbc655",
+    "facilityName": "Clinic 123"
+  },
+  {
+    "_id": "67ad12879f61e0e4551ba463",
+    "jobId": "9au2C6c",
+    "postTitle": "Beta Exemple: This could be you!",
+    "medProfession": "Physician",
+    "medSpeciality": "Radiologist",
+    "location": {
+      "lng": -75.67331999999999,
+      "lat": 45.4004889
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Main street",
+      "city": "Ottawa",
+      "postalCode": "Ottawa",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-02-28T05:00:00.000Z",
+      "to": "2025-03-24T04:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "locumPay": "8000",
+    "locumCreatorId": "673fc55ac323f7c0990df561",
+    "reservationId": "67ad12879f61e0e4551ba465",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "67adfb3b4df4da37adf43ec9",
+    "jobId": "y_rS0QG",
+    "postTitle": "Test Cornwall",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.2980967,
+      "lat": 43.6790048
+    },
+    "fullAddress": {
+      "streetNumber": "1",
+      "streetName": "Test Street",
+      "city": "Cornwall",
+      "postalCode": "K6J 3T7",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-03-03T05:00:00.000Z",
+      "to": "2025-03-14T04:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "locumPay": "8000",
+    "schedule": "Monday and Wednesday from 9am to 2pm",
+    "locumCreatorId": "67adf553663f0e600c7e3db9",
+    "reservationId": "67adfb3b4df4da37adf43ecb",
+    "facilityName": "Clinic Name"
+  },
+  {
+    "_id": "67adfc214df4da37adf43ed7",
+    "jobId": "bxZGTr3",
+    "postTitle": "Exemple: Cornwall Clinic",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -74.74100109999999,
+      "lat": 45.0353848
+    },
+    "fullAddress": {
+      "streetNumber": "1",
+      "streetName": "Test Street",
+      "city": "Cornwall",
+      "postalCode": "K6J 3T7",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-03-03T05:00:00.000Z",
+      "to": "2025-03-14T04:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "locumPay": "8000",
+    "locumCreatorId": "67adf553663f0e600c7e3db9",
+    "reservationId": "67adfc214df4da37adf43ed9",
+    "facilityName": "Clinic Name"
+  },
+  {
+    "_id": "67ae35c018b5850c51e6b711",
+    "jobId": "hTKQKol",
+    "postTitle": "test with dates change",
+    "medProfession": "Physician",
+    "medSpeciality": "Radiologist",
+    "location": {
+      "lng": -79.6802258,
+      "lat": 44.3986572
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Barrie",
+      "postalCode": "Ontario",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-02-16T05:00:00.000Z",
+      "to": "2025-03-30T04:00:00.000Z"
+    },
+    "jobType": "FTE",
+    "locumPay": "8000",
+    "locumCreatorId": "673fc55ac323f7c0990df561",
+    "reservationId": "67ae35c018b5850c51e6b713",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "67bf56050487ae2669e2ac87",
+    "jobId": "OyHTu2L",
+    "postTitle": "Locum for Thornhill clinic",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.4519885,
+      "lat": 43.8159379
+    },
+    "fullAddress": {
+      "streetNumber": "8000",
+      "streetName": "Bathurst St",
+      "city": "Thornhill",
+      "postalCode": "L4J 0B8",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-07-02T04:00:00.000Z",
+      "to": "2025-08-31T04:00:00.000Z"
+    },
+    "jobType": "PT",
+    "locumPay": "14500",
+    "schedule": "Monday 1-4, Tuesday 9-3:30, Thursday 9-12, Friday flexible",
+    "locumCreatorId": "67bf539c21505d3c8207abb0",
+    "reservationId": "67bf56050487ae2669e2ac89",
+    "facilityName": "8000 Bathurst test"
+  },
+  {
+    "_id": "67d2fde2da694adb7e2c52d4",
+    "jobId": "UlwuHy6",
+    "postTitle": "General Surgery Locum",
+    "medProfession": "Physician",
+    "medSpeciality": "Surgeon",
+    "location": {
+      "lng": -83.67906339999999,
+      "lat": 49.685309
+    },
+    "fullAddress": {
+      "streetNumber": "1405",
+      "streetName": "Edward St",
+      "city": "Hearst",
+      "postalCode": "P0L1N0",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-05-05T16:00:00.000Z",
+      "to": "2025-05-30T04:00:00.000Z"
+    },
+    "jobType": "PT",
+    "locumPay": "61149",
+    "schedule": "Flexible duration of coverage. Typical stay will be from Monday to Sunday, but we are open to other combinations and length of stays",
+    "locumCreatorId": "67c07880148ee7e47457b1d1",
+    "reservationId": "67d2fde2da694adb7e2c52d6",
+    "facilityName": "Hôpital Notre-Dame Hospital"
+  },
+  {
+    "_id": "67d72c552ed2d13f2ee1736d",
+    "jobId": "JUqMKaj",
+    "postTitle": "test delete me",
+    "medProfession": "Physician",
+    "medSpeciality": "Dermatologist",
+    "location": {
+      "lng": -79.3995231,
+      "lat": 43.6483567
+    },
+    "fullAddress": {
+      "streetNumber": "456",
+      "streetName": "Queen Street",
+      "city": "Toronto",
+      "postalCode": "M1N1N1",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-05-06T04:00:00.000Z",
+      "to": "2025-04-30T04:00:00.000Z"
+    },
+    "locumPay": "2300",
+    "locumCreatorId": "67d72b39f2a1e370bc372b58",
+    "reservationId": "67d72c552ed2d13f2ee1736f",
+    "facilityName": "North Hospital"
+  },
+  {
+    "_id": "67d82ac4a239643f01f5549e",
+    "jobId": "UNR-_wW",
+    "postTitle": "Locum",
+    "medProfession": "Physician",
+    "medSpeciality": "Cardiologist",
+    "location": {
+      "lng": -79.3831843,
+      "lat": 43.653226
+    },
+    "fullAddress": {
+      "streetNumber": "1",
+      "streetName": "test street",
+      "city": "Toronto",
+      "postalCode": "M5J1L4",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-03-19T04:00:00.000Z",
+      "to": "2025-03-21T04:00:00.000Z"
+    },
+    "locumPay": "1200",
+    "locumCreatorId": "67d77c5a06c797d3e18dea58",
+    "reservationId": "67d82ac4a239643f01f554a0",
+    "facilityName": "Test"
+  },
+  {
+    "_id": "6812ad498016f29a67a7fe1a",
+    "jobId": "f_MMRxc",
+    "postTitle": "Locum for Community Plastic Surgeon",
+    "medProfession": "Physician",
+    "medSpeciality": "Plastic Surgeon",
+    "location": {
+      "lng": -80.07396250000001,
+      "lat": 43.9197402
+    },
+    "fullAddress": {
+      "streetNumber": "100",
+      "streetName": "Rolling Hills Drive",
+      "city": "Orangeville",
+      "postalCode": "L9W4X9",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-07-01T04:00:00.000Z",
+      "to": "2026-04-01T04:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "Locum will have access to OR time, hospital minor procedure time, hospital trauma clinic and office clinic. To discuss weekly schedule in person. This is a shared practice with another plastic surgeon.",
+    "locumCreatorId": "67560667a0087c337a0f8a39",
+    "reservationId": "6812ad498016f29a67a7fe1c",
+    "facilityName": "Headwaters Healthcare Center"
+  },
+  {
+    "_id": "68221f3a28b941a308ae7f11",
+    "jobId": "eEmIf8P",
+    "postTitle": "Toronto Family Medicine Opportunities (Summer 2025 start)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.3545149,
+      "lat": 43.6332593
+    },
+    "fullAddress": {
+      "streetNumber": "1",
+      "streetName": "Multiple locations",
+      "city": "Toronto",
+      "postalCode": "M5G 2C4",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-07-01T04:00:00.000Z",
+      "to": "2025-08-31T04:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "Multiple locums in Toronto, see below:",
+    "locumCreatorId": "6820e9faf63a1e470adb525f",
+    "reservationId": "68221f3a28b941a308ae7f13",
+    "facilityName": "Multiple Locations"
+  },
+  {
+    "_id": "68226773b8be5d5eefc0b141",
+    "jobId": "Ee9ppm0",
+    "postTitle": "1-Year Locum for Maternity Coverage",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -75.7552098,
+      "lat": 45.3776777
+    },
+    "fullAddress": {
+      "streetNumber": "770",
+      "streetName": "Broadview Avenue",
+      "city": "Ottawa",
+      "postalCode": "K2J 1T6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-10-06T04:00:00.000Z",
+      "to": "2026-10-03T04:00:00.000Z"
+    },
+    "locumPay": "114400",
+    "schedule": "Monday-Thursday -flexible if you would like your half days in the morning or afternoon. Offering 3 in-person clinic half days and 1 out of office half day for inbox catch-up",
+    "locumCreatorId": "681e2dad537f5baca26bb9da",
+    "reservationId": "68226773b8be5d5eefc0b143",
+    "facilityName": "Clinic 207"
+  },
+  {
+    "_id": "683c81f89b3283ae8fea4e6a",
+    "jobId": "FZmLaUw",
+    "postTitle": "Family Medicine Locum Ottawa +/- FHO transfer",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -75.6259977,
+      "lat": 45.34759589999999
+    },
+    "fullAddress": {
+      "streetNumber": "1650",
+      "streetName": "Queensdale Avenue",
+      "city": "Ottawa",
+      "postalCode": "K1T1N8",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-09-01T04:00:00.000Z",
+      "to": "2025-12-01T05:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "I'm looking for a locum Family Physician to help with my well-established practice of ~1100 patients starting September 1, 2025 (end date flexible).\n\nLocation: South Ottawa Medical Centre (www.somc.info).\nWe are a dynamic, supportive FHO group comprised of 13 family doctors + 1 general surgeon + 1 psychiatrist + 1 GP-derm + 1 travel medicine MD. EMR: PSS. Ocean for patient communications. Dynacare in-house for our patients.\n\nPayment model: full FHO capitation income (including access bonus) + FFS shadow billings + third party billing - all minus the overhead\nNumber of half-days per week and number of patients per half-day: up to the locum (currently 4 half-days per week + 1 evening urgent care clinic per month + 1 Saturday q13weeks)\nI am available for mentorship and clinic coverage - so ideal for a new grad transitioning to practice! Also potential to join FHO long-term if interested.\n\nI am happy to answer further questions - please email eliseazzimd@gmail.com",
+    "locumCreatorId": "683c733a7a57b89cad2e9535",
+    "reservationId": "683c81f89b3283ae8fea4e6c",
+    "facilityName": "South Ottawa Medical Centre"
+  },
+  {
+    "_id": "683db05536c562cd1bee1d0f",
+    "jobId": "zpMDLnx",
+    "postTitle": "Looking for locum to cover FHO in Ottawa",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -75.674641,
+      "lat": 45.2339435
+    },
+    "fullAddress": {
+      "streetNumber": "5230",
+      "streetName": "Mitch Owens Road",
+      "city": "Manotick",
+      "postalCode": "K4M0V1",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-06-16T04:00:00.000Z",
+      "to": "2025-07-18T04:00:00.000Z"
+    },
+    "locumPay": "550",
+    "schedule": "3 days a week ideally; but open to any coverage of interest",
+    "locumCreatorId": "683dac3ad459d563938e8aa5",
+    "reservationId": "683db05536c562cd1bee1d11",
+    "facilityName": "Manotick Medical Centre"
+  },
+  {
+    "_id": "683dc716bcb7e76c314ddee1",
+    "jobId": "zSxyBbQ",
+    "postTitle": "Searching for maternity leave locum",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": 0,
+      "lat": 0
+    },
+    "fullAddress": {
+      "streetNumber": "225",
+      "streetName": "Donald st",
+      "city": "Ottawa",
+      "postalCode": "K1K1N1",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-07-21T04:00:00.000Z",
+      "to": "2026-07-31T04:00:00.000Z"
+    },
+    "locumPay": "120000",
+    "schedule": "Looking for 4-5 half days of clinic per week, schedule can be flexible\nIncludes after hours clinic - about 1x/mo\nLooking for 6-12 months, start date and duration flexible",
+    "locumCreatorId": "6838567fe9290392b5b1d2b7",
+    "reservationId": "683dc716bcb7e76c314ddee3",
+    "facilityName": "Equipe de santé fam communautaire Est Ottawa"
+  },
+  {
+    "_id": "683ed22d6eb3896a60858b82",
+    "jobId": "8OYSubV",
+    "postTitle": "FHO - 3 day per week - physician-run clinic - Upper Beaches (Toronto)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.28770779999999,
+      "lat": 43.6807153
+    },
+    "fullAddress": {
+      "streetNumber": "952",
+      "streetName": "Kingston Road",
+      "city": "Toronto",
+      "postalCode": "M4E 1S7",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-07-04T04:00:00.000Z",
+      "to": "2026-06-26T04:00:00.000Z"
+    },
+    "locumPay": "3300 $",
+    "schedule": "Mondays/Tuesdays/Wednesdays 9:00 to 12:00 and 1:00 to 4:00 pm",
+    "locumCreatorId": "683b432888735900976af49a",
+    "reservationId": "683ed22d6eb3896a60858b84",
+    "facilityName": "Vivo Family Medicine"
+  },
+  {
+    "_id": "68498a01e37c99f13a3b1d3b",
+    "jobId": "jiI-NB3",
+    "postTitle": "Maternity Leave FHO Locum Opportunity - Milton, ON",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.8854525,
+      "lat": 43.5063701
+    },
+    "fullAddress": {
+      "streetNumber": "100",
+      "streetName": "Bronte Street South, Unit 2",
+      "city": "Milton",
+      "postalCode": "L9T 1Y9",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-09-29T04:00:00.000Z",
+      "to": "2027-01-01T05:00:00.000Z"
+    },
+    "locumPay": "65500",
+    "schedule": "2 half days per week (flexible on which days)",
+    "locumCreatorId": "683d1dc322e4cd49f68888d1",
+    "reservationId": "68498a01e37c99f13a3b1d3d",
+    "facilityName": "Halton Medix Clinic"
+  },
+  {
+    "_id": "68570caca07ed1a67f6c3b07",
+    "jobId": "Q3k-yti",
+    "postTitle": "Walk-in physician for Markland Wood Medical",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.57570840000001,
+      "lat": 43.6308387
+    },
+    "fullAddress": {
+      "streetNumber": "4335",
+      "streetName": "Bloor St.",
+      "city": "Etobicoke",
+      "postalCode": "M9C 2A5",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-09-02T04:00:00.000Z",
+      "to": "2025-12-31T05:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "Monday/Tue  10-5PM",
+    "locumCreatorId": "6854b3a4269a17020f9b7bf2",
+    "reservationId": "68570caca07ed1a67f6c3b09",
+    "facilityName": "Markland Wood Medical Clinic"
+  },
+  {
+    "_id": "68570d6810aee8693020eba7",
+    "jobId": "WVP8cp6",
+    "postTitle": "Busy walk-in Medical doctor for Runnymede Walk-in Medical Clinic",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.475876,
+      "lat": 43.651013
+    },
+    "fullAddress": {
+      "streetNumber": "2213",
+      "streetName": "Bloor St.",
+      "city": "Toronto",
+      "postalCode": "M6S 1N5",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-07-27T04:00:00.000Z",
+      "to": "2025-09-30T04:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "Thursday and friday 10-6PM and alternative Sat",
+    "locumCreatorId": "6854b3a4269a17020f9b7bf2",
+    "reservationId": "68570d6810aee8693020eba9",
+    "facilityName": "Runnymede Walk-In Medical Clinic"
+  },
+  {
+    "_id": "685bfff06efe3d7e2cc5d7be",
+    "jobId": "G1R_su5",
+    "postTitle": "ED Locum Opportunities July - Sept 2025 - Northwestern Ontario",
+    "medProfession": "Physician",
+    "medSpeciality": "Emergency Medicine",
+    "location": {
+      "lng": -92.8377324,
+      "lat": 49.76969649999999
+    },
+    "fullAddress": {
+      "streetNumber": "58",
+      "streetName": "Goodall St",
+      "city": "Dryden",
+      "postalCode": "P8N 1V8",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-07-01T04:00:00.000Z",
+      "to": "2025-09-30T04:00:00.000Z"
+    },
+    "locumPay": "3600",
+    "schedule": "Dryden Regional Health Centre (DRHC) is seeking Emergency Department locums for the summer of 2025 and beyond.  CCFP, RCPSC-EM, and new grads are all welcome! More details, including current vacant shifts, can be found at: https://hfojobs.healthforceontario.ca/en/posting/145022/  Available shifts are subject to change - contact Zoe Brenner directly for the most up-to-date availability.",
+    "locumCreatorId": "685bf2dab4b739cce1de929e",
+    "reservationId": "685bfff06efe3d7e2cc5d7c0",
+    "facilityName": "Dryden Regional Health Centre"
+  },
+  {
+    "_id": "685c02ab1b499412241c7da8",
+    "jobId": "z2wgWt3",
+    "postTitle": "General Surgeon Locum Opportunities - Northwestern Ontario",
+    "medProfession": "Physician",
+    "medSpeciality": "Surgeon",
+    "location": {
+      "lng": -92.8377324,
+      "lat": 49.76969649999999
+    },
+    "fullAddress": {
+      "streetNumber": "58",
+      "streetName": "Goodall St",
+      "city": "Dryden",
+      "postalCode": "P8N 1V8",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-07-19T04:00:00.000Z",
+      "to": "2025-12-31T05:00:00.000Z"
+    },
+    "locumPay": "16500",
+    "schedule": "Dryden Regional Health Centre (DRHC) is looking for General Surgery locums from mid-July 2025 and beyond. Multi-day to multi-week assignments are available - let us know you're availability and we're happy to work with you! \n\nMore information can be found here: https://hfojobs.healthforceontario.ca/en/posting/145731/",
+    "locumCreatorId": "685bf2dab4b739cce1de929e",
+    "reservationId": "685c02ab1b499412241c7daa",
+    "facilityName": "Dryden Regional Health Centre"
+  },
+  {
+    "_id": "686d33829512e36a82a1fd1d",
+    "jobId": "uZd-bZz",
+    "postTitle": "3-Month Locum Opportunity in FHO/FHT Practice in Dundas (50-020-25)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.87348879999999,
+      "lat": 43.2568448
+    },
+    "fullAddress": {
+      "streetNumber": "100",
+      "streetName": "Main Street",
+      "city": "Hamilton",
+      "postalCode": "L8P 1H6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-07-08T04:00:00.000Z",
+      "to": "2025-09-30T04:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "A solo FHO/FHT practice in the quaint town of Dundas is seeking a locum physician to provide coverage for the practice until September 2025. The successful candidate will be caring for a roster of approximately 1,500 – 1,600 patients and can expect to see less than 20 patients per full day. Flexible start date.",
+    "locumCreatorId": "686d2f3ef9308841334c44ba",
+    "reservationId": "686d33829512e36a82a1fd1f",
+    "facilityName": "GHHN Physician Recruitment Program"
+  },
+  {
+    "_id": "686d37df9512e36a82a1fd4c",
+    "jobId": "ZibO0HE",
+    "postTitle": "Join the Hamilton Medical Assistance in Dying Community Outreach Team (50-019-25)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.87348879999999,
+      "lat": 43.2568448
+    },
+    "fullAddress": {
+      "streetNumber": "100",
+      "streetName": "Main Street",
+      "city": "Hamilton",
+      "postalCode": "L8P 1H6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-07-08T04:00:00.000Z",
+      "to": "2025-12-31T05:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "The Hamilton Family Health Team is looking for Physicians to join the Medical Assistance in Dying Community Outreach Team - flexible start dates.",
+    "locumCreatorId": "686d2f3ef9308841334c44ba",
+    "reservationId": "686d37df9512e36a82a1fd4e",
+    "facilityName": "GHHN Physician Recruitment Program"
+  },
+  {
+    "_id": "686d38fa9512e36a82a1fd6a",
+    "jobId": "qAGDW3B",
+    "postTitle": "Opportunity at a Community Health Centre in Hamilton (Bilingual) (50-057-24)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.87348879999999,
+      "lat": 43.2568448
+    },
+    "fullAddress": {
+      "streetNumber": "100",
+      "streetName": "Main Street",
+      "city": "Hamilton",
+      "postalCode": "L8P 1H6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-08-01T04:00:00.000Z",
+      "to": "2026-03-31T04:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "The Centre de santé communautaire Hamilton Niagara is looking for a bilingual family physician to join their team for 3 to 6 months, August 2025-March 2026.\n\nThe ideal candidate will be available to provide 14-28 hours of coverage per week (2-4 days/week) and will work as part of an excellent team alongside 3 other physicians. The Centre de santé communautaire Hamilton supports Hamilton’s Francophone community and operates Monday to Friday from 8:30 am to 4:30 pm.",
+    "locumCreatorId": "686d2f3ef9308841334c44ba",
+    "reservationId": "686d38fa9512e36a82a1fd6c",
+    "facilityName": "Centre de santé communautaire Hamilton Niagara"
+  },
+  {
+    "_id": "686fce8782ee4d5b0f6d4a89",
+    "jobId": "KhcV71w",
+    "postTitle": "Burlington FHO Locum",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.7702143,
+      "lat": 43.354244
+    },
+    "fullAddress": {
+      "streetNumber": "495",
+      "streetName": "Walkers Line",
+      "city": "Burlington",
+      "postalCode": "L7N 2E3",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-09-02T04:00:00.000Z",
+      "to": "2025-09-19T04:00:00.000Z"
+    },
+    "locumPay": "1200",
+    "schedule": "Great opportunity to locum in a small clinic with 3 other experienced doctors and great clinical staff! 3 days per week (or 6 half days per week), flexible scheduling.",
+    "locumCreatorId": "685b5113cd8caf9fa1b7b321",
+    "reservationId": "686fce8782ee4d5b0f6d4a8b",
+    "facilityName": "Walkers & New Medical Clinic"
+  },
+  {
+    "_id": "68790c38c72b86d16c9ef845",
+    "jobId": "Rg0ge_p",
+    "postTitle": "3-Month Locum Opportunity in FHO/FHT Practice (50-022-25)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.87348879999999,
+      "lat": 43.2568448
+    },
+    "fullAddress": {
+      "streetNumber": "100",
+      "streetName": "Main Street W",
+      "city": "Hamilton",
+      "postalCode": "L8P 1H6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-08-25T04:00:00.000Z",
+      "to": "2025-11-28T05:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "During the three months, the locum can expect to work 3 or 3-1/2 days per week, working Monday, Tuesday, Thursday and optional Friday mornings. Office hours are 8:30-5:00PM, and while seeing patients between 8:45-4:30PM, the locum can expect to see ~25 patients per day. Should the candidate be interested, there is opportunity to also provide LTC coverage to two locations within the Hamilton area. After-hour coverage is not required.",
+    "locumCreatorId": "686d2f3ef9308841334c44ba",
+    "reservationId": "68790c38c72b86d16c9ef847",
+    "facilityName": "GHHN Physician Recruitment Program"
+  },
+  {
+    "_id": "687a7012c2c4f1238c60ceb1",
+    "jobId": "MSe9B2v",
+    "postTitle": "Locum opportunity in busy Walk-in Clinic",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": 0,
+      "lat": 0
+    },
+    "fullAddress": {
+      "streetNumber": "3832",
+      "streetName": "Bloor Street West",
+      "city": "Etobicoke",
+      "postalCode": "M9B 1L1",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-07-28T04:00:00.000Z",
+      "to": "2026-07-31T04:00:00.000Z"
+    },
+    "locumPay": "200000",
+    "schedule": "Flexible Schedule: Part-time or full-time options available",
+    "locumCreatorId": "6877e2529afff77e9a6269ca",
+    "reservationId": "687a7012c2c4f1238c60ceb3",
+    "facilityName": "St. Andrew's Walk-in Clinic"
+  },
+  {
+    "_id": "687fba20b1f737d308061762",
+    "jobId": "pVbyxrc",
+    "postTitle": "6-Month Locum Opportunity in a FHO/FHT Solo Practice",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.87348879999999,
+      "lat": 43.2568448
+    },
+    "fullAddress": {
+      "streetNumber": "100",
+      "streetName": "Main Street West",
+      "city": "Hamilton",
+      "postalCode": "L8P 1H6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-08-01T04:00:00.000Z",
+      "to": "2026-01-30T05:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "6-Month Locum Opportunity in FHO/FHT Practice in Dundas\nPosting #50-024-25\n\nA solo FHO/FHT practice in the quaint town of Dundas is seeking a locum physician to provide coverage for the practice starting as soon as possible, covering until end of January 2026. The successful candidate will be caring for a roster of approximately 1,500 – 1,600 patients and can expect to see less than 20 patients per full day.\n\nAs part of the Hamilton Family Health Team, this practice is well supported by a variety of Allied Health Professionals including a Nurse, Clinical Pharmacist, Social Worker/Mental Health Counsellor, Dietitian, and Psychiatrist. Administrative support is provided by a receptionist and an off-site office manager. The office is fully computerized and utilizes Telus PS Suite EMR for patient records.  \n\nThe locum physician will have access to 2 exam rooms and an office and parking is free for staff. The practice is also located next to a pharmacy.\n\nThe locum will receive a competitive daily stipend for this work.\n\nInterested candidates are advised to send their CV via email to the GHHN recruitment team at Recruitment@GHHN.ca. Please reference the posting number in the subject line.",
+    "locumCreatorId": "686d2f3ef9308841334c44ba",
+    "reservationId": "687fba20b1f737d308061764",
+    "facilityName": "GHHN Physician Recruitment Program"
+  },
+  {
+    "_id": "687fbb9c6445e73235ff8ba6",
+    "jobId": "OfPZowP",
+    "postTitle": "FHO Locum opportunity in Tilbury",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -82.43709439999999,
+      "lat": 42.2629972
+    },
+    "fullAddress": {
+      "streetNumber": "22",
+      "streetName": "Mills Street West",
+      "city": "Tilbury",
+      "postalCode": "N0P2L0",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-11-17T05:00:00.000Z",
+      "to": "2026-05-29T04:00:00.000Z"
+    },
+    "locumPay": "1100",
+    "schedule": "Monday, Tuesday (9-4), Wednesday (1-8 PM) and Thursday (9-12)- all flexible, every 7th Saturday",
+    "locumCreatorId": "687faabef8129d0e1f987ac4",
+    "reservationId": "687fbb9c6445e73235ff8ba8",
+    "facilityName": "Tilbury District Family Health Team"
+  },
+  {
+    "_id": "6881305f96ca5383f2208c5a",
+    "jobId": "T7AaI8E",
+    "postTitle": "Women's Health Locum Needed ASAP",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.38283919999999,
+      "lat": 43.6617516
+    },
+    "fullAddress": {
+      "streetNumber": "500",
+      "streetName": "2 Carlton Street",
+      "city": "Toronto",
+      "postalCode": "M5B1J3",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-08-05T04:00:00.000Z",
+      "to": "2025-10-24T04:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "multidisciplinary care focused in women’s health and racialized populations\nUp to 0.6 FTE available immediately until October 24th , 2025 (or any part there of)\nAmazing team of MDs, NP, RNs, dietician, psychiatry , therapy, social work, etc. Dr. - the list goes on \nLab coverage on days you don’t work (when your off your off)\nNo billing; standard CHC locum rate  - pls inquiry w/ management\nLocated right on top of College Subway Station, downtown Toronto\nEmail : marie@whiwh.com with CV \nWomen's Health In Women's Hands",
+    "locumCreatorId": "68812251cd95fd1f5c3756bd",
+    "reservationId": "6881305f96ca5383f2208c5d",
+    "facilityName": "Women's Health In Women's Hands CHC"
+  },
+  {
+    "_id": "688cdc9d29d620be33298108",
+    "jobId": "ctwa4Aw",
+    "postTitle": "3-Week Locum Opportunity in FHO/FHT Solo Practice (50-021-25)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.87348879999999,
+      "lat": 43.2568448
+    },
+    "fullAddress": {
+      "streetNumber": "100",
+      "streetName": "Main Street W",
+      "city": "Hamilton",
+      "postalCode": "L8P 1H6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-08-11T04:00:00.000Z",
+      "to": "2025-08-29T04:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "A FHO/FHT practice on the Hamilton Mountain is seeking locum coverage for 3 weeks, August 11-29, 2025. The locum can expect to work 2 days/week or 4 half days/week, whichever they prefer. The practice prefers to have coverage on Tuesdays and Thursdays, but there is room for flexibility. The practice hours are 9:00-6:00 Monday-Thursday and 9:00-1:00PM on Fridays, but there is flexibility on hours during the three weeks coverage. With remote access available, part of the coverage can be done virtually, if desired. Should the locum be interested, there is option to additionally work on Saturdays for 4-6 hours between the hours of 10:00-4:00PM.",
+    "locumCreatorId": "686d2f3ef9308841334c44ba",
+    "reservationId": "688cdc9d29d620be3329810a",
+    "facilityName": "GHHN Physician Recruitment Program"
+  },
+  {
+    "_id": "68935829af9de22e31581258",
+    "jobId": "LQOKvfy",
+    "postTitle": "ED Locum Opportunities in Northwestern Ontario",
+    "medProfession": "Physician",
+    "medSpeciality": "Emergency Medicine",
+    "location": {
+      "lng": -92.8377324,
+      "lat": 49.76969649999999
+    },
+    "fullAddress": {
+      "streetNumber": "58",
+      "streetName": "Goodall St",
+      "city": "Dryden",
+      "postalCode": "P8N 1V8",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-08-27T04:00:00.000Z",
+      "to": "2025-11-30T05:00:00.000Z"
+    },
+    "locumPay": "3600",
+    "schedule": "Dryden Regional Health Centre (DRHC) is seeking Emergency Department locums on an ongoing basis - no minimum commitment required.  \n\nWork at a locum-friendly hospital with a rockstar team of experienced ED nurses, supportive admin staff, and an ED NP on shift most days.  CCFP, RCPSC-EM, and new grads are all welcome!  \n\nAvailable shifts are subject to change - contact Zoe Brenner directly for the most up-to-date availability.",
+    "locumCreatorId": "685bf2dab4b739cce1de929e",
+    "reservationId": "68935829af9de22e3158125a",
+    "facilityName": "Dryden Regional Health Centre"
+  },
+  {
+    "_id": "68935d048d950885f789012a",
+    "jobId": "df7Vu0o",
+    "postTitle": "Rural General Surgery Locum Opportunities",
+    "medProfession": "Physician",
+    "medSpeciality": "Surgeon",
+    "location": {
+      "lng": -92.8377324,
+      "lat": 49.76969649999999
+    },
+    "fullAddress": {
+      "streetNumber": "58",
+      "streetName": "Goodall St",
+      "city": "Dryden",
+      "postalCode": "P8N 1V8",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-10-01T04:00:00.000Z",
+      "to": "2026-03-31T04:00:00.000Z"
+    },
+    "locumPay": "16500",
+    "schedule": "Dryden Regional Health Centre (DRHC) is looking for General Surgery locums from October 2025 and beyond. Multi-day to multi-week assignments are available - let us know you're availability and we're happy to work with you! \n\nDRHC is also recruiting for a full-time General Surgeon to join our team - very competitive regional APP + over $150,000 in return-of-service signing bonuses available + relocation expense reimbursement. Contact Zoe for more details.",
+    "locumCreatorId": "685bf2dab4b739cce1de929e",
+    "reservationId": "68935d048d950885f789012c",
+    "facilityName": "Dryden Regional Health Centre"
+  },
+  {
+    "_id": "6894c870d63c735a74c98bfe",
+    "jobId": "eAtFhi-",
+    "postTitle": "6-Month+ Locum Opportunity in FHO/FHT Practice (50-026-25)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.87348879999999,
+      "lat": 43.2568448
+    },
+    "fullAddress": {
+      "streetNumber": "100",
+      "streetName": "Main Street W",
+      "city": "Hamilton",
+      "postalCode": "L8P 1H6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-10-01T04:00:00.000Z",
+      "to": "2026-06-30T04:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "A FHO/FHT practice on the Hamilton Mountain is seeking locum coverage for 1 day/week (or 4 days/month) starting October 2025, for at least 6 months. \n\nThe practice hours are 9:00-6:00 Monday-Thursday and 9:00-1:00PM on Fridays. With remote access available, part of the coverage can be done virtually, if desired. Should the locum be interested, there is option to additionally work on Saturdays for 4-6 hours between the hours of 10:00-4:00PM.",
+    "locumCreatorId": "686d2f3ef9308841334c44ba",
+    "reservationId": "6894c870d63c735a74c98c00",
+    "facilityName": "GHHN Physician Recruitment Program"
+  },
+  {
+    "_id": "689fbe68ec9f7a9295f2cdab",
+    "jobId": "Zhw8COe",
+    "postTitle": "North Bay Family Medicine locum- 9 months",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.46498609999999,
+      "lat": 46.3283965
+    },
+    "fullAddress": {
+      "streetNumber": "10",
+      "streetName": "Maplewood Avenue",
+      "city": "North Bay",
+      "postalCode": "P1B 7R6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-01-01T05:00:00.000Z",
+      "to": "2026-08-31T04:00:00.000Z"
+    },
+    "locumPay": "54000",
+    "schedule": "Full day Tuesday and half day Thursday with need for ability to provide hospitalist coverage every 1 in 8 weeks. Responsibility for approximately 20 patients, rare overnight calls, call runs Friday-Friday.",
+    "locumCreatorId": "689fb02a3c35de56759a03e0",
+    "reservationId": "689fbe68ec9f7a9295f2cdaf",
+    "facilityName": "Northern Shores Medical Clinic"
+  },
+  {
+    "_id": "68a89155b151335c6332beb2",
+    "jobId": "1fo4l6m",
+    "postTitle": "Long-Term Locum Opportunity in a FHO/FHT Group Practice (50-027-25)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.87348879999999,
+      "lat": 43.2568448
+    },
+    "fullAddress": {
+      "streetNumber": "100",
+      "streetName": "Main Street West",
+      "city": "Hamilton",
+      "postalCode": "L8P 1H6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-09-15T04:00:00.000Z",
+      "to": "2026-08-31T04:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "A physician who is part of a 2-member group practice is seeking a long-term locum to support the practice 2 ½ days per week starting in Fall 2025 (flexible start date).\n\nThe practice has a diverse roster with patients of all ages and backgrounds and receives administrative support from 5 clerical staff including 2 receptionists (shared between the group), book-keeping/billing staff, and support staff for booking appointments/tests. \n\nAs part of the Hamilton Family Health Team, the practice also receives extensive support from allied health professionals including significant nursing support provided by 3 Registered Nurses and 1 full-time Nurse Practitioner. Additional allied health support is provided by a clinical pharmacist, a registered dietitian, a psychiatrist, and a mental health counsellor. \n\nThe practice uses P&P EMR (training is available) and on-site facilities include 4 exam rooms, a private office/charting area, and a reception area/waiting room. The location also hosts a pharmacy, x-ray/ultrasound clinic, physiotherapy clinic, and dental office, and parking is free for both staff and patients. \n\nConveniently located on the fast-growing Southwest Hamilton Mountain and just minutes away from the Lincoln Alexander Parkway, this well-equipped practice is easily accessible. \n\nInterested candidates are advised to send their CV via email to the GHHN recruitment team at Recruitment@GHHN.ca. Please refer to the posting number in the subject line.",
+    "locumCreatorId": "686d2f3ef9308841334c44ba",
+    "reservationId": "68a89155b151335c6332beb4",
+    "facilityName": "GHHN Physician Recruitment Program"
+  },
+  {
+    "_id": "68afb4b966c0a892be74710f",
+    "jobId": "o5p-9GO",
+    "postTitle": "Downtown Toronto (Maternity Leave Coverage - Flexible Duration)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.3827503,
+      "lat": 43.6616746
+    },
+    "fullAddress": {
+      "streetNumber": "2",
+      "streetName": "Carlton Street",
+      "city": "Toronto",
+      "postalCode": "M5B1J3",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-01-01T05:00:00.000Z",
+      "to": "2026-12-31T05:00:00.000Z"
+    },
+    "locumPay": "1",
+    "schedule": "- FTE 0.6, days of the week are flexible and can be worked out with management. \n- Current doc works Monday, Wednesday,  and Thursday \n\nAdditional details: \n- Community health Centre right above Yonge subway station - set hourly rate that includes paid administrative time\n- Wonderful multidisciplinary team\n- Lab coverage on days you are not working (no remote lab checking on days your not working) \n- Telus ps suite emr and admin support \n- Up to date, well maintained charts and patients that respect time for appointments (current doc operates practice on time) \n\n- Minimum 2 months, up to 1 year",
+    "locumCreatorId": "6820e9faf63a1e470adb525f",
+    "reservationId": "68afb4b966c0a892be747111",
+    "facilityName": "Women's Health In Women's Hands CHC"
+  },
+  {
+    "_id": "68befe49f496d2f0d9615351",
+    "jobId": "palfSvH",
+    "postTitle": "Cardiologist",
+    "medProfession": "Physician",
+    "medSpeciality": "Cardiologist",
+    "location": {
+      "lng": -79.0186815,
+      "lat": 43.8825785
+    },
+    "fullAddress": {
+      "streetNumber": "300",
+      "streetName": "Rossland Road East, Unit 205",
+      "city": "Ajax",
+      "postalCode": "L1Z0K4",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-09-08T04:00:00.000Z",
+      "to": "2026-09-08T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Accuro EMR"
+    },
+    "locumPay": "500000",
+    "schedule": "Full-time available\nFlexible",
+    "locumCreatorId": "68b70f6e3c20ea51b72ff309",
+    "reservationId": "68befe49f496d2f0d9615353",
+    "facilityName": "Gram Cardiology"
+  },
+  {
+    "_id": "68c2fce1536bd06e8d0d77c4",
+    "jobId": "ngKaWw8",
+    "postTitle": "Maternity Leave Locum In Brampton January 2026 - January 2027",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.77166439999999,
+      "lat": 43.6950799
+    },
+    "fullAddress": {
+      "streetNumber": "366",
+      "streetName": "Main St N",
+      "city": "Brampton",
+      "postalCode": "L6V1P8",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-01-05T05:00:00.000Z",
+      "to": "2027-01-04T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Accuro EMR"
+    },
+    "locumPay": "1",
+    "schedule": "Flexible - 4-5 half days of coverage per week plus inbox coverage  - open to split into shorter term locum if needed",
+    "locumCreatorId": "68c2f7c7eb013b1d2d36b1d8",
+    "reservationId": "68c2fce1536bd06e8d0d77c6",
+    "facilityName": "Queen Square Doctors",
+    "practiceType": [
+      "Clinic only"
+    ]
+  },
+  {
+    "_id": "68c4c478f11a483deac294c1",
+    "jobId": "uuw7d5m",
+    "postTitle": "Part-time Locum (filled)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.1262029,
+      "lat": 44.1028452
+    },
+    "fullAddress": {
+      "country": "Canada"
+    },
+    "dateRange": {
+      "from": "2025-11-24T05:00:00.000Z",
+      "to": "2026-06-30T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumCreatorId": "68c4bdf3ba826e842b754c75",
+    "reservationId": "68c4c478f11a483deac294c4"
+  },
+  {
+    "_id": "68d1b4696d56fe26a47548f6",
+    "jobId": "zn7Kf-e",
+    "postTitle": "Downtown Toronto (Maternity Leave Coverage - Flexible Duration)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.383489,
+      "lat": 43.6614799
+    },
+    "fullAddress": {
+      "streetNumber": "2",
+      "streetName": "Carlton Street",
+      "city": "Toronto",
+      "postalCode": "M5B1J3",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-01-01T05:00:00.000Z",
+      "to": "2027-01-01T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "175419",
+    "schedule": "RESPONSIBILITIES:\n• Provides family-oriented medical care in a multi-disciplinary team, on or off site by:\no Interviewing/ history taking.\no Examining, assessing, and treating patients.\no Maintaining accurate records.\no Providing supportive counselling and psychotherapy and crisis intervention.\no Teaching on health and lifestyle matters in a non-judgmental manner.\no Referring to specialists, hospitals or other agencies as required.\no Advocating for patients with other medical workers, agencies or institutions.\no Supervising other medical personnel within the team.\no Providing after-hours medical care for WHIWH-CHC clients in rotation with other\nMDs.\no Ensuring standards of patient care are maintained according to accepted medical\nstandards and WHIWH-CHC policy.\n• Advocating on health and related matters on a larger front for the community as\nappropriate.\n• Recognizes and implements the educational component of Primary Health Care by\nsupervising and evaluating Medical Residents with other members of the Clinical\nTeam.\n• Assists with the administrative tasks of WHIWH-CHC and the Primary Care Team by:\no Participating in data collection and analysis and on-going monitoring and\nevaluation of WHIWH-CHC programs for various purposes (e.g. program planning,\nresearch, etc.).\no Participating in planning and ev",
+    "locumCreatorId": "6820e9faf63a1e470adb525f",
+    "reservationId": "68d1b4696d56fe26a47548f9",
+    "facilityName": "Women's Health In Women's Hands CHC"
+  },
+  {
+    "_id": "68d3163f9f785562240980b1",
+    "jobId": "gvZHEWe",
+    "postTitle": "Family Physician Locum",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -94.5025703,
+      "lat": 49.7669498
+    },
+    "fullAddress": {
+      "streetNumber": "1-45",
+      "streetName": "Wolsley St",
+      "city": "Kenora",
+      "postalCode": "P9N3W7",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-11-03T06:00:00.000Z",
+      "to": "2025-11-07T06:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "8748.85",
+    "schedule": "Schedule is Mon-Fri 8-4pm with some flexibility to start a bit later.  Optional ED, Surgical Assist or Enhanced OBs may be available.",
+    "locumCreatorId": "68d18664967b1cb8eb15d2f8",
+    "reservationId": "68d316409f785562240980b3",
+    "facilityName": "Sunset Country Family Health Team",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "68d42f637fff0755ce4095d2",
+    "jobId": "DeRsXjb",
+    "postTitle": "Short-Term Coverage Near Beautiful Lake Bernard (October)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.3866889,
+      "lat": 45.7734396
+    },
+    "fullAddress": {
+      "streetNumber": "5",
+      "streetName": "Park Street",
+      "city": "Sundridge",
+      "postalCode": "P0A 1Z0",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-10-14T04:00:00.000Z",
+      "to": "2025-10-17T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "4060",
+    "schedule": "Position Details:\nCoverage Dates: October 14-17, 2025 / January 26-29 / March 9-13th and March 16-20th.\nOpen to coverage of some of those dates and not all. Will have support of at least one other clinic physician\n\nClinic Hours:\n- Monday: 9:00 AM – 4:00 PM or 1:00-7:00 depending on which physician you cover\n- Tuesday: 1:00 PM – 7:00 PM/9:00-4:00 PM depending on which physician you cover\n- Wednesday: 9:00 AM – 4:00 PM\n- Thursday: 9:00 AM – 4:00 PM\n- Friday: 9:00 AM – 12:00 PM\n\nPatient Load: Approximately 16 patients per day\n\nSupport Team:\n- Two skilled nurse practitioners assisting with patient care\n- Friendly and experienced administrative and clinical staff\n\nAdditional Notes:\n- No emergency or inpatient work required\n- No call requirements\n\nThis is an excellent opportunity for a physician seeking a relaxed, collaborative work environment with strong clinical support and a well-organized schedule — all in a picturesque lakeside town.",
+    "locumCreatorId": "6820e9faf63a1e470adb525f",
+    "reservationId": "68d42f637fff0755ce4095d4",
+    "facilityName": "Sundridge Medical Center"
+  },
+  {
+    "_id": "68d430bc9ea020c0de15c6e5",
+    "jobId": "zhiBwAF",
+    "postTitle": "Short-Term Coverage Near Beautiful Lake Bernard (January)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.3866889,
+      "lat": 45.7734396
+    },
+    "fullAddress": {
+      "streetNumber": "5",
+      "streetName": "Park Street",
+      "city": "Sundridge",
+      "postalCode": "P0A 1Z0",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-01-26T05:00:00.000Z",
+      "to": "2026-01-29T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "4060",
+    "schedule": "Position Details:\nCoverage Dates: October 14-17, 2025 / January 26-29 / March 9-13th and March 16-20th.\nOpen to coverage of some of those dates and not all. Will have support of at least one other clinic physician\n\n\nClinic Hours:\n- Monday: 9:00 AM – 4:00 PM or 1:00-7:00 depending on which physician you cover\n- Tuesday: 1:00 PM – 7:00 PM/9:00-4:00 PM depending on which physician you cover\n- Wednesday: 9:00 AM – 4:00 PM\n- Thursday: 9:00 AM – 4:00 PM\n- Friday: 9:00 AM – 12:00 PM\n\nPatient Load: Approximately 16 patients per day\n\nSupport Team:\n- Two skilled nurse practitioners assisting with patient care\n- Friendly and experienced administrative and clinical staff\n\nAdditional Notes:\n- No emergency or inpatient work required\n- No call requirements\n\nThis is an excellent opportunity for a physician seeking a relaxed, collaborative work environment with strong clinical support and a well-organized schedule — all in a picturesque lakeside town.",
+    "locumCreatorId": "6820e9faf63a1e470adb525f",
+    "reservationId": "68d430bc9ea020c0de15c6e7",
+    "facilityName": "Sundridge Medical Center"
+  },
+  {
+    "_id": "68d430cb7fff0755ce4095f5",
+    "jobId": "QjhyG9H",
+    "postTitle": "Short-Term Coverage Near Beautiful Lake Bernard (March)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.3866889,
+      "lat": 45.7734396
+    },
+    "fullAddress": {
+      "streetNumber": "5",
+      "streetName": "Park Street",
+      "city": "Sundridge",
+      "postalCode": "P0A 1Z0",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-09T04:00:00.000Z",
+      "to": "2026-03-20T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "8120",
+    "schedule": "Position Details:\nCoverage Dates: October 14-17, 2025 / January 26-29 / March 9-13th and March 16-20th.\nOpen to coverage of some of those dates and not all. Will have support of at least one other clinic physician\n\n\nClinic Hours:\n- Monday: 9:00 AM – 4:00 PM or 1:00-7:00 depending on which physician you cover\n- Tuesday: 1:00 PM – 7:00 PM/9:00-4:00 PM depending on which physician you cover\n- Wednesday: 9:00 AM – 4:00 PM\n- Thursday: 9:00 AM – 4:00 PM\n- Friday: 9:00 AM – 12:00 PM\n\nPatient Load: Approximately 16 patients per day\n\nSupport Team:\n- Two skilled nurse practitioners assisting with patient care\n- Friendly and experienced administrative and clinical staff\n\nAdditional Notes:\n- No emergency or inpatient work required\n- No call requirements\n\nThis is an excellent opportunity for a physician seeking a relaxed, collaborative work environment with strong clinical support and a well-organized schedule — all in a picturesque lakeside town.",
+    "locumCreatorId": "6820e9faf63a1e470adb525f",
+    "reservationId": "68d430cb7fff0755ce4095f7",
+    "facilityName": "Sundridge Medical Center"
+  },
+  {
+    "_id": "68d5d72c37b86cc9491b79af",
+    "jobId": "zGPcn8-",
+    "postTitle": "Anaesthesiologist",
+    "medProfession": "Physician",
+    "medSpeciality": "Other",
+    "location": {
+      "lng": -74.7183251,
+      "lat": 45.0299121
+    },
+    "fullAddress": {
+      "streetNumber": "840",
+      "streetName": "McConnell Avenue",
+      "city": "Cornwall",
+      "postalCode": "K6H5S5",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-12-20T05:00:00.000Z",
+      "to": "2026-01-31T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Other"
+    },
+    "locumPay": "TBD",
+    "schedule": "Elective Blocks Monday to Friday\nCall Coverage (off post call)",
+    "locumCreatorId": "68ceac01170bd838db7b06cd",
+    "reservationId": "68d5d72c37b86cc9491b79b2",
+    "facilityName": "Cornwall Community Hospital",
+    "practiceType": [
+      "Other"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "68dc1fbef2ff07d0ac8c70a7",
+    "jobId": "QlxrgvJ",
+    "postTitle": "Endocrinologist - Hospital Based Diabetes Clinic",
+    "medProfession": "Physician",
+    "medSpeciality": "Other",
+    "location": {
+      "lng": -79.662353,
+      "lat": 44.4151876
+    },
+    "fullAddress": {
+      "streetNumber": "201",
+      "streetName": "Georgian Drive",
+      "city": "Barrie",
+      "postalCode": "L4M 6M2",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-02-05T05:00:00.000Z",
+      "to": "2026-09-25T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Other"
+    },
+    "locumPay": "132000",
+    "schedule": "Thursday and Fridays",
+    "locumCreatorId": "68d44bb3dd9b81b4ae987873",
+    "reservationId": "68dc1fbef2ff07d0ac8c70aa",
+    "facilityName": "Royal Victoria Regional Health Centre",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "68e0114f8139d7144370a381",
+    "jobId": "2mZKEl2",
+    "postTitle": "Wawa Family Health Team - Locum -  URGENT COVERAGE NEEDED",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -84.7721993,
+      "lat": 48.000819
+    },
+    "fullAddress": {
+      "streetNumber": "17",
+      "streetName": "Government Rd.",
+      "city": "Wawa",
+      "postalCode": "P0S1K0",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-12-08T05:00:00.000Z",
+      "to": "2025-12-15T05:00:00.000Z"
+    },
+    "facilityInfo": {},
+    "locumPay": "4250",
+    "schedule": "Regular Work Day:\n-\tRound on inpatients between 08:30 – 09:00. Usually you will have between 0-2 inpatients.\n-\tClinic starts at 10:00am. Clinic hours:10-12 1-4. We book 20 minute appts and no fit ins.\n-\tPost Call Clinic: 10-12 (or any two hour block you would like, and you are paid for the full clinic day)\n**Friday mornings at 08:30 inpatient handover rounds at the nursing station – please come and handover your inpatients or get handover if you’re on call over the weekend.\n\nCall Days\n-\tCall is 24hour 07:00am-07:00am (Our ER is low volume ~ 17 patients/shifts; NP assist)\n-\tFamily Health Team RNs see walk-in same day patients for you. They will ask you to assess patients and sign scripts as needed. You will thus need to be available to the Family Health Team nurses between 08:00am – 04:00pm on weekdays.",
+    "locumCreatorId": "68d19142a39d8c9296d466f7",
+    "reservationId": "68e0114f8139d7144370a384",
+    "facilityName": "Wawa Family Health Team",
+    "practiceType": [
+      "Comprehensive"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "68e016ef2a7781821f79fb2f",
+    "jobId": "NdQL9C9",
+    "postTitle": "Family Physician",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.384393,
+      "lat": 43.6494793
+    },
+    "fullAddress": {
+      "streetNumber": "150",
+      "streetName": "York Street",
+      "city": "Toronto",
+      "postalCode": "M5H 3S5",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-12-01T05:00:00.000Z",
+      "to": "2026-12-01T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Accuro EMR"
+    },
+    "locumPay": "600000",
+    "schedule": "Please contact for details. We are flexible to offer full-time, part time and temporary contracts.",
+    "locumCreatorId": "68e0015e88fc6aa4d2985b9a",
+    "reservationId": "68e016ef2a7781821f79fb32",
+    "facilityName": "Medcan",
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "68e5b410c16c7056187e0489",
+    "jobId": "jnyiLZf",
+    "postTitle": "4 Month Locum (opportunity To Extend Longer At Part Time)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -81.25394849999999,
+      "lat": 42.9961522
+    },
+    "fullAddress": {
+      "streetNumber": "781",
+      "streetName": "Richmond street",
+      "city": "London",
+      "postalCode": "N6A3H4",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-01-26T05:00:00.000Z",
+      "to": "2026-05-29T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "$60000",
+    "schedule": "6-7 half days per week, specific hours can be discussed. Additionally require coverage for After Hours clinic every 3rd Wednesday from 5-8pm and every 9th Saturday 9am-12pm",
+    "locumCreatorId": "68e5acb77db8ce86cc827a6b",
+    "reservationId": "68e5b410c16c7056187e048b",
+    "facilityName": "Advanced Medical Practice FHO",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "68e81481b15b7b819ca2937b",
+    "jobId": "6sGzv8R",
+    "postTitle": "Locum Opportunity – Maternity Leave Coverage At Unify FHO (Leaside, Toronto)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.3598193,
+      "lat": 43.7074174
+    },
+    "fullAddress": {
+      "streetNumber": "25",
+      "streetName": "Industrial Street",
+      "city": "Toronto",
+      "postalCode": "M4G 1Z2",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-02-23T05:00:00.000Z",
+      "to": "2027-02-21T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Accuro EMR"
+    },
+    "locumPay": "100000",
+    "schedule": "Flexible. Request for 3-4 half-days (3 hours of clinical time) per week, including 2 after-hours clinics per month (3 hours of clinical time from 5-8 pm on weekdays or anytime on Saturdays).",
+    "locumCreatorId": "68e80b489765ceedb38b9e90",
+    "reservationId": "68e81481b15b7b819ca2937d",
+    "facilityName": "Unify Health",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "68ec39c46fe5d7c292afe66e",
+    "jobId": "LFG_DQu",
+    "postTitle": "Flexible Family Medicine Locum Part-Time Midland, ON FHO+FHT ($1200+/d)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.906125,
+      "lat": 44.7514848
+    },
+    "fullAddress": {
+      "streetNumber": "847",
+      "streetName": "Vindin St",
+      "city": "Midland",
+      "postalCode": "L4R 4L9",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-01-01T08:00:00.000Z",
+      "to": "2026-06-30T07:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Accuro EMR"
+    },
+    "locumPay": "1",
+    "schedule": "Flexible; minimum 2 half-days (1 full-day) on-site",
+    "locumCreatorId": "68ec366faa5c053e80c02dd2",
+    "reservationId": "68ec39c46fe5d7c292afe670",
+    "facilityName": "EssentialMD Clinic",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "68fffa15527480bae27a0bed",
+    "jobId": "I1GrI96",
+    "postTitle": "FHO MATERNITY LEAVE LOCUM OPPORTUNITY",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.6518771,
+      "lat": 43.90010179999999
+    },
+    "fullAddress": {
+      "streetNumber": "12931",
+      "streetName": "Highway 27",
+      "city": "Nobleton",
+      "postalCode": "L0G 1N0",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-01-26T05:00:00.000Z",
+      "to": "2026-10-31T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "110000",
+    "schedule": "Schedule:\n5 half-days per week (3.25 hours per half day)\n1 evening per week (5pm to 8pm)\n1 Saturday every 5th week (9:30am to 12:30pm)",
+    "locumCreatorId": "68fb7dedd9500bf89ea3484e",
+    "reservationId": "68fffa15527480bae27a0bef",
+    "facilityName": "Nobleton Medical Clinic",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "690812ec17b14ce40e5fa0a0",
+    "jobId": "UPc7tjW",
+    "postTitle": "Family Physician 4-6 Month Locum To Cover Medical Leave, Aurora",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.4301747,
+      "lat": 44.02649599999999
+    },
+    "fullAddress": {
+      "streetNumber": "25",
+      "streetName": "William Graham Drive",
+      "city": "Aurora",
+      "postalCode": "L4G 3G3",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-12-15T05:00:00.000Z",
+      "to": "2026-05-29T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "1",
+    "schedule": "Flexible hours - Could be covered with 3 days /week",
+    "locumCreatorId": "68f4df47d86a53a3190b0d21",
+    "reservationId": "690812ec17b14ce40e5fa0a2",
+    "facilityName": "Enhanced Care Clinic - Aurora East",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "69168ca4e21c99f9a6c3bb7a",
+    "jobId": "FbyA0gE",
+    "postTitle": "Looking For: P/T Mat Leave Locum",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.6556987,
+      "lat": 43.5449107
+    },
+    "fullAddress": {
+      "streetNumber": "1645",
+      "streetName": "Dundas Street West",
+      "city": "Mississauga",
+      "postalCode": "L5c1e3",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-02T05:00:00.000Z",
+      "to": "2026-09-30T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "40000",
+    "schedule": "Flexible schedule - looking for 10-12h of coverage per week. Ideally for Mondays/Tuesdays, but schedule can be flexible. No evenings or weekend coverage required.",
+    "locumCreatorId": "6916886933529060bcd578fe",
+    "reservationId": "69168ca4e21c99f9a6c3bb7c",
+    "facilityName": "Mississauga",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages",
+      "Pediatric"
+    ]
+  },
+  {
+    "_id": "691d4acc5d551c4ec05c6c8a",
+    "jobId": "mTy1VCU",
+    "postTitle": "Family Medicine Locum",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -80.20025009999999,
+      "lat": 44.0759838
+    },
+    "fullAddress": {
+      "streetNumber": "167",
+      "streetName": "Centre Street",
+      "city": "Shelburne",
+      "postalCode": "L9V3R8",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-01-12T05:00:00.000Z",
+      "to": "2026-04-03T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "14400",
+    "schedule": "- 2 days per week of direct patient care (~6h per day)\n- can be increased to 3-4 days per week if requested by locum. \n- Also looking for inbox coverage (messages, labs) on days not in office",
+    "locumCreatorId": "691a1017acf4ef48499a9f5f",
+    "reservationId": "691d4acc5d551c4ec05c6c8c",
+    "facilityName": "Shelburne Centre for Health",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "692088e959ed2f044d9dd42d",
+    "jobId": "mIpnSbR",
+    "postTitle": "General Obstetrics And Gynecology Locum",
+    "medProfession": "Physician",
+    "medSpeciality": "Obstetrician/Gynecologist (OB/GYN)",
+    "location": {
+      "lng": -80.20349999999999,
+      "lat": 44.4997215
+    },
+    "fullAddress": {
+      "streetNumber": "459",
+      "streetName": "Hume St",
+      "city": "Collingwood",
+      "postalCode": "L9Y3W9",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-04-15T04:00:00.000Z",
+      "to": "2026-10-15T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "180000",
+    "schedule": "Full time including private office, operating room, ambulatory care and home call shifts.",
+    "locumCreatorId": "691bd3c0219823598a88020f",
+    "reservationId": "692088ea59ed2f044d9dd430",
+    "facilityName": "Collingwood General and Marine Hospital",
+    "practiceType": [
+      "Comprehensive"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "6921f9b3472801230e6fb8dd",
+    "jobId": "OjNaVRc",
+    "postTitle": "Family Physician Locum In Toronto Community FHT",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.4189506,
+      "lat": 43.6377057
+    },
+    "fullAddress": {
+      "streetNumber": "171",
+      "streetName": "East Liberty St",
+      "city": "Toronto",
+      "postalCode": "M6K3P6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-04-20T04:00:00.000Z",
+      "to": "2027-05-31T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Accuro EMR"
+    },
+    "locumPay": "1000",
+    "schedule": "Monday am/pm\nWednesday am/pm\nFriday am",
+    "locumCreatorId": "690390a1da0e727c176b6729",
+    "reservationId": "6921f9b3472801230e6fb8df",
+    "facilityName": "Village Family Health Team",
+    "practiceType": [
+      "Clinic only"
+    ]
+  },
+  {
+    "_id": "69222ab3ab77969515f3bb59",
+    "jobId": "RwDgLqb",
+    "postTitle": "Beautiful Yorkville Family Practice Clinic",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.3923973,
+      "lat": 43.6707918
+    },
+    "fullAddress": {
+      "streetNumber": "101",
+      "streetName": "Yorkville Avenue unit 205",
+      "city": "Toronto",
+      "postalCode": "M5R 1C1",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2025-12-01T05:00:00.000Z",
+      "to": "2026-01-18T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "1",
+    "schedule": "Any hours you are available.  Clinic is open Monday-Saturday 8am - 5pm.  Evening and virtual appointments are possible if desired.",
+    "locumCreatorId": "6920b3509a5786cb69f75d28",
+    "reservationId": "69222ab3ab77969515f3bb5b",
+    "facilityName": "Avenue Bloor Medical Clinic",
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "692ca1c6576e34b8cdcd93c8",
+    "jobId": "HwlCHuf",
+    "postTitle": "Family Physician Locum",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -80.23749,
+      "lat": 43.4994328
+    },
+    "fullAddress": {
+      "streetNumber": "115",
+      "streetName": "Downey Road",
+      "city": "Guelph",
+      "postalCode": "N1C 1A2",
+      "country": "CA",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-08-03T04:00:00.000Z",
+      "to": "2026-08-31T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "15000",
+    "schedule": "3.5 days per week in clinic.  Varied days depending on which physician in the practice covering for.",
+    "locumCreatorId": "692c4d1942cbf73032a2ecfe",
+    "reservationId": "692ca1c6576e34b8cdcd93cb",
+    "facilityName": "Downey Family Medical Centre",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "6934c209a49d5647ebc91db0",
+    "jobId": "ay8YQ3O",
+    "postTitle": "FHG Locum In Mississauga For Mat Leave Coverage - Mar-Sep 2026 - Mississauga Mar",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.68782999999999,
+      "lat": 43.53726
+    },
+    "fullAddress": {
+      "streetNumber": "3476",
+      "streetName": "Glen Erin Dr #230",
+      "city": "Mississauga",
+      "postalCode": "L5L3R4",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-02T05:00:00.000Z",
+      "to": "2026-09-27T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Accuro EMR"
+    },
+    "locumPay": "150000",
+    "schedule": "Flexible!\nI currently work 4 days a week and I do phone calls after hours some days. But, up to you how you would like to structure it.",
+    "locumCreatorId": "693083f9097b01684fd506cc",
+    "reservationId": "6934c209a49d5647ebc91db2",
+    "facilityName": "Glen Erin Commons Medical",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "6938ed0f78cab68761f8ef50",
+    "jobId": "Q_4g7Fc",
+    "postTitle": "Cardiology Clinic Practice",
+    "medProfession": "Physician",
+    "medSpeciality": "Cardiologist",
+    "location": {
+      "lng": -81.01974489999999,
+      "lat": 46.4769053
+    },
+    "fullAddress": {
+      "streetNumber": "907",
+      "streetName": "Lorne St",
+      "city": "Sudbury",
+      "postalCode": "P3C4R6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-16T04:00:00.000Z",
+      "to": "2026-09-30T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Cerebrum"
+    },
+    "locumPay": "1",
+    "schedule": "Flexible",
+    "locumCreatorId": "692e2d83456238a2261f5bb0",
+    "reservationId": "6938ed0f78cab68761f8ef52",
+    "facilityName": "Neoheart clinic",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "Adult"
+    ]
+  },
+  {
+    "_id": "693a2dfb99b0c2b26e5191ff",
+    "jobId": "QC8p1rj",
+    "postTitle": "Locum Physician For Maternity Leave",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.5927817,
+      "lat": 43.6630812
+    },
+    "fullAddress": {
+      "streetNumber": "2800",
+      "streetName": "Skymark Avenue",
+      "city": "Mississauga",
+      "postalCode": "L4W5A6",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-09T04:00:00.000Z",
+      "to": "2026-12-09T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "77100",
+    "schedule": "Schedule: \n- 3 half days per week (3 hours per half day)\n- 1 Saturday/Sunday (10AM-1:00PM) every 4 weeks\n- Days in office are flexible and open for discussion.\n- inbox coverage $100 on days not in office",
+    "locumCreatorId": "69398c5813a23a369f0986cb",
+    "reservationId": "693a2dfb99b0c2b26e519201",
+    "facilityName": "Skymark Medical Centre",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "69430296e0c005a919b9ebf8",
+    "jobId": "NtDz_25",
+    "postTitle": "Locum Physician (12 Month Contract)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.384393,
+      "lat": 43.6494793
+    },
+    "fullAddress": {
+      "streetNumber": "150",
+      "streetName": "York Street",
+      "city": "Toronto",
+      "postalCode": "M5H 3S5",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-02-23T05:00:00.000Z",
+      "to": "2027-02-22T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Accuro EMR"
+    },
+    "locumPay": "220000",
+    "schedule": "Please contact for details. Schedule is flexible for 3 days/week Monday - Friday during regular clinic hours of 8:30am - 5pm.",
+    "locumCreatorId": "68e0015e88fc6aa4d2985b9a",
+    "reservationId": "69430296e0c005a919b9ebfa",
+    "facilityName": "Medcan",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "6944a44d1c3ba06bd50d8a2a",
+    "jobId": "dLC6T7e",
+    "postTitle": "Pediatric Locum For 6 Month Maternity Leave",
+    "medProfession": "Physician",
+    "medSpeciality": "Pediatrician",
+    "location": {
+      "lng": -89.2738281,
+      "lat": 48.423676
+    },
+    "fullAddress": {
+      "streetNumber": "1260",
+      "streetName": "Golf Links Road",
+      "city": "Thunder Bay",
+      "postalCode": "P7G 2M2",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-05-01T04:00:00.000Z",
+      "to": "2026-10-31T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "400000",
+    "schedule": "Full Time Locum Coverage\n1 in 10 On Call Coverage (Inpatient pediatric, Level 2C NICU, emergency consults, outside calls, transport call)\n1 in 10 Coverage Level 2C NICU\n1 in 10 Coverage Inpatient Pediatric Unit\nRest covering outpatient practice",
+    "locumCreatorId": "69434a725ee1021f56885437",
+    "reservationId": "6944a44d1c3ba06bd50d8a2c",
+    "facilityName": "Thunder Bay Regional Health Sciences Centre",
+    "practiceType": [
+      "Comprehensive"
+    ],
+    "patientType": [
+      "Pediatric"
+    ]
+  },
+  {
+    "_id": "69457d093330dbc87955c896",
+    "jobId": "S_qMUN-",
+    "postTitle": "Mat Leave Locum March 2026 (12 Months)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.3862389,
+      "lat": 43.6604402
+    },
+    "fullAddress": {
+      "streetNumber": "790",
+      "streetName": "Bay St",
+      "city": "Toronto",
+      "postalCode": "M5G 1 N8",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-16T04:00:00.000Z",
+      "to": "2027-04-05T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Avaros EMR"
+    },
+    "locumPay": "158400",
+    "schedule": "Monday, Tuesday, Thursday but flexible, would need a total of 6 half days during the week with 1-2 evenings 5-8 per month if possible",
+    "locumCreatorId": "6945794135ffede20176a101",
+    "reservationId": "69457d0a3330dbc87955c898",
+    "facilityName": "Balmoral Health Group",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "69544072edec477173f766f9",
+    "jobId": "ANoUeb3",
+    "postTitle": "FHO/FHT Locum July-Sept In Dundas, ON",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.9582707,
+      "lat": 43.2668612
+    },
+    "fullAddress": {
+      "streetNumber": "109",
+      "streetName": "King St W",
+      "city": "Dundas",
+      "postalCode": "L9H1V1",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-07-13T04:00:00.000Z",
+      "to": "2026-09-18T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "20000",
+    "schedule": "Dates for locum very flexible - start anytime in July and ideally looking for 8-10 weeks of coverage!  900 patient roster well managed practice. Looking for 4-5 half days per week, flexible on which days of the week. Clinic usually runs 9-12 and 1-4pm, though this is also flexible!",
+    "locumCreatorId": "69339242dc92b4e4a8b08110",
+    "reservationId": "69544072edec477173f766fc",
+    "facilityName": "Dundas Family Practice",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "69568b793105d2ea27f8b0ab",
+    "jobId": "vT2AhVB",
+    "postTitle": "Looking For 4 Half Days Over The Week Of August (flexible)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.3931532,
+      "lat": 43.6685903
+    },
+    "fullAddress": {
+      "streetNumber": "151",
+      "streetName": "Bloor street west",
+      "city": "Toronto",
+      "postalCode": "M5S1S4",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-08-04T04:00:00.000Z",
+      "to": "2026-08-11T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "2400",
+    "schedule": "Looking for 4 half days over the time frame.",
+    "locumCreatorId": "6921f89752162f474e8a96aa",
+    "reservationId": "69568b793105d2ea27f8b0ad",
+    "facilityName": "Bloom Family Practice",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "696555a3529eefbbb3c0fe6e",
+    "jobId": "QUC0C85",
+    "postTitle": "Radiologist",
+    "medProfession": "Physician",
+    "medSpeciality": "Radiologist",
+    "location": {
+      "lng": -113.4503738,
+      "lat": 53.4722788
+    },
+    "fullAddress": {
+      "streetNumber": "160",
+      "streetName": "Millbourne Shopping Centre NW",
+      "city": "Edmonton",
+      "postalCode": "T6K 3L6",
+      "country": "Canada",
+      "province": "AB"
+    },
+    "dateRange": {
+      "from": "2026-02-01T07:00:00.000Z",
+      "to": "2027-02-01T07:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Other"
+    },
+    "locumPay": "1",
+    "schedule": "Minimum 3 days per week on-site, with flexible hours to suit your availability\nAdditional days may be added based on mutual agreement",
+    "locumCreatorId": "695ee10c4eaecbb1cb2dc12a",
+    "reservationId": "696555a3529eefbbb3c0fe70",
+    "facilityName": "Raydius Medical Imaging",
+    "practiceType": [
+      "Other"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "69655878d4ae8b73ea6f2e4a",
+    "jobId": "rT9Nukl",
+    "postTitle": "Physician – Pain Management / Injections",
+    "medProfession": "Physician",
+    "medSpeciality": "Other",
+    "location": {
+      "lng": -113.4503738,
+      "lat": 53.4722788
+    },
+    "fullAddress": {
+      "streetNumber": "160",
+      "streetName": "Millbourne Shopping Centre NW",
+      "city": "Edmonton",
+      "postalCode": "T6K 3L6",
+      "country": "Canada",
+      "province": "AB"
+    },
+    "dateRange": {
+      "from": "2026-02-01T07:00:00.000Z",
+      "to": "2027-02-01T07:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Other"
+    },
+    "locumPay": "1",
+    "schedule": "Minimum 2 days per week on-site, with flexible hours to suit your availability\nAdditional days may be added based on mutual agreement",
+    "locumCreatorId": "695ee10c4eaecbb1cb2dc12a",
+    "reservationId": "69655878d4ae8b73ea6f2e4c",
+    "facilityName": "Raydius Medical Imaging",
+    "practiceType": [
+      "Other"
+    ],
+    "patientType": [
+      "Adult"
+    ]
+  },
+  {
+    "_id": "696e6e74613db870369b8b1f",
+    "jobId": "0OK4ULH",
+    "postTitle": "Family Physician Locum - Alliston, Ontario",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.8726372,
+      "lat": 44.1534659
+    },
+    "fullAddress": {
+      "streetNumber": "106",
+      "streetName": "Victoria Street West",
+      "city": "Allistion",
+      "postalCode": "L9R 1Y7",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-24T04:00:00.000Z",
+      "to": "2026-05-22T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "0.01",
+    "schedule": "2 or 3 days per week\noption to extend locum beyond May",
+    "locumCreatorId": "696ac707966b4bd446590e89",
+    "reservationId": "696e6e75613db870369b8b21",
+    "facilityName": "Millpond Medical Clinic",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "6970249b23fa25a8075079c4",
+    "jobId": "RrIYYYO",
+    "postTitle": "Family Physician – Occupational / Industrial Medicine (on-site, daily guarantee)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -81.0058885,
+      "lat": 43.3509794
+    },
+    "fullAddress": {
+      "streetNumber": "114",
+      "streetName": "Packham Rd",
+      "city": "Stratford",
+      "postalCode": "N4Z 0A2",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-02-25T05:00:00.000Z",
+      "to": "2026-02-25T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Other"
+    },
+    "locumPay": "1000",
+    "schedule": "The mobile clinic operates from 6:30 a.m. to 6:30 p.m., with the option to work either an AM or PM shift (3 to 4 hours based on patient volume).",
+    "locumCreatorId": "6820e9faf63a1e470adb525f",
+    "reservationId": "6970249b23fa25a8075079c6",
+    "facilityName": "TG Minto",
+    "practiceType": [
+      "Other"
+    ],
+    "patientType": [
+      "Adult"
+    ]
+  },
+  {
+    "_id": "6970257634a927eb44c97383",
+    "jobId": "A3ZkXX4",
+    "postTitle": "Family Physician – Occupational / Industrial Medicine (on-site, Daily Guarantee)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -80.8358116,
+      "lat": 43.8347113
+    },
+    "fullAddress": {
+      "streetNumber": "300",
+      "streetName": "Toronto St",
+      "city": "Palmerston",
+      "postalCode": "N0G 2P0",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-02-17T05:00:00.000Z",
+      "to": "2026-02-17T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Other"
+    },
+    "locumPay": "2000",
+    "schedule": "The mobile clinic operates from 6:30 a.m. to 6:30 p.m., with the option to work either AM or PM shift (3 to 4 hours based on patient volume).",
+    "locumCreatorId": "6820e9faf63a1e470adb525f",
+    "reservationId": "6970257634a927eb44c97385",
+    "facilityName": "TG Minto",
+    "practiceType": [
+      "Other"
+    ],
+    "patientType": [
+      "Adult"
+    ]
+  },
+  {
+    "_id": "697a338da8fda96aa029abe9",
+    "jobId": "wvQmQ12",
+    "postTitle": "Urgent Care Physician",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.384393,
+      "lat": 43.6494793
+    },
+    "fullAddress": {
+      "streetNumber": "150",
+      "streetName": "York Street",
+      "city": "Toronto",
+      "postalCode": "M5H 3S5",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-02-09T05:00:00.000Z",
+      "to": "2027-02-05T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Accuro EMR"
+    },
+    "locumPay": "100000",
+    "schedule": "Shifts scheduled Monday-Sunday during operating hours (6am-6pm in clinic, 6am-9pm virtual)",
+    "locumCreatorId": "68e0015e88fc6aa4d2985b9a",
+    "reservationId": "697a338da8fda96aa029abec",
+    "facilityName": "Medcan",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "697c08c9eced3a4778193e0f",
+    "jobId": "NpbMQoy",
+    "postTitle": "Family Physician 4  Month Locum -Toronto",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.3435276,
+      "lat": 43.7077392
+    },
+    "fullAddress": {
+      "streetNumber": "62",
+      "streetName": "Overlea Blvd #4a, , ON",
+      "city": "Toronto",
+      "postalCode": "M4H 1C4",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-02-01T05:00:00.000Z",
+      "to": "2026-04-30T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "0.1",
+    "schedule": "Full time",
+    "locumCreatorId": "697ae15992a8ded23611cfea",
+    "reservationId": "697c08c9eced3a4778193e11",
+    "facilityName": "Thornlea Medical Centre",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "697fb7fdaf652711ea482e6f",
+    "jobId": "G9gdgff",
+    "postTitle": "Locum Physician Needed In Midtown Toronto FHO",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.4110159,
+      "lat": 43.704327
+    },
+    "fullAddress": {
+      "streetNumber": "418",
+      "streetName": "Eglinton Ave W",
+      "city": "Toronto",
+      "postalCode": "M5N1A2",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-06-01T04:00:00.000Z",
+      "to": "2027-05-31T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "OSCAR McMaster - Professional Edition (OSCAR Pro)"
+    },
+    "locumPay": "188100",
+    "schedule": "Monday, Tuesday and Thursday 9:30-3 pm, 45 min lunch\nFriday 9:30-12 pm\nHours/days worked are flexible, target total clinic hours 16.5 hours",
+    "locumCreatorId": "697f9f3b48801759d63665af",
+    "reservationId": "697fb7fdaf652711ea482e72",
+    "facilityName": "Magenta Health Midtown",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "6984efdfd61e66a4ff417277",
+    "jobId": "tj48jqi",
+    "postTitle": "Family Physician – March Break Locum Coverage",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.42669570000001,
+      "lat": 44.604645
+    },
+    "fullAddress": {
+      "streetNumber": "170",
+      "streetName": "Colborne St W",
+      "city": "Orillia",
+      "postalCode": "L3V 2Z3",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-16T04:00:00.000Z",
+      "to": "2026-03-20T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "5000.00",
+    "schedule": "Monday to Friday: Full Days (~1000/day)",
+    "locumCreatorId": "6968f0247dab497487bd4d52",
+    "reservationId": "6984efdfd61e66a4ff417279",
+    "facilityName": "Orillia & Lake Country Physician Recruitment",
+    "practiceType": [
+      "Comprehensive",
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "69850a47914e6d649ed3c8f4",
+    "jobId": "KxPqBUo",
+    "postTitle": "Family Physician Opportunity",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.42669570000001,
+      "lat": 44.604645
+    },
+    "fullAddress": {
+      "streetNumber": "170",
+      "streetName": "Colborne St W.",
+      "city": "Orillia",
+      "postalCode": "L3V 2Z3",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-01T05:00:00.000Z",
+      "to": "2027-03-31T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "1",
+    "schedule": "PRACTICE MODEL & CLINIC OPPORTUNITIES\n-Family Health Organization (FHO) with Family Health Team (FHT) funding \n-Comprehensive primary care across all ages \n-Opportunity to develop focused interests, including: \n--Obstetrics \n--Palliative care \n--Emergency Medicine \n--Hospitalist medicine \n--OR assisting \n--High demand population with complex and geriatric care needs \n--Build to full practice capacity within 2 years (new grads supported) \n\nAs part of the Family Health Organization, your patients benefit from access to an extensive interdisciplinary team, including: \n-Nurse Practitioners & Pharmacists \n-Dietitians & Chiropodists \n-Occupational Therapists & Kinesiologists \n-Social Workers & Registered Psychotherapists \n-Geriatric Outreach Team \n-Psychiatry & Mental Health Services \n-Internists (CHF/COPD), Respirology, Geriatrics \n-Rapid Access Low Back Pain Clinic \n-One of Ontario’s four fully funded Transgender Health Programs",
+    "locumCreatorId": "6968f0247dab497487bd4d52",
+    "reservationId": "69850a48914e6d649ed3c8f6",
+    "facilityName": "Orillia & Lake Country Physician Recruitment",
+    "practiceType": [
+      "Comprehensive",
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "6985124aac61209ae47f1e30",
+    "jobId": "sLSv1qB",
+    "postTitle": "Family Physician – Incentives Available",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -79.42669570000001,
+      "lat": 44.604645
+    },
+    "fullAddress": {
+      "streetNumber": "170",
+      "streetName": "Colborne St W",
+      "city": "Orillia",
+      "postalCode": "L3V 2Z3",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-01T05:00:00.000Z",
+      "to": "2027-03-31T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "PS Suite EMR"
+    },
+    "locumPay": "1",
+    "schedule": "CLINICAL PRACTICE & FLEXIBILITY\n-Family Health Organization (FHO) model \n-Comprehensive primary care across all ages and stages of health \n-Ability to pursue enhanced or focused practices, including: \n--Obstetrics \n--Palliative care \n--Emergency Medicine \n--Hospitalist care \n--Longterm care \n--OR assisting \n-High demand community with patients actively waiting for care \n-New physicians supported to build to full capacity within two years \n\nHOSPITAL AFFILIATION\nOrillia Soldiers’ Memorial Hospital (OSMH) provides a comprehensive range of services, including: \n-Emergency, medical, and surgical care \n-Regional programs in: \n--Kidney care \n--Orthopedics \n--Adult mental health \n--Senior's care \n--Sexual assault & domestic violence treatment \n--Pediatrics and neonatal intensive care \n-Physicians interested in hospital work will be supported with introductions and hospital tours. \n\nCOMMUNITY SITE VISIT SUPPORT\nOur Community Physician Recruiter will conduct a personalized needs assessment prior to your visit to tailor the experience for you and your family. During your visit, we will: \n-Introduce you to potential colleagues \n-Tour clinic and hospital facilities \n-Explore housing, schools, and community amenities \nWe also support settlement services, including housing, school registration, and community integration.",
+    "locumCreatorId": "6968f0247dab497487bd4d52",
+    "reservationId": "6985124aac61209ae47f1e33",
+    "facilityName": "Orillia & Lake Country Physician Recruitment",
+    "practiceType": [
+      "Comprehensive",
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "6992661963f1f5cab16e4f6c",
+    "jobId": "atYvBes",
+    "postTitle": "Whitby Family Medicine FHO Locum",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -78.9444249,
+      "lat": 43.8796683
+    },
+    "fullAddress": {
+      "streetNumber": "220",
+      "streetName": "Dundas St W",
+      "city": "Whitby",
+      "postalCode": "L1N8M7",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-08-31T04:00:00.000Z",
+      "to": "2026-09-04T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "OSCAR McMaster - Professional Edition (OSCAR Pro)"
+    },
+    "locumPay": "1",
+    "schedule": "Hoping for any coverage, can be part-time, full-time hours for the week of August 31 - September 4, 2026.",
+    "locumCreatorId": "697d32525246960b42da52be",
+    "reservationId": "6992661963f1f5cab16e4f6e",
+    "facilityName": "Whitby FHO",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "699887ecda015611f4f886f0",
+    "jobId": "nN0jjYi",
+    "postTitle": "Family Physician – Occupational / Industrial Medicine (on-site, Daily Guarantee)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -80.30693169999999,
+      "lat": 43.5357942
+    },
+    "fullAddress": {
+      "streetNumber": "400",
+      "streetName": "Massey Road",
+      "city": "Guelph",
+      "postalCode": "N1K 1C4",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-03T05:00:00.000Z",
+      "to": "2026-03-03T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Other"
+    },
+    "locumPay": "1500",
+    "schedule": "The mobile clinic operates from 9 a.m. to 6 p.m., with patient volume to be confirmed prior to the shift.",
+    "locumCreatorId": "6820e9faf63a1e470adb525f",
+    "reservationId": "699887ecda015611f4f886f2",
+    "facilityName": "Transgear Manufacturing",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "Adult"
+    ]
+  },
+  {
+    "_id": "6998890e71b5fa2802b90b90",
+    "jobId": "xPvR8PG",
+    "postTitle": "Family Physician – Occupational / Industrial Medicine (on-site, Daily Guarantee)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -82.9965563,
+      "lat": 42.3031521
+    },
+    "fullAddress": {
+      "streetNumber": "1855",
+      "streetName": "Turner Road",
+      "city": "Windsor",
+      "postalCode": "N8W 3K2",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-06T05:00:00.000Z",
+      "to": "2026-03-06T05:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Other"
+    },
+    "locumPay": "1000",
+    "schedule": "The mobile clinic operates from 9 a.m. to 5 p.m., with patient volume and exact schedule to be confirmed prior to the shift.",
+    "locumCreatorId": "6820e9faf63a1e470adb525f",
+    "reservationId": "6998890e71b5fa2802b90b92",
+    "facilityName": "Chrysler Assembly, Security, Windsor",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "Adult"
+    ]
+  },
+  {
+    "_id": "699889998db97607e0684813",
+    "jobId": "YWaVMH0",
+    "postTitle": "Wawa Family Health Team - Locum -  URGENT COVERAGE NEEDED March 26 To 31, 2026",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -84.7721993,
+      "lat": 48.000819
+    },
+    "fullAddress": {
+      "streetNumber": "17",
+      "streetName": "Government Rd.",
+      "city": "Wawa",
+      "postalCode": "P0S1K0",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-26T04:00:00.000Z",
+      "to": "2026-03-31T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Other"
+    },
+    "locumPay": "12345",
+    "schedule": "Clinic Days:\n-\tRound on inpatients between 08:30 – 09:00. Usually you will have between 0-2 inpatients.\n-\tClinic starts at 10:00am. Clinic hours:10-12 1-4. We book 20 minute appts and no fit ins.\n-\tPost Call Clinic: 10-12 (or any two hour block you would like, and you are paid for the full clinic day)\n\nCall Days:\n-\tCall is 24hour 07:00am-07:00am (Our ER is low volume ~ 17 patients/shifts; NP assist)\n-\tFamily Health Team RNs see walk-in same day patients for you. They will ask you to assess patients and sign scripts as needed. You will thus need to be available to the Family Health Team nurses between 08:00am – 04:00pm on weekdays.",
+    "locumCreatorId": "68d19142a39d8c9296d466f7",
+    "reservationId": "6998899a8db97607e0684816",
+    "facilityName": "Lady Dunn Health Centre/ Wawa Family Health Team",
+    "practiceType": [
+      "Clinic & ED"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  },
+  {
+    "_id": "699889b56beb5010438383a8",
+    "jobId": "Bsb5FsR",
+    "postTitle": "Family Physician – Occupational / Industrial Medicine (On-Site, Daily Guarantee)",
+    "medProfession": "Physician",
+    "medSpeciality": "Family Medicine",
+    "location": {
+      "lng": -80.284922,
+      "lat": 43.1329986
+    },
+    "fullAddress": {
+      "streetNumber": "10",
+      "streetName": "Spalding Dr",
+      "city": "Brantford",
+      "postalCode": "N3T 6B8",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-03-25T04:00:00.000Z",
+      "to": "2026-03-25T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Other"
+    },
+    "locumPay": "1000",
+    "schedule": "The mobile clinic operates from 9 a.m. to 5 p.m., with patient volume and exact schedule to be confirmed prior to the shift.",
+    "locumCreatorId": "6820e9faf63a1e470adb525f",
+    "reservationId": "699889b56beb5010438383aa",
+    "facilityName": "Fowler Metal Group, Brantford",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "Adult"
+    ]
+  },
+  {
+    "_id": "6998b824d7fe308af88635c4",
+    "jobId": "zlsX-wE",
+    "postTitle": "Family Physicians And Specialists",
+    "medProfession": "Physician",
+    "medSpeciality": "Other",
+    "location": {
+      "lng": -78.15391149999999,
+      "lat": 43.9630417
+    },
+    "fullAddress": {
+      "streetNumber": "316",
+      "streetName": "King Street East",
+      "city": "Cobourg",
+      "postalCode": "K9a5R8",
+      "country": "Canada",
+      "province": "ON"
+    },
+    "dateRange": {
+      "from": "2026-02-20T05:00:00.000Z",
+      "to": "2031-08-07T04:00:00.000Z"
+    },
+    "facilityInfo": {
+      "emr": "Other"
+    },
+    "locumPay": "1",
+    "schedule": "You can create your own schedule.",
+    "locumCreatorId": "6995f024bd02801146186c4e",
+    "reservationId": "6998b824d7fe308af88635c6",
+    "facilityName": "King Street Medical",
+    "practiceType": [
+      "Clinic only"
+    ],
+    "patientType": [
+      "All Ages"
+    ]
+  }
+]
