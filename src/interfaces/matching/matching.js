@@ -20,18 +20,6 @@
  */
 
 /**
- * Per-category score breakdown. Each field is the score for that category.
- * undefined = that category wasnt scored (different from 0)
- *
- * @typedef {Object} ScoreBreakdown
- * @property {number} [location]
- * @property {number} [duration]
- * @property {number} [emr]
- * @property {number} [speciality]
- * @property {number} [province]
- */
-
-/**
  * A single physician match result
  *
  * Has the total score AND a per-category breakdown so the platform can show WHY someone was matched, not just the final number
@@ -42,24 +30,6 @@
  * @property {number} score - Total match score, 0-1 range. Higher = better
  * @property {ScoreBreakdown} breakdown - Score breakdown by category
  * @property {string[]} [flags] - Data quality flags, e.g. "missing_physician_location", "missing_emr_data"
-<<<<<<< HEAD
-=======
- */
-
-/**
- * Bundled search input: job + optional reservation + options
- *
- * @typedef {Object} SearchCriteria
- * @property {LocumJob} job
- * @property {Reservation} [reservation]
- * @property {{ onlyLookingForLocums?: boolean }} [options]
- */
-
-/**
- * Interface for the matching engine (stub or real)
- *
- * @typedef {{ searchPhysicians(criteria: SearchCriteria, physicians: Physician[]): Promise<SearchResult[]> }} MatchingEngine
->>>>>>> 00e3701 (Unify harness types with interfaces and rename User to Physician)
  */
 
 /**
@@ -79,25 +49,7 @@
  * Contains the 5 individual category scores (each 0-1) and data quality flags
  * NO total score yet — that happens in Stage 3 (combineAndRank)
  *
-<<<<<<< HEAD
  * This is never stored in the database. It lives only during pipeline execution
-=======
- * The function is responsible for:
- * - Extracting the fields it needs from the LocumJob (medProfession, medSpeciality, location, dateRange, province, emr)
- * - Filtering the physician pool (hard filters: medProfession must match, medSpeciality must match, isLookingForLocums must be true)
- * - Scoring each eligible physician on each category:
- *    - scoreLocation(physician, job.location, job.fullAddress)
- *    - scoreDuration(physician, job.dateRange)
- *    - scoreEMR(physician.emrSystems, job.emr)
- *    - scoreProvince(physician, job.fullAddress.province)
- *    - scoreSpeciality(physician, job.medSpeciality)
- * - Combining all category scores into one total score using configurable weights (NOT hardcoded, see README §9)
- * - Building a SearchResult for each physician with the total score and breakdown
- * - Filtering out results below the threshold (if provided via options)
- * - Sorting results by score descending
- * - Capping results at the limit (if provided via options)
- * - Returning the final SearchResult[]
->>>>>>> 00e3701 (Unify harness types with interfaces and rename User to Physician)
  *
  * @typedef {Object} ScoredPair
  * @property {string} physicianId

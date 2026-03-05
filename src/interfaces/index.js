@@ -6,7 +6,7 @@
 // Import types in consuming files using:
 //   /** @typedef {import("./interfaces/index.js").Physician} Physician */
 
-export * from './core/index.js'
+export * from './core/models.js'
 export * from './matching/index.js'
 export * from './scoring/index.js'
 export * from './persistence/index.js'

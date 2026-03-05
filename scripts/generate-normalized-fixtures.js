@@ -19,18 +19,9 @@ const rawJobs = JSON.parse(readFileSync(resolve(fixturesDir, 'locum.locumjobs.fo
 const rawReservations = JSON.parse(readFileSync(resolve(fixturesDir, 'locum.reservations.formatted.json'), 'utf-8'))
 
 // --- Normalize ---
-const physicians = rawUsers.map(
-  /** @param {any} raw */
-  (raw) => physicianToDomain(raw)
-)
-const locumJobs = rawJobs.map(
-  /** @param {any} raw */
-  (raw) => locumJobToDomain(raw)
-)
-const reservations = rawReservations.map(
-  /** @param {any} raw */
-  (raw) => reservationToDomain(raw)
-)
+const physicians = rawUsers.map((/** @type {any} */ raw) => physicianToDomain(raw))
+const locumJobs = rawJobs.map((/** @type {any} */ raw) => locumJobToDomain(raw))
+const reservations = rawReservations.map((/** @type {any} */ raw) => reservationToDomain(raw))
 
 // --- Write normalized fixtures ---
 writeFileSync(resolve(fixturesDir, 'normalized.physicians.json'), JSON.stringify(physicians, null, 2) + '\n')

@@ -80,7 +80,7 @@ function normalizeApplicant(raw) {
   }
 
   const applicationLog = Array.isArray(raw.applicationLog)
-    ? /** @type {any[]} */ (raw.applicationLog)
+    ? raw.applicationLog
         .filter((entry) => entry && typeof entry === 'object')
         .map((entry) => ({
           event: validateStage(entry.event) ?? trimString(entry.event),

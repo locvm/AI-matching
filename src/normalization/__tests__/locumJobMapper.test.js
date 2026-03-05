@@ -128,10 +128,8 @@ describe('locumJobMapper.toDomain', () => {
   })
 
   it('throws for null/undefined input', () => {
-    // @ts-expect-error - intentional boundary test: null input
-    expect(() => toDomain(null)).toThrow('raw document is required')
-    // @ts-expect-error - intentional boundary test: undefined input
-    expect(() => toDomain(undefined)).toThrow('raw document is required')
+    expect(() => toDomain(/** @type {any} */ (null))).toThrow('raw document is required')
+    expect(() => toDomain(/** @type {any} */ (undefined))).toThrow('raw document is required')
   })
 })
 

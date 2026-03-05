@@ -38,10 +38,13 @@
       "Thu",
       "Fri"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -354,9 +357,12 @@
       "Sat",
       "Sun"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -1711,9 +1717,12 @@
       "part-time",
       "on-call"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -1932,9 +1941,12 @@
     "commitmentTypes": [
       "full-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -2069,10 +2081,13 @@
       "part-time",
       "full-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -2130,10 +2145,13 @@
     "commitmentTypes": [
       "part-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -2470,9 +2488,12 @@
       "full-time",
       "part-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -2628,10 +2649,13 @@
       "part-time",
       "on-call"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -2705,10 +2729,13 @@
       "part-time",
       "on-call"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -2778,10 +2805,13 @@
       "on-call",
       "full-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -2895,9 +2925,12 @@
     "commitmentTypes": [
       "part-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -2951,9 +2984,12 @@
       "full-time",
       "part-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -3145,9 +3181,12 @@
     "commitmentTypes": [
       "full-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -3264,10 +3303,13 @@
       "part-time",
       "on-call"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -3311,10 +3353,13 @@
       "Thu",
       "Fri"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -3386,9 +3431,12 @@
     "commitmentTypes": [
       "full-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -3451,10 +3499,13 @@
     "commitmentTypes": [
       "full-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -3586,9 +3637,12 @@
       "part-time",
       "on-call"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -3633,9 +3687,12 @@
     "commitmentTypes": [
       "part-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -3738,10 +3795,13 @@
     "commitmentTypes": [
       "full-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -3849,9 +3909,12 @@
       "full-time",
       "part-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -3927,10 +3990,13 @@
       "on-call",
       "part-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -4057,10 +4123,13 @@
     "role": "User",
     "languages": [],
     "locumDurations": [],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -4220,10 +4289,13 @@
     "commitmentTypes": [
       "full-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -4370,10 +4442,13 @@
       "part-time",
       "on-call"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -4415,10 +4490,13 @@
       "full-time",
       "part-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -4536,10 +4614,13 @@
       "part-time",
       "full-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -4570,9 +4651,12 @@
     "commitmentTypes": [
       "part-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -4797,10 +4881,13 @@
       "full-time",
       "on-call"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -4883,9 +4970,12 @@
       "part-time",
       "on-call"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -4988,10 +5078,13 @@
       "part-time",
       "on-call"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -5105,9 +5198,12 @@
     "commitmentTypes": [
       "part-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -5217,9 +5313,12 @@
       "part-time",
       "on-call"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -5275,10 +5374,13 @@
       "part-time",
       "on-call"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": false,
     "isOnboardingCompleted": true
   },
@@ -5364,10 +5466,13 @@
     "commitmentTypes": [
       "part-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -5420,10 +5525,13 @@
     "commitmentTypes": [
       "part-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -5487,9 +5595,12 @@
     "commitmentTypes": [
       "part-time"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -5635,10 +5746,13 @@
       "Sat",
       "Sun"
     ],
+<<<<<<< HEAD
     "availabilityYears": [
       2025,
       2026
     ],
+=======
+>>>>>>> 55fce72 (Add normalization layer for converting raw MongoDB docs to clean domain models)
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },

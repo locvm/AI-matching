@@ -56,13 +56,8 @@
 /**
  * A numeric day range for how long a doctor wants to do a locum.
  *
-<<<<<<< HEAD
  * Comes from dropdown strings like "1-3 months" which becomes { minDays: 30, maxDays: 90 }.
  * Cleanup logic is in src/normalization/normalizeLocumDuration.js
-=======
- * All fields are flat and top-level — no nested preferences object.
- * The fixture loader flattens preferences.* from the raw DB into these fields.
->>>>>>> 00e3701 (Unify harness types with interfaces and rename User to Physician)
  *
  * @typedef {Object} DurationRange
  * @property {number} minDays - minimum days (inclusive)
@@ -102,7 +97,6 @@
 
 /**
  * @typedef {Object} Physician
-<<<<<<< HEAD
  *
  * Identity
  * @property {string} _id - MongoDB ObjectId as string
@@ -140,18 +134,32 @@
  * Account flags
  * @property {boolean} [isProfileComplete]
  * @property {boolean} [isOnboardingCompleted]
-=======
  * @property {string} _id - MongoDB ObjectId as string
- * @property {string} medProfession - "Physician", "Recruiter" - only Physicians get matched
- * @property {string} medSpeciality - like "Family Medicine", "Emergency Medicine", "Radiologist"
- * @property {boolean} isLookingForLocums - Whether the doctor is actively looking. Missing values -> true during cleanup
- * @property {GeoCoordinates | null} location - Doctors anchor location. Null for 43% of physicians. When null, location scoring returns middle score (0.5)
- * @property {Address | null} workAddress - Work address
- * @property {ProvinceCode} [medicalProvince] - Province where the doctor is medically licensed. Currently almost everyone is "ON" (Ontario)
- * @property {ProvinceCode[]} preferredProvinces - Provinces the doctor prefers to work in. Flattened from preferences.preferredProvinces
- * @property {string[]} specificRegions - Free-text region preferences like "downtown toronto", "GTA", "Barrie". Flattened from preferences.specificRegions
- * @property {string[]} emrSystems - EMR systems the doctor knows. Only 42/410 have this
- * @property {string} [facilityEMR] - EMR system at the doctor's facility
+ *
+ * Medical Info
+ * @property {string} medProfession - "Physician" or "Recruiter". Only Physicians get matched.
+ * @property {string} medSpeciality - Like "Family Medicine", "Emergency Medicine".
+ * @property {ProvinceCode} [medicalProvince] - Province where licensed. Almost everyone is "ON".
+ * @property {string[]} emrSystems - EMR systems the doctor knows. Only 42 out of 410 have this.
+ *
+ * Location
+ * @property {GeoCoordinates | null} location - Always null. User schema has no coordinates.
+ * @property {Address | null} workAddress - Work address.
+ *
+ * Preferences (flattened from UserSchema.preferences)
+ * @property {boolean} isLookingForLocums - Actively looking. If missing we default to true.
+ * @property {ProvinceCode[]} preferredProvinces - Provinces the doctor prefers (stored as full names in DB).
+ * @property {string[]} specificRegions - Free text regions like "downtown toronto", "GTA".
+ * @property {DurationRange[]} [locumDurations] - How long they want to work, as numeric day ranges.
+ * @property {DayOfWeek[]} [availableDays] - Which days they can work. Comes from "Weekdays"/"Weekends".
+ * @property {CommitmentType[]} [commitmentTypes] - Full time, part time, or on call.
+ * @property {AvailabilityWindow[]} [availabilityWindows] - Specific date ranges when they can work. Like "Jan 2025 to Mar 2025".
+ *
+ * Facility
+ * @property {string} [facilityName] - Name of the doctors facility.
+ * @property {string} [facilityEMR] - EMR system at the doctors facility.
+ *
+ * Personal
  * @property {string} [firstName]
  * @property {string} [lastName]
  * @property {string} [role]
@@ -160,7 +168,6 @@
  * @property {string[]} [availabilityTypes] - Availability type preferences like "Weekdays", "Weekends", "Evenings". Flattened from preferences.availabilityTypes
  * @property {boolean} [isProfileComplete] - Whether the doctors profile is complete
  * @property {boolean} [isOnboardingCompleted] - Whether onboarding is done
->>>>>>> 00e3701 (Unify harness types with interfaces and rename User to Physician)
  */
 
 // Physician, intentionally omitted (not needed for matching):
@@ -183,7 +190,6 @@
 // facilityInfo.emr will carry the value. Until then, EMR scoring treats missing as 0.5.
 
 /**
-<<<<<<< HEAD
  * @typedef {Object} LocumJob
  *
  * Identity
@@ -234,37 +240,6 @@
  * All the states a reservation can be in. Only these 8 values exist in production.
  *
  * @typedef {"Pending" | "Requested" | "Awaiting Payment" | "Confirmed" | "In Progress" | "Completed" | "Cancelled" | "Expired"} ReservationStatus
-=======
- * Clean locum job posting
- *
- * All fields are flat and top-level. The fixture loader converts GeoJSON coordinates
- * to {lng, lat} and cleans province strings to 2-letter codes.
- *
- * Jobs are way cleaner than users tbh, all 108 have coordinates, all have date ranges, all have specialty
- *
- * The big gap: EMR. The field literally doesnt exist on any job document right now. Eve added emrSystems to users ~8 months in but jobs never got it. When the platform adds it, this field will carry the value
- * Until then, EMR scoring treats missing job EMR as middle score (0.5)
- *
- * @typedef {Object} LocumJob
- * @property {string} _id - MongoDB ObjectId as string
- * @property {string} [jobId] - Human-readable short ID like "EuXagtm"
- * @property {string} [postTitle]
- * @property {string} medProfession
- * @property {string} medSpeciality
- * @property {GeoCoordinates | null} location - Job location as {lng, lat}. Flattened from GeoJSON coordinates [lng, lat]
- * @property {Address} fullAddress - Clean full address, province normalized to 2-letter code
- * @property {{ from: Date, to: Date }} dateRange - When the locum needs to be filled
- * @property {string} [jobType] - "FTE" or "PT"
- * @property {{ emr?: string }} [facilityInfo] - Facility info including EMR system
- * @property {string} [experience] - Experience level, free text, pretty messy. Needs future cleanup
- * @property {string} [locumPay] - Pay amount as string like "8000". Future: clean up to number
- * @property {string} [schedule] - Work schedule description
- * @property {string} [locumCreatorId] - Who created this job posting
- * @property {string} [reservationId] - Associated reservation ID if any
- * @property {string} [facilityName] - Facility name
- * @property {string[]} [practiceType]
- * @property {string[]} [patientType]
->>>>>>> 00e3701 (Unify harness types with interfaces and rename User to Physician)
  */
 
 /**
@@ -278,7 +253,6 @@
  * Tracks state changes. Mongoose has a pre save hook that syncs currentApplicationStage
  * to the last log entry automatically.
  *
-<<<<<<< HEAD
  * @typedef {Object} ApplicationLogEntry
  * @property {string} event - the stage transition event (matches ApplicationStage values)
  * @property {Date} [at] - when it happened
@@ -287,24 +261,16 @@
 
 /**
  * An applicant on a reservation.
-=======
- * The fixture loader flattens applicants[].userId from {$oid: "..."} to plain strings.
->>>>>>> 00e3701 (Unify harness types with interfaces and rename User to Physician)
  *
  * @typedef {Object} ReservationApplicant
  * @property {string} _id
  * @property {string} [userId]
-<<<<<<< HEAD
  * @property {ApplicationStage} [currentApplicationStage] - Synced from the last applicationLog entry.
  * @property {ApplicationLogEntry[]} [applicationLog]
-=======
- * @property {Array<{ status?: string, at?: Date }>} [applicationLog]
->>>>>>> 00e3701 (Unify harness types with interfaces and rename User to Physician)
  */
 
 /**
  * @typedef {Object} Reservation
-<<<<<<< HEAD
  *
  * Core
  * @property {string} _id
@@ -322,15 +288,6 @@
  * @property {string} [reservedBy]
  *
  * Timestamps
-=======
- * @property {string} _id
- * @property {string} locumJobId
- * @property {ReservationStatus} status
- * @property {ReservationApplicant[]} [applicants]
- * @property {{ from: Date, to: Date }} [reservationDate]
- * @property {string} [createdBy]
- * @property {string} [reservedBy]
->>>>>>> 00e3701 (Unify harness types with interfaces and rename User to Physician)
  * @property {Date} [createdAt]
  * @property {Date} [dateModified]
  */
