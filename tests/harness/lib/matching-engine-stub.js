@@ -16,10 +16,10 @@ import {
 } from './stub-scorers.js'
 
 /**
- * @typedef {import('../../../src/interfaces/index.js').Physician} Physician
- * @typedef {import('../../../src/interfaces/index.js').LocumJob} LocumJob
- * @typedef {import('../../../src/interfaces/index.js').Reservation} Reservation
- * @typedef {import('../../../src/interfaces/index.js').SearchResult} SearchResult
+ * @typedef {import('./types.js').Physician} Physician
+ * @typedef {import('./types.js').LocumJob} LocumJob
+ * @typedef {import('./types.js').Reservation} Reservation
+ * @typedef {import('./types.js').SearchResult} SearchResult
  */
 
 /**

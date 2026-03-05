@@ -21,6 +21,8 @@ import { OUTPUT, PATHS } from '../harness.config.js'
  * @typedef {import('../../../src/interfaces/index.js').ScorePhysicianFn} ScorePhysicianFn
  */
 
+// ── Job-centric harness (1 job → all physicians) ───────────────────────────
+
 export class MatchingTestHarness {
   /** @type {LocumJob[]} */
   #jobs
@@ -104,6 +106,8 @@ export class MatchingTestHarness {
     }
   }
 }
+
+// Physician-centric harness (1 physician → all jobs)
 
 export class PhysicianTestHarness {
   /** @type {LocumJob[]} */

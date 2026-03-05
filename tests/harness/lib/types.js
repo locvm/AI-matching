@@ -9,8 +9,8 @@ export {}
 /** @typedef {import('../../../src/interfaces/core/models.js').ReservationApplicant} ReservationApplicant */
 /** @typedef {import('../../../src/interfaces/matching/matching.js').SearchResult} SearchResult */
 /** @typedef {import('../../../src/interfaces/matching/matching.js').ScoreBreakdown} ScoreBreakdown */
-/** @typedef {import('../../../src/interfaces/matching/matching.js').SearchCriteria} SearchCriteria */
-/** @typedef {import('../../../src/interfaces/matching/matching.js').MatchingEngine} MatchingEngine */
+/** @typedef {import('../../../src/interfaces/matching/matching.js').ScoreJobFn} ScoreJobFn */
+/** @typedef {import('../../../src/interfaces/matching/matching.js').ScorePhysicianFn} ScorePhysicianFn */
 
 // Harness-specific types
 

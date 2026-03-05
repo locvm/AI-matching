@@ -13,18 +13,26 @@ beforeAll(async () => {
   fixtures = await loadFixtures()
 })
 
+// ── Job-centric helpers ─────────────────────────────────────────────────────
+
 /**
  * @param {object} [overrides]
  * @returns {MatchingTestHarness}
  */
 function createJobHarness(overrides = {}) {
-  return new MatchingTestHarness({
-    jobs: fixtures.jobs,
-    physicians: fixtures.physicians,
-    reservations: fixtures.reservations,
-    ...overrides,
+  return new MatchingTestHarness(fixtures, {
+    topK: OUTPUT.TOP_K,
+    outputDir: PATHS.OUTPUT_DIR,
+    sampling: {
+      maxJobs: TEST.MAX_JOBS,
+      maxUsers: TEST.MAX_USERS,
+      seed: TEST.SEED,
+      ...overrides,
+    },
   })
 }
+
+// ── Physician-centric helpers ───────────────────────────────────────────────
 
 /**
  * @param {object} [overrides]
@@ -42,6 +50,10 @@ function createPhysicianHarness(overrides = {}) {
     },
   })
 }
+
+// ═══════════════════════════════════════════════════════════════════════════
+// JOB-CENTRIC: 1 job → find matching physicians
+// ═══════════════════════════════════════════════════════════════════════════
 
 describe('MatchingTestHarness – end-to-end', () => {
   /** @type {import('./lib/types.js').HarnessRunResult} */
