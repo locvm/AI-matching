@@ -8,6 +8,7 @@
 // The combine function scales everything to 0-MAX_SCORE for harness test compatibility.
 
 import { SCORING } from '../harness.config.js'
+import { scoreLocation } from '../../../src/scoring/location/scoreLocation.js'
 
 /**
  * @typedef {import('./types.js').Physician} Physician
@@ -47,15 +48,15 @@ function hashToScore(physicianId, jobId, salt) {
 // ── Stub scorers (each returns 0-1) ─────────────────────────────────────────
 
 /**
- * Stub location scorer. Returns hash-based 0-1.
- * Swap this for the real scoreLocation when ready.
+ * Real location scorer. Uses 6-tier fallback:
+ * GPS distance (reverse sigmoid) → specificRegions → preferredProvinces → workProvince → medicalProvince → no data (0.5)
  *
  * @param {Physician} physician
  * @param {LocumJob} job
  * @returns {number} 0 to 1
  */
 export function stubScoreLocation(physician, job) {
-  return hashToScore(physician._id, job._id, 'location')
+  return scoreLocation(physician, job.location, job.fullAddress)
 }
 
 /**
@@ -115,9 +116,6 @@ export function stubScoreSpeciality(physician, job) {
 
 /**
  * Takes 5 individual 0-1 scores and produces a combined result.
- *
- * Scales breakdown values to 0-MAX_SCORE for harness test compatibility.
- * Total score is a weighted sum of the scaled breakdown values.
  *
  * @param {CategoryScores} scores - the 5 individual 0-1 scores
  * @returns {{ score: number, breakdown: import('./types.js').ScoreBreakdown }}
