@@ -86,6 +86,7 @@ describe('geocodeAddress', () => {
   })
 
   it('returns null for null address', async () => {
+    // @ts-expect-error - intentional boundary test: null address
     const result = await geocodeAddress(null)
     expect(result).toBeNull()
   })
