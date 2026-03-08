@@ -98,6 +98,24 @@ export function toDomain(raw) {
 }
 
 /**
+ * Enriches a Physician with GPS coordinates from their workAddress.
+ * Call this AFTER toDomain() when you need GPS quality location scoring.
+ *
+ * Takes a geocode function so you can swap between local lookup and Nominatim.
+ *
+ * @param {Physician} physician
+ * @param {(address: import("../interfaces/core/models.js").Address) => Promise<import("../interfaces/core/models.js").GeoCoordinates | null> | import("../interfaces/core/models.js").GeoCoordinates | null} geocodeFn
+ * @returns {Promise<Physician>}
+ */
+export async function enrichWithCoordinates(physician, geocodeFn) {
+  if (physician.location) return physician
+  if (!physician.workAddress?.city) return physician
+
+  const coords = await geocodeFn(physician.workAddress)
+  return coords ? { ...physician, location: coords } : physician
+}
+
+/**
  * Turns a clean Physician back into the raw Mongo shape.
  * Not built yet. Will be needed for write operations or SQL migration.
  *

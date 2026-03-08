@@ -6,14 +6,26 @@ Scores how geographically close a job is for a physician. Returns a number from 
 
 The scorer tries the best data first and falls through to less precise methods if that data is missing.
 
-| Tier | What It Uses                                   | Match Score           | Mismatch Score | When It Fires                                             |
+<<<<<<< HEAD
+| Tier | What It Uses | Match Score | Mismatch Score | When It Fires |
 | ---- | ---------------------------------------------- | --------------------- | -------------- | --------------------------------------------------------- |
-| 1    | GPS coordinates (Haversine distance)           | Reverse sigmoid curve | same           | Both physician AND job have lat/lng                       |
-| 2    | physician.specificRegions vs job city          | 0.85                  | 0.15           | Physician listed specific regions like "downtown toronto" |
-| 3    | physician.preferredProvinces vs job province   | 0.70                  | 0.20           | Physician listed preferred provinces                      |
-| 4    | physician.workAddress.province vs job province | 0.55                  | 0.40           | Physician has a work address                              |
-| 5    | physician.medicalProvince vs job province      | 0.50                  | 0.45           | Last resort, where they are licensed                      |
-| 6    | nothing                                        | 0.50                  | n/a            | Zero usable location data                                 |
+| 1 | GPS coordinates (Haversine distance) | Reverse sigmoid curve | same | Both physician AND job have lat/lng |
+| 2 | physician.specificRegions vs job city | 0.85 | 0.15 | Physician listed specific regions like "downtown toronto" |
+| 3 | physician.preferredProvinces vs job province | 0.70 | 0.20 | Physician listed preferred provinces |
+| 4 | physician.workAddress.province vs job province | 0.55 | 0.40 | Physician has a work address |
+| 5 | physician.medicalProvince vs job province | 0.50 | 0.45 | Last resort, where they are licensed |
+| 6 | nothing | 0.50 | n/a | Zero usable location data |
+=======
+| Tier | What It Uses | Match Score | Mismatch Score | When It Fires |
+|------|-------------|-------------|----------------|---------------|
+| 1 | GPS coordinates (Haversine distance) | Reverse sigmoid curve | same | Both physician AND job have lat/lng |
+| 2 | physician.specificRegions vs job city | 0.85 | 0.15 | Physician listed specific regions like "downtown toronto" |
+| 3 | physician.preferredProvinces vs job province | 0.70 | 0.20 | Physician listed preferred provinces |
+| 4 | physician.workAddress.province vs job province | 0.55 | 0.40 | Physician has a work address |
+| 5 | physician.medicalProvince vs job province | 0.50 | 0.45 | Last resort, where they are licensed |
+| 6 | nothing | 0.50 | n/a | Zero usable location data |
+
+> > > > > > > 9ad93fa (Add real location scorer, dual geocoding, and connect harness to normalization layer)
 
 ### Tier 1: GPS Distance (The Good One)
 
@@ -24,6 +36,11 @@ score(d) = 1 / (1 + exp(0.035 * (d - 100)))
 ```
 
 What that looks like:
+<<<<<<< HEAD
+
+=======
+
+> > > > > > > 9ad93fa (Add real location scorer, dual geocoding, and connect harness to normalization layer)
 
 - 0 km (same location): ~0.97
 - 25 km (same city): ~0.93
@@ -67,6 +84,11 @@ Calls OpenStreetMap's free Nominatim API. Can resolve any address worldwide, not
 **Rate limit warning:** The Nominatim public API is free but requires max 1 request per second and a User-Agent header. Do NOT call it in a tight loop. The batch geocoder in `geocodeBatch.js` handles the delay automatically.
 
 For production, consider:
+<<<<<<< HEAD
+
+=======
+
+> > > > > > > 9ad93fa (Add real location scorer, dual geocoding, and connect harness to normalization layer)
 
 - Self-hosting Nominatim (Docker image available)
 - Caching results (physician addresses rarely change)
@@ -86,8 +108,13 @@ Raw Mongo doc
 The `enrichWithCoordinates()` function in physicianMapper.js lets you pass any geocode function:
 
 ```js
+<<<<<<< HEAD
 import { lookupAddress } from '../scoring/location/canadianCities.js'
 import { geocodeAddress } from '../normalization/geocodeAddress.js'
+=======
+import { lookupAddress } from "../scoring/location/canadianCities.js"
+import { geocodeAddress } from "../normalization/geocodeAddress.js"
+>>>>>>> 9ad93fa (Add real location scorer, dual geocoding, and connect harness to normalization layer)
 
 // Local only (instant)
 const enriched = await enrichWithCoordinates(physician, lookupAddress)
@@ -108,15 +135,28 @@ All scoring parameters live in `src/config/locationConfig.js`:
 
 ## Files
 
-| File                                     | What It Does                                                                           |
+<<<<<<< HEAD
+| File | What It Does |
 | ---------------------------------------- | -------------------------------------------------------------------------------------- |
-| `scoreLocation.js`                       | The scorer. 6 tier fallback. Exports `scoreLocation()` and `scoreLocationWithDetail()` |
-| `haversine.js`                           | Haversine great circle distance formula                                                |
-| `canadianCities.js`                      | Local city to GPS lookup table                                                         |
-| `../../config/locationConfig.js`         | All configurable parameters                                                            |
-| `../../normalization/geocodeAddress.js`  | Nominatim API wrapper                                                                  |
-| `../../normalization/geocodeBatch.js`    | Batch geocoding with rate limiting                                                     |
-| `../../normalization/physicianMapper.js` | `enrichWithCoordinates()` function                                                     |
+| `scoreLocation.js` | The scorer. 6 tier fallback. Exports `scoreLocation()` and `scoreLocationWithDetail()` |
+| `haversine.js` | Haversine great circle distance formula |
+| `canadianCities.js` | Local city to GPS lookup table |
+| `../../config/locationConfig.js` | All configurable parameters |
+| `../../normalization/geocodeAddress.js` | Nominatim API wrapper |
+| `../../normalization/geocodeBatch.js` | Batch geocoding with rate limiting |
+| `../../normalization/physicianMapper.js` | `enrichWithCoordinates()` function |
+=======
+| File | What It Does |
+|------|-------------|
+| `scoreLocation.js` | The scorer. 6 tier fallback. Exports `scoreLocation()` and `scoreLocationWithDetail()` |
+| `haversine.js` | Haversine great circle distance formula |
+| `canadianCities.js` | Local city to GPS lookup table |
+| `../../config/locationConfig.js` | All configurable parameters |
+| `../../normalization/geocodeAddress.js` | Nominatim API wrapper |
+| `../../normalization/geocodeBatch.js` | Batch geocoding with rate limiting |
+| `../../normalization/physicianMapper.js` | `enrichWithCoordinates()` function |
+
+> > > > > > > 9ad93fa (Add real location scorer, dual geocoding, and connect harness to normalization layer)
 
 ## Tests
 

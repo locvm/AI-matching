@@ -3,6 +3,7 @@ import { readFileSync } from 'fs'
 import { resolve } from 'path'
 import { scoreLocation, scoreLocationWithDetail } from '../scoreLocation.js'
 import { normalizeProvince } from '../../../normalization/normalizeProvince.js'
+import { toPhysician } from '../../../../tests/helpers/fixture-to-physician.js'
 
 // Load real fixture data
 // These tests run the scorer against actual physician and job data
@@ -14,31 +15,9 @@ let rawUsers
 let rawJobs
 
 /**
- * Converts a raw user fixture into a flat Physician shape.
- * Flattens preferences.* into top-level fields.
- * @param {Record<string, any>} raw
- */
-function toPhysician(raw) {
-  const prefs = raw.preferences ?? {}
-  return {
-    _id: raw._id?.$oid ?? raw._id ?? 'unknown',
-    medProfession: raw.medProfession ?? '',
-    medSpeciality: raw.medSpeciality ?? '',
-    isLookingForLocums: prefs.isLookingForLocums ?? true,
-    location: null, // no users have GPS coords in fixtures
-    workAddress: raw.workAddress ?? null,
-    medicalProvince: raw.medicalProvince ? normalizeProvince(raw.medicalProvince) : undefined,
-    preferredProvinces: (prefs.preferredProvinces ?? []).map((/** @type {any} */ p) => normalizeProvince(p) ?? p),
-    specificRegions: prefs.specificRegions ?? [],
-    emrSystems: raw.emrSystems ?? [],
-  }
-}
-
-/**
  * Converts a raw job fixture into the fields the scorer needs
- * @param {Record<string, any>} raw
  */
-function toJobLocation(raw) {
+function toJobLocation(/** @type {any} */ raw) {
   const coords = raw.location?.coordinates
   return {
     jobLocation: coords ? { lng: coords[0], lat: coords[1] } : { lng: 0, lat: 0 },
@@ -61,7 +40,6 @@ describe('Harness: score distribution', () => {
     const { jobLocation, jobAddress } = toJobLocation(rawJobs[0])
 
     for (const physician of physicians) {
-      // @ts-expect-error - medicalProvince may be undefined (fixture shape) vs expected string | null
       const score = scoreLocation(physician, jobLocation, jobAddress)
       expect(score).toBeGreaterThanOrEqual(0)
       expect(score).toBeLessThanOrEqual(1)
@@ -75,7 +53,6 @@ describe('Harness: score distribution', () => {
 
     let gpsCount = 0
     for (const physician of physicians) {
-      // @ts-expect-error - medicalProvince may be undefined (fixture shape) vs expected string | null
       const detail = scoreLocationWithDetail(physician, jobLocation, jobAddress)
       if (detail.method === 'gps_distance') gpsCount++
     }
@@ -99,7 +76,6 @@ describe('Harness: score distribution', () => {
     expect(noDataPhysicians.length).toBeGreaterThan(0)
 
     for (const physician of noDataPhysicians) {
-      // @ts-expect-error - medicalProvince may be undefined (fixture shape) vs expected string | null
       const score = scoreLocation(physician, jobLocation, jobAddress)
       expect(score).toBe(0.5)
     }
@@ -114,7 +90,6 @@ describe('Harness: known physician/job regression anchors', () => {
     const physician = toPhysician(raw)
     const { jobLocation, jobAddress } = toJobLocation(rawJobs[0]) // Markham, Ontario
 
-    // @ts-expect-error - medicalProvince may be undefined (fixture shape) vs expected string | null
     const score = scoreLocation(physician, jobLocation, jobAddress)
     expect(score).toBe(0.7)
   })
@@ -126,7 +101,6 @@ describe('Harness: known physician/job regression anchors', () => {
     const physician = toPhysician(raw)
     const { jobLocation, jobAddress } = toJobLocation(rawJobs[0])
 
-    // @ts-expect-error - medicalProvince may be undefined (fixture shape) vs expected string | null
     const score = scoreLocation(physician, jobLocation, jobAddress)
     expect(score).toBe(0.2)
   })
@@ -141,7 +115,6 @@ describe('Harness: known physician/job regression anchors', () => {
     expect(torontoJob).toBeDefined()
 
     const { jobLocation, jobAddress } = toJobLocation(torontoJob)
-    // @ts-expect-error - medicalProvince may be undefined (fixture shape) vs expected string | null
     const score = scoreLocation(physician, jobLocation, jobAddress)
     expect(score).toBe(0.85)
   })
@@ -155,7 +128,6 @@ describe('Harness: known physician/job regression anchors', () => {
     expect(markhamJob).toBeDefined()
 
     const { jobLocation, jobAddress } = toJobLocation(markhamJob)
-    // @ts-expect-error - medicalProvince may be undefined (fixture shape) vs expected string | null
     const score = scoreLocation(physician, jobLocation, jobAddress)
     // "toronto" does not match "Markham" city
     expect(score).toBe(0.15)
@@ -168,7 +140,6 @@ describe('Harness: known physician/job regression anchors', () => {
     const physician = toPhysician(raw)
     const { jobLocation, jobAddress } = toJobLocation(rawJobs[0])
 
-    // @ts-expect-error - medicalProvince may be undefined (fixture shape) vs expected string | null
     const score = scoreLocation(physician, jobLocation, jobAddress)
     expect(score).toBe(0.5)
   })
@@ -187,16 +158,10 @@ describe('Harness: Ontario province bias check', () => {
     if (onPhysicians.length === 0 || nonOnPhysicians.length === 0) return
 
     const avgOn =
-      onPhysicians.reduce((sum, p) => {
-        // @ts-expect-error - medicalProvince may be undefined (fixture shape) vs expected string | null
-        return sum + scoreLocation(p, jobLocation, jobAddress)
-      }, 0) / onPhysicians.length
+      onPhysicians.reduce((sum, p) => sum + scoreLocation(p, jobLocation, jobAddress), 0) / onPhysicians.length
 
     const avgNonOn =
-      nonOnPhysicians.reduce((sum, p) => {
-        // @ts-expect-error - medicalProvince may be undefined (fixture shape) vs expected string | null
-        return sum + scoreLocation(p, jobLocation, jobAddress)
-      }, 0) / nonOnPhysicians.length
+      nonOnPhysicians.reduce((sum, p) => sum + scoreLocation(p, jobLocation, jobAddress), 0) / nonOnPhysicians.length
 
     expect(avgOn).toBeGreaterThan(avgNonOn)
   })
@@ -208,7 +173,6 @@ describe('Harness: explainability fields', () => {
     const physician = toPhysician(raw)
     const { jobLocation, jobAddress } = toJobLocation(rawJobs[0])
 
-    // @ts-expect-error - medicalProvince may be undefined (fixture shape) vs expected string | null
     const detail = scoreLocationWithDetail(physician, jobLocation, jobAddress)
 
     expect(detail.method).toBe('preferred_province')
