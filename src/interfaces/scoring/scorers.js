@@ -46,10 +46,14 @@
  * DB stores availability as month/year strings, cleanup layer converts them to proper Dates before they reach this function
  * Partial overlap is allowed and should still produce a positive score
  *
+ * Returns a result object with the score and a breakdown indicating which scoring
+ * method was used (overlap, bucket, or neutral), the overlap percentage if computed,
+ * and whether the bucket fallback path was taken
+ *
  * @callback ScoreDurationFn
  * @param {Physician} physician - the clean physician profile
  * @param {{ from: Date, to: Date }} jobDateRange - the jobs start and end dates
- * @returns {number} score between 0 and 1 where 1 = full date-range coverage
+ * @returns {import("../../scoring/scoring.config.js").DurationScoreResult}
  */
 
 /**
