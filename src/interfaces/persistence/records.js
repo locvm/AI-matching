@@ -3,7 +3,7 @@
 // LOCVM Matching Engine - Persistence Data Shapes (JavaScript / JSDoc version)
 //
 // Shapes of records that get stored in the database
-// MatchRun, MatchRunResult, OutboxItem are all DB entities
+// MatchRun and MatchRunResult are DB entities
 //
 // The actual code that reads/writes these is implementation
 // These just define what the records look like
@@ -39,23 +39,7 @@
  * @property {number} score
  * @property {Record<string, number>} breakdown - Per-category breakdown
  * @property {Date} computedAt
- */
-
-/**
- * A notification waiting to be sent. Stored in the DB
- *
- * Outbox pattern: matching engine writes "notify doctor X about job Y" here. A separate process picks them up and sends emails or push or in-app
- * Note to self: need to check with Eve if the existing codebase already has notification infra. If it does we should use that instead
- *
- * @typedef {Object} OutboxItem
- * @property {string} id
- * @property {"SHORT_TERM_MATCH" | "WEEKLY_DIGEST"} type
- * @property {string} recipientId - Who gets it
- * @property {Record<string, unknown>} payload - The payload, shape depends on type. SHORT_TERM_MATCH: { jobId, score, jobTitle, ... } WEEKLY_DIGEST: { matches: [{ jobId, score, ... }] }
- * @property {Date} createdAt
- * @property {Date} [sentAt] - When it was actually sent (null = not yet)
- * @property {number} attempts - How many times we tried to send it
- * @property {string} [lastError] - Last error if sending failed
+ * @property {Date} [notifiedAt] - When the physician was notified about this match. Null = not yet notified. Replaces the old OutboxItem table
  */
 
 export {};

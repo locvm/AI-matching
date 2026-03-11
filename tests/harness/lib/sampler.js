@@ -5,7 +5,7 @@ import { SAMPLING, JOB_FILTERS } from '../harness.config.js'
 
 /**
  * @typedef {import('./types.js').LocumJob} LocumJob
- * @typedef {import('./types.js').User} User
+ * @typedef {import('./types.js').Physician} Physician
  * @typedef {import('./types.js').SamplerConfig} SamplerConfig
  */
 
@@ -43,13 +43,13 @@ export class Sampler {
   }
 
   /**
-   * @param {User[]} users
-   * @returns {User[]}
+   * @param {Physician[]} physicians
+   * @returns {Physician[]}
    */
-  sampleUsers(users) {
-    if (users.length <= this._config.maxUsers) return users
+  sampleUsers(physicians) {
+    if (physicians.length <= this._config.maxUsers) return physicians
 
-    const shuffled = seededShuffle(users, this._rng)
+    const shuffled = seededShuffle(physicians, this._rng)
     return shuffled.slice(0, this._config.maxUsers)
   }
 
