@@ -1,6 +1,7 @@
 // @ts-check
 
 import { SCORING } from '../harness.config.js'
+import { filterEligiblePhysicians } from '../../../src/matchingLogic/filterEligiblePhysicians.js'
 
 /**
  * @typedef {import('./types.js').User} User
@@ -9,6 +10,9 @@ import { SCORING } from '../harness.config.js'
  * @typedef {import('./types.js').SearchCriteria} SearchCriteria
  * @typedef {import('./types.js').SearchResult} SearchResult
  */
+
+/** Reservation statuses that mean the job is still accepting applicants. Others (Completed, Cancelled, Expired) are excluded. */
+const ELIGIBLE_RESERVATION_STATUSES = new Set(['Pending', 'In Progress', 'Ongoing'])
 
 /**
  * Stub implementation of the matching engine.
@@ -22,15 +26,22 @@ export class MatchingEngineStub {
    */
   async searchPhysicians(criteria, users) {
     const { job, reservation, options } = criteria
-    const onlyLooking = options?.onlyLookingForLocums ?? true
 
-    const applicantIds = this.#getApplicantIds(reservation ?? null)
+    if (!this.#isJobAcceptingApplicants(job, reservation)) {
+      return []
+    }
 
+    const eligible = /** @type {User[]} */ (
+      filterEligiblePhysicians(
+        /** @type {any} */ (users),
+        /** @type {any} */ (job),
+        /** @type {any} */ (reservation ?? undefined),
+        /** @type {any} */ (criteria)
+      )
+    )
     const results = []
 
-    for (const user of users) {
-      if (!this.#passesHardFilters(user, job, applicantIds, onlyLooking)) continue
-
+    for (const user of eligible) {
       results.push(this.#stubScore(user, job))
     }
 
@@ -39,23 +50,15 @@ export class MatchingEngineStub {
   }
 
   /**
-   * @param {User} user
+   * True if we should run matching for this job. Excludes jobs whose reservation is not in an eligible workflow status.
    * @param {LocumJob} job
-   * @param {Set<string>} applicantIds
-   * @param {boolean} onlyLooking
+   * @param {Reservation | null | undefined} reservation
    * @returns {boolean}
    */
-  #passesHardFilters(user, job, applicantIds, onlyLooking) {
-    if (user.medProfession !== job.medProfession) return false
-
-    const uSpec = (user.medSpeciality ?? '').trim().toLowerCase()
-    const jSpec = (job.medSpeciality ?? '').trim().toLowerCase()
-    if (uSpec !== jSpec) return false
-
-    if (onlyLooking && !user.preferences?.isLookingForLocums) return false
-    if (applicantIds.has(user._id)) return false
-
-    return true
+  #isJobAcceptingApplicants(job, reservation) {
+    if (!reservation) return true
+    const status = (reservation.status ?? '').trim()
+    return ELIGIBLE_RESERVATION_STATUSES.has(status)
   }
 
   /**
@@ -103,19 +106,6 @@ export class MatchingEngineStub {
       breakdown: { location, duration, emr },
       flags,
     }
-  }
-
-  /**
-   * @param {Reservation | null} reservation
-   * @returns {Set<string>}
-   */
-  #getApplicantIds(reservation) {
-    const ids = new Set()
-    if (!reservation?.applicants) return ids
-    for (const a of reservation.applicants) {
-      if (a.userId) ids.add(a.userId)
-    }
-    return ids
   }
 
   /**
