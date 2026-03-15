@@ -41,7 +41,11 @@ function collectFlags(physician, job) {
     flags.push('missing_job_location')
   }
 
-  if (!job.facilityInfo?.emr && !(Array.isArray(physician.emrSystems) && physician.emrSystems.length > 0) && !physician.facilityEMR) {
+  if (
+    !job.facilityInfo?.emr &&
+    !(Array.isArray(physician.emrSystems) && physician.emrSystems.length > 0) &&
+    !physician.facilityEMR
+  ) {
     flags.push('missing_emr_data')
   }
 
@@ -57,10 +61,10 @@ function collectFlags(physician, job) {
  */
 function scoreAndBuild(physician, job) {
   const scores = {
-    location:   stubScoreLocation(physician, job),
-    duration:   stubScoreDuration(physician, job),
-    emr:        stubScoreEMR(physician, job),
-    province:   stubScoreProvince(physician, job),
+    location: stubScoreLocation(physician, job),
+    duration: stubScoreDuration(physician, job),
+    emr: stubScoreEMR(physician, job),
+    province: stubScoreProvince(physician, job),
     speciality: stubScoreSpeciality(physician, job),
   }
 

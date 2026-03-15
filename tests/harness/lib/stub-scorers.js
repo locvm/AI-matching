@@ -129,8 +129,7 @@ export function stubCombineScores(scores) {
   const emr = Math.round(scores.emr * MAX_SCORE * 100) / 100
 
   // Weighted sum of the scaled values
-  const score =
-    Math.round((location * WEIGHTS.LOCATION + duration * WEIGHTS.DURATION + emr * WEIGHTS.EMR) * 100) / 100
+  const score = Math.round((location * WEIGHTS.LOCATION + duration * WEIGHTS.DURATION + emr * WEIGHTS.EMR) * 100) / 100
 
   return {
     score,

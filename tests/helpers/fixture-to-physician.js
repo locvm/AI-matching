@@ -5,9 +5,12 @@
  * for scorer tests. Lives here until the real cleanup layer exists.
  */
 
-/** @typedef {import("../harness/lib/types.js").User} User */
+import { normalizeLocumDuration } from '../../src/normalization/normalizeLocumDuration.js'
+
+/** @typedef {any} User */
 /** @typedef {import("../../src/interfaces/core/models.js").Physician} Physician */
 /** @typedef {import("../../src/interfaces/core/models.js").AvailabilityWindow} AvailabilityWindow */
+/** @typedef {import("../../src/interfaces/core/models.js").DurationRange} DurationRange */
 
 const MONTH_INDEX = /** @type {Record<string, number>} */ ({
   january: 0,
@@ -63,8 +66,13 @@ export function parseAvailability(user) {
  * @returns {Physician}
  */
 export function toPhysician(user) {
+  const rawDurations = /** @type {unknown[]} */ (user.preferences?.locumDurations ?? [])
+  const locumDurations = /** @type {DurationRange[]} */ (
+    rawDurations.map((d) => normalizeLocumDuration(typeof d === 'string' ? d : String(d))).filter((d) => d !== null)
+  )
+
   return /** @type {Physician} */ ({
-    id: user._id,
+    _id: user._id,
     firstName: user.firstName ?? '',
     lastName: user.lastName ?? '',
     medProfession: user.medProfession ?? '',
@@ -73,11 +81,11 @@ export function toPhysician(user) {
     location: null,
     workAddress: null,
     preferredProvinces: [],
+    specificRegions: [],
     emrSystems: user.emrSystems ?? [],
     languages: [],
-    availability: parseAvailability(user),
-    locumDurations: user.preferences?.locumDurations ?? [],
-    availabilityTypes: user.preferences?.availabilityTypes ?? [],
+    availabilityWindows: parseAvailability(user),
+    locumDurations,
     isProfileComplete: true,
     isOnboardingCompleted: true,
   })
