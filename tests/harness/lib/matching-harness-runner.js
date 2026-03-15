@@ -1,7 +1,7 @@
 // @ts-check
 
 import { searchPhysicians as searchPhysiciansStub, searchJobs as searchJobsStub } from './matching-engine-stub.js'
-import { Sampler } from './Sampler.js'
+import { Sampler } from './sampler.js'
 import { SummaryStatsCollector } from './summary-stats-collector.js'
 import { CsvReportWriter, PhysicianCsvReportWriter } from './csv-report-writer.js'
 import { OUTPUT, PATHS } from '../harness.config.js'

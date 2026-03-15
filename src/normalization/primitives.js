@@ -10,7 +10,7 @@
 /** @typedef {import("../interfaces/core/models.js").Address} Address */
 /** @typedef {import("../interfaces/core/models.js").ProvinceCode} ProvinceCode */
 
-import { normalizeProvince } from "./normalizeProvince.js";
+import { normalizeProvince } from './normalizeProvince.js'
 
 /**
  * Turns any kind of ID into a plain string.
@@ -20,11 +20,11 @@ import { normalizeProvince } from "./normalizeProvince.js";
  * @returns {string}
  */
 export function coerceObjectId(value) {
-  if (value == null) return "";
-  if (typeof value === "string") return value;
-  if (typeof value === "object" && value.$oid) return String(value.$oid);
-  if (typeof value.toString === "function") return value.toString();
-  return "";
+  if (value == null) return ''
+  if (typeof value === 'string') return value
+  if (typeof value === 'object' && value.$oid) return String(value.$oid)
+  if (typeof value.toString === 'function') return value.toString()
+  return ''
 }
 
 /**
@@ -35,17 +35,17 @@ export function coerceObjectId(value) {
  * @returns {Date | null}
  */
 export function ensureDate(value) {
-  if (value == null) return null;
-  if (value instanceof Date) return isNaN(value.getTime()) ? null : value;
-  if (typeof value === "object" && value.$date) {
-    const d = new Date(value.$date);
-    return isNaN(d.getTime()) ? null : d;
+  if (value == null) return null
+  if (value instanceof Date) return isNaN(value.getTime()) ? null : value
+  if (typeof value === 'object' && value.$date) {
+    const d = new Date(value.$date)
+    return isNaN(d.getTime()) ? null : d
   }
-  if (typeof value === "string" || typeof value === "number") {
-    const d = new Date(value);
-    return isNaN(d.getTime()) ? null : d;
+  if (typeof value === 'string' || typeof value === 'number') {
+    const d = new Date(value)
+    return isNaN(d.getTime()) ? null : d
   }
-  return null;
+  return null
 }
 
 /**
@@ -55,10 +55,10 @@ export function ensureDate(value) {
  * @param {string} [fallback=""]
  * @returns {string}
  */
-export function trimString(value, fallback = "") {
-  if (value == null || typeof value !== "string") return fallback;
-  const trimmed = value.trim();
-  return trimmed || fallback;
+export function trimString(value, fallback = '') {
+  if (value == null || typeof value !== 'string') return fallback
+  const trimmed = value.trim()
+  return trimmed || fallback
 }
 
 /**
@@ -69,11 +69,11 @@ export function trimString(value, fallback = "") {
  * @returns {string[]}
  */
 export function ensureStringArray(value) {
-  if (!Array.isArray(value)) return [];
+  if (!Array.isArray(value)) return []
   return value
-    .filter((item) => typeof item === "string")
+    .filter((item) => typeof item === 'string')
     .map((item) => item.trim())
-    .filter((item) => item.length > 0);
+    .filter((item) => item.length > 0)
 }
 
 /**
@@ -83,19 +83,19 @@ export function ensureStringArray(value) {
  * @returns {Address | null}
  */
 export function normalizeAddress(raw) {
-  if (!raw || typeof raw !== "object") return null;
+  if (!raw || typeof raw !== 'object') return null
 
   /** @type {Address} */
-  const address = {};
+  const address = {}
 
-  if (raw.streetNumber != null) address.streetNumber = trimString(raw.streetNumber) || undefined;
-  if (raw.streetName != null) address.streetName = trimString(raw.streetName) || undefined;
-  if (raw.city != null) address.city = trimString(raw.city) || undefined;
-  if (raw.postalCode != null) address.postalCode = trimString(raw.postalCode) || undefined;
-  if (raw.country != null) address.country = trimString(raw.country) || undefined;
+  if (raw.streetNumber != null) address.streetNumber = trimString(raw.streetNumber) || undefined
+  if (raw.streetName != null) address.streetName = trimString(raw.streetName) || undefined
+  if (raw.city != null) address.city = trimString(raw.city) || undefined
+  if (raw.postalCode != null) address.postalCode = trimString(raw.postalCode) || undefined
+  if (raw.country != null) address.country = trimString(raw.country) || undefined
 
-  const province = normalizeProvince(raw.province);
-  if (province) address.province = province;
+  const province = normalizeProvince(raw.province)
+  if (province) address.province = province
 
-  return address;
+  return address
 }

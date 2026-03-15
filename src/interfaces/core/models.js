@@ -262,4 +262,4 @@
 //   reservationDetails (snapshot of job data at booking time),
 //   simpleJobIdForUser, reviewId, transactionId, reviewsCompleted, smartMatching
 
-export {};
+export {}

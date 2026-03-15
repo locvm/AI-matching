@@ -5,9 +5,6 @@
 // Defines the output file for SME review
 // The matching engine produces SearchResult[], this module defines how those results get turned into a human-readable report (CSV/JSON)
 
-/** @typedef {import("../matching/matching.js").SearchResult} SearchResult */
-/** @typedef {import("../core/models.js").LocumJob} LocumJob */
-
 /**
  * Settings for the matching report output
  *
@@ -23,8 +20,8 @@
  * Per-job section of the report, grouping results by the job that was matched
  *
  * @typedef {Object} ReportJobSection
- * @property {LocumJob} job - The job used for this matching run
- * @property {SearchResult[]} topResults - Top K results for this job, sorted by score descending
+ * @property {import("../core/models.js").LocumJob} job - The job used for this matching run
+ * @property {import("../matching/matching.js").SearchResult[]} topResults - Top K results for this job, sorted by score descending
  * @property {Object} stats - Summary stats for this jobs full result set (not just top K)
  * @property {number} stats.totalQualified - Total physicians that passed hard filters
  * @property {number} stats.minScore - Minimum score across all qualified physicians
@@ -64,9 +61,9 @@
  * 4) Return a MatchingReport object with the formatted content and metadata
  *
  * @callback GenerateMatchingReportFn
- * @param {{ job: LocumJob, results: SearchResult[] }[]} sections - array of job sections
+ * @param {{ job: import("../core/models.js").LocumJob, results: import("../matching/matching.js").SearchResult[] }[]} sections - array of job sections
  * @param {ReportOptions} [options] - settings for the report
  * @returns {MatchingReport} a structured report object containing the formatted output
  */
 
-export {};
+export {}
