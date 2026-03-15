@@ -11,8 +11,8 @@
 /** @typedef {import("../interfaces/core/models.js").GeoCoordinates} GeoCoordinates */
 /** @typedef {import("../interfaces/core/models.js").Address} Address */
 
-const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
-const USER_AGENT = "LOCVM-matching-service/0.1.0 (locum physician matching engine)"
+const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search'
+const USER_AGENT = 'LOCVM-matching-service/0.1.0 (locum physician matching engine)'
 
 /**
  * Geocodes an address using the Nominatim API.
@@ -30,17 +30,17 @@ export async function geocodeAddress(address) {
   if (address.province) parts.push(address.province)
   if (address.country) parts.push(address.country)
 
-  const query = parts.join(", ")
+  const query = parts.join(', ')
 
   try {
     const url = new URL(NOMINATIM_URL)
-    url.searchParams.set("q", query)
-    url.searchParams.set("format", "json")
-    url.searchParams.set("limit", "1")
-    url.searchParams.set("countrycodes", "ca")
+    url.searchParams.set('q', query)
+    url.searchParams.set('format', 'json')
+    url.searchParams.set('limit', '1')
+    url.searchParams.set('countrycodes', 'ca')
 
     const response = await fetch(url.toString(), {
-      headers: { "User-Agent": USER_AGENT },
+      headers: { 'User-Agent': USER_AGENT },
     })
 
     if (!response.ok) return null

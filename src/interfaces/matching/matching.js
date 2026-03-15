@@ -7,10 +7,6 @@
 //
 // SearchResult = what comes back
 
-/** @typedef {import("../core/models.js").LocumJob} LocumJob */
-/** @typedef {import("../core/models.js").Physician} Physician */
-/** @typedef {import("../core/models.js").Reservation} Reservation */
-
 /**
  * Per-category score breakdown. Each field is the score for that category.
  * undefined = that category wasnt scored (different from 0)
@@ -76,8 +72,8 @@
  * Does NOT apply weights or compute a total score — that's combineAndRank's job
  *
  * @callback ScoreMatchFn
- * @param {Physician} physician - the physician to score
- * @param {LocumJob} job - the job to score against
+ * @param {import("../core/models.js").Physician} physician - the physician to score
+ * @param {import("../core/models.js").LocumJob} job - the job to score against
  * @returns {ScoredPair} the raw category scores and flags for this pair
  */
 
@@ -114,9 +110,9 @@
  * 4) Return SearchResult[]
  *
  * @callback ScoreJobFn
- * @param {LocumJob} job - the job to find physicians for
- * @param {Physician[]} physicians - the full pool of physicians
- * @param {Reservation} [reservation] - optional reservation for scheduling conflict checks
+ * @param {import("../core/models.js").LocumJob} job - the job to find physicians for
+ * @param {import("../core/models.js").Physician[]} physicians - the full pool of physicians
+ * @param {import("../core/models.js").Reservation} [reservation] - optional reservation for scheduling conflict checks
  * @param {SearchOptions} [options] - threshold, limit
  * @returns {Promise<SearchResult[]>} ranked physician matches for this job
  */
@@ -133,11 +129,11 @@
  * 4) Return SearchResult[]
  *
  * @callback ScorePhysicianFn
- * @param {Physician} physician - the physician to find jobs for
- * @param {LocumJob[]} jobs - the full pool of active jobs
- * @param {Reservation[]} [reservations] - optional array of reservations (matched by locumJobId)
+ * @param {import("../core/models.js").Physician} physician - the physician to find jobs for
+ * @param {import("../core/models.js").LocumJob[]} jobs - the full pool of active jobs
+ * @param {import("../core/models.js").Reservation[]} [reservations] - optional array of reservations (matched by locumJobId)
  * @param {SearchOptions} [options] - threshold, limit
  * @returns {Promise<SearchResult[]>} ranked job matches for this physician
  */
 
-export {};
+export {}

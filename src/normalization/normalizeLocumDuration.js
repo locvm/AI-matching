@@ -20,12 +20,12 @@
  * @type {Map<string, DurationRange>}
  */
 const DURATION_MAP = new Map([
-  ["a few days",         { minDays: 1,   maxDays: 7   }],
-  ["less than a month",  { minDays: 1,   maxDays: 30  }],
-  ["1-3 months",         { minDays: 30,  maxDays: 90  }],
-  ["3-6 months",         { minDays: 90,  maxDays: 180 }],
-  ["6+ months",          { minDays: 180, maxDays: 365 }],
-]);
+  ['a few days', { minDays: 1, maxDays: 7 }],
+  ['less than a month', { minDays: 1, maxDays: 30 }],
+  ['1-3 months', { minDays: 30, maxDays: 90 }],
+  ['3-6 months', { minDays: 90, maxDays: 180 }],
+  ['6+ months', { minDays: 180, maxDays: 365 }],
+])
 
 /**
  * Takes a raw duration string and gives back a numeric day range (or null if we dont recognize it).
@@ -34,10 +34,13 @@ const DURATION_MAP = new Map([
  * @returns {DurationRange | null}
  */
 export function normalizeLocumDuration(raw) {
-  if (typeof raw !== "string") return null;
+  if (typeof raw !== 'string') return null
 
   // Clean up: trim, lowercase, swap fancy dashes to regular hyphen
-  const key = raw.trim().toLowerCase().replace(/[\u2013\u2014]/g, "-");
+  const key = raw
+    .trim()
+    .toLowerCase()
+    .replace(/[\u2013\u2014]/g, '-')
 
-  return DURATION_MAP.get(key) ?? null;
+  return DURATION_MAP.get(key) ?? null
 }

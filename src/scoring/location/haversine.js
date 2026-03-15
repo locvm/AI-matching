@@ -7,7 +7,7 @@
 
 /** @typedef {import("../../interfaces/core/models.js").GeoCoordinates} GeoCoordinates */
 
-const EARTH_RADIUS_KM = 6371;
+const EARTH_RADIUS_KM = 6371
 
 /**
  * Converts degrees to radians
@@ -16,7 +16,7 @@ const EARTH_RADIUS_KM = 6371;
  * @returns {number}
  */
 function toRadians(deg) {
-  return (deg * Math.PI) / 180;
+  return (deg * Math.PI) / 180
 }
 
 /**
@@ -27,16 +27,14 @@ function toRadians(deg) {
  * @returns {number} distance in kilometers
  */
 export function haversineKm(a, b) {
-  const phi1 = toRadians(a.lat);
-  const phi2 = toRadians(b.lat);
-  const deltaPhi = toRadians(b.lat - a.lat);
-  const deltaLambda = toRadians(b.lng - a.lng);
+  const phi1 = toRadians(a.lat)
+  const phi2 = toRadians(b.lat)
+  const deltaPhi = toRadians(b.lat - a.lat)
+  const deltaLambda = toRadians(b.lng - a.lng)
 
-  const halfChord =
-    Math.sin(deltaPhi / 2) ** 2 +
-    Math.cos(phi1) * Math.cos(phi2) * Math.sin(deltaLambda / 2) ** 2;
+  const halfChord = Math.sin(deltaPhi / 2) ** 2 + Math.cos(phi1) * Math.cos(phi2) * Math.sin(deltaLambda / 2) ** 2
 
-  const angularDistance = 2 * Math.atan2(Math.sqrt(halfChord), Math.sqrt(1 - halfChord));
+  const angularDistance = 2 * Math.atan2(Math.sqrt(halfChord), Math.sqrt(1 - halfChord))
 
-  return EARTH_RADIUS_KM * angularDistance;
+  return EARTH_RADIUS_KM * angularDistance
 }
