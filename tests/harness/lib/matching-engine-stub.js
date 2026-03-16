@@ -89,36 +89,38 @@ function scoreAndBuild(physician, job) {
  * @type {import('../../../src/interfaces/matching/matching.js').ScoreJobFn}
  */
 export async function searchPhysicians(job, physicians, reservation, options) {
-  const onlyLooking = true
-
-  // Build applicant set from reservation (for scheduling conflict filter)
-  const applicantIds = new Set()
-  if (reservation?.applicants) {
-    for (const a of reservation.applicants) {
-      if (a.userId) applicantIds.add(a.userId)
-    }
+  if (!isJobAcceptingApplicants(job, reservation)) {
+    return []
   }
+
+  const eligible = filterEligiblePhysicians(
+    /** @type {any} */ (physicians),
+    /** @type {any} */ (job),
+    /** @type {any} */ (reservation ?? undefined),
+    /** @type {any} */ ({ job, reservation, options: { onlyLookingForLocums: true } })
+  )
 
   /** @type {SearchResult[]} */
   const results = []
 
-  for (const physician of physicians) {
-    // FILTER (hard filters, pass or fail)
-    if (physician.medProfession !== job.medProfession) continue
-
-    const pSpec = (physician.medSpeciality ?? '').trim().toLowerCase()
-    const jSpec = (job.medSpeciality ?? '').trim().toLowerCase()
-    if (pSpec !== jSpec) continue
-
-    if (onlyLooking && !physician.isLookingForLocums) continue
-    if (applicantIds.has(physician._id)) continue
-
-    // SCORE + BUILD result
-    results.push(scoreAndBuild(physician, job))
+  for (const physician of eligible) {
+    results.push(scoreAndBuild(/** @type {any} */ (physician), job))
   }
 
   results.sort((a, b) => b.score - a.score)
   return results
+}
+
+/**
+ * True if we should run matching for this job.
+ * @param {LocumJob} job
+ * @param {Reservation | null | undefined} reservation
+ * @returns {boolean}
+ */
+function isJobAcceptingApplicants(job, reservation) {
+  if (!reservation) return true
+  const status = (reservation.status ?? '').trim()
+  return ELIGIBLE_RESERVATION_STATUSES.has(status)
 }
 
 /**

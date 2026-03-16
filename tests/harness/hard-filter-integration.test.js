@@ -2,7 +2,7 @@
 
 /**
  * Harness-backed integration tests for the hard filter.
- * Uses real fixture data (users, jobs, reservations), samples with configurable maxJobs/maxUsers/seed,
+ * Uses real fixture data (physicians, jobs, reservations), samples with configurable maxJobs/maxUsers/seed,
  * runs filterEligiblePhysicians per job, and asserts invariants on the eligible list.
  *
  * Run: npm test -- tests/harness/hard-filter-integration.test.js
@@ -32,7 +32,6 @@ beforeAll(async () => {
  * where results[i] = { job, reservation, eligible } for each sampled job.
  *
  * @param {{ maxJobs?: number, maxUsers?: number, seed?: number }} [sampling]
- * @returns {{ sampledJobs: import('./lib/types.js').LocumJob[], sampledUsers: import('./lib/types.js').User[], results: Array<{ job: import('./lib/types.js').LocumJob, reservation: import('./lib/types.js').Reservation | null, eligible: import('./lib/types.js').User[] }> }}
  */
 function runHardFilterWithSampling(sampling = {}) {
   const config = {
@@ -42,7 +41,7 @@ function runHardFilterWithSampling(sampling = {}) {
   }
   const sampler = new Sampler(config)
   const sampledJobs = sampler.sampleJobs(fixtures.jobs)
-  const sampledUsers = sampler.sampleUsers(fixtures.users)
+  const sampledPhysicians = sampler.sampleUsers(fixtures.physicians)
 
   const results = []
   for (const job of sampledJobs) {
@@ -54,7 +53,7 @@ function runHardFilterWithSampling(sampling = {}) {
       options: { onlyLookingForLocums: true },
     }
     const eligible = filterEligiblePhysicians(
-      /** @type {any} */ (sampledUsers),
+      /** @type {any} */ (sampledPhysicians),
       /** @type {any} */ (job),
       /** @type {any} */ (reservation ?? undefined),
       /** @type {any} */ (criteria)
@@ -62,16 +61,16 @@ function runHardFilterWithSampling(sampling = {}) {
     results.push({ job, reservation, eligible })
   }
 
-  return { sampledJobs, sampledUsers, results }
+  return { sampledJobs, sampledPhysicians, results }
 }
 
 describe('Hard filter – harness-backed integration', () => {
   it('uses sampled jobs and users from fixtures', () => {
-    const { sampledJobs, sampledUsers } = defaultRun
+    const { sampledJobs, sampledPhysicians } = defaultRun
     expect(sampledJobs.length).toBeGreaterThan(0)
     expect(sampledJobs.length).toBeLessThanOrEqual(TEST.MAX_JOBS)
-    expect(sampledUsers.length).toBeGreaterThan(0)
-    expect(sampledUsers.length).toBeLessThanOrEqual(TEST.MAX_USERS)
+    expect(sampledPhysicians.length).toBeGreaterThan(0)
+    expect(sampledPhysicians.length).toBeLessThanOrEqual(TEST.MAX_USERS)
   })
 
   it('returns one result set per sampled job', () => {
@@ -118,9 +117,9 @@ describe('Hard filter – harness-backed integration', () => {
   })
 
   it('returned list size is <= input list size for each job', () => {
-    const { sampledUsers, results } = defaultRun
+    const { sampledPhysicians, results } = defaultRun
     for (const { eligible } of results) {
-      expect(eligible.length).toBeLessThanOrEqual(sampledUsers.length)
+      expect(eligible.length).toBeLessThanOrEqual(sampledPhysicians.length)
     }
   })
 
@@ -148,17 +147,17 @@ describe('Hard filter – harness-backed integration', () => {
 
 describe('Hard filter – configurable sampling', () => {
   it('runs with custom maxJobs, maxUsers, seed', () => {
-    const { sampledJobs, sampledUsers, results } = runHardFilterWithSampling({
+    const { sampledJobs, sampledPhysicians, results } = runHardFilterWithSampling({
       maxJobs: 10,
       maxUsers: 500,
       seed: 123,
     })
     expect(sampledJobs.length).toBeLessThanOrEqual(10)
-    expect(sampledUsers.length).toBeLessThanOrEqual(500)
+    expect(sampledPhysicians.length).toBeLessThanOrEqual(500)
     expect(results.length).toBe(sampledJobs.length)
 
     for (const { eligible } of results) {
-      expect(eligible.length).toBeLessThanOrEqual(sampledUsers.length)
+      expect(eligible.length).toBeLessThanOrEqual(sampledPhysicians.length)
       for (const p of eligible) {
         expect(p.medProfession).toBeTruthy()
         expect((p.medSpeciality ?? '').trim().toLowerCase()).toBeTruthy()
