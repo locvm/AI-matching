@@ -3,7 +3,7 @@
 // LOCVM Matching Engine - Orchestration Service Interfaces (JavaScript / JSDoc version)
 //
 // These define WHEN matching runs happen and HOW results get saved
-// The matching engine itself (searchPhysicians) is the building block
+// The matching engine pipeline (scoreJob / scorePhysician) is the building block
 // These services call it at the right time and store the outputs
 //
 // See README §13.5 for the authoritative spec
@@ -26,12 +26,11 @@
  *   4) Create a new MatchRun record with type "SHORT_TERM", status "PENDING"
  *   5) Update run status to "RUNNING"
  *   6) Load all physicians from the data source
- *   7) Call searchPhysicians(job, physicians, reservation, { isShortTerm: true }) to get ranked results
+ *   7) Call scoreJob(job, physicians, reservation, options) to get ranked results
  *   8) Filter results above the configured score threshold
  *   9) Save results via MatchRunResultRepository.saveResults()
- *   10) Create OutboxItem entries (type "SHORT_TERM_MATCH") for each qualifying physician and add them to the queue via NotificationOutboxRepository.enqueue(). Payload should include { jobId, score, jobTitle, ... }
- *   11) Update run status to "COMPLETED" (or "FAILED" if an error happened)
- *   12) Return the runId
+ *   10) Update run status to "COMPLETED" (or "FAILED" if an error happened)
+ *   11) Return the runId
  *
  *   Error handling: if any step fails, catch the error, set run status to "FAILED" with the error message, and re-throw
  */
@@ -54,13 +53,11 @@
  *   2) Update run status to "RUNNING"
  *   3) Load all active, unfilled jobs from the data source. Active = reservation status is "Pending" or "Awaiting Payment" (per README §7.1)
  *   4) Load all physicians from the data source
- *   5) For each job: load its reservation (if any), call searchPhysicians(job, physicians, reservation)
+ *   5) For each job: load its reservation (if any), call scoreJob(job, physicians, reservation)
  *   6) Combine results per physician: for each physician, collect their top N job matches across all jobs (no duplicate jobIds)
  *   7) Save all results via MatchRunResultRepository.saveResults()
- *   8) For each physician with at least one qualifying match, create a single OutboxItem of type "WEEKLY_DIGEST" with payload containing the list of matching jobs: { matches: [{ jobId, score, jobTitle, ... }] }
- *   9) Add all outbox items to the queue via NotificationOutboxRepository.enqueue()
- *   10) Update run status to "COMPLETED" (or "FAILED" if an error happened)
- *   11) Return the runId
+ *   8) Update run status to "COMPLETED" (or "FAILED" if an error happened)
+ *   9) Return the runId
  *
  *   Error handling: if any step fails, catch the error, set run status to "FAILED" with the error message, and re-throw
  */

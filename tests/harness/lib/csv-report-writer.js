@@ -8,6 +8,7 @@ import { OUTPUT, PATHS } from '../harness.config.js'
 
 /**
  * @typedef {import('./types.js').HarnessJobResult} HarnessJobResult
+ * @typedef {import('./types.js').HarnessPhysicianResult} HarnessPhysicianResult
  * @typedef {import('./types.js').JobSummaryStats} JobSummaryStats
  */
 
@@ -98,6 +99,104 @@ export class CsvReportWriter {
           score_emr: r.breakdown.emr,
           flags: (r.flags ?? []).join('; '),
           eligible_candidates: stats.eligibleCandidates,
+          score_min: stats.minScore,
+          score_median: stats.medianScore,
+          score_max: stats.maxScore,
+          missing_data_flags: stats.missingDataFlags.join('; '),
+          seed: meta?.seed ?? '',
+        })
+      }
+    }
+
+    return rows
+  }
+}
+
+export class PhysicianCsvReportWriter {
+  /** @type {string} */
+  #outputDir
+
+  /** @param {string} [outputDir] */
+  constructor(outputDir) {
+    this.#outputDir = outputDir ?? PATHS.OUTPUT_DIR
+  }
+
+  /**
+   * @param {HarnessPhysicianResult[]} results
+   * @param {object} [meta]
+   * @param {number} [meta.seed]
+   * @param {number} [meta.maxJobs]
+   * @param {number} [meta.maxUsers]
+   * @returns {Promise<string>}
+   */
+  async write(results, meta) {
+    await mkdir(this.#outputDir, { recursive: true })
+
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
+    const filename = `${OUTPUT.PHYSICIAN_CSV_PREFIX}_${timestamp}.csv`
+    const filePath = join(this.#outputDir, filename)
+
+    const rows = this.#buildRows(results, meta)
+    const csv = stringify(rows, { header: true })
+
+    await writeFile(filePath, csv, 'utf-8')
+    return filePath
+  }
+
+  /**
+   * @param {HarnessPhysicianResult[]} results
+   * @param {object} [meta]
+   * @param {number} [meta.seed]
+   * @param {number} [meta.maxJobs]
+   * @param {number} [meta.maxUsers]
+   * @returns {Record<string, string | number>[]}
+   */
+  #buildRows(results, meta) {
+    /** @type {Record<string, string | number>[]} */
+    const rows = []
+
+    for (const { physician, topResults, stats } of results) {
+      const physicianContext = {
+        physician_id: physician._id,
+        physician_name: [physician.firstName, physician.lastName].filter(Boolean).join(' ') || '',
+        specialty: physician.medSpeciality ?? '',
+        province: physician.workAddress?.province ?? '',
+      }
+
+      if (topResults.length === 0) {
+        rows.push({
+          ...physicianContext,
+          rank: 0,
+          job_id: 'NO_MATCHES',
+          job_title: '',
+          score: 0,
+          score_location: 0,
+          score_duration: 0,
+          score_emr: 0,
+          flags: '',
+          eligible_jobs: stats.eligibleJobs,
+          score_min: stats.minScore,
+          score_median: stats.medianScore,
+          score_max: stats.maxScore,
+          missing_data_flags: stats.missingDataFlags.join('; '),
+          seed: meta?.seed ?? '',
+        })
+        continue
+      }
+
+      for (let i = 0; i < topResults.length; i++) {
+        const r = topResults[i]
+        rows.push({
+          ...physicianContext,
+          rank: i + 1,
+          job_id: r.jobId ?? '',
+          job_title: '',
+          score: r.score,
+          score_location: r.breakdown.location,
+          score_duration: r.breakdown.duration,
+          score_emr: r.breakdown.emr,
+          flags: (r.flags ?? []).join('; '),
+          eligible_jobs: stats.eligibleJobs,
           score_min: stats.minScore,
           score_median: stats.medianScore,
           score_max: stats.maxScore,

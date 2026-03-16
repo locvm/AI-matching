@@ -24,6 +24,7 @@ export const SAMPLING = {
 export const OUTPUT = {
   TOP_K: 10,
   CSV_PREFIX: 'matching_test_results',
+  PHYSICIAN_CSV_PREFIX: 'physician_matching_results',
 }
 
 // scoring (stub weights)
