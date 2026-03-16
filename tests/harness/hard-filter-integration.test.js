@@ -123,6 +123,27 @@ describe('Hard filter – harness-backed integration', () => {
       expect(eligible.length).toBeLessThanOrEqual(sampledUsers.length)
     }
   })
+
+  it('no returned physician has a duration mismatch with the job', () => {
+    const MS_PER_DAY = 86_400_000
+    const SHORT_OVERLAP = new Set(['A few days', 'Less than a month', '1–3 months'])
+    const MID_OVERLAP = new Set(['1–3 months', '3–6 months'])
+    const LONG_OVERLAP = new Set(['3–6 months', '6+ months'])
+
+    const { results } = defaultRun
+    for (const { job, eligible } of results) {
+      if (!job.dateRange?.from || !job.dateRange?.to) continue
+      const days = (new Date(job.dateRange.to).getTime() - new Date(job.dateRange.from).getTime()) / MS_PER_DAY
+      const allowed = days <= 30 ? SHORT_OVERLAP : days <= 89 ? MID_OVERLAP : LONG_OVERLAP
+
+      for (const p of eligible) {
+        const durations = p.preferences?.locumDurations ?? p.locumDurations ?? []
+        if (durations.length === 0) continue
+        const hasOverlap = durations.some((d) => allowed.has(d))
+        expect(hasOverlap).toBe(true)
+      }
+    }
+  })
 })
 
 describe('Hard filter – configurable sampling', () => {

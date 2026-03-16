@@ -150,3 +150,134 @@ describe('filterEligiblePhysicians', () => {
     expect(result).toHaveLength(0)
   })
 })
+
+const shortJob = {
+  ...baseJob,
+  dateRange: { from: '2025-01-01', to: '2025-01-15' },
+}
+
+const midJob = {
+  ...baseJob,
+  dateRange: { from: '2025-01-01', to: '2025-03-15' },
+}
+
+const longJob = {
+  ...baseJob,
+  dateRange: { from: '2025-01-01', to: '2025-07-01' },
+}
+
+describe('filterEligiblePhysicians – duration filter', () => {
+  it('short job: physician with "A few days" passes', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['A few days'] }]
+    const result = filterEligiblePhysicians(physicians, shortJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('short job: physician with "Less than a month" passes', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['Less than a month'] }]
+    const result = filterEligiblePhysicians(physicians, shortJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('short job: physician with "1–3 months" passes (gray area, allowed)', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['1–3 months'] }]
+    const result = filterEligiblePhysicians(physicians, shortJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('short job: physician with only "3–6 months" excluded', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['3–6 months'] }]
+    const result = filterEligiblePhysicians(physicians, shortJob, undefined, {})
+    expect(result).toHaveLength(0)
+  })
+
+  it('short job: physician with only "6+ months" excluded', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['6+ months'] }]
+    const result = filterEligiblePhysicians(physicians, shortJob, undefined, {})
+    expect(result).toHaveLength(0)
+  })
+
+  it('long job: physician with "3–6 months" passes', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['3–6 months'] }]
+    const result = filterEligiblePhysicians(physicians, longJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('long job: physician with "6+ months" passes', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['6+ months'] }]
+    const result = filterEligiblePhysicians(physicians, longJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('long job: physician with only "A few days" excluded', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['A few days'] }]
+    const result = filterEligiblePhysicians(physicians, longJob, undefined, {})
+    expect(result).toHaveLength(0)
+  })
+
+  it('long job: physician with only "1–3 months" excluded', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['1–3 months'] }]
+    const result = filterEligiblePhysicians(physicians, longJob, undefined, {})
+    expect(result).toHaveLength(0)
+  })
+
+  it('mid job: physician with "1–3 months" passes', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['1–3 months'] }]
+    const result = filterEligiblePhysicians(physicians, midJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('mid job: physician with "3–6 months" passes', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['3–6 months'] }]
+    const result = filterEligiblePhysicians(physicians, midJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('mid job: physician with only "A few days" excluded', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['A few days'] }]
+    const result = filterEligiblePhysicians(physicians, midJob, undefined, {})
+    expect(result).toHaveLength(0)
+  })
+
+  it('mid job: physician with only "6+ months" excluded', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['6+ months'] }]
+    const result = filterEligiblePhysicians(physicians, midJob, undefined, {})
+    expect(result).toHaveLength(0)
+  })
+
+  it('multiple durations: physician with both short and long passes for short job', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['A few days', '6+ months'] }]
+    const result = filterEligiblePhysicians(physicians, shortJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('multiple durations: physician with both short and long passes for long job', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['A few days', '6+ months'] }]
+    const result = filterEligiblePhysicians(physicians, longJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('missing locumDurations: physician passes (lenient)', () => {
+    const physicians = [{ ...basePhysician }]
+    const result = filterEligiblePhysicians(physicians, shortJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('empty locumDurations array: physician passes (lenient)', () => {
+    const physicians = [{ ...basePhysician, locumDurations: [] }]
+    const result = filterEligiblePhysicians(physicians, shortJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('locumDurations in preferences: physician passes when overlapping', () => {
+    const physicians = [{ ...basePhysician, preferences: { isLookingForLocums: true, locumDurations: ['A few days'] } }]
+    const result = filterEligiblePhysicians(physicians, shortJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('job without dateRange: duration filter skipped, physician passes', () => {
+    const physicians = [{ ...basePhysician, locumDurations: ['6+ months'] }]
+    const result = filterEligiblePhysicians(physicians, baseJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+})
