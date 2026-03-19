@@ -1,4 +1,4 @@
-# Test Data Analysis – Summary 
+# Test Data Analysis – Summary
 
 This page answers the questions from the test-data-analysis task using the data in [test-data-analysis.md](./test-data-analysis.md). Run `npm run analyze-data` to regenerate the full report.
 
@@ -33,14 +33,14 @@ This page answers the questions from the test-data-analysis task using the data 
 
 ## 4. Distribution highlights
 
-| Metric | Result |
-|--------|--------|
-| Top specialties (users) | Family Medicine 203, Other 11, Cardiologist 7, Pediatrician 4, … |
-| Top specialties (jobs) | Family Medicine 70, Radiologist 11, Pediatrician 6, … |
-| EMR distribution | PS Suite, Accuro, OSCAR Pro, Other + variants (see report) |
-| % users with availabilityDateRanges | 6.8% (28/410) |
-| % jobs with coordinates | 100% (108/108) |
-| % users with no location preference | preferredProvinces 75.9% missing; specificRegions 94.4% missing |
+| Metric                              | Result                                                           |
+| ----------------------------------- | ---------------------------------------------------------------- |
+| Top specialties (users)             | Family Medicine 203, Other 11, Cardiologist 7, Pediatrician 4, … |
+| Top specialties (jobs)              | Family Medicine 70, Radiologist 11, Pediatrician 6, …            |
+| EMR distribution                    | PS Suite, Accuro, OSCAR Pro, Other + variants (see report)       |
+| % users with availabilityDateRanges | 6.8% (28/410)                                                    |
+| % jobs with coordinates             | 100% (108/108)                                                   |
+| % users with no location preference | preferredProvinces 75.9% missing; specificRegions 94.4% missing  |
 
 ---
 
@@ -63,4 +63,4 @@ This page answers the questions from the test-data-analysis task using the data 
 
 ---
 
-*Full field-by-field tables, value counts, and wrong/weird details are in [test-data-analysis.md](./test-data-analysis.md).*
+_Full field-by-field tables, value counts, and wrong/weird details are in [test-data-analysis.md](./test-data-analysis.md)._

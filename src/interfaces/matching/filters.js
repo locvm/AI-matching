@@ -4,10 +4,6 @@
 //
 // Hard filters and checks that decide if a physician even qualifies before any scoring happens
 
-/** @typedef {import("../core/models.js").Physician} Physician */
-/** @typedef {import("../core/models.js").LocumJob} LocumJob */
-/** @typedef {import("../core/models.js").Reservation} Reservation */
-
 /**
  * Checks whether a physician passes all hard filters and should be scored
  *
@@ -23,9 +19,9 @@
  * The isLookingForLocums check should be something you can turn on/off in case we want to match non-looking physicians in the future (per README §7.1)
  *
  * @callback IsEligiblePhysicianFn
- * @param {Physician} physician - the clean physician profile
- * @param {LocumJob} job - the locum job to match against
- * @param {Reservation} [reservation] - optional reservation for scheduling conflict checks
+ * @param {import("../core/models.js").Physician} physician - the clean physician profile
+ * @param {import("../core/models.js").LocumJob} job - the locum job to match against
+ * @param {import("../core/models.js").Reservation} [reservation] - optional reservation for scheduling conflict checks
  * @returns {boolean} true if the physician should be scored, false if excluded
  */
 
@@ -45,7 +41,7 @@
  * The exact thresholds should come from a config object, not hardcoded values
  *
  * @callback IsShortTermJobFn
- * @param {LocumJob} job - the clean locum job
+ * @param {import("../core/models.js").LocumJob} job - the clean locum job
  * @returns {boolean} true if the job should trigger an immediate short-term matching run
  */
 
@@ -56,10 +52,10 @@
  * Loops all physicians, calls IsEligiblePhysicianFn on each, returns only those that pass
  *
  * @callback FilterPhysiciansForJobFn
- * @param {LocumJob} job - the job to filter physicians against
- * @param {Physician[]} physicians - the full pool of physicians
- * @param {Reservation} [reservation] - optional reservation for scheduling conflict checks
- * @returns {Physician[]} only the physicians that pass all hard filters
+ * @param {import("../core/models.js").LocumJob} job - the job to filter physicians against
+ * @param {import("../core/models.js").Physician[]} physicians - the full pool of physicians
+ * @param {import("../core/models.js").Reservation} [reservation] - optional reservation for scheduling conflict checks
+ * @returns {import("../core/models.js").Physician[]} only the physicians that pass all hard filters
  */
 
 /**
@@ -69,10 +65,10 @@
  * Loops all jobs, calls IsEligiblePhysicianFn (with args flipped) on each, returns only those that pass
  *
  * @callback FilterJobsForPhysicianFn
- * @param {Physician} physician - the physician to filter jobs for
- * @param {LocumJob[]} jobs - the full pool of active jobs
- * @param {Reservation[]} [reservations] - optional array of reservations (one per job, matched by locumJobId)
- * @returns {LocumJob[]} only the jobs this physician qualifies for
+ * @param {import("../core/models.js").Physician} physician - the physician to filter jobs for
+ * @param {import("../core/models.js").LocumJob[]} jobs - the full pool of active jobs
+ * @param {import("../core/models.js").Reservation[]} [reservations] - optional array of reservations (one per job, matched by locumJobId)
+ * @returns {import("../core/models.js").LocumJob[]} only the jobs this physician qualifies for
  */
 
 // FUTURE FILTERS (not implemented yet, per Eve's feedback March 2026)
@@ -103,4 +99,4 @@
 //    Field does not exist yet in the schema. Will need to be added to Physician type first.
 //    To enable: add field to models.js, add check in IsEligiblePhysicianFn.
 
-export {};
+export {}

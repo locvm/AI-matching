@@ -10,130 +10,130 @@ User, job, and reservation analysis: missingness, frequency of inputs, and wrong
 
 ## User field completeness (missingness)
 
-| Field | Present | Missing |
-|-------|---------|---------|
-| medProfession | 326 (79.5%) | 84 (20.5%) |
-| medSpeciality | 235 (57.3%) | 175 (42.7%) |
-| preferences.isLookingForLocums | 230 (56.1%) | 180 (43.9%) |
-| preferences.preferredProvinces | 99 (24.1%) | 311 (75.9%) |
-| preferences.specificRegions | 23 (5.6%) | 387 (94.4%) |
-| preferences.locumDurations | 82 (20.0%) | 328 (80.0%) |
-| preferences.availabilityDateRanges | 28 (6.8%) | 382 (93.2%) |
-| workAddress | 410 (100.0%) | 0 (0.0%) |
-| emrSystems | 42 (10.2%) | 368 (89.8%) |
-| facilityEMR | 28 (6.8%) | 382 (93.2%) |
+| Field                              | Present      | Missing     |
+| ---------------------------------- | ------------ | ----------- |
+| medProfession                      | 326 (79.5%)  | 84 (20.5%)  |
+| medSpeciality                      | 235 (57.3%)  | 175 (42.7%) |
+| preferences.isLookingForLocums     | 230 (56.1%)  | 180 (43.9%) |
+| preferences.preferredProvinces     | 99 (24.1%)   | 311 (75.9%) |
+| preferences.specificRegions        | 23 (5.6%)    | 387 (94.4%) |
+| preferences.locumDurations         | 82 (20.0%)   | 328 (80.0%) |
+| preferences.availabilityDateRanges | 28 (6.8%)    | 382 (93.2%) |
+| workAddress                        | 410 (100.0%) | 0 (0.0%)    |
+| emrSystems                         | 42 (10.2%)   | 368 (89.8%) |
+| facilityEMR                        | 28 (6.8%)    | 382 (93.2%) |
 
 ## User preferences & profile - frequency of inputs
 
 ### medProfession (e.g. Physician, Recruiter)
 
-| Value | Count |
-|-------|-------|
-| Physician | 288 |
-| Recruiter | 37 |
-| Musician | 1 |
+| Value     | Count |
+| --------- | ----- |
+| Physician | 288   |
+| Recruiter | 37    |
+| Musician  | 1     |
 
 ### medSpeciality (e.g. Family Medicine)
 
-| Value | Count |
-|-------|-------|
-| Family Medicine | 203 |
-| Other | 11 |
-| Cardiologist | 7 |
-| Pediatrician | 4 |
-| Anesthesiologist | 2 |
-| Obstetrician/Gynecologist (OB/GYN) | 2 |
-| Radiologist | 1 |
-| Plastic Surgeon | 1 |
-| Oncologist | 1 |
-| Emergency Medicine | 1 |
-| Surgeon | 1 |
-| Dermatologist | 1 |
+| Value                              | Count |
+| ---------------------------------- | ----- |
+| Family Medicine                    | 203   |
+| Other                              | 11    |
+| Cardiologist                       | 7     |
+| Pediatrician                       | 4     |
+| Anesthesiologist                   | 2     |
+| Obstetrician/Gynecologist (OB/GYN) | 2     |
+| Radiologist                        | 1     |
+| Plastic Surgeon                    | 1     |
+| Oncologist                         | 1     |
+| Emergency Medicine                 | 1     |
+| Surgeon                            | 1     |
+| Dermatologist                      | 1     |
 
 ### preferences.preferredProvinces (Ontario, ON, etc.)
 
-| Value | Count |
-|-------|-------|
-| Ontario | 96 |
-| Northwest Territories | 7 |
-| Yukon | 7 |
-| Alberta | 6 |
-| Nunavut | 6 |
-| British Columbia | 5 |
-| Prince Edward Island | 5 |
-| Nova Scotia | 5 |
-| Manitoba | 3 |
-| New Brunswick | 2 |
-| Quebec | 2 |
-| Newfoundland and Labrador | 1 |
+| Value                     | Count |
+| ------------------------- | ----- |
+| Ontario                   | 96    |
+| Northwest Territories     | 7     |
+| Yukon                     | 7     |
+| Alberta                   | 6     |
+| Nunavut                   | 6     |
+| British Columbia          | 5     |
+| Prince Edward Island      | 5     |
+| Nova Scotia               | 5     |
+| Manitoba                  | 3     |
+| New Brunswick             | 2     |
+| Quebec                    | 2     |
+| Newfoundland and Labrador | 1     |
 
 ### preferences.specificRegions (cities, districts)
 
-| Value | Count |
-|-------|-------|
-| Toronto | 8 |
-| toronto | 5 |
-| Ottawa | 5 |
-| burlington | 2 |
-| Oakville | 2 |
-| milton | 2 |
-| Guelph | 2 |
-| London | 2 |
-| stratford | 2 |
-| strathroy | 2 |
-| ilderton | 2 |
-| st thomas | 2 |
-| Etobicoke | 2 |
-| Gta | 1 |
-| vaughn | 1 |
-| northyork | 1 |
-| richmondhill | 1 |
-| Sault | 1 |
-| Richards Landing | 1 |
-| Perth | 1 |
-| Winchester | 1 |
-| Renfrew | 1 |
-| Lanark | 1 |
-| brampton | 1 |
-| peel | 1 |
+| Value            | Count |
+| ---------------- | ----- |
+| Toronto          | 8     |
+| toronto          | 5     |
+| Ottawa           | 5     |
+| burlington       | 2     |
+| Oakville         | 2     |
+| milton           | 2     |
+| Guelph           | 2     |
+| London           | 2     |
+| stratford        | 2     |
+| strathroy        | 2     |
+| ilderton         | 2     |
+| st thomas        | 2     |
+| Etobicoke        | 2     |
+| Gta              | 1     |
+| vaughn           | 1     |
+| northyork        | 1     |
+| richmondhill     | 1     |
+| Sault            | 1     |
+| Richards Landing | 1     |
+| Perth            | 1     |
+| Winchester       | 1     |
+| Renfrew          | 1     |
+| Lanark           | 1     |
+| brampton         | 1     |
+| peel             | 1     |
 
 ### preferences.locumDurations (e.g. 1–3 months)
 
-| Value | Count |
-|-------|-------|
-| 1–3 months | 62 |
-| Less than a month | 55 |
-| A few days | 46 |
-| 3–6 months | 43 |
-| 6+ months | 23 |
+| Value             | Count |
+| ----------------- | ----- |
+| 1–3 months        | 62    |
+| Less than a month | 55    |
+| A few days        | 46    |
+| 3–6 months        | 43    |
+| 6+ months         | 23    |
 
 ### emrSystems (facility EMR / equipment)
 
-| Value | Count |
-|-------|-------|
-| PS Suite EMR | 23 |
-| Accuro EMR | 16 |
-| OSCAR McMaster - Professional Edition (OSCAR Pro) | 16 |
-| Avaros EMR | 6 |
-| Other | 5 |
-| Collaborative Health Record (CHR) | 4 |
-| Juno EMR | 2 |
-| Med Access EMR | 2 |
-| Wolfe | 1 |
-| Cerner | 1 |
-| Avaros Inc. | 1 |
+| Value                                             | Count |
+| ------------------------------------------------- | ----- |
+| PS Suite EMR                                      | 23    |
+| Accuro EMR                                        | 16    |
+| OSCAR McMaster - Professional Edition (OSCAR Pro) | 16    |
+| Avaros EMR                                        | 6     |
+| Other                                             | 5     |
+| Collaborative Health Record (CHR)                 | 4     |
+| Juno EMR                                          | 2     |
+| Med Access EMR                                    | 2     |
+| Wolfe                                             | 1     |
+| Cerner                                            | 1     |
+| Avaros Inc.                                       | 1     |
 
 ### facilityEMR (primary EMR)
 
-| Value | Count |
-|-------|-------|
-| PS Suite EMR | 6 |
-| Other | 6 |
-| Avaros EMR | 5 |
-| OSCAR McMaster - Professional Edition (OSCAR Pro) | 4 |
-| Accuro EMR | 3 |
-| Collaborative Health Record (CHR) | 3 |
-| Medesync | 1 |
+| Value                                             | Count |
+| ------------------------------------------------- | ----- |
+| PS Suite EMR                                      | 6     |
+| Other                                             | 6     |
+| Avaros EMR                                        | 5     |
+| OSCAR McMaster - Professional Edition (OSCAR Pro) | 4     |
+| Accuro EMR                                        | 3     |
+| Collaborative Health Record (CHR)                 | 3     |
+| Medesync                                          | 1     |
 
 ## Wrong or weird input (when something was provided)
 
@@ -154,7 +154,6 @@ Empty string, wrong type, etc. Excludes undefined/null (see missingness for thos
 - **facilityEMR**:
   - [string(empty)]: 26
 
-
 ---
 
 ## Jobs
@@ -163,106 +162,106 @@ Empty string, wrong type, etc. Excludes undefined/null (see missingness for thos
 
 ## Job field completeness (missingness)
 
-| Field | Present | Missing |
-|-------|---------|---------|
-| medProfession | 108 (100.0%) | 0 (0.0%) |
-| medSpeciality | 108 (100.0%) | 0 (0.0%) |
-| location.coordinates | 108 (100.0%) | 0 (0.0%) |
-| fullAddress.city | 107 (99.1%) | 1 (0.9%) |
-| fullAddress.province | 107 (99.1%) | 1 (0.9%) |
-| dateRange.from | 108 (100.0%) | 0 (0.0%) |
-| dateRange.to | 108 (100.0%) | 0 (0.0%) |
-| facilityInfo.emr | 47 (43.5%) | 61 (56.5%) |
-| practiceType | 40 (37.0%) | 68 (63.0%) |
-| patientType | 40 (37.0%) | 68 (63.0%) |
+| Field                | Present      | Missing    |
+| -------------------- | ------------ | ---------- |
+| medProfession        | 108 (100.0%) | 0 (0.0%)   |
+| medSpeciality        | 108 (100.0%) | 0 (0.0%)   |
+| location.coordinates | 108 (100.0%) | 0 (0.0%)   |
+| fullAddress.city     | 107 (99.1%)  | 1 (0.9%)   |
+| fullAddress.province | 107 (99.1%)  | 1 (0.9%)   |
+| dateRange.from       | 108 (100.0%) | 0 (0.0%)   |
+| dateRange.to         | 108 (100.0%) | 0 (0.0%)   |
+| facilityInfo.emr     | 47 (43.5%)   | 61 (56.5%) |
+| practiceType         | 40 (37.0%)   | 68 (63.0%) |
+| patientType          | 40 (37.0%)   | 68 (63.0%) |
 
 ## Job frequency of inputs (selected fields)
 
 ### medProfession
 
-| Value | Count |
-|-------|-------|
-| Physician | 108 |
+| Value     | Count |
+| --------- | ----- |
+| Physician | 108   |
 
 ### medSpeciality
 
-| Value | Count |
-|-------|-------|
-| Family Medicine | 70 |
-| Radiologist | 11 |
-| Pediatrician | 6 |
-| Cardiologist | 5 |
-| Surgeon | 5 |
-| Other | 4 |
-| Emergency Medicine | 3 |
-| Plastic Surgeon | 2 |
-| Dermatologist | 1 |
-| Obstetrician/Gynecologist (OB/GYN) | 1 |
+| Value                              | Count |
+| ---------------------------------- | ----- |
+| Family Medicine                    | 70    |
+| Radiologist                        | 11    |
+| Pediatrician                       | 6     |
+| Cardiologist                       | 5     |
+| Surgeon                            | 5     |
+| Other                              | 4     |
+| Emergency Medicine                 | 3     |
+| Plastic Surgeon                    | 2     |
+| Dermatologist                      | 1     |
+| Obstetrician/Gynecologist (OB/GYN) | 1     |
 
 ### fullAddress.city
 
-| Value | Count |
-|-------|-------|
-| Toronto | 30 |
-| Hamilton | 8 |
-| Ottawa | 7 |
-| Dryden | 4 |
-| Barrie | 3 |
-| toronto | 3 |
-| Cornwall | 3 |
-| Sundridge | 3 |
-| Mississauga | 3 |
-| Orillia | 3 |
-| Windsor | 2 |
-| Orangeville | 2 |
-| Etobicoke | 2 |
-| Wawa | 2 |
-| Guelph | 2 |
-| Edmonton | 2 |
-| Markham | 1 |
-| St. Catharines | 1 |
-| Alton | 1 |
-| Thornhill | 1 |
-| Hearst | 1 |
-| Manotick | 1 |
-| Milton | 1 |
-| Burlington | 1 |
-| Tilbury | 1 |
+| Value          | Count |
+| -------------- | ----- |
+| Toronto        | 30    |
+| Hamilton       | 8     |
+| Ottawa         | 7     |
+| Dryden         | 4     |
+| Barrie         | 3     |
+| toronto        | 3     |
+| Cornwall       | 3     |
+| Sundridge      | 3     |
+| Mississauga    | 3     |
+| Orillia        | 3     |
+| Windsor        | 2     |
+| Orangeville    | 2     |
+| Etobicoke      | 2     |
+| Wawa           | 2     |
+| Guelph         | 2     |
+| Edmonton       | 2     |
+| Markham        | 1     |
+| St. Catharines | 1     |
+| Alton          | 1     |
+| Thornhill      | 1     |
+| Hearst         | 1     |
+| Manotick       | 1     |
+| Milton         | 1     |
+| Burlington     | 1     |
+| Tilbury        | 1     |
 
 ### fullAddress.province
 
-| Value | Count |
-|-------|-------|
-| Ontario | 105 |
-| Alberta | 2 |
+| Value   | Count |
+| ------- | ----- |
+| Ontario | 105   |
+| Alberta | 2     |
 
 ### facilityInfo.emr
 
-| Value | Count |
-|-------|-------|
-| PS Suite EMR | 23 |
-| Other | 11 |
-| Accuro EMR | 9 |
-| OSCAR McMaster - Professional Edition (OSCAR Pro) | 2 |
-| Cerebrum | 1 |
-| Avaros EMR | 1 |
+| Value                                             | Count |
+| ------------------------------------------------- | ----- |
+| PS Suite EMR                                      | 23    |
+| Other                                             | 11    |
+| Accuro EMR                                        | 9     |
+| OSCAR McMaster - Professional Edition (OSCAR Pro) | 2     |
+| Cerebrum                                          | 1     |
+| Avaros EMR                                        | 1     |
 
 ### practiceType
 
-| Value | Count |
-|-------|-------|
-| Clinic only | 31 |
-| Comprehensive | 6 |
-| Other | 5 |
-| Clinic & ED | 1 |
+| Value         | Count |
+| ------------- | ----- |
+| Clinic only   | 31    |
+| Comprehensive | 6     |
+| Other         | 5     |
+| Clinic & ED   | 1     |
 
 ### patientType
 
-| Value | Count |
-|-------|-------|
-| All Ages | 32 |
-| Adult | 7 |
-| Pediatric | 2 |
+| Value     | Count |
+| --------- | ----- |
+| All Ages  | 32    |
+| Adult     | 7     |
+| Pediatric | 2     |
 
 ## Job wrong or weird input (when something was provided)
 
@@ -293,7 +292,6 @@ Excludes undefined/null. Invalid type or empty for coords, date, string, nonEmpt
 - **patientType**:
   - [array(0)]: 5
 
-
 ---
 
 ## Reservations
@@ -302,21 +300,21 @@ Excludes undefined/null. Invalid type or empty for coords, date, string, nonEmpt
 
 ## Reservation field completeness (missingness)
 
-| Field | Present | Missing |
-|-------|---------|---------|
-| status | 110 (100.0%) | 0 (0.0%) |
-| applicants | 19 (17.3%) | 91 (82.7%) |
+| Field      | Present      | Missing    |
+| ---------- | ------------ | ---------- |
+| status     | 110 (100.0%) | 0 (0.0%)   |
+| applicants | 19 (17.3%)   | 91 (82.7%) |
 
 ## Reservation frequency of inputs (status)
 
-| Value | Count |
-|-------|-------|
-| Expired | 46 |
-| Pending | 44 |
-| Completed | 9 |
-| Cancelled | 9 |
-| In Progress | 1 |
-| Ongoing | 1 |
+| Value       | Count |
+| ----------- | ----- |
+| Expired     | 46    |
+| Pending     | 44    |
+| Completed   | 9     |
+| Cancelled   | 9     |
+| In Progress | 1     |
+| Ongoing     | 1     |
 
 ## Reservation wrong or weird input (when something was provided)
 
@@ -326,4 +324,3 @@ Excludes undefined/null.
 
 - **applicants**:
   - [array(0)]: 9
-

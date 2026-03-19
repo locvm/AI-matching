@@ -12,8 +12,8 @@
 /** @typedef {import("../interfaces/core/models.js").GeoCoordinates} GeoCoordinates */
 /** @typedef {import("../interfaces/core/models.js").Address} Address */
 
-import { lookupAddress } from "../scoring/location/canadianCities.js"
-import { geocodeAddress } from "./geocodeAddress.js"
+import { lookupAddress } from '../scoring/location/canadianCities.js'
+import { geocodeAddress } from './geocodeAddress.js'
 
 /**
  * Delays execution for a given number of milliseconds.

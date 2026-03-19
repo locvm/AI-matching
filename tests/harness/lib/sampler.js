@@ -71,7 +71,7 @@ export class Sampler {
         return days <= JOB_FILTERS.SHORT_TERM_MAX_DAYS
       })
     }
-    
+
     if (key === 'long-term') {
       return jobs.filter((job) => {
         if (!job.dateRange?.from || !job.dateRange?.to) return false

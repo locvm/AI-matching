@@ -1,5 +1,5 @@
-import { generateSlug } from "@/utils/utils";
-import { Schema, model, models } from "mongoose";
+import { generateSlug } from '@/utils/utils'
+import { Schema, model, models } from 'mongoose'
 
 const LocumJobSchema = new Schema({
   postTitle: {
@@ -9,7 +9,7 @@ const LocumJobSchema = new Schema({
   },
   facilityName: {
     type: String,
-    required: [true, "Facility name is required!"],
+    required: [true, 'Facility name is required!'],
   },
 
   fullAddress: {
@@ -21,17 +21,17 @@ const LocumJobSchema = new Schema({
     },
     city: {
       type: String,
-      required: [true, "City is required!"],
+      required: [true, 'City is required!'],
     },
     province: {
       type: String,
-      default: "Ontario",
-      required: [true, "Province is required!"],
+      default: 'Ontario',
+      required: [true, 'Province is required!'],
     },
     country: {
       type: String,
-      default: "Canada",
-      required: [true, "Country is required!"],
+      default: 'Canada',
+      required: [true, 'Country is required!'],
     },
     postalCode: {
       type: String,
@@ -40,7 +40,7 @@ const LocumJobSchema = new Schema({
   location: {
     type: {
       type: String,
-      enum: ["Point"],
+      enum: ['Point'],
       required: true,
     },
     coordinates: {
@@ -75,11 +75,11 @@ const LocumJobSchema = new Schema({
   dateRange: {
     from: {
       type: Date,
-      required: [true, "Start date is required!"],
+      required: [true, 'Start date is required!'],
     },
     to: {
       type: Date,
-      required: [true, "End date is required!"],
+      required: [true, 'End date is required!'],
     },
   },
 
@@ -139,38 +139,38 @@ const LocumJobSchema = new Schema({
   },
   reservationId: {
     type: Schema.Types.ObjectId,
-    ref: "Reservation",
+    ref: 'Reservation',
   },
   locumCreator: {
     type: Schema.Types.ObjectId,
-    ref: "User",
-    required: [true, "Creator is required!"],
+    ref: 'User',
+    required: [true, 'Creator is required!'],
   },
   isPostedByRecruiter: {
     type: Boolean,
     default: false,
     required: true,
   },
-});
+})
 
 // Create 2dsphere index for geospatial queries
-LocumJobSchema.index({ location: "2dsphere" });
+LocumJobSchema.index({ location: '2dsphere' })
 
 // Pre-save hook to generate slug
-LocumJobSchema.pre("save", async function () {
-  const fieldsToCheck = ["postTitle", "facilityName", "fullAddress", "jobId"];
-  const shouldGenerateSlug = this.isNew || fieldsToCheck.some((field) => this.isModified(field));
+LocumJobSchema.pre('save', async function () {
+  const fieldsToCheck = ['postTitle', 'facilityName', 'fullAddress', 'jobId']
+  const shouldGenerateSlug = this.isNew || fieldsToCheck.some((field) => this.isModified(field))
 
   if (shouldGenerateSlug) {
     try {
-      this.slug = generateSlug(this.postTitle || this.facilityName, this.fullAddress?.city, this.jobId);
+      this.slug = generateSlug(this.postTitle || this.facilityName, this.fullAddress?.city, this.jobId)
     } catch (error) {
-      console.warn("Slug generation failed:", error.message);
+      console.warn('Slug generation failed:', error.message)
     }
   }
-});
+})
 
 //check if user exists if not create new
-const LocumJob = models.LocumJob || model("LocumJob", LocumJobSchema);
+const LocumJob = models.LocumJob || model('LocumJob', LocumJobSchema)
 
-export default LocumJob;
+export default LocumJob

@@ -31,7 +31,7 @@
 /** @typedef {import("../interfaces/core/models.js").LocumJob} LocumJob */
 /** @typedef {import("../interfaces/core/models.js").GeoCoordinates} GeoCoordinates */
 
-import { coerceObjectId, ensureDate, trimString, ensureStringArray, normalizeAddress } from "./primitives.js";
+import { coerceObjectId, ensureDate, trimString, ensureStringArray, normalizeAddress } from './primitives.js'
 
 /**
  * Pulls out lat/lng from a GeoJSON Point. Mongo stores it as {type: "Point", coordinates: [lng, lat]}.
@@ -40,17 +40,17 @@ import { coerceObjectId, ensureDate, trimString, ensureStringArray, normalizeAdd
  * @returns {GeoCoordinates | null}
  */
 function extractGeoCoordinates(raw) {
-  if (!raw || typeof raw !== "object") return null;
+  if (!raw || typeof raw !== 'object') return null
 
-  const coords = raw.coordinates;
-  if (!Array.isArray(coords) || coords.length < 2) return null;
+  const coords = raw.coordinates
+  if (!Array.isArray(coords) || coords.length < 2) return null
 
-  const lng = Number(coords[0]);
-  const lat = Number(coords[1]);
+  const lng = Number(coords[0])
+  const lat = Number(coords[1])
 
-  if (isNaN(lng) || isNaN(lat)) return null;
+  if (isNaN(lng) || isNaN(lat)) return null
 
-  return { lng, lat };
+  return { lng, lat }
 }
 
 /**
@@ -60,11 +60,11 @@ function extractGeoCoordinates(raw) {
  * @returns {LocumJob}
  */
 export function toDomain(raw) {
-  if (!raw || typeof raw !== "object") {
-    throw new Error("locumJobMapper.toDomain: raw document is required");
+  if (!raw || typeof raw !== 'object') {
+    throw new Error('locumJobMapper.toDomain: raw document is required')
   }
 
-  const rawDateRange = raw.dateRange ?? {};
+  const rawDateRange = raw.dateRange ?? {}
 
   return {
     _id: coerceObjectId(raw._id),
@@ -73,7 +73,9 @@ export function toDomain(raw) {
     medProfession: trimString(raw.medProfession),
     medSpeciality: trimString(raw.medSpeciality),
     location: extractGeoCoordinates(raw.location),
-    fullAddress: normalizeAddress(raw.fullAddress) ?? { province: /** @type {import("../interfaces/core/models.js").ProvinceCode} */ ("ON") },
+    fullAddress: normalizeAddress(raw.fullAddress) ?? {
+      province: /** @type {import("../interfaces/core/models.js").ProvinceCode} */ ('ON'),
+    },
     dateRange: {
       from: ensureDate(rawDateRange.from) ?? new Date(0),
       to: ensureDate(rawDateRange.to) ?? new Date(0),
@@ -88,7 +90,7 @@ export function toDomain(raw) {
     facilityName: trimString(raw.facilityName) || undefined,
     practiceType: ensureStringArray(raw.practiceType).length > 0 ? ensureStringArray(raw.practiceType) : undefined,
     patientType: ensureStringArray(raw.patientType).length > 0 ? ensureStringArray(raw.patientType) : undefined,
-  };
+  }
 }
 
 /**
@@ -99,5 +101,5 @@ export function toDomain(raw) {
  * @returns {never}
  */
 export function toPersistence(_job) {
-  throw new Error("locumJobMapper.toPersistence: not implemented");
+  throw new Error('locumJobMapper.toPersistence: not implemented')
 }
