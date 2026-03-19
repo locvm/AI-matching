@@ -52,16 +52,17 @@ function hashToScore(physicianId, jobId, salt) {
 //   return scoreLocation(physician, job.location, job.fullAddress)
 // }
 
-/**
- * Stub duration scorer. Returns hash-based 0-1.
- *
- * @param {Physician} physician
- * @param {LocumJob} job
- * @returns {number} 0 to 1
- */
-export function stubScoreDuration(physician, job) {
-  return hashToScore(physician._id, job._id, 'duration')
-}
+// stubScoreDuration — callers now use createDurationScorer() directly.
+// /**
+//  * Stub duration scorer. Returns hash-based 0-1.
+//  *
+//  * @param {Physician} physician
+//  * @param {LocumJob} job
+//  * @returns {number} 0 to 1
+//  */
+// export function stubScoreDuration(physician, job) {
+//   return hashToScore(physician._id, job._id, 'duration')
+// }
 
 /**
  * Stub EMR scorer. Returns hash-based 0-1.
@@ -74,27 +75,29 @@ export function stubScoreEMR(physician, job) {
   return hashToScore(physician._id, job._id, 'emr')
 }
 
-/**
- * Stub province scorer. Returns hash-based 0-1.
- *
- * @param {Physician} physician
- * @param {LocumJob} job
- * @returns {number} 0 to 1
- */
-export function stubScoreProvince(physician, job) {
-  return hashToScore(physician._id, job._id, 'province')
-}
+// stubScoreProvince — removed: province is covered by location scorer's fallback chain.
+// /**
+//  * Stub province scorer. Returns hash-based 0-1.
+//  *
+//  * @param {Physician} physician
+//  * @param {LocumJob} job
+//  * @returns {number} 0 to 1
+//  */
+// export function stubScoreProvince(physician, job) {
+//   return hashToScore(physician._id, job._id, 'province')
+// }
 
-/**
- * Stub speciality scorer. Returns hash-based 0-1.
- *
- * @param {Physician} physician
- * @param {LocumJob} job
- * @returns {number} 0 to 1
- */
-export function stubScoreSpeciality(physician, job) {
-  return hashToScore(physician._id, job._id, 'speciality')
-}
+// stubScoreSpeciality — removed: speciality is a hard filter in matching-engine-stub.
+// /**
+//  * Stub speciality scorer. Returns hash-based 0-1.
+//  *
+//  * @param {Physician} physician
+//  * @param {LocumJob} job
+//  * @returns {number} 0 to 1
+//  */
+// export function stubScoreSpeciality(physician, job) {
+//   return hashToScore(physician._id, job._id, 'speciality')
+// }
 
 // stubCombineScores — callers now use computeWeightedScore() directly.
 //

@@ -3,7 +3,7 @@
 // Stage 3: Combine + Rank
 //
 // Takes scored pairs (each with per-category 0-1 scores) and produces
-// ranked SearchResults with a total 0-1 score (directly usable as a percentage).
+// ranked SearchResults with a total 0-5 score.
 //
 // Missing categories are handled by re-normalizing weights across
 // available categories, so physicians with incomplete data aren't penalized.
@@ -27,7 +27,7 @@ function round2(n) {
 /**
  * Compute the weighted score for a single pair with re-normalization for missing categories.
  *
- * Returns totalScore in [0, 1] and breakdown with each category's raw 0-1 score.
+ * Returns totalScore in [0, 5] and breakdown with each category's raw 0-1 score.
  *
  * @param {ScoreBreakdown} breakdown - per-category 0-1 scores (undefined = not scored)
  * @returns {{ totalScore: number, breakdown: ScoreBreakdown }}
@@ -54,7 +54,8 @@ export function computeWeightedScore(breakdown) {
 
   // Re-normalize: divide by the sum of available weights (not 1.0)
   // This redistributes missing categories' weights proportionally
-  const totalScore = Math.min(1, Math.max(0, round2(weightedSum / weightSum)))
+  // Scale to 0-5 range
+  const totalScore = Math.min(5, Math.max(0, round2((weightedSum / weightSum) * 5)))
 
   return { totalScore, breakdown: outBreakdown }
 }

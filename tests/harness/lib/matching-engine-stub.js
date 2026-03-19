@@ -6,9 +6,12 @@
 // When a real scorer is built, change one import in stub-scorers.js and nothing here changes.
 // The harness doesnt care whats inside. It just calls the function and gets results.
 
-import { stubScoreDuration, stubScoreEMR, stubScoreProvince, stubScoreSpeciality } from './stub-scorers.js'
-import { computeWeightedScore } from '../../../src/scoring/combineAndRank.js'
+import { stubScoreEMR } from './stub-scorers.js'
 import { scoreLocation } from '../../../src/scoring/location/scoreLocation.js'
+import { createDurationScorer } from '../../../src/scoring/score-duration.js'
+import { computeWeightedScore } from '../../../src/scoring/combineAndRank.js'
+
+const scoreDuration = createDurationScorer()
 
 /**
  * @typedef {import('./types.js').Physician} Physician
@@ -48,7 +51,7 @@ function collectFlags(physician, job) {
 }
 
 /**
- * Scores a single physician-job pair across all 5 categories and combines.
+ * Scores a single physician-job pair across all 3 categories and combines.
  *
  * @param {Physician} physician
  * @param {LocumJob} job
@@ -57,10 +60,8 @@ function collectFlags(physician, job) {
 function scoreAndBuild(physician, job) {
   const scores = {
     location: scoreLocation(physician, job.location, job.fullAddress),
-    duration: stubScoreDuration(physician, job),
+    duration: scoreDuration(physician, job.dateRange).score,
     emr: stubScoreEMR(physician, job),
-    province: stubScoreProvince(physician, job),
-    speciality: stubScoreSpeciality(physician, job),
   }
 
   const { totalScore: score, breakdown } = computeWeightedScore(scores)

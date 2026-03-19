@@ -8,14 +8,12 @@
 
 import { describe, it, expect, beforeAll } from 'vitest'
 import { loadFixtures } from '../../harness/lib/fixture-loader.js'
-import {
-  stubScoreDuration,
-  stubScoreEMR,
-  stubScoreProvince,
-  stubScoreSpeciality,
-} from '../../harness/lib/stub-scorers.js'
+import { stubScoreEMR } from '../../harness/lib/stub-scorers.js'
 import { scoreLocation } from '../location/scoreLocation.js'
+import { createDurationScorer } from '../duration/scoreDuration.js'
 import { combineAndRank } from '../combineAndRank.js'
+
+const scoreDuration = createDurationScorer()
 
 /** @typedef {import('../../interfaces/matching/matching.js').ScoredPair} ScoredPair */
 
@@ -56,10 +54,8 @@ function buildScoredPairs(job, physicians) {
       jobId: job._id,
       breakdown: {
         location: scoreLocation(physician, job.location, job.fullAddress),
-        duration: stubScoreDuration(physician, job),
+        duration: scoreDuration(physician, job.dateRange).score,
         emr: stubScoreEMR(physician, job),
-        province: stubScoreProvince(physician, job),
-        speciality: stubScoreSpeciality(physician, job),
       },
       flags,
     })
@@ -88,10 +84,10 @@ describe('Harness: combineAndRank end-to-end', () => {
     expect(allResults.length).toBeGreaterThan(0)
   })
 
-  it('all scores are in [0, 1]', () => {
+  it('all scores are in [0, 5]', () => {
     for (const r of allResults) {
       expect(r.score).toBeGreaterThanOrEqual(0)
-      expect(r.score).toBeLessThanOrEqual(1)
+      expect(r.score).toBeLessThanOrEqual(5)
     }
   })
 
@@ -114,13 +110,11 @@ describe('Harness: combineAndRank end-to-end', () => {
     }
   })
 
-  it('breakdown contains all 5 categories (all stubs always return a value)', () => {
+  it('breakdown contains all 3 categories (all stubs always return a value)', () => {
     for (const r of allResults) {
       expect(r.breakdown.location).toBeDefined()
       expect(r.breakdown.duration).toBeDefined()
       expect(r.breakdown.emr).toBeDefined()
-      expect(r.breakdown.province).toBeDefined()
-      expect(r.breakdown.speciality).toBeDefined()
     }
   })
 
@@ -145,11 +139,11 @@ describe('Harness: combineAndRank sorting and filtering', () => {
   it('threshold filters correctly on real data', () => {
     const pairs = buildScoredPairs(fixtures.jobs[0], fixtures.physicians)
     const all = combineAndRank(pairs)
-    const filtered = combineAndRank(pairs, { threshold: 0.5 })
+    const filtered = combineAndRank(pairs, { threshold: 2.5 })
 
     expect(filtered.length).toBeLessThanOrEqual(all.length)
     for (const r of filtered) {
-      expect(r.score).toBeGreaterThanOrEqual(0.5)
+      expect(r.score).toBeGreaterThanOrEqual(2.5)
     }
   })
 

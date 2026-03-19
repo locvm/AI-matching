@@ -13,11 +13,9 @@
  * Sum must equal 1.0.
  */
 export const WEIGHTS = {
-  speciality: 0.3, // what they do matters most
-  emr: 0.25, // system familiarity is critical for day-1 readiness
-  province: 0.2, // licensing/geography
-  location: 0.15, // proximity within province
-  duration: 0.1, // scheduling flexibility is least decisive
+  emr: 0.4, // system familiarity is critical for day-1 readiness
+  location: 0.35, // proximity (includes province fallback chain)
+  duration: 0.25, // scheduling flexibility
 }
 
 /** Ordered list of scoring categories (must match WEIGHTS keys) */

@@ -15,8 +15,6 @@
  * @property {number} [location]
  * @property {number} [duration]
  * @property {number} [emr]
- * @property {number} [speciality]
- * @property {number} [province]
  */
 
 /**
@@ -27,7 +25,7 @@
  * @typedef {Object} SearchResult
  * @property {string} physicianId - Matched physicians ID
  * @property {string} jobId - The job that was matched against
- * @property {number} score - Total match score, 0-1 range. Higher = better
+ * @property {number} score - Total match score, 0-5 range. Higher = better
  * @property {ScoreBreakdown} breakdown - Score breakdown by category
  * @property {string[]} [flags] - Data quality flags, e.g. "missing_physician_location", "missing_emr_data"
  */
@@ -46,7 +44,7 @@
 /**
  * In-memory intermediate result from scoring a single physician-job pair
  *
- * Contains the 5 individual category scores (each 0-1) and data quality flags
+ * Contains the individual category scores (each 0-1) and data quality flags
  * NO total score yet — that happens in Stage 3 (combineAndRank)
  *
  * This is never stored in the database. It lives only during pipeline execution
@@ -54,19 +52,17 @@
  * @typedef {Object} ScoredPair
  * @property {string} physicianId
  * @property {string} jobId
- * @property {ScoreBreakdown} breakdown - 5 individual 0-1 scores (location, duration, emr, province, speciality)
+ * @property {ScoreBreakdown} breakdown - individual 0-1 scores (location, duration, emr)
  * @property {string[]} flags - Data quality flags, e.g. "missing_physician_location", "missing_emr_data"
  */
 
 /**
- * Scores a single physician-job pair across all 5 categories
+ * Scores a single physician-job pair across all 3 categories
  *
- * Calls all 5 scorers internally:
+ * Calls all 3 scorers internally:
  *   scoreLocation(physician, job.location, job.fullAddress)  → 0 to 1
  *   scoreDuration(physician, job.dateRange)                  → 0 to 1
  *   scoreEMR(physician.emrSystems, job.emr)                 → 0 to 1
- *   scoreProvince(physician, job.fullAddress.province)       → 0 to 1
- *   scoreSpeciality(physician, job.medSpeciality)            → 0 to 1
  *
  * Collects data quality flags for any missing data (e.g. no location, no EMR)
  * Does NOT apply weights or compute a total score — that's combineAndRank's job
@@ -83,7 +79,7 @@
  * Applies weights to scored pairs, computes total scores, filters, sorts, and caps
  *
  * Steps:
- * 1) For each ScoredPair, apply configurable weights to each breakdown category → total score (0-1)
+ * 1) For each ScoredPair, apply configurable weights to each breakdown category → total score (0-5)
  * 2) Build a SearchResult with the total score, breakdown, and flags
  * 3) Filter out results below options.threshold (if provided)
  * 4) Sort by score descending
