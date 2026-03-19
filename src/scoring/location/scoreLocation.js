@@ -17,9 +17,37 @@
 /** @typedef {import("../../interfaces/core/models.js").Address} Address */
 /** @typedef {import("../../interfaces/core/models.js").ProvinceCode} ProvinceCode */
 
-import { haversineKm } from './haversine.js'
 import { normalizeProvince } from '../../normalization/normalizeProvince.js'
 import { LOCATION_CONFIG } from '../../config/locationConfig.js'
+
+// ── Haversine distance ─────────────────────────────────────────────────────
+
+const EARTH_RADIUS_KM = 6371
+
+/** @param {number} deg */
+function toRadians(deg) {
+  return (deg * Math.PI) / 180
+}
+
+/**
+ * Haversine great-circle distance between two points.
+ *
+ * @param {GeoCoordinates} a
+ * @param {GeoCoordinates} b
+ * @returns {number} distance in kilometers
+ */
+export function haversineKm(a, b) {
+  const phi1 = toRadians(a.lat)
+  const phi2 = toRadians(b.lat)
+  const deltaPhi = toRadians(b.lat - a.lat)
+  const deltaLambda = toRadians(b.lng - a.lng)
+
+  const halfChord = Math.sin(deltaPhi / 2) ** 2 + Math.cos(phi1) * Math.cos(phi2) * Math.sin(deltaLambda / 2) ** 2
+
+  const angularDistance = 2 * Math.atan2(Math.sqrt(halfChord), Math.sqrt(1 - halfChord))
+
+  return EARTH_RADIUS_KM * angularDistance
+}
 
 /**
  * @typedef {"gps_distance" | "specific_region" | "preferred_province" | "work_province" | "medical_province" | "no_data"} ScoringMethod

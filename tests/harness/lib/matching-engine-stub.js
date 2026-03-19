@@ -6,14 +6,9 @@
 // When a real scorer is built, change one import in stub-scorers.js and nothing here changes.
 // The harness doesnt care whats inside. It just calls the function and gets results.
 
-import {
-  stubScoreLocation,
-  stubScoreDuration,
-  stubScoreEMR,
-  stubScoreProvince,
-  stubScoreSpeciality,
-  stubCombineScores,
-} from './stub-scorers.js'
+import { stubScoreDuration, stubScoreEMR, stubScoreProvince, stubScoreSpeciality } from './stub-scorers.js'
+import { computeWeightedScore } from '../../../src/scoring/combineAndRank.js'
+import { scoreLocation } from '../../../src/scoring/location/scoreLocation.js'
 
 /**
  * @typedef {import('./types.js').Physician} Physician
@@ -61,14 +56,14 @@ function collectFlags(physician, job) {
  */
 function scoreAndBuild(physician, job) {
   const scores = {
-    location: stubScoreLocation(physician, job),
+    location: scoreLocation(physician, job.location, job.fullAddress),
     duration: stubScoreDuration(physician, job),
     emr: stubScoreEMR(physician, job),
     province: stubScoreProvince(physician, job),
     speciality: stubScoreSpeciality(physician, job),
   }
 
-  const { score, breakdown } = stubCombineScores(scores)
+  const { totalScore: score, breakdown } = computeWeightedScore(scores)
   const flags = collectFlags(physician, job)
 
   return {
@@ -125,7 +120,7 @@ export async function searchPhysicians(job, physicians, reservation, options) {
  *
  * Pipeline: filter → score each pair → combine → sort → return.
  *
- * @type {import('../../../src/interfaces/matching/matching.js').ScorePhysicianFn}
+ * @type {import('../../../src/interfaces/index.js').ScorePhysicianFn}
  */
 export async function searchJobs(physician, jobs, reservations, options) {
   const onlyLooking = true

@@ -54,7 +54,7 @@ export class MatchingTestHarness {
     this.#searchPhysicians = data.searchPhysicians ?? searchPhysiciansStub
     this.#config = {
       topK: config.topK ?? OUTPUT.TOP_K,
-      outputDir: config.outputDir ?? PATHS.OUTPUT_DIR,
+      outputDir: config.outputDir ?? PATHS.JOB_OUTPUT_DIR,
       sampling: config.sampling,
     }
   }
@@ -140,7 +140,7 @@ export class PhysicianTestHarness {
     this.#searchJobs = data.searchJobs ?? searchJobsStub
     this.#config = {
       topK: config.topK ?? OUTPUT.TOP_K,
-      outputDir: config.outputDir ?? PATHS.OUTPUT_DIR,
+      outputDir: config.outputDir ?? PATHS.PHYSICIAN_OUTPUT_DIR,
       sampling: config.sampling,
     }
   }

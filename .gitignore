@@ -1,3 +1,6 @@
-artifacts/
+harness-output/
 node_modules/
 *.tsbuildinfo
+.env
+docs/*
+!docs/.gitkeep

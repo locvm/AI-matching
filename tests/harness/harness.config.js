@@ -5,12 +5,16 @@ import { resolve } from 'node:path'
 // paths
 const FIXTURES_DIR = resolve('fixtures')
 
+const OUTPUT_ROOT = resolve('harness-output')
+
 export const PATHS = {
   FIXTURES_DIR,
   JOBS_FIXTURE: resolve(FIXTURES_DIR, 'locum.locumjobs.formatted.json'),
   USERS_FIXTURE: resolve(FIXTURES_DIR, 'locum.users.formatted.json'),
   RESERVATIONS_FIXTURE: resolve(FIXTURES_DIR, 'locum.reservations.formatted.json'),
-  OUTPUT_DIR: resolve('artifacts'),
+  OUTPUT_DIR: OUTPUT_ROOT,
+  JOB_OUTPUT_DIR: resolve(OUTPUT_ROOT, 'job-to-physicians'),
+  PHYSICIAN_OUTPUT_DIR: resolve(OUTPUT_ROOT, 'physician-to-jobs'),
 }
 
 // sampling controls

@@ -2,7 +2,7 @@
 
 export {}
 
-// Domain types (from interfaces)
+// ── Domain types (from interfaces) ──────────────────────────────────────────
 /** @typedef {import('../../../src/interfaces/core/models.js').LocumJob} LocumJob */
 /** @typedef {import('../../../src/interfaces/core/models.js').Physician} Physician */
 /** @typedef {import('../../../src/interfaces/core/models.js').Reservation} Reservation */

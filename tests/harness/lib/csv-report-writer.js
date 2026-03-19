@@ -18,7 +18,7 @@ export class CsvReportWriter {
 
   /** @param {string} [outputDir] */
   constructor(outputDir) {
-    this.#outputDir = outputDir ?? PATHS.OUTPUT_DIR
+    this.#outputDir = outputDir ?? PATHS.JOB_OUTPUT_DIR
   }
 
   /**
@@ -118,7 +118,7 @@ export class PhysicianCsvReportWriter {
 
   /** @param {string} [outputDir] */
   constructor(outputDir) {
-    this.#outputDir = outputDir ?? PATHS.OUTPUT_DIR
+    this.#outputDir = outputDir ?? PATHS.PHYSICIAN_OUTPUT_DIR
   }
 
   /**
