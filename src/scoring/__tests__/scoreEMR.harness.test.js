@@ -125,6 +125,31 @@ describe('Harness: EMR match existence', () => {
   })
 })
 
+describe('Harness: EMR alias resolution', () => {
+  it('"Avaros Inc." physicians match "Avaros EMR" jobs via alias', () => {
+    const physicians = rawUsers.map(toPhysician)
+    const jobs = rawJobs.map(toJob)
+
+    const avarosIncPhysicians = physicians.filter(
+      (p) => p.emrSystems.some((e) => /avaros inc/i.test(e))
+    )
+    const avarosEMRJobs = jobs.filter(
+      (j) => j.facilityInfo?.emr && /avaros emr/i.test(j.facilityInfo.emr)
+    )
+
+    if (avarosIncPhysicians.length === 0 || avarosEMRJobs.length === 0) return
+
+    for (const job of avarosEMRJobs) {
+      for (const physician of avarosIncPhysicians) {
+        const detail = scoreEMRWithDetail(physician, job)
+        expect(detail.score).toBe(1.0)
+        expect(detail.method).toBe('match')
+        expect(detail.matched).toBe(true)
+      }
+    }
+  })
+})
+
 describe('Harness: EMR method distribution', () => {
   it('reports method counts across all pairs for a sample of jobs', () => {
     const physicians = rawUsers.map(toPhysician)

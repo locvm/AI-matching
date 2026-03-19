@@ -26,17 +26,56 @@
 //   so they aren't rewarded or punished.
 //
 // Matching:
-//   Case-insensitive, trimmed. "PS Suite" matches "ps suite".
-//
-// TODO: v2 — add alias mapping so variants like "Avaros" vs "Avaros Inc."
-//   or "OSCAR Pro" vs "Oscar" resolve to the same system. Would require a
-//   lookup table (e.g. { "avaros inc.": "avaros", "oscar": "oscar pro" }).
+//   Case-insensitive, trimmed, canonicalized. "Avaros Inc." and "Avaros EMR"
+//   both resolve to "avaros" via a static alias table, so they match.
+//   Unknown names fall through unchanged — exact match still works for anything
+//   not in the table.
 
 /** @typedef {import("../interfaces/core/models.js").Physician} Physician */
 /** @typedef {import("../interfaces/core/models.js").LocumJob} LocumJob */
 /** @typedef {import("./scoring.config.js").EMRScorerConfig} EMRScorerConfig */
 
 import { EMR_DEFAULTS } from './scoring.config.js'
+
+// Maps every known variant (lowercased) to a single canonical name.
+// Unknown values fall through via the ?? fallback in canonicalize().
+const EMR_ALIASES = /** @type {Record<string, string>} */ ({
+  'avaros emr':       'avaros',
+  'avaros inc.':      'avaros',
+  'avaros inc':       'avaros',
+  'avaros':           'avaros',
+  'ps suite emr':     'ps suite',
+  'ps suite':         'ps suite',
+  'oscar mcmaster - professional edition (oscar pro)': 'oscar pro',
+  'oscar pro':        'oscar pro',
+  'oscar':            'oscar pro',
+  'accuro emr':       'accuro',
+  'accuro':           'accuro',
+  'juno emr':         'juno',
+  'juno':             'juno',
+  'med access emr':   'med access',
+  'med access':       'med access',
+  'collaborative health record (chr)': 'chr',
+  'chr':              'chr',
+  'medesync':         'medesync',
+  'cerner':           'cerner',
+  'cerebrum':         'cerebrum',
+  'wolfe':            'wolfe',
+  'other':            'other',
+})
+
+/**
+ * Normalizes an EMR name to its canonical form.
+ * Trims, lowercases, then looks up in the alias table.
+ * Unknown names pass through unchanged so exact matching still works.
+ *
+ * @param {string} name
+ * @returns {string}
+ */
+function canonicalize(name) {
+  const key = name.trim().toLowerCase()
+  return EMR_ALIASES[key] ?? key
+}
 
 /**
  * @typedef {'match' | 'no_match' | 'no_job_emr' | 'no_physician_emr'} EMRScoringMethod
@@ -52,10 +91,10 @@ import { EMR_DEFAULTS } from './scoring.config.js'
  */
 
 /**
- * Builds a deduplicated, normalized set of EMR names from the physician's two fields.
+ * Builds a deduplicated, canonicalized set of EMR names from the physician's two fields.
  *
  * @param {Physician} physician
- * @returns {Set<string>} lowercased, trimmed EMR names
+ * @returns {Set<string>} canonical EMR names
  */
 function getKnownEMRs(physician) {
   /** @type {Set<string>} */
@@ -63,14 +102,14 @@ function getKnownEMRs(physician) {
 
   if (Array.isArray(physician.emrSystems)) {
     for (const e of physician.emrSystems) {
-      const normalized = (e ?? '').trim().toLowerCase()
-      if (normalized) emrs.add(normalized)
+      const canonical = canonicalize(e ?? '')
+      if (canonical) emrs.add(canonical)
     }
   }
 
   if (physician.facilityEMR) {
-    const normalized = physician.facilityEMR.trim().toLowerCase()
-    if (normalized) emrs.add(normalized)
+    const canonical = canonicalize(physician.facilityEMR)
+    if (canonical) emrs.add(canonical)
   }
 
   return emrs
@@ -88,7 +127,7 @@ export function scoreEMRWithDetail(physician, job, config = {}) {
   const opts = { ...EMR_DEFAULTS, ...config }
 
   const jobEMRRaw = job.facilityInfo?.emr
-  const jobEMR = (jobEMRRaw ?? '').trim().toLowerCase() || null
+  const jobEMR = jobEMRRaw?.trim() ? canonicalize(jobEMRRaw) : null
 
   const knownEMRs = getKnownEMRs(physician)
   const physicianEMRs = [...knownEMRs]

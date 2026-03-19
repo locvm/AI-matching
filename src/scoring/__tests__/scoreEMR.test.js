@@ -112,6 +112,96 @@ describe('scoreEMR – dedup', () => {
   })
 })
 
+// ── Alias / canonicalization ─────────────────────────────────────────────────
+
+describe('scoreEMR – alias matching', () => {
+  it('matches "Avaros Inc." physician against "Avaros EMR" job', () => {
+    const physician = makePhysician({ emrSystems: ['Avaros Inc.'] })
+    const job = makeJob({ facilityInfo: { emr: 'Avaros EMR' } })
+    expect(scoreEMR(physician, job)).toBe(1.0)
+  })
+
+  it('matches "Avaros EMR" physician against "Avaros Inc." job', () => {
+    const physician = makePhysician({ emrSystems: ['Avaros EMR'] })
+    const job = makeJob({ facilityInfo: { emr: 'Avaros Inc.' } })
+    expect(scoreEMR(physician, job)).toBe(1.0)
+  })
+
+  it('matches bare "Avaros" physician against "Avaros EMR" job', () => {
+    const physician = makePhysician({ facilityEMR: 'Avaros' })
+    const job = makeJob({ facilityInfo: { emr: 'Avaros EMR' } })
+    expect(scoreEMR(physician, job)).toBe(1.0)
+  })
+
+  it('matches "OSCAR Pro" against full OSCAR name', () => {
+    const physician = makePhysician({ emrSystems: ['OSCAR Pro'] })
+    const job = makeJob({ facilityInfo: { emr: 'OSCAR McMaster - Professional Edition (OSCAR Pro)' } })
+    expect(scoreEMR(physician, job)).toBe(1.0)
+  })
+
+  it('matches bare "OSCAR" against "OSCAR Pro"', () => {
+    const physician = makePhysician({ emrSystems: ['OSCAR'] })
+    const job = makeJob({ facilityInfo: { emr: 'OSCAR Pro' } })
+    expect(scoreEMR(physician, job)).toBe(1.0)
+  })
+
+  it('matches "PS Suite" against "PS Suite EMR"', () => {
+    const physician = makePhysician({ emrSystems: ['PS Suite'] })
+    const job = makeJob({ facilityInfo: { emr: 'PS Suite EMR' } })
+    expect(scoreEMR(physician, job)).toBe(1.0)
+  })
+
+  it('matches "Accuro" against "Accuro EMR"', () => {
+    const physician = makePhysician({ emrSystems: ['Accuro'] })
+    const job = makeJob({ facilityInfo: { emr: 'Accuro EMR' } })
+    expect(scoreEMR(physician, job)).toBe(1.0)
+  })
+
+  it('matches "Juno" against "Juno EMR"', () => {
+    const physician = makePhysician({ facilityEMR: 'Juno' })
+    const job = makeJob({ facilityInfo: { emr: 'Juno EMR' } })
+    expect(scoreEMR(physician, job)).toBe(1.0)
+  })
+
+  it('matches "CHR" against full Collaborative Health Record name', () => {
+    const physician = makePhysician({ emrSystems: ['CHR'] })
+    const job = makeJob({ facilityInfo: { emr: 'Collaborative Health Record (CHR)' } })
+    expect(scoreEMR(physician, job)).toBe(1.0)
+  })
+
+  it('still returns 0.0 when aliases resolve to different systems', () => {
+    const physician = makePhysician({ emrSystems: ['Accuro EMR'] })
+    const job = makeJob({ facilityInfo: { emr: 'Avaros EMR' } })
+    expect(scoreEMR(physician, job)).toBe(0.0)
+  })
+
+  it('unknown EMR names still work via exact match fallback', () => {
+    const physician = makePhysician({ emrSystems: ['SomeNewEMR'] })
+    const job = makeJob({ facilityInfo: { emr: 'SomeNewEMR' } })
+    expect(scoreEMR(physician, job)).toBe(1.0)
+  })
+
+  it('unknown EMR names that differ still return 0.0', () => {
+    const physician = makePhysician({ emrSystems: ['SomeNewEMR'] })
+    const job = makeJob({ facilityInfo: { emr: 'AnotherNewEMR' } })
+    expect(scoreEMR(physician, job)).toBe(0.0)
+  })
+})
+
+describe('scoreEMRWithDetail – alias breakdown', () => {
+  it('reports canonical names in breakdown for alias match', () => {
+    const physician = makePhysician({ emrSystems: ['Avaros Inc.'] })
+    const job = makeJob({ facilityInfo: { emr: 'Avaros EMR' } })
+    const detail = scoreEMRWithDetail(physician, job)
+
+    expect(detail.score).toBe(1.0)
+    expect(detail.method).toBe('match')
+    expect(detail.matched).toBe(true)
+    expect(detail.jobEMR).toBe('avaros')
+    expect(detail.physicianEMRs).toContain('avaros')
+  })
+})
+
 // ── Output range ─────────────────────────────────────────────────────────────
 
 describe('scoreEMR – output range', () => {
