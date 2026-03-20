@@ -19,6 +19,7 @@
 
 import { normalizeProvince } from '../../normalization/normalizeProvince.js'
 import { LOCATION_CONFIG } from '../../config/locationConfig.js'
+import { lookupCity } from './canadianCities.js'
 
 // ── Haversine distance ─────────────────────────────────────────────────────
 
@@ -191,6 +192,43 @@ export function scoreLocationWithDetail(physician, jobLocation, jobAddress, conf
     const granularRegions = physician.specificRegions.filter((r) => !isCoarseRegion(r, config))
 
     if (granularRegions.length > 0) {
+      // When multiple regions exist and job has GPS coords, try distance-based scoring
+      if (granularRegions.length > 1 && isValidCoords(jobLocation)) {
+        const physicianProvince =
+          (physician.preferredProvinces && physician.preferredProvinces.length > 0
+            ? normalizeProvince(physician.preferredProvinces[0])
+            : null) ?? normalizeProvince(physician.workAddress?.province)
+
+        if (physicianProvince) {
+          let closestDistance = Infinity
+          let closestRegion = null
+
+          for (const region of granularRegions) {
+            const coords = lookupCity(region, physicianProvince)
+            if (coords && isValidCoords(coords)) {
+              const dist = haversineKm(coords, /** @type {GeoCoordinates} */ (jobLocation))
+              if (dist < closestDistance) {
+                closestDistance = dist
+                closestRegion = region
+              }
+            }
+          }
+
+          if (closestRegion !== null) {
+            const score = reverseSigmoid(closestDistance, config)
+            detail.score = Math.max(0, Math.min(1, score))
+            detail.method = 'gps_distance'
+            detail.distanceKm = Math.round(closestDistance * 100) / 100
+            detail.distanceBucket = getDistanceBucket(closestDistance, config)
+            detail.matchedRegion = closestRegion
+            detail.resolvedPhysicianProvince = physicianProvince
+            detail.provinceMatch = physicianProvince === jobProvince
+            return detail
+          }
+        }
+      }
+
+      // Fallback: string matching (single region or no regions geocoded)
       const matchedRegion = granularRegions.find((r) => regionMatchesJob(r, jobAddress))
 
       detail.method = 'specific_region'
