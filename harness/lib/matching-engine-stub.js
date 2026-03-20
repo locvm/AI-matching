@@ -7,9 +7,9 @@
 // The harness doesnt care whats inside. It just calls the function and gets results.
 
 import { stubScoreEMR } from './stub-scorers.js'
-import { scoreLocation } from '../../../src/scoring/location/scoreLocation.js'
-import { createDurationScorer } from '../../../src/scoring/duration/scoreDuration.js'
-import { computeWeightedScore } from '../../../src/scoring/combineAndRank.js'
+import { scoreLocation } from '../../src/scoring/location/scoreLocation.js'
+import { createDurationScorer } from '../../src/scoring/duration/scoreDuration.js'
+import { computeWeightedScore } from '../../src/scoring/combineAndRank.js'
 
 const scoreDuration = createDurationScorer()
 
@@ -81,7 +81,7 @@ function scoreAndBuild(physician, job) {
  *
  * Pipeline: filter → score each pair → combine → sort → return.
  *
- * @type {import('../../../src/interfaces/matching/matching.js').ScoreJobFn}
+ * @type {import('../../src/interfaces/matching/matching.js').ScoreJobFn}
  */
 export async function searchPhysicians(job, physicians, reservation, options) {
   const onlyLooking = true
@@ -121,7 +121,7 @@ export async function searchPhysicians(job, physicians, reservation, options) {
  *
  * Pipeline: filter → score each pair → combine → sort → return.
  *
- * @type {import('../../../src/interfaces/index.js').ScorePhysicianFn}
+ * @type {import('../../src/interfaces/matching/matching.js').ScorePhysicianFn}
  */
 export async function searchJobs(physician, jobs, reservations, options) {
   const onlyLooking = true

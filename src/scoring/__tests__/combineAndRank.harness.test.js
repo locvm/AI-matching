@@ -7,8 +7,8 @@
 // Validates end-to-end scoring invariants.
 
 import { describe, it, expect, beforeAll } from 'vitest'
-import { loadFixtures } from '../../harness/lib/fixture-loader.js'
-import { stubScoreEMR } from '../../harness/lib/stub-scorers.js'
+import { loadFixtures } from '../../../tests/harness/lib/fixture-loader.js'
+import { stubScoreEMR } from '../../../tests/harness/lib/stub-scorers.js'
 import { scoreLocation } from '../location/scoreLocation.js'
 import { createDurationScorer } from '../duration/scoreDuration.js'
 import { combineAndRank } from '../combineAndRank.js'
@@ -17,7 +17,7 @@ const scoreDuration = createDurationScorer()
 
 /** @typedef {import('../../interfaces/matching/matching.js').ScoredPair} ScoredPair */
 
-/** @type {import('../../harness/lib/types.js').FixtureData} */
+/** @type {import('../../../harness/lib/types.js').FixtureData} */
 let fixtures
 
 beforeAll(async () => {
@@ -93,8 +93,11 @@ describe('Harness: combineAndRank end-to-end', () => {
 
   it('all breakdown values are in [0, 1]', () => {
     for (const r of allResults) {
-      for (const key of Object.keys(r.breakdown)) {
-        const val = r.breakdown[key]
+      for (const key of Object.keys(
+        r.breakdown
+      ) /** @type {keyof import('../../interfaces/matching/matching.js').ScoreBreakdown} */) {
+        const val =
+          r.breakdown[/** @type {keyof import('../../interfaces/matching/matching.js').ScoreBreakdown} */ (key)]
         expect(val).toBeGreaterThanOrEqual(0)
         expect(val).toBeLessThanOrEqual(1)
       }
@@ -104,8 +107,14 @@ describe('Harness: combineAndRank end-to-end', () => {
   it('no NaN values in scores or breakdown', () => {
     for (const r of allResults) {
       expect(Number.isNaN(r.score)).toBe(false)
-      for (const key of Object.keys(r.breakdown)) {
-        expect(Number.isNaN(r.breakdown[key])).toBe(false)
+      for (const key of Object.keys(
+        r.breakdown
+      ) /** @type {keyof import('../../interfaces/matching/matching.js').ScoreBreakdown} */) {
+        expect(
+          Number.isNaN(
+            r.breakdown[/** @type {keyof import('../../interfaces/matching/matching.js').ScoreBreakdown} */ (key)]
+          )
+        ).toBe(false)
       }
     }
   })
