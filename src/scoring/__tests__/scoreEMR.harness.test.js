@@ -76,9 +76,7 @@ describe('Harness: EMR score distribution', () => {
     const physicians = rawUsers.map(toPhysician)
     const jobs = rawJobs.map(toJob)
 
-    const noEMRPhysicians = physicians.filter(
-      (p) => p.emrSystems.length === 0 && !p.facilityEMR
-    )
+    const noEMRPhysicians = physicians.filter((p) => p.emrSystems.length === 0 && !p.facilityEMR)
     const jobsWithEMR = jobs.filter((j) => j.facilityInfo?.emr?.trim())
 
     expect(noEMRPhysicians.length).toBeGreaterThan(0)
@@ -101,9 +99,7 @@ describe('Harness: EMR match existence', () => {
     const jobs = rawJobs.map(toJob)
 
     const jobsWithEMR = jobs.filter((j) => j.facilityInfo?.emr?.trim())
-    const physiciansWithEMR = physicians.filter(
-      (p) => p.emrSystems.length > 0 || p.facilityEMR
-    )
+    const physiciansWithEMR = physicians.filter((p) => p.emrSystems.length > 0 || p.facilityEMR)
 
     if (jobsWithEMR.length === 0 || physiciansWithEMR.length === 0) {
       return
@@ -130,12 +126,8 @@ describe('Harness: EMR alias resolution', () => {
     const physicians = rawUsers.map(toPhysician)
     const jobs = rawJobs.map(toJob)
 
-    const avarosIncPhysicians = physicians.filter(
-      (p) => p.emrSystems.some((e) => /avaros inc/i.test(e))
-    )
-    const avarosEMRJobs = jobs.filter(
-      (j) => j.facilityInfo?.emr && /avaros emr/i.test(j.facilityInfo.emr)
-    )
+    const avarosIncPhysicians = physicians.filter((p) => p.emrSystems.some((e) => /avaros inc/i.test(e)))
+    const avarosEMRJobs = jobs.filter((j) => j.facilityInfo?.emr && /avaros emr/i.test(j.facilityInfo.emr))
 
     if (avarosIncPhysicians.length === 0 || avarosEMRJobs.length === 0) return
 
