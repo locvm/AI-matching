@@ -1,6 +1,5 @@
 // @ts-check
 
-import { SCORING } from '../harness.config.js'
 import { filterEligiblePhysicians } from '../../../src/matchingLogic/filterEligiblePhysicians.js'
 // Stub implementations of ScoreJobFn and ScorePhysicianFn.
 //
