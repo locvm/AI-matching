@@ -91,7 +91,7 @@ export async function loadFixtures(options = {}) {
 
   // Optionally enrich physicians with GPS coordinates
   if (options.enrichGps) {
-    const useNominatim = options.enrichGps === "nominatim"
+    const useNominatim = options.enrichGps === 'nominatim'
     const result = await geocodeBatch(physicians, { useNominatim })
     physicians = result.physicians
   }

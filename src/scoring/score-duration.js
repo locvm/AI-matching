@@ -1,6 +1,6 @@
 // @ts-check
 
-import { DURATION_BUCKETS, DURATION_DEFAULTS } from './scoring.config.js'
+import { DURATION_DEFAULTS } from './scoring.config.js'
 
 /** @typedef {import("../interfaces/core/models.js").Physician} Physician */
 /** @typedef {import("../interfaces/core/models.js").AvailabilityWindow} AvailabilityWindow */
@@ -18,12 +18,12 @@ export function createDurationScorer(config = {}) {
     const jobDays = daysBetween(jobDateRange.from, jobDateRange.to)
     if (jobDays <= 0) return neutral(opts.neutralScore)
 
-    if (physician.availability.length > 0) {
-      return scoreByOverlap(physician.availability, jobDateRange, jobDays, opts)
+    if ((physician.availabilityWindows ?? []).length > 0) {
+      return scoreByOverlap(physician.availabilityWindows ?? [], jobDateRange, jobDays, opts)
     }
 
-    if (physician.locumDurations.length > 0) {
-      return scoreByBucket(physician.locumDurations, jobDays, opts)
+    if ((physician.locumDurations ?? []).length > 0) {
+      return scoreByBucket(physician.locumDurations ?? [], jobDays, opts)
     }
 
     return neutral(opts.neutralScore)
@@ -57,24 +57,22 @@ function scoreByOverlap(windows, jobRange, jobDays, opts) {
 }
 
 /**
- * @param {string[]} preferred
+ * @param {import("../interfaces/core/models.js").DurationRange[]} preferred
  * @param {number} jobDays
  * @param {typeof DURATION_DEFAULTS} opts
  * @returns {DurationScoreResult}
  */
 function scoreByBucket(preferred, jobDays, opts) {
-  const set = new Set(preferred)
-
-  for (const b of DURATION_BUCKETS) {
-    if (set.has(b.label) && jobDays >= b.min && jobDays < b.max) {
+  for (const d of preferred) {
+    if (jobDays >= d.minDays && jobDays <= d.maxDays) {
       return bucket(opts.bucketMatchScore)
     }
   }
 
-  for (const b of DURATION_BUCKETS) {
-    if (!set.has(b.label)) continue
-    const margin = Math.max((b.max - b.min) * 0.25, 7)
-    if (jobDays >= b.min - margin && jobDays < b.max + margin) {
+  for (const d of preferred) {
+    const range = d.maxDays - d.minDays
+    const margin = Math.max(range * 0.25, 7)
+    if (jobDays >= d.minDays - margin && jobDays <= d.maxDays + margin) {
       return bucket(opts.bucketPartialScore)
     }
   }

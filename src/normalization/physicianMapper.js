@@ -34,12 +34,12 @@
 
 /** @typedef {import("../interfaces/core/models.js").Physician} Physician */
 
-import { coerceObjectId, trimString, ensureStringArray, normalizeAddress } from "./primitives.js";
-import { normalizeProvince } from "./normalizeProvince.js";
-import { normalizeLocumDuration } from "./normalizeLocumDuration.js";
-import { normalizeAvailability } from "./normalizeAvailability.js";
-import { normalizeAvailabilityDateRanges } from "./normalizeAvailabilityDateRange.js";
-import { normalizeAvailabilityYears } from "./normalizeAvailabilityYears.js";
+import { coerceObjectId, trimString, ensureStringArray, normalizeAddress } from './primitives.js'
+import { normalizeProvince } from './normalizeProvince.js'
+import { normalizeLocumDuration } from './normalizeLocumDuration.js'
+import { normalizeAvailability } from './normalizeAvailability.js'
+import { normalizeAvailabilityDateRanges } from './normalizeAvailabilityDateRange.js'
+import { normalizeAvailabilityYears } from './normalizeAvailabilityYears.js'
 
 /**
  * Takes a raw User doc from Mongo and gives back a clean Physician.
@@ -48,25 +48,25 @@ import { normalizeAvailabilityYears } from "./normalizeAvailabilityYears.js";
  * @returns {Physician}
  */
 export function toDomain(raw) {
-  if (!raw || typeof raw !== "object") {
-    throw new Error("physicianMapper.toDomain: raw document is required");
+  if (!raw || typeof raw !== 'object') {
+    throw new Error('physicianMapper.toDomain: raw document is required')
   }
 
-  const prefs = raw.preferences ?? {};
+  const prefs = raw.preferences ?? {}
 
   // Clean provinces: "Ontario" becomes "ON", filter out anything we dont recognize
   const preferredProvinces = ensureStringArray(prefs.preferredProvinces)
     .map((p) => normalizeProvince(p))
-    .filter(/** @returns {p is import("../interfaces/core/models.js").ProvinceCode} */ (p) => p !== null);
+    .filter(/** @returns {p is import("../interfaces/core/models.js").ProvinceCode} */ (p) => p !== null)
 
   // Split availabilityTypes into days + commitment
-  const availability = normalizeAvailability(ensureStringArray(prefs.availabilityTypes));
+  const availability = normalizeAvailability(ensureStringArray(prefs.availabilityTypes))
 
   // Convert month/year date ranges into real Date objects
-  const availabilityWindows = normalizeAvailabilityDateRanges(prefs.availabilityDateRanges);
+  const availabilityWindows = normalizeAvailabilityDateRanges(prefs.availabilityDateRanges)
 
   // Extract years from strings like "Available in 2025"
-  const availabilityYears = normalizeAvailabilityYears(prefs.availabilityYears);
+  const availabilityYears = normalizeAvailabilityYears(prefs.availabilityYears)
 
   return {
     _id: coerceObjectId(raw._id),
@@ -94,7 +94,7 @@ export function toDomain(raw) {
     availabilityYears: availabilityYears.length > 0 ? availabilityYears : undefined,
     isProfileComplete: raw.isProfileComplete ?? undefined,
     isOnboardingCompleted: raw.isOnboardingCompleted ?? undefined,
-  };
+  }
 }
 
 /**
@@ -108,11 +108,11 @@ export function toDomain(raw) {
  * @returns {Promise<Physician>}
  */
 export async function enrichWithCoordinates(physician, geocodeFn) {
-  if (physician.location) return physician;
-  if (!physician.workAddress?.city) return physician;
+  if (physician.location) return physician
+  if (!physician.workAddress?.city) return physician
 
-  const coords = await geocodeFn(physician.workAddress);
-  return coords ? { ...physician, location: coords } : physician;
+  const coords = await geocodeFn(physician.workAddress)
+  return coords ? { ...physician, location: coords } : physician
 }
 
 /**
@@ -123,5 +123,5 @@ export async function enrichWithCoordinates(physician, geocodeFn) {
  * @returns {never}
  */
 export function toPersistence(_physician) {
-  throw new Error("physicianMapper.toPersistence: not implemented");
+  throw new Error('physicianMapper.toPersistence: not implemented')
 }

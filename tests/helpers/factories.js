@@ -8,7 +8,7 @@
  */
 export function makePhysician(overrides = {}) {
   return {
-    id: 'test-physician',
+    _id: 'test-physician',
     firstName: 'Jane',
     lastName: 'Doe',
     medProfession: 'Physician',
@@ -17,11 +17,11 @@ export function makePhysician(overrides = {}) {
     location: null,
     workAddress: null,
     preferredProvinces: [],
+    specificRegions: [],
     emrSystems: [],
     languages: ['English'],
-    availability: [],
+    availabilityWindows: [],
     locumDurations: [],
-    availabilityTypes: [],
     isProfileComplete: true,
     isOnboardingCompleted: true,
     ...overrides,

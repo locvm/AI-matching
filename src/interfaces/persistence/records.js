@@ -42,4 +42,4 @@
  * @property {Date} [notifiedAt] - When the physician was notified about this match. Null = not yet notified. Replaces the old OutboxItem table
  */
 
-export {};
+export {}

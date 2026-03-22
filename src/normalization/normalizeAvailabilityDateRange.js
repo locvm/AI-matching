@@ -14,19 +14,19 @@
 
 /** @type {Map<string, number>} */
 const MONTH_MAP = new Map([
-  ["january", 0],
-  ["february", 1],
-  ["march", 2],
-  ["april", 3],
-  ["may", 4],
-  ["june", 5],
-  ["july", 6],
-  ["august", 7],
-  ["september", 8],
-  ["october", 9],
-  ["november", 10],
-  ["december", 11],
-]);
+  ['january', 0],
+  ['february', 1],
+  ['march', 2],
+  ['april', 3],
+  ['may', 4],
+  ['june', 5],
+  ['july', 6],
+  ['august', 7],
+  ['september', 8],
+  ['october', 9],
+  ['november', 10],
+  ['december', 11],
+])
 
 /**
  * Turns a month string into a 0 based index (January is 0, December is 11).
@@ -36,8 +36,8 @@ const MONTH_MAP = new Map([
  * @returns {number | null}
  */
 function parseMonth(month) {
-  if (typeof month !== "string") return null;
-  return MONTH_MAP.get(month.trim().toLowerCase()) ?? null;
+  if (typeof month !== 'string') return null
+  return MONTH_MAP.get(month.trim().toLowerCase()) ?? null
 }
 
 /**
@@ -47,10 +47,10 @@ function parseMonth(month) {
  * @returns {number | null}
  */
 function parseYear(year) {
-  if (typeof year !== "string" && typeof year !== "number") return null;
-  const n = Number(year);
-  if (isNaN(n) || n < 2000 || n > 2100) return null;
-  return n;
+  if (typeof year !== 'string' && typeof year !== 'number') return null
+  const n = Number(year)
+  if (isNaN(n) || n < 2000 || n > 2100) return null
+  return n
 }
 
 /**
@@ -64,28 +64,28 @@ function parseYear(year) {
  * @returns {AvailabilityWindow | null}
  */
 export function normalizeAvailabilityDateRange(raw) {
-  if (!raw || typeof raw !== "object") return null;
+  if (!raw || typeof raw !== 'object') return null
 
-  const fromMonthIndex = parseMonth(raw.fromMonth);
-  const fromYear = parseYear(raw.fromYear);
-  const toMonthIndex = parseMonth(raw.toMonth);
-  const toYear = parseYear(raw.toYear);
+  const fromMonthIndex = parseMonth(raw.fromMonth)
+  const fromYear = parseYear(raw.fromYear)
+  const toMonthIndex = parseMonth(raw.toMonth)
+  const toYear = parseYear(raw.toYear)
 
   // All 4 fields are required.
   if (fromMonthIndex === null || fromYear === null || toMonthIndex === null || toYear === null) {
-    return null;
+    return null
   }
 
   // First day of the from month.
-  const from = new Date(fromYear, fromMonthIndex, 1);
+  const from = new Date(fromYear, fromMonthIndex, 1)
 
   // Last day of the to month. We go to the 1st of the next month and subtract 1 day.
-  const to = new Date(toYear, toMonthIndex + 1, 0);
+  const to = new Date(toYear, toMonthIndex + 1, 0)
 
   // Sanity check. "from" should be before or equal to "to".
-  if (from > to) return null;
+  if (from > to) return null
 
-  return { from, to };
+  return { from, to }
 }
 
 /**
@@ -96,9 +96,9 @@ export function normalizeAvailabilityDateRange(raw) {
  * @returns {AvailabilityWindow[]}
  */
 export function normalizeAvailabilityDateRanges(rawArray) {
-  if (!Array.isArray(rawArray)) return [];
+  if (!Array.isArray(rawArray)) return []
 
   return rawArray
     .map((item) => normalizeAvailabilityDateRange(item))
-    .filter(/** @returns {r is AvailabilityWindow} */ (r) => r !== null);
+    .filter(/** @returns {r is AvailabilityWindow} */ (r) => r !== null)
 }

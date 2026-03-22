@@ -1,6 +1,6 @@
-import { PROVINCES_CANADA } from "@/constants";
-import { ONBOARDING_DISCOVERY_SOURCES } from "@/constants/onboarding";
-import { Schema, model, models } from "mongoose";
+import { PROVINCES_CANADA } from '@/constants'
+import { ONBOARDING_DISCOVERY_SOURCES } from '@/constants/onboarding'
+import { Schema, model, models } from 'mongoose'
 
 // Define the nested address schema
 const AddressSchema = new Schema({
@@ -10,17 +10,17 @@ const AddressSchema = new Schema({
   city: { type: String },
   province: { type: String },
   country: { type: String },
-});
+})
 
 const UserSchema = new Schema({
   // Personal Information
   firstName: {
     type: String,
-    default: "",
+    default: '',
   },
   lastName: {
     type: String,
-    default: "",
+    default: '',
   },
   languages: {
     type: [String],
@@ -31,12 +31,12 @@ const UserSchema = new Schema({
   },
   gender: {
     type: String,
-    enum: ["Male", "Female", "Other", "Prefer not to say"],
+    enum: ['Male', 'Female', 'Other', 'Prefer not to say'],
   },
   email: {
     type: String,
-    unique: [true, "Email already exists!"],
-    required: [true, "Email is required!"],
+    unique: [true, 'Email already exists!'],
+    required: [true, 'Email is required!'],
   },
   cellPhone: {
     type: String,
@@ -87,7 +87,7 @@ const UserSchema = new Schema({
   medProfession: {
     type: String,
     enum: {
-      values: ["Physician", "Recruiter"],
+      values: ['Physician', 'Recruiter'],
       message: "Profession must be either 'Physician' or 'Recruiter'",
     },
   },
@@ -124,16 +124,16 @@ const UserSchema = new Schema({
   },
   recruiterStatus: {
     type: String,
-    enum: ["None", "Pending", "Confirmed", "Rejected"],
-    default: "None",
+    enum: ['None', 'Pending', 'Confirmed', 'Rejected'],
+    default: 'None',
   },
 
   //CPSO Information
   CPSOProof: {
     status: {
       type: String,
-      enum: ["Pending", "Confirmed", "Rejected"],
-      default: "Pending",
+      enum: ['Pending', 'Confirmed', 'Rejected'],
+      default: 'Pending',
     },
     filePath: {
       type: String,
@@ -144,7 +144,7 @@ const UserSchema = new Schema({
     verifiedAt: { type: Date },
     verifiedBy: {
       type: Schema.Types.ObjectId,
-      ref: "User",
+      ref: 'User',
     },
   },
 
@@ -165,31 +165,31 @@ const UserSchema = new Schema({
     createdLocums: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Reservation",
+        ref: 'Reservation',
       },
     ],
     reservedLocums: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Reservation",
+        ref: 'Reservation',
       },
     ],
     appliedLocums: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Reservation",
+        ref: 'Reservation',
       },
     ],
     completedLocums: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Reservation",
+        ref: 'Reservation',
       },
     ],
     savedLocums: [
       {
         type: Schema.Types.ObjectId,
-        ref: "LocumJob",
+        ref: 'LocumJob',
       },
     ],
     matchedLocums: [
@@ -197,7 +197,7 @@ const UserSchema = new Schema({
         _id: false,
         jobId: {
           type: Schema.Types.ObjectId,
-          ref: "LocumJob",
+          ref: 'LocumJob',
         },
         suggestedAt: {
           type: Date,
@@ -205,7 +205,7 @@ const UserSchema = new Schema({
         },
         feedback: {
           type: String,
-          enum: ["like", "dislike", null],
+          enum: ['like', 'dislike', null],
           default: null,
         },
         feedbackAt: {
@@ -271,8 +271,8 @@ const UserSchema = new Schema({
   },
   role: {
     type: String,
-    enum: ["Admin", "User"],
-    default: "User",
+    enum: ['Admin', 'User'],
+    default: 'User',
   },
   firebaseUid: {
     type: String,
@@ -290,7 +290,7 @@ const UserSchema = new Schema({
   reviews: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Review",
+      ref: 'Review',
     },
   ],
 
@@ -302,8 +302,8 @@ const UserSchema = new Schema({
   modifiedAt: {
     type: Date,
   },
-});
+})
 
-const User = models.User || model("User", UserSchema);
+const User = models.User || model('User', UserSchema)
 
-export default User;
+export default User
