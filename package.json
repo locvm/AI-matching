@@ -4,7 +4,7 @@
   "description": "LOCVM matching service",
   "type": "module",
   "bin": {
-    "matching-harness": "CLI-scripts/matching-harness.js"
+    "matching-harness": "scripts/matching-harness.js"
   },
   "engines": {
     "node": ">=22.0.0"

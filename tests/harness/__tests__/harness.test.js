@@ -6,7 +6,7 @@ import { loadFixtures } from '../lib/fixture-loader.js'
 import { MatchingTestHarness, PhysicianTestHarness } from '../lib/matching-harness-runner.js'
 import { PATHS, OUTPUT, SCORING, TEST } from '../harness.config.js'
 
-/** @type {import('../lib/fixture-loader.js').FixtureData} */
+/** @type {import('../lib/harness-types.js').FixtureData} */
 let fixtures
 
 beforeAll(async () => {
@@ -56,7 +56,7 @@ function createPhysicianHarness(overrides = {}) {
 // ═══════════════════════════════════════════════════════════════════════════
 
 describe('MatchingTestHarness – end-to-end', () => {
-  /** @type {import('../lib/types.js').HarnessRunResult} */
+  /** @type {import('../lib/harness-types.js').HarnessRunResult} */
   let result
 
   beforeAll(async () => {
@@ -159,7 +159,7 @@ describe('MatchingTestHarness – determinism', () => {
 })
 
 describe('PhysicianTestHarness – end-to-end', () => {
-  /** @type {import('../lib/types.js').PhysicianHarnessRunResult} */
+  /** @type {import('../lib/harness-types.js').PhysicianHarnessRunResult} */
   let result
 
   beforeAll(async () => {

@@ -1,18 +1,18 @@
 // @ts-check
 
 import { describe, it, expect, beforeAll } from 'vitest'
-import { createDurationScorer } from '../scoreDuration.js'
 import { loadFixtures } from '../../../../tests/harness/lib/fixture-loader.js'
+import { createDurationScorer } from '../scoreDuration.js'
 
 const scoreDuration = createDurationScorer()
 
-/** @type {import('../../../../harness/lib/types.js').FixtureData} */
+/** @type {import('../../../../tests/harness/lib/harness-types.js').FixtureData} */
 let fixtures
 
-/** @type {import('../../../../harness/lib/types.js').LocumJob[]} */
+/** @type {import('../../../../src/interfaces/index.js').LocumJob[]} */
 let validJobs
 
-/** @type {import("../../../interfaces/core/models.js").Physician[]} */
+/** @type {import("../../../../src/interfaces/index.js").Physician[]} */
 let physiciansWithWindows
 
 beforeAll(async () => {

@@ -1,5 +1,7 @@
 // @ts-check
 
+// Test-harness-only JSDoc types. Domain types live in src/interfaces/index.js.
+
 export {}
 
 // ── Domain types (from interfaces) ──────────────────────────────────────────

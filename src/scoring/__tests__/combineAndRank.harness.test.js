@@ -17,7 +17,7 @@ const scoreDuration = createDurationScorer()
 
 /** @typedef {import('../../interfaces/matching/matching.js').ScoredPair} ScoredPair */
 
-/** @type {import('../../../harness/lib/types.js').FixtureData} */
+/** @type {import('../../../tests/harness/lib/types.js').FixtureData} */
 let fixtures
 
 beforeAll(async () => {

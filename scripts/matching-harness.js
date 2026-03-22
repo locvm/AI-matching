@@ -4,13 +4,13 @@
 import { Command } from 'commander'
 import { ZodError } from 'zod'
 
-import { cliOptsSchema } from '../harness/lib/cli-schema.js'
-import { loadFixtures } from '../harness/lib/fixture-loader.js'
-import { MatchingTestHarness } from '../harness/lib/matching-harness-runner.js'
-import { SAMPLING, OUTPUT, PATHS, VALID_JOB_FILTERS } from '../harness/harness.config.js'
+import { cliOptsSchema } from '../tests/harness/lib/cli-schema.js'
+import { loadFixtures } from '../tests/harness/lib/fixture-loader.js'
+import { MatchingTestHarness } from '../tests/harness/lib/matching-harness-runner.js'
+import { SAMPLING, OUTPUT, PATHS, VALID_JOB_FILTERS } from '../tests/harness/harness.config.js'
 
-/** @typedef {import('../harness/lib/types.js').HarnessCliOptions} HarnessCliOptions */
-/** @typedef {import('../harness/lib/types.js').HarnessRunResult} HarnessRunResult */
+/** @typedef {import('../tests/harness/lib/types.js').HarnessCliOptions} HarnessCliOptions */
+/** @typedef {import('../tests/harness/lib/types.js').HarnessRunResult} HarnessRunResult */
 
 const program = new Command()
 
