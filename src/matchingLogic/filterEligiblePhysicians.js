@@ -11,7 +11,8 @@
 /** @typedef {import('../interfaces/core/models.js').Physician} Physician */
 /** @typedef {import('../interfaces/core/models.js').LocumJob} LocumJob */
 /** @typedef {import('../interfaces/core/models.js').Reservation} Reservation */
-/** @typedef {Physician & { preferences?: { isLookingForLocums?: boolean, locumDurations?: string[] }, _id?: string, locumDurations?: string[] }} PhysicianInput */
+/** @typedef {import('../interfaces/core/models.js').DurationRange} DurationRange */
+/** @typedef {Physician & { preferences?: { isLookingForLocums?: boolean }, _id?: string }} PhysicianInput */
 /** @typedef {Reservation & { applicants?: Array<{ userId?: string }> }} ReservationInput */
 
 /**
@@ -70,39 +71,23 @@ function isEligiblePhysician(physician, job, applicantIds, onlyLooking) {
 // the job's length. Only removes obvious mismatches; gray-area cases
 // pass through and are handled by scoring.
 //
-// Job duration buckets (from dateRange):
-//   short  = ≤ 30 days
-//   mid    = 31–89 days  (~1–3 months)
-//   long   = 90+ days    (~3 months and above)
+// Works with normalized DurationRange[] ({ minDays, maxDays }) from the
+// normalization layer. A physician passes if any of their duration ranges
+// overlap with the job's duration in days.
 //
-// For each bucket, which physician locumDurations options count as overlap:
-//   short jobs  → "A few days", "Less than a month", "1–3 months"
-//   mid jobs    → "1–3 months", "3–6 months"
-//   long jobs   → "3–6 months", "6+ months"
-//
-// We exclude only when NONE of the physician's selected durations overlap.
+// We exclude only when NONE of the physician's ranges overlap.
 // If locumDurations is missing or empty → lenient (pass through).
 
-const MS_PER_DAY = 86_400_000 // 86,400,000 milliseconds in a day to calculate the number of days between dateRange.from and dateRange.to
-
-/** @type {Record<string, Set<string>>} */
-const DURATION_OVERLAP = {
-  short: new Set(['A few days', 'Less than a month', '1–3 months']),
-  mid:   new Set(['1–3 months', '3–6 months']),
-  long:  new Set(['3–6 months', '6+ months']),
-}
+const MS_PER_DAY = 86_400_000
 
 /**
  * @param {{ from: Date | string, to: Date | string }} dateRange
- * @returns {'short' | 'mid' | 'long'}
+ * @returns {number}
  */
-function getJobDurationBucket(dateRange) {
+function getJobDurationDays(dateRange) {
   const from = new Date(dateRange.from)
   const to = new Date(dateRange.to)
-  const days = (to.getTime() - from.getTime()) / MS_PER_DAY
-  if (days <= 30) return 'short'
-  if (days <= 89) return 'mid'
-  return 'long'
+  return (to.getTime() - from.getTime()) / MS_PER_DAY
 }
 
 /**
@@ -113,13 +98,12 @@ function getJobDurationBucket(dateRange) {
 function passesDurationFilter(physician, job) {
   if (!job.dateRange?.from || !job.dateRange?.to) return true
 
-  const durations = physician.locumDurations ?? physician.preferences?.locumDurations ?? []
+  const durations = physician.locumDurations ?? []
   if (durations.length === 0) return true
 
-  const bucket = getJobDurationBucket(job.dateRange)
-  const allowed = DURATION_OVERLAP[bucket]
+  const jobDays = getJobDurationDays(job.dateRange)
 
-  return durations.some((d) => allowed.has(d))
+  return durations.some((d) => jobDays >= d.minDays && jobDays <= d.maxDays)
 }
 
 /**
