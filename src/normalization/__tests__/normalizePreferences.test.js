@@ -44,9 +44,13 @@ describe('normalizeLocumDuration', () => {
   })
 
   it('returns null for non-string input', () => {
+    // @ts-expect-error - intentional boundary test: null input
     expect(normalizeLocumDuration(null)).toBeNull()
+    // @ts-expect-error - intentional boundary test: undefined input
     expect(normalizeLocumDuration(undefined)).toBeNull()
+    // @ts-expect-error - intentional boundary test: number input
     expect(normalizeLocumDuration(42)).toBeNull()
+    // @ts-expect-error - intentional boundary test: object input
     expect(normalizeLocumDuration({})).toBeNull()
   })
 })
@@ -140,8 +144,8 @@ describe('normalizeAvailabilityDateRange', () => {
       toYear: '2025',
     })
     expect(result).not.toBeNull()
-    expect(result.from).toEqual(new Date(2025, 0, 1))
-    expect(result.to).toEqual(new Date(2025, 2, 31))
+    expect(result?.from).toEqual(new Date(2025, 0, 1))
+    expect(result?.to).toEqual(new Date(2025, 2, 31))
   })
 
   it('handles a single month range (same from and to)', () => {
@@ -151,8 +155,8 @@ describe('normalizeAvailabilityDateRange', () => {
       toMonth: 'june',
       toYear: '2025',
     })
-    expect(result.from).toEqual(new Date(2025, 5, 1))
-    expect(result.to).toEqual(new Date(2025, 5, 30))
+    expect(result?.from).toEqual(new Date(2025, 5, 1))
+    expect(result?.to).toEqual(new Date(2025, 5, 30))
   })
 
   it('handles ranges that cross years', () => {
@@ -162,8 +166,8 @@ describe('normalizeAvailabilityDateRange', () => {
       toMonth: 'june',
       toYear: '2026',
     })
-    expect(result.from).toEqual(new Date(2025, 10, 1))
-    expect(result.to).toEqual(new Date(2026, 5, 30))
+    expect(result?.from).toEqual(new Date(2025, 10, 1))
+    expect(result?.to).toEqual(new Date(2026, 5, 30))
   })
 
   it('handles february end date correctly (non leap year)', () => {
@@ -173,7 +177,7 @@ describe('normalizeAvailabilityDateRange', () => {
       toMonth: 'february',
       toYear: '2025',
     })
-    expect(result.to).toEqual(new Date(2025, 1, 28))
+    expect(result?.to).toEqual(new Date(2025, 1, 28))
   })
 
   it('handles february end date correctly (leap year)', () => {
@@ -183,7 +187,7 @@ describe('normalizeAvailabilityDateRange', () => {
       toMonth: 'february',
       toYear: '2024',
     })
-    expect(result.to).toEqual(new Date(2024, 1, 29))
+    expect(result?.to).toEqual(new Date(2024, 1, 29))
   })
 
   it('is case insensitive for month names', () => {
@@ -194,7 +198,7 @@ describe('normalizeAvailabilityDateRange', () => {
       toYear: '2025',
     })
     expect(result).not.toBeNull()
-    expect(result.from).toEqual(new Date(2025, 0, 1))
+    expect(result?.from).toEqual(new Date(2025, 0, 1))
   })
 
   it('trims whitespace from month names', () => {
@@ -276,7 +280,7 @@ describe('normalizeAvailabilityDateRange', () => {
       toYear: 2025,
     })
     expect(result).not.toBeNull()
-    expect(result.from).toEqual(new Date(2025, 0, 1))
+    expect(result?.from).toEqual(new Date(2025, 0, 1))
   })
 })
 
@@ -287,8 +291,8 @@ describe('normalizeAvailabilityDateRanges', () => {
       { fromMonth: 'september', fromYear: '2025', toMonth: 'december', toYear: '2025' },
     ])
     expect(result).toHaveLength(2)
-    expect(result[0].from).toEqual(new Date(2025, 0, 1))
-    expect(result[1].from).toEqual(new Date(2025, 8, 1))
+    expect(result[0]?.from).toEqual(new Date(2025, 0, 1))
+    expect(result[1]?.from).toEqual(new Date(2025, 8, 1))
   })
 
   it('filters out bad entries', () => {
