@@ -1,8 +1,12 @@
 import { describe, it, expect } from 'vitest'
 import { scoreEMR, scoreEMRWithDetail } from '../scoreEMR.js'
 
+/** @typedef {import("../../interfaces/core/models.js").Physician} Physician */
+/** @typedef {import("../../interfaces/core/models.js").LocumJob} LocumJob */
+
+/** @param {Partial<Physician>} [overrides] */
 function makePhysician(overrides = {}) {
-  return {
+  return /** @type {Physician} */ ({
     _id: 'test-physician',
     medProfession: 'Physician',
     medSpeciality: 'Family Medicine',
@@ -13,19 +17,20 @@ function makePhysician(overrides = {}) {
     specificRegions: [],
     emrSystems: [],
     ...overrides,
-  }
+  })
 }
 
+/** @param {Partial<LocumJob>} [overrides] */
 function makeJob(overrides = {}) {
-  return {
+  return /** @type {LocumJob} */ ({
     _id: 'test-job',
     medProfession: 'Physician',
     medSpeciality: 'Family Medicine',
     location: null,
-    fullAddress: { city: 'Toronto', province: 'ON' },
+    fullAddress: { city: 'Toronto', province: /** @type {const} */ ('ON') },
     dateRange: { from: new Date('2025-01-01'), to: new Date('2025-03-01') },
     ...overrides,
-  }
+  })
 }
 
 // ── Core scoring rules ──────────────────────────────────────────────────────

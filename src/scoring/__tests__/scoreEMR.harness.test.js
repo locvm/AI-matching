@@ -8,6 +8,7 @@ let rawUsers
 /** @type {any[]} */
 let rawJobs
 
+/** @param {any} raw */
 function toPhysician(raw) {
   return {
     _id: raw._id?.$oid ?? raw._id ?? 'unknown',
@@ -23,6 +24,7 @@ function toPhysician(raw) {
   }
 }
 
+/** @param {any} raw */
 function toJob(raw) {
   return {
     _id: raw._id?.$oid ?? raw._id ?? 'unknown',
@@ -126,7 +128,9 @@ describe('Harness: EMR alias resolution', () => {
     const physicians = rawUsers.map(toPhysician)
     const jobs = rawJobs.map(toJob)
 
-    const avarosIncPhysicians = physicians.filter((p) => p.emrSystems.some((e) => /avaros inc/i.test(e)))
+    const avarosIncPhysicians = physicians.filter((p) =>
+      p.emrSystems.some((/** @type {string} */ e) => /avaros inc/i.test(e))
+    )
     const avarosEMRJobs = jobs.filter((j) => j.facilityInfo?.emr && /avaros emr/i.test(j.facilityInfo.emr))
 
     if (avarosIncPhysicians.length === 0 || avarosEMRJobs.length === 0) return
