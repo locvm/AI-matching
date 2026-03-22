@@ -8,7 +8,7 @@ This document describes the hard filtering layer used in the matching pipeline: 
 
 The pipeline has two levels of hard filtering:
 
-- **Job-level:** Should we run matching for this job at all? (Implemented in the matching engine / stub before the physician filter is called.) Can also be done inside filterEligiblePhysicians if wanted. This is a design decision, to keep filterEligiblePhysicians to only filter Physicains and not jobs that aren't open.
+- **Job-level:** Should we run matching for this job at all? (Implemented in the matching engine / stub before the physician filter is called.) Can also be done inside filterEligiblePhysicians if wanted. This is a design decision, to keep filterEligiblePhysicians to only filter Physicians and not jobs that aren't open.
 - **Physician-level:** For a given job, which physicians are eligible to be scored? (Implemented in `filterEligiblePhysicians`.)
 
 A physician is only scored if the job passes the job level check and the physician passes every physician level rule.
