@@ -16,7 +16,7 @@ A physician is only scored if the job passes the job level check and the physici
 ### 1.1 Job-level rule (workflow / reservation status)
 
 - **Rule:** Only run matching for jobs whose reservation is in an **eligible workflow status** (i.e. the job is still accepting applicants).
-- **Where:** Matching engine stub: `#isJobAcceptingApplicants(job, reservation)`.
+- **Where:** Matching engine stub: `isJobAcceptingApplicants(job, reservation)`.
 - **Logic:** If there is no reservation, the job is treated as open. If there is a reservation, `reservation.status` must be one of:
   - `Pending`
   - `In Progress`
