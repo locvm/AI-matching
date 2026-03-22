@@ -44,7 +44,7 @@ export function filterEligiblePhysicians(physicians, job, reservation, criteria)
  * @returns {boolean}
  */
 
-// for all the missing values like isLookingForLocums, we treat it as not looking, if the field is not present, we exclude them. So we only suggest jobs to people who have effectively said they’re looking 
+// For missing values like isLookingForLocums, we assume they are looking (treat as true)
 function isEligiblePhysician(physician, job, applicantIds, onlyLooking) {
   if (physician.medProfession !== job.medProfession) return false
 
