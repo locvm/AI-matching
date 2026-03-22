@@ -34,8 +34,8 @@ export function filterEligiblePhysicians(physicians, job, reservation, criteria)
 
 /**
  * Single physician eligibility check (v1: profession, specialty, isLookingForLocums, not already in applicants).
- * TODO: When subscriptions launch, exclude physicians where CPSOProof.status is not confirmed (per product). (Q9 from Georage)
- * TODO: When onboarding is required, exclude physicians where !isOnboardingCompleted or !isProfileComplete. (Q10 from Georage)
+ * TODO: When subscriptions launch, exclude physicians where CPSOProof.status is not confirmed (per product). (Q9 from George)
+ * TODO: When onboarding is required, exclude physicians where !isOnboardingCompleted or !isProfileComplete. (Q10 from George)
  *
  * @param {PhysicianInput} physician
  * @param {LocumJob} job
