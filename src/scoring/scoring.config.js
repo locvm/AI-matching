@@ -38,3 +38,18 @@ export const DURATION_DEFAULTS = {
   bucketMatchScore: 0.6,
   bucketPartialScore: 0.3,
 }
+
+// ── EMR scoring ──────────────────────────────────────────────────────────────
+
+/**
+ * @typedef {object} EMRScorerConfig
+ * @property {number} [matchScore]
+ * @property {number} [noMatchScore]
+ * @property {number} [neutralScore]
+ */
+
+export const EMR_DEFAULTS = {
+  matchScore: 1.0,
+  noMatchScore: 0.0,
+  neutralScore: 0.5,
+}

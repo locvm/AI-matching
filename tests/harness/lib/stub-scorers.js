@@ -65,14 +65,15 @@ function hashToScore(physicianId, jobId, salt) {
 // }
 
 /**
- * Stub EMR scorer. Returns hash-based 0-1.
+ * Real EMR scorer. Matches physician EMR systems against job facility EMR.
+ * Neutral (0.5) when either side has no data.
  *
  * @param {Physician} physician
  * @param {LocumJob} job
  * @returns {number} 0 to 1
  */
 export function stubScoreEMR(physician, job) {
-  return hashToScore(physician._id, job._id, 'emr')
+  return scoreEMR(physician, job)
 }
 
 // stubScoreProvince — removed: province is covered by location scorer's fallback chain.
