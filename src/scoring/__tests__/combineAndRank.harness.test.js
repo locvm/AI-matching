@@ -8,7 +8,7 @@
 
 import { describe, it, expect, beforeAll } from 'vitest'
 import { loadFixtures } from '../../../tests/harness/lib/fixture-loader.js'
-import { stubScoreEMR } from '../../../tests/harness/lib/stub-scorers.js'
+import { scoreEMR } from '../scoreEMR.js'
 import { scoreLocation } from '../location/scoreLocation.js'
 import { createDurationScorer } from '../duration/scoreDuration.js'
 import { combineAndRank } from '../combineAndRank.js'
@@ -55,7 +55,7 @@ function buildScoredPairs(job, physicians) {
       breakdown: {
         location: scoreLocation(physician, job.location, job.fullAddress),
         duration: scoreDuration(physician, job.dateRange).score,
-        emr: stubScoreEMR(physician, job),
+        emr: scoreEMR(physician, job),
       },
       flags,
     })

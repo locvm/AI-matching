@@ -6,7 +6,7 @@
 // When a real scorer is built, change one import in stub-scorers.js and nothing here changes.
 // The harness doesnt care whats inside. It just calls the function and gets results.
 
-import { stubScoreEMR } from './stub-scorers.js'
+import { scoreEMR } from '../../../src/scoring/scoreEMR.js'
 import { scoreLocation } from '../../../src/scoring/location/scoreLocation.js'
 import { createDurationScorer } from '../../../src/scoring/duration/scoreDuration.js'
 import { computeWeightedScore } from '../../../src/scoring/combineAndRank.js'
@@ -61,7 +61,7 @@ function scoreAndBuild(physician, job) {
   const scores = {
     location: scoreLocation(physician, job.location, job.fullAddress),
     duration: scoreDuration(physician, job.dateRange).score,
-    emr: stubScoreEMR(physician, job),
+    emr: scoreEMR(physician, job),
   }
 
   const { totalScore: score, breakdown } = computeWeightedScore(scores)

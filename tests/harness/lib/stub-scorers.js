@@ -64,17 +64,18 @@ function hashToScore(physicianId, jobId, salt) {
 //   return hashToScore(physician._id, job._id, 'duration')
 // }
 
-/**
- * Real EMR scorer. Matches physician EMR systems against job facility EMR.
- * Neutral (0.5) when either side has no data.
- *
- * @param {Physician} physician
- * @param {LocumJob} job
- * @returns {number} 0 to 1
- */
-export function stubScoreEMR(physician, job) {
-  return scoreEMR(physician, job)
-}
+// stubScoreEMR removed — callers now use scoreEMR() directly.
+// /**
+//  * Real EMR scorer. Matches physician EMR systems against job facility EMR.
+//  * Neutral (0.5) when either side has no data.
+//  *
+//  * @param {Physician} physician
+//  * @param {LocumJob} job
+//  * @returns {number} 0 to 1
+//  */
+// export function stubScoreEMR(physician, job) {
+//   return scoreEMR(physician, job)
+// }
 
 // stubScoreProvince — removed: province is covered by location scorer's fallback chain.
 // /**
