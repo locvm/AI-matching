@@ -27,13 +27,13 @@ A physician is only scored if the job passes the job level check and the physici
 
 Each rule is an AND: a physician must pass all of them to be eligible for scoring.
 
-| # | Rule | Field(s) | Behavior |
-|---|------|----------|----------|
-| 1 | **Profession match** | `physician.medProfession`, `job.medProfession` | Must be equal (e.g. both `"Physician"`). Mismatch → excluded. |
-| 2 | **Specialty match** | `physician.medSpeciality`, `job.medSpeciality` | Compared case-insensitively after trim. Empty/missing on physician → no match → excluded. |
-| 3 | **Looking for locums** | `physician.isLookingForLocums`, `physician.preferences?.isLookingForLocums`, `criteria.options.onlyLookingForLocums` | If `onlyLookingForLocums` is true (default): physician is excluded only when explicitly **not** looking (e.g. `false`). Missing → treated as "looking" (pass). If `onlyLookingForLocums` is false, this check is skipped. |
-| 4 | **Not already an applicant** | `physician._id` / `physician.id`, `reservation.applicants[].userId` | If the physician's id appears in `reservation.applicants` (by `userId`), they are excluded. No reservation or no `applicants` → no one excluded by this rule. |
-| 5 | **Duration mismatch** | `physician.locumDurations` / `physician.preferences?.locumDurations`, `job.dateRange` | Job duration (in days) is bucketed into short/mid/long. Each bucket has a set of allowed physician duration labels. Physician is excluded only when none of their selected durations overlap the job's bucket. Missing/empty `locumDurations` → lenient (pass). No `dateRange` on job → skipped (pass). See §1.3. |
+| #   | Rule                         | Field(s)                                                                                                             | Behavior                                                                                                                                                                                                                                                                                                          |
+| --- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | **Profession match**         | `physician.medProfession`, `job.medProfession`                                                                       | Must be equal (e.g. both `"Physician"`). Mismatch → excluded.                                                                                                                                                                                                                                                     |
+| 2   | **Specialty match**          | `physician.medSpeciality`, `job.medSpeciality`                                                                       | Compared case-insensitively after trim. Empty/missing on physician → no match → excluded.                                                                                                                                                                                                                         |
+| 3   | **Looking for locums**       | `physician.isLookingForLocums`, `physician.preferences?.isLookingForLocums`, `criteria.options.onlyLookingForLocums` | If `onlyLookingForLocums` is true (default): physician is excluded only when explicitly **not** looking (e.g. `false`). Missing → treated as "looking" (pass). If `onlyLookingForLocums` is false, this check is skipped.                                                                                         |
+| 4   | **Not already an applicant** | `physician._id` / `physician.id`, `reservation.applicants[].userId`                                                  | If the physician's id appears in `reservation.applicants` (by `userId`), they are excluded. No reservation or no `applicants` → no one excluded by this rule.                                                                                                                                                     |
+| 5   | **Duration mismatch**        | `physician.locumDurations` / `physician.preferences?.locumDurations`, `job.dateRange`                                | Job duration (in days) is bucketed into short/mid/long. Each bucket has a set of allowed physician duration labels. Physician is excluded only when none of their selected durations overlap the job's bucket. Missing/empty `locumDurations` → lenient (pass). No `dateRange` on job → skipped (pass). See §1.3. |
 
 ### 1.3 Duration filter rules
 
@@ -41,19 +41,19 @@ The duration filter excludes physicians whose preferred `locumDurations` clearly
 
 **Job duration buckets** (computed from `job.dateRange.from` → `job.dateRange.to`):
 
-| Bucket | Job duration |
-|--------|-------------|
-| Short | ≤ 30 days |
-| Mid | 31–89 days (~1–3 months) |
-| Long | 90+ days (~3+ months) |
+| Bucket | Job duration             |
+| ------ | ------------------------ |
+| Short  | ≤ 30 days                |
+| Mid    | 31–89 days (~1–3 months) |
+| Long   | 90+ days (~3+ months)    |
 
 **Physician `locumDurations` overlap per bucket:**
 
-| Job bucket | Physician options that count as overlap |
-|------------|----------------------------------------|
-| Short | "A few days", "Less than a month", "1–3 months" |
-| Mid | "1–3 months", "3–6 months" |
-| Long | "3–6 months", "6+ months" |
+| Job bucket | Physician options that count as overlap         |
+| ---------- | ----------------------------------------------- |
+| Short      | "A few days", "Less than a month", "1–3 months" |
+| Mid        | "1–3 months", "3–6 months"                      |
+| Long       | "3–6 months", "6+ months"                       |
 
 **How it works:**
 
@@ -115,14 +115,14 @@ Hard filters can be **strict** (missing → exclude) or **lenient** (missing →
 
 ### 4.1 Current behavior by field
 
-| Field | When it's missing | Effect |
-|-------|-------------------|--------|
-| `medProfession` | Physician has no profession | **Strict:** no match to job → excluded. |
-| `medSpeciality` | Physician has no specialty | **Strict:** no match to job → excluded. |
-| `isLookingForLocums` / `preferences.isLookingForLocums` | Not set or no `preferences` | **Lenient:** treated as "looking" → passes this rule. |
-| `reservation.applicants` | Reservation has no applicants array | **Lenient:** no one excluded by "already applicant" rule. |
-| `locumDurations` / `preferences.locumDurations` | Not set or empty array | **Lenient:** duration filter skipped → passes this rule. |
-| `job.dateRange` | Job has no date range | **Lenient:** duration filter skipped → passes this rule. |
+| Field                                                   | When it's missing                   | Effect                                                    |
+| ------------------------------------------------------- | ----------------------------------- | --------------------------------------------------------- |
+| `medProfession`                                         | Physician has no profession         | **Strict:** no match to job → excluded.                   |
+| `medSpeciality`                                         | Physician has no specialty          | **Strict:** no match to job → excluded.                   |
+| `isLookingForLocums` / `preferences.isLookingForLocums` | Not set or no `preferences`         | **Lenient:** treated as "looking" → passes this rule.     |
+| `reservation.applicants`                                | Reservation has no applicants array | **Lenient:** no one excluded by "already applicant" rule. |
+| `locumDurations` / `preferences.locumDurations`         | Not set or empty array              | **Lenient:** duration filter skipped → passes this rule.  |
+| `job.dateRange`                                         | Job has no date range               | **Lenient:** duration filter skipped → passes this rule.  |
 
 So today: profession and specialty are strict; "looking for locums", "applicants", and "duration" are lenient when missing.
 
@@ -135,19 +135,19 @@ As you make onboarding or profile completeness stricter, you can later tighten t
 
 ### 4.3 How to change strictness
 
-- **`filterEligiblePhysicians.js` — profession/specialty:**  
-  - To keep strict: leave as-is (no match ⇒ exclude).  
+- **`filterEligiblePhysicians.js` — profession/specialty:**
+  - To keep strict: leave as-is (no match ⇒ exclude).
   - To relax: e.g. if specialty becomes optional, you could allow empty physician specialty to pass (e.g. "no specialty declared" matches any job). That would be a product decision and a small code change in `isEligiblePhysician`.
 
-- **`filterEligiblePhysicians.js` — isLookingForLocums:**  
-  - Current: `isLooking = physician.isLookingForLocums ?? physician.preferences?.isLookingForLocums ?? true` (missing → true → pass).  
-  - To be strict: change the default from `true` to `false` so missing → excluded.  
+- **`filterEligiblePhysicians.js` — isLookingForLocums:**
+  - Current: `isLooking = physician.isLookingForLocums ?? physician.preferences?.isLookingForLocums ?? true` (missing → true → pass).
+  - To be strict: change the default from `true` to `false` so missing → excluded.
   - Optional: make the default configurable via `criteria.options` (e.g. `treatMissingIsLookingAsTrue: boolean`) so you can A/B test or switch by environment.
 
-- **Reservation / applicants:**  
+- **Reservation / applicants:**
   - When `applicants` is often missing, staying lenient (don't exclude anyone) avoids over-excluding. When the field is reliably populated, the current "exclude if in applicants" rule is the right one. If you add stage-based exclusion, document which stages count as "already applied" so future changes are clear.
 
-- **Duration / locumDurations:**  
+- **Duration / locumDurations:**
   - Current: missing or empty `locumDurations` → pass (lenient). This means physicians who never set duration preferences still get scored for all jobs.
   - To be strict: change `passesDurationFilter()` to return `false` when `durations.length === 0`, so physicians without duration preferences are excluded.
   - As more users fill in `locumDurations`, you can tighten the rule without changing the bucket or overlap logic.
@@ -156,7 +156,7 @@ As you make onboarding or profile completeness stricter, you can later tighten t
 
 - Run your data analysis (`npm run analyze-data`) and check missingness for `medProfession`, `medSpeciality`, `preferences.isLookingForLocums`, `reservation.applicants`, and `preferences.locumDurations`.
 - If a large share of physicians is missing a required field (e.g. specialty), either:
-  - **Product/UX:** Make the field required or nudged so more people fill it, then keep the hard filter strict, or  
+  - **Product/UX:** Make the field required or nudged so more people fill it, then keep the hard filter strict, or
   - **Temporary:** Relax the rule for that field (e.g. allow missing specialty to pass) until data quality improves, and document the trade-off (more recommendations vs less precise targeting).
 
 Keeping this in a doc (or in code comments) next to the filter makes it clear why each rule is strict or lenient and what to change when product or data quality evolves.
