@@ -125,17 +125,30 @@ describe('Hard filter – harness-backed integration', () => {
 
   it('no returned physician has a duration mismatch with the job', () => {
     const MS_PER_DAY = 86_400_000
+    const BUCKET_RANGES = {
+      short: { min: 0,  max: 90  },
+      mid:   { min: 30, max: 180 },
+      long:  { min: 90, max: 365 },
+    }
+
+    /** @param {number} days */
+    function getBucket(days) {
+      if (days <= 30) return 'short'
+      if (days <= 89) return 'mid'
+      return 'long'
+    }
 
     const { results } = defaultRun
     for (const { job, eligible } of results) {
       if (!job.dateRange?.from || !job.dateRange?.to) continue
       const jobDays = (new Date(job.dateRange.to).getTime() - new Date(job.dateRange.from).getTime()) / MS_PER_DAY
+      const bucket = BUCKET_RANGES[getBucket(jobDays)]
 
       for (const p of eligible) {
         const durations = p.locumDurations ?? []
         if (durations.length === 0) continue
         const hasOverlap = durations.some((/** @type {{ minDays: number, maxDays: number }} */ d) =>
-          jobDays >= d.minDays && jobDays <= d.maxDays
+          d.minDays <= bucket.max && d.maxDays >= bucket.min
         )
         expect(hasOverlap).toBe(true)
       }

@@ -72,13 +72,26 @@ function isEligiblePhysician(physician, job, applicantIds, onlyLooking) {
 // pass through and are handled by scoring.
 //
 // Works with normalized DurationRange[] ({ minDays, maxDays }) from the
-// normalization layer. A physician passes if any of their duration ranges
-// overlap with the job's duration in days.
+// normalization layer. The job is bucketed by duration into short/mid/long,
+// and each bucket has a day range. A physician passes if any of their
+// DurationRanges overlap with the job bucket's day range.
 //
-// We exclude only when NONE of the physician's ranges overlap.
+// Bucket ranges (intentionally overlapping for leniency):
+//   short  = 0–90 days    (covers "A few days", "Less than a month", "1–3 months")
+//   mid    = 30–180 days  (covers "1–3 months", "3–6 months")
+//   long   = 90–365 days  (covers "3–6 months", "6+ months")
+//
+// We exclude only when NONE of the physician's ranges overlap the bucket.
 // If locumDurations is missing or empty → lenient (pass through).
 
 const MS_PER_DAY = 86_400_000
+
+/** @type {Record<string, { min: number, max: number }>} */
+const BUCKET_RANGES = {
+  short: { min: 0,  max: 90  },
+  mid:   { min: 30, max: 180 },
+  long:  { min: 90, max: 365 },
+}
 
 /**
  * @param {{ from: Date | string, to: Date | string }} dateRange
@@ -88,6 +101,27 @@ function getJobDurationDays(dateRange) {
   const from = new Date(dateRange.from)
   const to = new Date(dateRange.to)
   return (to.getTime() - from.getTime()) / MS_PER_DAY
+}
+
+/**
+ * @param {number} days
+ * @returns {'short' | 'mid' | 'long'}
+ */
+function getJobBucket(days) {
+  if (days <= 30) return 'short'
+  if (days <= 89) return 'mid'
+  return 'long'
+}
+
+/**
+ * Two ranges overlap if one starts before the other ends and vice versa.
+ *
+ * @param {DurationRange} physician
+ * @param {{ min: number, max: number }} bucket
+ * @returns {boolean}
+ */
+function rangesOverlap(physician, bucket) {
+  return physician.minDays <= bucket.max && physician.maxDays >= bucket.min
 }
 
 /**
@@ -102,8 +136,9 @@ function passesDurationFilter(physician, job) {
   if (durations.length === 0) return true
 
   const jobDays = getJobDurationDays(job.dateRange)
+  const bucket = BUCKET_RANGES[getJobBucket(jobDays)]
 
-  return durations.some((d) => jobDays >= d.minDays && jobDays <= d.maxDays)
+  return durations.some((d) => rangesOverlap(d, bucket))
 }
 
 /**
