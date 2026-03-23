@@ -12,7 +12,7 @@
 /** @typedef {import('../interfaces/core/models.js').LocumJob} LocumJob */
 /** @typedef {import('../interfaces/core/models.js').Reservation} Reservation */
 /** @typedef {import('../interfaces/core/models.js').DurationRange} DurationRange */
-/** @typedef {Physician & { preferences?: { isLookingForLocums?: boolean }, _id?: string }} PhysicianInput */
+/** @typedef {Physician & { preferences?: { isLookingForLocums?: boolean }, _id?: string, id?: string }} PhysicianInput */
 /** @typedef {Reservation & { applicants?: Array<{ userId?: string }> }} ReservationInput */
 
 /**
@@ -24,13 +24,18 @@
  * @param {{ job?: LocumJob, reservation?: Reservation, options?: { onlyLookingForLocums?: boolean } }} [criteria] - Optional SearchCriteria style options
  * @returns {PhysicianInput[]} Subset of physicians who pass all hard filters
  */
-export function filterEligiblePhysicians(physicians, job, reservation, criteria) {
-  const onlyLooking = criteria?.options?.onlyLookingForLocums ?? true
-  const applicantIds = getApplicantIds(reservation ?? null)
+export function filterEligiblePhysicians(
+  physicians,
+  job,
+  reservation,
+  criteria,
+) {
+  const onlyLooking = criteria?.options?.onlyLookingForLocums ?? true;
+  const applicantIds = getApplicantIds(reservation ?? null);
 
   return physicians.filter((physician) =>
-    isEligiblePhysician(physician, job, applicantIds, onlyLooking)
-  )
+    isEligiblePhysician(physician, job, applicantIds, onlyLooking),
+  );
 }
 
 /**
@@ -47,24 +52,27 @@ export function filterEligiblePhysicians(physicians, job, reservation, criteria)
 
 // For missing values like isLookingForLocums, we assume they are looking (treat as true)
 function isEligiblePhysician(physician, job, applicantIds, onlyLooking) {
-  if (physician.medProfession !== job.medProfession) return false
+  if (physician.medProfession !== job.medProfession) return false;
 
-  const pSpec = (physician.medSpeciality ?? '').trim().toLowerCase()
-  const jSpec = (job.medSpeciality ?? '').trim().toLowerCase()
-  if (pSpec !== jSpec) return false
+  const pSpec = (physician.medSpeciality ?? "").trim().toLowerCase();
+  const jSpec = (job.medSpeciality ?? "").trim().toLowerCase();
+  if (pSpec !== jSpec) return false;
 
   // Missing = assume true (e.g. abandoned onboarding); only exclude when explicitly false
-  const isLooking = physician.isLookingForLocums ?? physician.preferences?.isLookingForLocums ?? true
-  if (onlyLooking && !isLooking) return false
+  const isLooking =
+    physician.isLookingForLocums ??
+    physician.preferences?.isLookingForLocums ??
+    true;
+  if (onlyLooking && !isLooking) return false;
 
-  const physicianId = physician._id ?? physician.id
-  if (applicantIds.has(String(physicianId))) return false
+  const physicianId = physician._id ?? physician.id;
+  if (applicantIds.has(String(physicianId))) return false;
 
-  if (!passesDurationFilter(physician, job)) return false
+  if (!passesDurationFilter(physician, job)) return false;
 
-  if (!passesProvinceFilter(physician, job)) return false
+  if (!passesProvinceFilter(physician, job)) return false;
 
-  return true
+  return true;
 }
 
 // ── Job Duration filter ──────────────────────────────────────────────────
@@ -86,23 +94,23 @@ function isEligiblePhysician(physician, job, applicantIds, onlyLooking) {
 // We exclude only when NONE of the physician's ranges overlap the bucket.
 // If locumDurations is missing or empty → lenient (pass through).
 
-const MS_PER_DAY = 86_400_000
+const MS_PER_DAY = 86_400_000;
 
 /** @type {Record<string, { min: number, max: number }>} */
 const BUCKET_RANGES = {
-  short: { min: 0,  max: 90  },
-  mid:   { min: 30, max: 180 },
-  long:  { min: 90, max: 365 },
-}
+  short: { min: 0, max: 90 },
+  mid: { min: 30, max: 180 },
+  long: { min: 90, max: 365 },
+};
 
 /**
  * @param {{ from: Date | string, to: Date | string }} dateRange
  * @returns {number}
  */
 function getJobDurationDays(dateRange) {
-  const from = new Date(dateRange.from)
-  const to = new Date(dateRange.to)
-  return (to.getTime() - from.getTime()) / MS_PER_DAY
+  const from = new Date(dateRange.from);
+  const to = new Date(dateRange.to);
+  return (to.getTime() - from.getTime()) / MS_PER_DAY;
 }
 
 /**
@@ -110,9 +118,9 @@ function getJobDurationDays(dateRange) {
  * @returns {'short' | 'mid' | 'long'}
  */
 function getJobBucket(days) {
-  if (days <= 30) return 'short'
-  if (days <= 89) return 'mid'
-  return 'long'
+  if (days <= 30) return "short";
+  if (days <= 89) return "mid";
+  return "long";
 }
 
 /**
@@ -123,7 +131,7 @@ function getJobBucket(days) {
  * @returns {boolean}
  */
 function rangesOverlap(physician, bucket) {
-  return physician.minDays <= bucket.max && physician.maxDays >= bucket.min
+  return physician.minDays <= bucket.max && physician.maxDays >= bucket.min;
 }
 
 /**
@@ -132,15 +140,15 @@ function rangesOverlap(physician, bucket) {
  * @returns {boolean}
  */
 function passesDurationFilter(physician, job) {
-  if (!job.dateRange?.from || !job.dateRange?.to) return true
+  if (!job.dateRange?.from || !job.dateRange?.to) return true;
 
-  const durations = physician.locumDurations ?? []
-  if (durations.length === 0) return true
+  const durations = physician.locumDurations ?? [];
+  if (durations.length === 0) return true;
 
-  const jobDays = getJobDurationDays(job.dateRange)
-  const bucket = BUCKET_RANGES[getJobBucket(jobDays)]
+  const jobDays = getJobDurationDays(job.dateRange);
+  const bucket = BUCKET_RANGES[getJobBucket(jobDays)];
 
-  return durations.some((d) => rangesOverlap(d, bucket))
+  return durations.some((d) => rangesOverlap(d, bucket));
 }
 
 // ── Province filter ─────────────────────────────────────────────────────
@@ -155,13 +163,13 @@ function passesDurationFilter(physician, job) {
  * @returns {boolean}
  */
 function passesProvinceFilter(physician, job) {
-  const jobProvince = job.fullAddress?.province
-  if (!jobProvince) return true
+  const jobProvince = job.fullAddress?.province;
+  if (!jobProvince) return true;
 
-  const preferred = physician.preferredProvinces ?? []
-  if (preferred.length === 0) return true
+  const preferred = physician.preferredProvinces ?? [];
+  if (preferred.length === 0) return true;
 
-  return preferred.includes(jobProvince)
+  return preferred.includes(jobProvince);
 }
 
 /**
@@ -169,13 +177,11 @@ function passesProvinceFilter(physician, job) {
  * @returns {Set<string>}
  */
 function getApplicantIds(reservation) {
-  const ids = new Set()
-  const applicants = reservation?.applicants
-  if (!applicants) return ids
+  const ids = new Set();
+  const applicants = reservation?.applicants;
+  if (!applicants) return ids;
   for (const a of applicants) {
-    if (a.userId) ids.add(String(a.userId))
+    if (a.userId) ids.add(String(a.userId));
   }
-  return ids
+  return ids;
 }
-
-
