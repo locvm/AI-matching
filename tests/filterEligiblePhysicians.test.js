@@ -39,7 +39,7 @@ describe('filterEligiblePhysicians', () => {
     expect(result).toHaveLength(1)
   })
 
-  it('case insensitive specialty: different casing still matches', () => {
+  it('specialty match: different casing still matches (filter compares trim + lowercase)', () => {
     const physicians = [
       { ...basePhysician, _id: 'a', medSpeciality: 'family medicine' },
       { ...basePhysician, _id: 'b', medSpeciality: 'FAMILY MEDICINE' },
