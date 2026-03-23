@@ -62,6 +62,8 @@ function isEligiblePhysician(physician, job, applicantIds, onlyLooking) {
 
   if (!passesDurationFilter(physician, job)) return false
 
+  if (!passesProvinceFilter(physician, job)) return false
+
   return true
 }
 
@@ -139,6 +141,27 @@ function passesDurationFilter(physician, job) {
   const bucket = BUCKET_RANGES[getJobBucket(jobDays)]
 
   return durations.some((d) => rangesOverlap(d, bucket))
+}
+
+// ── Province filter ─────────────────────────────────────────────────────
+//
+// Excludes physicians whose preferredProvinces don't include the job's province.
+// Lenient on both sides: if job has no province or physician has no preferred provinces, pass through.
+// All province values are normalized to ProvinceCode (2-letter) before this stage.
+
+/**
+ * @param {PhysicianInput} physician
+ * @param {LocumJob} job
+ * @returns {boolean}
+ */
+function passesProvinceFilter(physician, job) {
+  const jobProvince = job.fullAddress?.province
+  if (!jobProvince) return true
+
+  const preferred = physician.preferredProvinces ?? []
+  if (preferred.length === 0) return true
+
+  return preferred.includes(jobProvince)
 }
 
 /**

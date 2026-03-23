@@ -279,3 +279,71 @@ describe('filterEligiblePhysicians – duration filter', () => {
     expect(result).toHaveLength(1)
   })
 })
+
+const jobON = { ...baseJob, fullAddress: { province: 'ON' } }
+const jobBC = { ...baseJob, fullAddress: { province: 'BC' } }
+
+describe('filterEligiblePhysicians – province filter', () => {
+  it('province match: physician with matching preferredProvince passes', () => {
+    const physicians = [{ ...basePhysician, preferredProvinces: ['ON'] }]
+    const result = filterEligiblePhysicians(physicians, jobON, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('province mismatch: physician with different preferredProvince excluded', () => {
+    const physicians = [{ ...basePhysician, preferredProvinces: ['BC'] }]
+    const result = filterEligiblePhysicians(physicians, jobON, undefined, {})
+    expect(result).toHaveLength(0)
+  })
+
+  it('province match via multiple preferredProvinces: passes when any matches', () => {
+    const physicians = [{ ...basePhysician, preferredProvinces: ['BC', 'ON', 'AB'] }]
+    const result = filterEligiblePhysicians(physicians, jobON, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('physician with empty preferredProvinces: passes (lenient)', () => {
+    const physicians = [{ ...basePhysician, preferredProvinces: [] }]
+    const result = filterEligiblePhysicians(physicians, jobON, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('physician with no preferredProvinces field: passes (lenient)', () => {
+    const physicians = [{ ...basePhysician }]
+    const result = filterEligiblePhysicians(physicians, jobON, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('job with no fullAddress: province filter skipped, physician passes', () => {
+    const physicians = [{ ...basePhysician, preferredProvinces: ['BC'] }]
+    const result = filterEligiblePhysicians(physicians, baseJob, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('job with fullAddress but no province field: province filter skipped, physician passes', () => {
+    const jobNoProvince = { ...baseJob, fullAddress: { city: 'Toronto' } }
+    const physicians = [{ ...basePhysician, preferredProvinces: ['BC'] }]
+    const result = filterEligiblePhysicians(physicians, jobNoProvince, undefined, {})
+    expect(result).toHaveLength(1)
+  })
+
+  it('mixed pool: only matching province physicians pass', () => {
+    const physicians = [
+      { ...basePhysician, _id: 'p-on', preferredProvinces: ['ON'] },
+      { ...basePhysician, _id: 'p-bc', preferredProvinces: ['BC'] },
+      { ...basePhysician, _id: 'p-any', preferredProvinces: [] },
+    ]
+    const result = filterEligiblePhysicians(physicians, jobON, undefined, {})
+    expect(result).toHaveLength(2)
+    const ids = result.map((p) => p._id)
+    expect(ids).toContain('p-on')
+    expect(ids).toContain('p-any')
+    expect(ids).not.toContain('p-bc')
+  })
+
+  it('province check is exact code match (ProvinceCode, not full name)', () => {
+    const physicians = [{ ...basePhysician, preferredProvinces: ['Ontario'] }]
+    const result = filterEligiblePhysicians(physicians, jobON, undefined, {})
+    expect(result).toHaveLength(0)
+  })
+})

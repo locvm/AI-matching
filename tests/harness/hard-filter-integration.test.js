@@ -123,6 +123,19 @@ describe('Hard filter – harness-backed integration', () => {
     }
   })
 
+  it('no returned physician has a province mismatch with the job', () => {
+    const { results } = defaultRun
+    for (const { job, eligible } of results) {
+      const jobProvince = job.fullAddress?.province
+      if (!jobProvince) continue
+      for (const p of eligible) {
+        const preferred = p.preferredProvinces ?? []
+        if (preferred.length === 0) continue
+        expect(preferred).toContain(jobProvince)
+      }
+    }
+  })
+
   it('no returned physician has a duration mismatch with the job', () => {
     const MS_PER_DAY = 86_400_000
     const BUCKET_RANGES = {
