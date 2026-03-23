@@ -6,11 +6,6 @@
 //
 // These are type definitions only (contracts). The actual code lives elsewhere and must follow these signatures
 
-/** @typedef {import("../core/models.js").Physician} Physician */
-/** @typedef {import("../core/models.js").GeoCoordinates} GeoCoordinates */
-/** @typedef {import("../core/models.js").Address} Address */
-/** @typedef {import("../core/models.js").ProvinceCode} ProvinceCode */
-
 /**
  * Scores how close a physician is to the job location
  *
@@ -27,9 +22,9 @@
  * Implementation: src/scoring/location/scoreLocation.js
  *
  * @callback ScoreLocationFn
- * @param {Physician} physician - the clean physician profile
- * @param {GeoCoordinates} jobLocation - the jobs geographic coordinates
- * @param {Address} [jobAddress] - optional full address of the job, used for province/region fallback when physician has no GPS coords
+ * @param {import("../core/models.js").Physician} physician - the clean physician profile
+ * @param {import("../core/models.js").GeoCoordinates} jobLocation - the jobs geographic coordinates
+ * @param {import("../core/models.js").Address} [jobAddress] - optional full address of the job, used for province/region fallback when physician has no GPS coords
  * @returns {number} score between 0 and 1 where 1 = same spot, 0 = super far
  */
 
@@ -53,7 +48,7 @@
  * and whether the bucket fallback path was taken
  *
  * @callback ScoreDurationFn
- * @param {Physician} physician - the clean physician profile
+ * @param {import("../core/models.js").Physician} physician - the clean physician profile
  * @param {{ from: Date, to: Date }} jobDateRange - the jobs start and end dates
  * @returns {import("../../scoring/scoring.config.js").DurationScoreResult}
  */
@@ -94,8 +89,8 @@
  * preferredProvinces had messy variants in raw data, already cleaned up
  *
  * @callback ScoreProvinceFn
- * @param {Physician} physician - the clean physician profile
- * @param {ProvinceCode | undefined} jobProvince - the 2-letter province code where the job is
+ * @param {import("../core/models.js").Physician} physician - the clean physician profile
+ * @param {import("../core/models.js").ProvinceCode | undefined} jobProvince - the 2-letter province code where the job is
  * @returns {number} score between 0 and 1
  */
 
@@ -112,9 +107,9 @@
  * In v1 this will mostly be yes/no (1.0 or 0.0) since the hard filter already kicks out non-matching specialities
  *
  * @callback ScoreSpecialityFn
- * @param {Physician} physician - the clean physician profile
+ * @param {import("../core/models.js").Physician} physician - the clean physician profile
  * @param {string} jobSpeciality - the required speciality for the job
  * @returns {number} score between 0 and 1
  */
 
-export {};
+export {}

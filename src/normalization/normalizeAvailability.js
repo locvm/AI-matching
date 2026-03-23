@@ -22,26 +22,26 @@
 /** @typedef {import("../interfaces/core/models.js").CommitmentType} CommitmentType */
 
 /** @type {DayOfWeek[]} */
-const WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
 
 /** @type {DayOfWeek[]} */
-const WEEKEND = ["Sat", "Sun"];
+const WEEKEND = ['Sat', 'Sun']
 
 /** @type {DayOfWeek[]} */
-const DAY_ORDER = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const DAY_ORDER = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
 /** @type {Map<string, DayOfWeek[]>} */
 const DAY_MAP = new Map([
-  ["weekdays", WEEKDAYS],
-  ["weekends", WEEKEND],
-]);
+  ['weekdays', WEEKDAYS],
+  ['weekends', WEEKEND],
+])
 
 /** @type {Map<string, CommitmentType>} */
 const COMMITMENT_MAP = new Map([
-  ["full-time", "full-time"],
-  ["part-time", "part-time"],
-  ["on-call or short notice", "on-call"],
-]);
+  ['full-time', 'full-time'],
+  ['part-time', 'part-time'],
+  ['on-call or short notice', 'on-call'],
+])
 
 /**
  * Takes the raw availabilityTypes array and splits it into days and commitment levels.
@@ -51,33 +51,33 @@ const COMMITMENT_MAP = new Map([
  */
 export function normalizeAvailability(rawTypes) {
   if (!Array.isArray(rawTypes)) {
-    return { availableDays: [], commitmentTypes: [] };
+    return { availableDays: [], commitmentTypes: [] }
   }
 
   /** @type {Set<DayOfWeek>} */
-  const daySet = new Set();
+  const daySet = new Set()
   /** @type {Set<CommitmentType>} */
-  const commitmentSet = new Set();
+  const commitmentSet = new Set()
 
   for (const raw of rawTypes) {
-    if (typeof raw !== "string") continue;
-    const key = raw.trim().toLowerCase();
+    if (typeof raw !== 'string') continue
+    const key = raw.trim().toLowerCase()
 
-    const days = DAY_MAP.get(key);
+    const days = DAY_MAP.get(key)
     if (days) {
-      for (const d of days) daySet.add(d);
-      continue;
+      for (const d of days) daySet.add(d)
+      continue
     }
 
-    const commitment = COMMITMENT_MAP.get(key);
+    const commitment = COMMITMENT_MAP.get(key)
     if (commitment) {
-      commitmentSet.add(commitment);
+      commitmentSet.add(commitment)
     }
   }
 
   // Sort days Mon to Sun
-  const availableDays = DAY_ORDER.filter((d) => daySet.has(d));
-  const commitmentTypes = /** @type {CommitmentType[]} */ ([...commitmentSet]);
+  const availableDays = DAY_ORDER.filter((d) => daySet.has(d))
+  const commitmentTypes = /** @type {CommitmentType[]} */ ([...commitmentSet])
 
-  return { availableDays, commitmentTypes };
+  return { availableDays, commitmentTypes }
 }

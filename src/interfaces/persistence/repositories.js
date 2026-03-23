@@ -5,9 +5,6 @@
 // These dont care what storage you use, could be JSON files (dev/testing) or MongoDB (production)
 // See README §13.5 for the authoritative spec
 
-/** @typedef {import("./records.js").MatchRun} MatchRun */
-/** @typedef {import("./records.js").MatchRunResult} MatchRunResult */
-
 /**
  * Repository for managing match run records
  *
@@ -15,7 +12,7 @@
  *
  * @typedef {Object} MatchRunRepository
  *
- * @property {(run: MatchRun) => Promise<void>} createRun
+ * @property {(run: import("./records.js").MatchRun) => Promise<void>} createRun
  *   Saves a new match run record
  *
  *   Steps:
@@ -24,7 +21,7 @@
  *   3) Set run.createdAt to now if not already set
  *   4) Write the record to storage
  *
- * @property {(runId: string, status: MatchRun["status"], error?: string) => Promise<void>} updateRunStatus
+ * @property {(runId: string, status: import("./records.js").MatchRun["status"], error?: string) => Promise<void>} updateRunStatus
  *   Updates the status and timestamps of an existing run
  *
  *   Steps:
@@ -35,7 +32,7 @@
  *   5) If status is "FAILED" and an error message is provided, set run.error
  *   6) Save the update
  *
- * @property {(type?: MatchRun["type"]) => Promise<MatchRun[]>} getPendingRuns
+ * @property {(type?: import("./records.js").MatchRun["type"]) => Promise<import("./records.js").MatchRun[]>} getPendingRuns
  *   Gets all runs in PENDING status, optionally filtered by type
  *
  *   Steps:
@@ -51,7 +48,7 @@
  *
  * @typedef {Object} MatchRunResultRepository
  *
- * @property {(runId: string, results: MatchRunResult[]) => Promise<void>} saveResults
+ * @property {(runId: string, results: import("./records.js").MatchRunResult[]) => Promise<void>} saveResults
  *   Saves a bunch of match results for a given run
  *
  *   Steps:
@@ -59,7 +56,7 @@
  *   2) Write all result rows to storage in one go
  *   3) Update the parent runs resultCount field
  *
- * @property {(runId: string) => Promise<MatchRunResult[]>} getResults
+ * @property {(runId: string) => Promise<import("./records.js").MatchRunResult[]>} getResults
  *   Gets all results for a given run, ordered by score descending
  *
  *   Steps:
@@ -68,4 +65,4 @@
  *   3) Return the array
  */
 
-export {};
+export {}

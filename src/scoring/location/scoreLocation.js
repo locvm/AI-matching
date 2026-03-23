@@ -17,9 +17,9 @@
 /** @typedef {import("../../interfaces/core/models.js").Address} Address */
 /** @typedef {import("../../interfaces/core/models.js").ProvinceCode} ProvinceCode */
 
-import { haversineKm } from "./haversine.js";
-import { normalizeProvince } from "../../normalization/normalizeProvince.js";
-import { LOCATION_CONFIG } from "../../config/locationConfig.js";
+import { haversineKm } from './haversine.js'
+import { normalizeProvince } from '../../normalization/normalizeProvince.js'
+import { LOCATION_CONFIG } from '../../config/locationConfig.js'
 
 /**
  * @typedef {"gps_distance" | "specific_region" | "preferred_province" | "work_province" | "medical_province" | "no_data"} ScoringMethod
@@ -44,9 +44,9 @@ import { LOCATION_CONFIG } from "../../config/locationConfig.js";
  * @returns {boolean}
  */
 function isValidCoords(coords) {
-  if (!coords) return false;
-  if (coords.lat === 0 && coords.lng === 0) return false;
-  return true;
+  if (!coords) return false
+  if (coords.lat === 0 && coords.lng === 0) return false
+  return true
 }
 
 /**
@@ -59,8 +59,8 @@ function isValidCoords(coords) {
  * @returns {number} score in [0, 1]
  */
 function reverseSigmoid(distanceKm, config = LOCATION_CONFIG) {
-  const { MIDPOINT_KM, STEEPNESS_K } = config;
-  return 1 / (1 + Math.exp(STEEPNESS_K * (distanceKm - MIDPOINT_KM)));
+  const { MIDPOINT_KM, STEEPNESS_K } = config
+  return 1 / (1 + Math.exp(STEEPNESS_K * (distanceKm - MIDPOINT_KM)))
 }
 
 /**
@@ -71,13 +71,13 @@ function reverseSigmoid(distanceKm, config = LOCATION_CONFIG) {
  * @returns {"same_city" | "nearby" | "regional" | "far" | "very_far" | "unknown"}
  */
 function getDistanceBucket(distanceKm, config = LOCATION_CONFIG) {
-  if (distanceKm === null) return "unknown";
-  const { SAME_CITY, NEARBY, REGIONAL, FAR } = config.DISTANCE_BUCKETS;
-  if (distanceKm <= SAME_CITY) return "same_city";
-  if (distanceKm <= NEARBY) return "nearby";
-  if (distanceKm <= REGIONAL) return "regional";
-  if (distanceKm <= FAR) return "far";
-  return "very_far";
+  if (distanceKm === null) return 'unknown'
+  const { SAME_CITY, NEARBY, REGIONAL, FAR } = config.DISTANCE_BUCKETS
+  if (distanceKm <= SAME_CITY) return 'same_city'
+  if (distanceKm <= NEARBY) return 'nearby'
+  if (distanceKm <= REGIONAL) return 'regional'
+  if (distanceKm <= FAR) return 'far'
+  return 'very_far'
 }
 
 /**
@@ -88,7 +88,7 @@ function getDistanceBucket(distanceKm, config = LOCATION_CONFIG) {
  * @returns {boolean}
  */
 function isCoarseRegion(region, config = LOCATION_CONFIG) {
-  return config.COARSE_REGION_NAMES.includes(region.trim().toLowerCase());
+  return config.COARSE_REGION_NAMES.includes(region.trim().toLowerCase())
 }
 
 /**
@@ -100,14 +100,14 @@ function isCoarseRegion(region, config = LOCATION_CONFIG) {
  * @returns {boolean}
  */
 function regionMatchesJob(region, jobAddress) {
-  const regionLower = region.trim().toLowerCase();
-  const cityLower = (jobAddress.city ?? "").trim().toLowerCase();
+  const regionLower = region.trim().toLowerCase()
+  const cityLower = (jobAddress.city ?? '').trim().toLowerCase()
 
-  if (!cityLower) return false;
+  if (!cityLower) return false
 
   // Check if region contains city or city contains region
   // e.g. "downtown toronto" contains "toronto", or "toronto" matches "toronto"
-  return regionLower.includes(cityLower) || cityLower.includes(regionLower);
+  return regionLower.includes(cityLower) || cityLower.includes(regionLower)
 }
 
 /**
@@ -119,66 +119,61 @@ function regionMatchesJob(region, jobAddress) {
  * @param {typeof LOCATION_CONFIG} [config]
  * @returns {LocationScoreDetail}
  */
-export function scoreLocationWithDetail(
-  physician,
-  jobLocation,
-  jobAddress,
-  config = LOCATION_CONFIG
-) {
-  const { SCORES } = config;
-  const jobProvince = jobAddress ? normalizeProvince(jobAddress.province) : null;
+export function scoreLocationWithDetail(physician, jobLocation, jobAddress, config = LOCATION_CONFIG) {
+  const { SCORES } = config
+  const jobProvince = jobAddress ? normalizeProvince(jobAddress.province) : null
 
   // Base detail object
   /** @type {LocationScoreDetail} */
   const detail = {
     score: SCORES.NO_DATA,
-    method: "no_data",
+    method: 'no_data',
     distanceKm: null,
-    distanceBucket: "unknown",
+    distanceBucket: 'unknown',
     matchedRegion: null,
     resolvedPhysicianProvince: null,
     resolvedJobProvince: jobProvince,
     provinceMatch: false,
-  };
+  }
 
   // Tier 1: GPS coordinates
   if (isValidCoords(physician.location) && isValidCoords(jobLocation)) {
     const distance = haversineKm(
       /** @type {GeoCoordinates} */ (physician.location),
       /** @type {GeoCoordinates} */ (jobLocation)
-    );
-    const score = reverseSigmoid(distance, config);
+    )
+    const score = reverseSigmoid(distance, config)
 
-    detail.score = Math.max(0, Math.min(1, score));
-    detail.method = "gps_distance";
-    detail.distanceKm = Math.round(distance * 100) / 100;
-    detail.distanceBucket = getDistanceBucket(distance, config);
+    detail.score = Math.max(0, Math.min(1, score))
+    detail.method = 'gps_distance'
+    detail.distanceKm = Math.round(distance * 100) / 100
+    detail.distanceBucket = getDistanceBucket(distance, config)
 
     // Also resolve province for informational purposes
-    const physicianProvince = normalizeProvince(physician.workAddress?.province);
-    detail.resolvedPhysicianProvince = physicianProvince;
-    detail.provinceMatch = physicianProvince !== null && physicianProvince === jobProvince;
+    const physicianProvince = normalizeProvince(physician.workAddress?.province)
+    detail.resolvedPhysicianProvince = physicianProvince
+    detail.provinceMatch = physicianProvince !== null && physicianProvince === jobProvince
 
-    return detail;
+    return detail
   }
 
   // Tier 2: specificRegions
   if (physician.specificRegions && physician.specificRegions.length > 0 && jobAddress) {
     // Filter out coarse regions (just province names)
-    const granularRegions = physician.specificRegions.filter((r) => !isCoarseRegion(r, config));
+    const granularRegions = physician.specificRegions.filter((r) => !isCoarseRegion(r, config))
 
     if (granularRegions.length > 0) {
-      const matchedRegion = granularRegions.find((r) => regionMatchesJob(r, jobAddress));
+      const matchedRegion = granularRegions.find((r) => regionMatchesJob(r, jobAddress))
 
-      detail.method = "specific_region";
-      detail.score = matchedRegion ? SCORES.SPECIFIC_REGION_MATCH : SCORES.SPECIFIC_REGION_MISMATCH;
-      detail.matchedRegion = matchedRegion ?? null;
+      detail.method = 'specific_region'
+      detail.score = matchedRegion ? SCORES.SPECIFIC_REGION_MATCH : SCORES.SPECIFIC_REGION_MISMATCH
+      detail.matchedRegion = matchedRegion ?? null
 
-      const physicianProvince = normalizeProvince(physician.workAddress?.province);
-      detail.resolvedPhysicianProvince = physicianProvince;
-      detail.provinceMatch = physicianProvince !== null && physicianProvince === jobProvince;
+      const physicianProvince = normalizeProvince(physician.workAddress?.province)
+      detail.resolvedPhysicianProvince = physicianProvince
+      detail.provinceMatch = physicianProvince !== null && physicianProvince === jobProvince
 
-      return detail;
+      return detail
     }
     // If all regions are coarse, fall through to Tier 3
   }
@@ -188,54 +183,54 @@ export function scoreLocationWithDetail(
     // preferredProvinces should already be clean ProvinceCodes but normalize just in case
     const normalizedPreferred = physician.preferredProvinces
       .map((p) => normalizeProvince(p))
-      .filter(/** @returns {p is ProvinceCode} */ (p) => p !== null);
+      .filter(/** @returns {p is ProvinceCode} */ (p) => p !== null)
 
     if (normalizedPreferred.length > 0) {
-      const match = normalizedPreferred.includes(jobProvince);
+      const match = normalizedPreferred.includes(jobProvince)
 
-      detail.method = "preferred_province";
-      detail.score = match ? SCORES.PREFERRED_PROVINCE_MATCH : SCORES.PREFERRED_PROVINCE_MISMATCH;
-      detail.resolvedPhysicianProvince = normalizedPreferred[0];
-      detail.provinceMatch = match;
+      detail.method = 'preferred_province'
+      detail.score = match ? SCORES.PREFERRED_PROVINCE_MATCH : SCORES.PREFERRED_PROVINCE_MISMATCH
+      detail.resolvedPhysicianProvince = normalizedPreferred[0]
+      detail.provinceMatch = match
 
-      return detail;
+      return detail
     }
   }
 
   // Tier 4: workAddress province
   if (physician.workAddress?.province && jobProvince) {
-    const workProvince = normalizeProvince(physician.workAddress.province);
+    const workProvince = normalizeProvince(physician.workAddress.province)
 
     if (workProvince) {
-      const match = workProvince === jobProvince;
+      const match = workProvince === jobProvince
 
-      detail.method = "work_province";
-      detail.score = match ? SCORES.WORK_PROVINCE_MATCH : SCORES.WORK_PROVINCE_MISMATCH;
-      detail.resolvedPhysicianProvince = workProvince;
-      detail.provinceMatch = match;
+      detail.method = 'work_province'
+      detail.score = match ? SCORES.WORK_PROVINCE_MATCH : SCORES.WORK_PROVINCE_MISMATCH
+      detail.resolvedPhysicianProvince = workProvince
+      detail.provinceMatch = match
 
-      return detail;
+      return detail
     }
   }
 
   // Tier 5: medicalProvince
   if (physician.medicalProvince && jobProvince) {
-    const medProvince = normalizeProvince(physician.medicalProvince);
+    const medProvince = normalizeProvince(physician.medicalProvince)
 
     if (medProvince) {
-      const match = medProvince === jobProvince;
+      const match = medProvince === jobProvince
 
-      detail.method = "medical_province";
-      detail.score = match ? SCORES.MEDICAL_PROVINCE_MATCH : SCORES.MEDICAL_PROVINCE_MISMATCH;
-      detail.resolvedPhysicianProvince = medProvince;
-      detail.provinceMatch = match;
+      detail.method = 'medical_province'
+      detail.score = match ? SCORES.MEDICAL_PROVINCE_MATCH : SCORES.MEDICAL_PROVINCE_MISMATCH
+      detail.resolvedPhysicianProvince = medProvince
+      detail.provinceMatch = match
 
-      return detail;
+      return detail
     }
   }
 
   // Tier 6: no usable location data
-  return detail;
+  return detail
 }
 
 /**
@@ -251,5 +246,5 @@ export function scoreLocationWithDetail(
  * @returns {number} score in [0, 1]
  */
 export function scoreLocation(physician, jobLocation, jobAddress, config = LOCATION_CONFIG) {
-  return scoreLocationWithDetail(physician, jobLocation, jobAddress, config).score;
+  return scoreLocationWithDetail(physician, jobLocation, jobAddress, config).score
 }

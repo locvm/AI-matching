@@ -1,10 +1,10 @@
-import { Schema, model, models } from "mongoose";
+import { Schema, model, models } from 'mongoose'
 
 // Define the schema for job history entries
 const reservationSchema = new Schema({
   locumJobId: {
     type: Schema.Types.ObjectId,
-    ref: "LocumJob",
+    ref: 'LocumJob',
     required: true,
   },
   // DEPRECATED: Legacy field from 1-to-1 booking model (pre-Open Lobby)
@@ -28,8 +28,8 @@ const reservationSchema = new Schema({
   // },
   status: {
     type: String,
-    enum: ["Pending", "Requested", "Awaiting Payment", "Confirmed", "In Progress", "Completed", "Cancelled", "Expired"],
-    default: "Pending",
+    enum: ['Pending', 'Requested', 'Awaiting Payment', 'Confirmed', 'In Progress', 'Completed', 'Cancelled', 'Expired'],
+    default: 'Pending',
     required: true, //TODO: add drafts
   },
   reservationDate: {
@@ -80,11 +80,11 @@ const reservationSchema = new Schema({
 
   createdBy: {
     type: Schema.Types.ObjectId,
-    ref: "User",
+    ref: 'User',
   },
   reservedBy: {
     type: Schema.Types.ObjectId,
-    ref: "User",
+    ref: 'User',
   },
   createdAt: {
     type: Date,
@@ -102,12 +102,12 @@ const reservationSchema = new Schema({
   },
   reviewId: {
     type: Schema.Types.ObjectId,
-    ref: "Review",
+    ref: 'Review',
   },
 
   transactionId: {
     type: Schema.Types.ObjectId,
-    ref: "Transaction",
+    ref: 'Transaction',
   },
   reviewsCompleted: {
     type: Boolean,
@@ -117,7 +117,7 @@ const reservationSchema = new Schema({
   smartMatching: [
     {
       type: Schema.Types.ObjectId,
-      ref: "User",
+      ref: 'User',
     },
   ],
 
@@ -126,20 +126,20 @@ const reservationSchema = new Schema({
       {
         userId: {
           type: Schema.Types.ObjectId,
-          ref: "User",
+          ref: 'User',
           required: true,
         },
         // Quick-access field for UI badges and filtering
         currentApplicationStage: {
           type: String,
-          enum: ["Applied", "Selected", "Archived", "Withdrawn", "Cancelled"],
+          enum: ['Applied', 'Selected', 'Archived', 'Withdrawn', 'Cancelled'],
           required: true,
         },
         applicationLog: [
           {
             event: {
               type: String,
-              enum: ["Applied", "Selected", "Archived", "Withdrawn", "Cancelled"],
+              enum: ['Applied', 'Selected', 'Archived', 'Withdrawn', 'Cancelled'],
               required: true,
             },
             at: { type: Date, required: true, default: Date.now },
@@ -150,13 +150,13 @@ const reservationSchema = new Schema({
     ],
     default: [],
   },
-});
+})
 
 // Pre-save hook to ensure currentApplicationStage matches the last log entry
-reservationSchema.pre("save", async function () {
+reservationSchema.pre('save', async function () {
   // Only run if applicants array was modified to avoid unnecessary iterations
-  if (!this.isModified("applicants")) {
-    return;
+  if (!this.isModified('applicants')) {
+    return
   }
 
   if (this.applicants && Array.isArray(this.applicants)) {
@@ -167,17 +167,17 @@ reservationSchema.pre("save", async function () {
         Array.isArray(applicant.applicationLog) &&
         applicant.applicationLog.length > 0
       ) {
-        const lastLogEntry = applicant.applicationLog[applicant.applicationLog.length - 1];
+        const lastLogEntry = applicant.applicationLog[applicant.applicationLog.length - 1]
         if (lastLogEntry && lastLogEntry.event) {
-          applicant.currentApplicationStage = lastLogEntry.event;
+          applicant.currentApplicationStage = lastLogEntry.event
         }
       }
-    });
+    })
   }
-});
+})
 
 // Reviews should only be created when status changes to "Completed"
 
-const Reservation = models.Reservation || model("Reservation", reservationSchema);
+const Reservation = models.Reservation || model('Reservation', reservationSchema)
 
-export default Reservation;
+export default Reservation

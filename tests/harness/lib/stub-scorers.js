@@ -9,6 +9,7 @@
 
 import { SCORING } from '../harness.config.js'
 import { scoreLocation } from '../../../src/scoring/location/scoreLocation.js'
+import { scoreEMR } from '../../../src/scoring/scoreEMR.js'
 
 /**
  * @typedef {import('./types.js').Physician} Physician
@@ -71,14 +72,15 @@ export function stubScoreDuration(physician, job) {
 }
 
 /**
- * Stub EMR scorer. Returns hash-based 0-1.
+ * Real EMR scorer. Matches physician EMR systems against job facility EMR.
+ * Neutral (0.5) when either side has no data.
  *
  * @param {Physician} physician
  * @param {LocumJob} job
  * @returns {number} 0 to 1
  */
 export function stubScoreEMR(physician, job) {
-  return hashToScore(physician._id, job._id, 'emr')
+  return scoreEMR(physician, job)
 }
 
 /**
@@ -129,8 +131,7 @@ export function stubCombineScores(scores) {
   const emr = Math.round(scores.emr * MAX_SCORE * 100) / 100
 
   // Weighted sum of the scaled values
-  const score =
-    Math.round((location * WEIGHTS.LOCATION + duration * WEIGHTS.DURATION + emr * WEIGHTS.EMR) * 100) / 100
+  const score = Math.round((location * WEIGHTS.LOCATION + duration * WEIGHTS.DURATION + emr * WEIGHTS.EMR) * 100) / 100
 
   return {
     score,

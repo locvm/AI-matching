@@ -4,10 +4,6 @@
 //
 // Hard filters and checks that decide if a physician even qualifies before any scoring happens
 
-/** @typedef {import("../core/models.js").Physician} Physician */
-/** @typedef {import("../core/models.js").LocumJob} LocumJob */
-/** @typedef {import("../core/models.js").Reservation} Reservation */
-
 /**
  * Options the caller can pass to control filter behavior.
  * Aligns with the SearchCriteria contract from the ClickUp spec.
@@ -60,7 +56,7 @@
  * The exact thresholds should come from a config object, not hardcoded values
  *
  * @callback IsShortTermJobFn
- * @param {LocumJob} job - the clean locum job
+ * @param {import("../core/models.js").LocumJob} job - the clean locum job
  * @returns {boolean} true if the job should trigger an immediate short-term matching run
  */
 
@@ -86,10 +82,10 @@
  * Loops all jobs, calls IsEligiblePhysicianFn (with args flipped) on each, returns only those that pass
  *
  * @callback FilterJobsForPhysicianFn
- * @param {Physician} physician - the physician to filter jobs for
- * @param {LocumJob[]} jobs - the full pool of active jobs
- * @param {Reservation[]} [reservations] - optional array of reservations (one per job, matched by locumJobId)
- * @returns {LocumJob[]} only the jobs this physician qualifies for
+ * @param {import("../core/models.js").Physician} physician - the physician to filter jobs for
+ * @param {import("../core/models.js").LocumJob[]} jobs - the full pool of active jobs
+ * @param {import("../core/models.js").Reservation[]} [reservations] - optional array of reservations (one per job, matched by locumJobId)
+ * @returns {import("../core/models.js").LocumJob[]} only the jobs this physician qualifies for
  */
 
 // FUTURE FILTERS (not implemented yet, per Eve's feedback March 2026)
@@ -120,4 +116,4 @@
 //    Field does not exist yet in the schema. Will need to be added to Physician type first.
 //    To enable: add field to models.js, add check in IsEligiblePhysicianFn.
 
-export {};
+export {}

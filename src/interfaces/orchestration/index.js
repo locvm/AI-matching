@@ -4,4 +4,4 @@
 // Types defined via @typedef in services.js are available to any file via:
 //   /** @typedef {import("../orchestration/services.js").ShortTermMatchService} ShortTermMatchService */
 
-export * from "./services.js";
+export * from './services.js'

@@ -15,7 +15,14 @@
     "clean:all": "rimraf node_modules artifacts ./*.tsbuildinfo",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:harness": "node scripts/matching-harness.js"
+    "test:harness": "node scripts/matching-harness.js",
+    "prepare": "husky",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "*.{js,json,md}": "prettier --write"
   },
   "keywords": [
     "locvm",
@@ -26,9 +33,14 @@
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
+    "@types/node": "^25.5.0",
     "commander": "^13.0.0",
     "csv-stringify": "^6.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.3",
+    "prettier": "^3.8.1",
     "rimraf": "^6.1.3",
+    "typescript": "^5.9.3",
     "vitest": "^3.0.0",
     "zod": "^4.3.6"
   }
