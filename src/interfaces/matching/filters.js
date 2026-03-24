@@ -4,17 +4,13 @@
 //
 // Hard filters and checks that decide if a physician even qualifies before any scoring happens
 
-/** @typedef {import("../core/models.js").Physician} Physician */
-/** @typedef {import("../core/models.js").LocumJob} LocumJob */
-/** @typedef {import("../core/models.js").Reservation} Reservation */
-
 /**
  * Options the caller can pass to control filter behavior.
  * Aligns with the SearchCriteria contract from the ClickUp spec.
  *
  * @typedef {Object} SearchCriteria
- * @property {LocumJob} [job] - the job (also passed as a direct arg for convenience)
- * @property {Reservation} [reservation] - the reservation (also passed as a direct arg)
+ * @property {import("../core/models.js").LocumJob} [job] - the job (also passed as a direct arg for convenience)
+ * @property {import("../core/models.js").Reservation} [reservation] - the reservation (also passed as a direct arg)
  * @property {{ onlyLookingForLocums?: boolean }} [options] - toggles for individual filters
  */
 
@@ -37,8 +33,8 @@
  * The isLookingForLocums check can be toggled off via criteria.options.onlyLookingForLocums (per README §7.1)
  *
  * @callback IsEligiblePhysicianFn
- * @param {Physician} physician - the clean physician profile
- * @param {LocumJob} job - the locum job to match against
+ * @param {import("../core/models.js").Physician} physician - the clean physician profile
+ * @param {import("../core/models.js").LocumJob} job - the locum job to match against
  * @param {Set<string>} applicantIds - pre-built Set of user IDs who already applied
  * @param {boolean} onlyLooking - whether to enforce the isLookingForLocums check
  * @returns {boolean} true if the physician should be scored, false if excluded
@@ -72,11 +68,11 @@
  * from criteria, then loops all physicians through isEligiblePhysician.
  *
  * @callback FilterPhysiciansForJobFn
- * @param {Physician[]} physicians - the full pool of physicians
- * @param {LocumJob} job - the job to filter physicians against
- * @param {Reservation} [reservation] - optional reservation (used to build applicant ID set)
+ * @param {import("../core/models.js").Physician[]} physicians - the full pool of physicians
+ * @param {import("../core/models.js").LocumJob} job - the job to filter physicians against
+ * @param {import("../core/models.js").Reservation} [reservation] - optional reservation (used to build applicant ID set)
  * @param {SearchCriteria} [criteria] - optional search criteria with filter toggles
- * @returns {Physician[]} only the physicians that pass all hard filters
+ * @returns {import("../core/models.js").Physician[]} only the physicians that pass all hard filters
  */
 
 /**

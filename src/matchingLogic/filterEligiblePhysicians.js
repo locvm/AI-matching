@@ -12,16 +12,39 @@
 /** @typedef {import('../interfaces/core/models.js').LocumJob} LocumJob */
 /** @typedef {import('../interfaces/core/models.js').Reservation} Reservation */
 /** @typedef {import('../interfaces/core/models.js').DurationRange} DurationRange */
-/** @typedef {Physician & { preferences?: { isLookingForLocums?: boolean }, _id?: string, id?: string }} PhysicianInput */
-/** @typedef {Reservation & { applicants?: Array<{ userId?: string }> }} ReservationInput */
+/**
+ * @typedef {Object} PhysicianInput
+ * @property {string} [medProfession]
+ * @property {string} [medSpeciality]
+ * @property {boolean} [isLookingForLocums]
+ * @property {{ isLookingForLocums?: boolean }} [preferences]
+ * @property {string} [_id]
+ * @property {string} [id]
+ * @property {DurationRange[]} [locumDurations]
+ * @property {string[]} [preferredProvinces]
+ */
+
+/**
+ * @typedef {Object} JobInput
+ * @property {string} [_id]
+ * @property {string} [medProfession]
+ * @property {string} [medSpeciality]
+ * @property {{ from: Date | string, to: Date | string }} [dateRange]
+ * @property {{ province?: string, city?: string }} [fullAddress]
+ */
+
+/**
+ * @typedef {Object} ReservationInput
+ * @property {Array<{ userId?: string }>} [applicants]
+ */
 
 /**
  * Hard filtering layer: returns only physicians who pass all v1 eligibility rules.
  *
  * @param {PhysicianInput[]} physicians - Pool of physicians (clean or raw fixture shape)
- * @param {LocumJob} job - Locum job to match against
- * @param {ReservationInput} [reservation] - Optional reservation (applicants with userId)
- * @param {{ job?: LocumJob, reservation?: Reservation, options?: { onlyLookingForLocums?: boolean } }} [criteria] - Optional SearchCriteria style options
+ * @param {JobInput} job - Locum job to match against
+ * @param {ReservationInput | null} [reservation] - Optional reservation (applicants with userId)
+ * @param {{ job?: JobInput, reservation?: ReservationInput | null, options?: { onlyLookingForLocums?: boolean } }} [criteria] - Optional SearchCriteria style options
  * @returns {PhysicianInput[]} Subset of physicians who pass all hard filters
  */
 export function filterEligiblePhysicians(physicians, job, reservation, criteria) {
@@ -37,7 +60,7 @@ export function filterEligiblePhysicians(physicians, job, reservation, criteria)
  * TODO: When onboarding is required, exclude physicians where !isOnboardingCompleted or !isProfileComplete. (Q10 from George)
  *
  * @param {PhysicianInput} physician
- * @param {LocumJob} job
+ * @param {JobInput} job
  * @param {Set<string>} applicantIds
  * @param {boolean} onlyLooking
  * @returns {boolean}
@@ -126,7 +149,7 @@ function rangesOverlap(physician, bucket) {
 
 /**
  * @param {PhysicianInput} physician
- * @param {LocumJob} job
+ * @param {JobInput} job
  * @returns {boolean}
  */
 function passesDurationFilter(physician, job) {
@@ -149,7 +172,7 @@ function passesDurationFilter(physician, job) {
 
 /**
  * @param {PhysicianInput} physician
- * @param {LocumJob} job
+ * @param {JobInput} job
  * @returns {boolean}
  */
 function passesProvinceFilter(physician, job) {
