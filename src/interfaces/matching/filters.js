@@ -4,6 +4,10 @@
 //
 // Hard filters and checks that decide if a physician even qualifies before any scoring happens
 
+/** @typedef {import("../core/models.js").Physician} Physician */
+/** @typedef {import("../core/models.js").LocumJob} LocumJob */
+/** @typedef {import("../core/models.js").Reservation} Reservation */
+
 /**
  * Options the caller can pass to control filter behavior.
  * Aligns with the SearchCriteria contract from the ClickUp spec.
