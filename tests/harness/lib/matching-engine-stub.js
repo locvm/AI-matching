@@ -129,37 +129,36 @@ function isJobAcceptingApplicants(job, reservation) {
 /**
  * Stub ScorePhysicianFn. Physician-centric: 1 physician → find matching jobs.
  *
- * Pipeline: filter → score each pair → combine → sort → return.
+ * Same hard filters as searchPhysicians — both paths go through
+ * filterEligiblePhysicians (IsEligiblePhysicianFn) so any new filter
+ * (duration, province, future gates) is automatically applied here too.
+ *
+ * We wrap the single physician in an array and call filterEligiblePhysicians
+ * per job. If the physician survives the filter, we score; otherwise skip.
+ *
+ * Pipeline: per-job filter → score each passing pair → sort → return.
  *
  * @type {import('../../../src/interfaces/matching/matching.js').ScorePhysicianFn}
  */
 export async function searchJobs(physician, jobs, reservations, options) {
-  const onlyLooking = true
-
-  // Early exit: if physician isnt looking, no matches
-  if (onlyLooking && !physician.isLookingForLocums) return []
-
   /** @type {SearchResult[]} */
   const results = []
+  const pool = [physician]
 
   for (const job of jobs) {
-    // FILTER (hard filters, pass or fail)
-    if (job.medProfession !== physician.medProfession) continue
+    const reservation = reservations?.find((r) => r.locumJobId === job._id) ?? undefined
 
-    const jSpec = (job.medSpeciality ?? '').trim().toLowerCase()
-    const pSpec = (physician.medSpeciality ?? '').trim().toLowerCase()
-    if (jSpec !== pSpec) continue
+    if (!isJobAcceptingApplicants(job, reservation ?? null)) continue
 
-    // Check if physician already applied to this job's reservation
-    if (reservations) {
-      const reservation = reservations.find((r) => r.locumJobId === job._id)
-      if (reservation?.applicants) {
-        const alreadyApplied = reservation.applicants.some((a) => a.userId === physician._id)
-        if (alreadyApplied) continue
-      }
-    }
+    const eligible = filterEligiblePhysicians(
+      /** @type {any} */ (pool),
+      /** @type {any} */ (job),
+      /** @type {any} */ (reservation),
+      /** @type {any} */ ({ job, reservation, options: { onlyLookingForLocums: true } })
+    )
 
-    // SCORE + BUILD result
+    if (eligible.length === 0) continue
+
     results.push(scoreAndBuild(physician, job))
   }
 
