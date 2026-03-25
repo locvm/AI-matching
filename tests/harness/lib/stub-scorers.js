@@ -7,9 +7,8 @@
 //
 // The combine function scales everything to 0-MAX_SCORE for harness test compatibility.
 
-import { SCORING } from '../harness.config.js'
-import { scoreLocation } from '../../../src/scoring/location/scoreLocation.js'
-import { scoreEMR } from '../../../src/scoring/scoreEMR.js'
+// import { SCORING } from '../harness.config.js'
+// import { scoreLocation } from '../../scoring/location/scoreLocation.js'
 
 /**
  * @typedef {import('./types.js').Physician} Physician
@@ -48,93 +47,91 @@ function hashToScore(physicianId, jobId, salt) {
 
 // ── Stub scorers (each returns 0-1) ─────────────────────────────────────────
 
-/**
- * Real location scorer. Uses 6-tier fallback:
- * GPS distance (reverse sigmoid) → specificRegions → preferredProvinces → workProvince → medicalProvince → no data (0.5)
- *
- * @param {Physician} physician
- * @param {LocumJob} job
- * @returns {number} 0 to 1
- */
-export function stubScoreLocation(physician, job) {
-  return scoreLocation(physician, job.location, job.fullAddress)
-}
+// stubScoreLocation removed — callers now use scoreLocation() directly.
+// export function stubScoreLocation(physician, job) {
+//   return scoreLocation(physician, job.location, job.fullAddress)
+// }
 
-/**
- * Stub duration scorer. Returns hash-based 0-1.
- *
- * @param {Physician} physician
- * @param {LocumJob} job
- * @returns {number} 0 to 1
- */
-export function stubScoreDuration(physician, job) {
-  return hashToScore(physician._id, job._id, 'duration')
-}
+// stubScoreDuration — callers now use createDurationScorer() directly.
+// /**
+//  * Stub duration scorer. Returns hash-based 0-1.
+//  *
+//  * @param {Physician} physician
+//  * @param {LocumJob} job
+//  * @returns {number} 0 to 1
+//  */
+// export function stubScoreDuration(physician, job) {
+//   return hashToScore(physician._id, job._id, 'duration')
+// }
 
-/**
- * Real EMR scorer. Matches physician EMR systems against job facility EMR.
- * Neutral (0.5) when either side has no data.
- *
- * @param {Physician} physician
- * @param {LocumJob} job
- * @returns {number} 0 to 1
- */
-export function stubScoreEMR(physician, job) {
-  return scoreEMR(physician, job)
-}
+// stubScoreEMR removed — callers now use scoreEMR() directly.
+// /**
+//  * Real EMR scorer. Matches physician EMR systems against job facility EMR.
+//  * Neutral (0.5) when either side has no data.
+//  *
+//  * @param {Physician} physician
+//  * @param {LocumJob} job
+//  * @returns {number} 0 to 1
+//  */
+// export function stubScoreEMR(physician, job) {
+//   return scoreEMR(physician, job)
+// }
 
-/**
- * Stub province scorer. Returns hash-based 0-1.
- *
- * @param {Physician} physician
- * @param {LocumJob} job
- * @returns {number} 0 to 1
- */
-export function stubScoreProvince(physician, job) {
-  return hashToScore(physician._id, job._id, 'province')
-}
+// stubScoreProvince — removed: province is covered by location scorer's fallback chain.
+// /**
+//  * Stub province scorer. Returns hash-based 0-1.
+//  *
+//  * @param {Physician} physician
+//  * @param {LocumJob} job
+//  * @returns {number} 0 to 1
+//  */
+// export function stubScoreProvince(physician, job) {
+//   return hashToScore(physician._id, job._id, 'province')
+// }
 
-/**
- * Stub speciality scorer. Returns hash-based 0-1.
- *
- * @param {Physician} physician
- * @param {LocumJob} job
- * @returns {number} 0 to 1
- */
-export function stubScoreSpeciality(physician, job) {
-  return hashToScore(physician._id, job._id, 'speciality')
-}
+// stubScoreSpeciality — removed: speciality is a hard filter in matching-engine-stub.
+// /**
+//  * Stub speciality scorer. Returns hash-based 0-1.
+//  *
+//  * @param {Physician} physician
+//  * @param {LocumJob} job
+//  * @returns {number} 0 to 1
+//  */
+// export function stubScoreSpeciality(physician, job) {
+//   return hashToScore(physician._id, job._id, 'speciality')
+// }
 
-// ── Combine ──────────────────────────────────────────────────────────────────
-
-/**
- * @typedef {Object} CategoryScores
- * @property {number} location - 0 to 1
- * @property {number} duration - 0 to 1
- * @property {number} emr - 0 to 1
- * @property {number} province - 0 to 1
- * @property {number} speciality - 0 to 1
- */
-
-/**
- * Takes 5 individual 0-1 scores and produces a combined result.
- *
- * @param {CategoryScores} scores - the 5 individual 0-1 scores
- * @returns {{ score: number, breakdown: import('./types.js').ScoreBreakdown }}
- */
-export function stubCombineScores(scores) {
-  const { WEIGHTS, MAX_SCORE } = SCORING
-
-  // Scale each 0-1 score to 0-MAX_SCORE for the breakdown
-  const location = Math.round(scores.location * MAX_SCORE * 100) / 100
-  const duration = Math.round(scores.duration * MAX_SCORE * 100) / 100
-  const emr = Math.round(scores.emr * MAX_SCORE * 100) / 100
-
-  // Weighted sum of the scaled values
-  const score = Math.round((location * WEIGHTS.LOCATION + duration * WEIGHTS.DURATION + emr * WEIGHTS.EMR) * 100) / 100
-
-  return {
-    score,
-    breakdown: { location, duration, emr },
-  }
-}
+// stubCombineScores — callers now use computeWeightedScore() directly.
+//
+// /**
+//  * @typedef {Object} CategoryScores
+//  * @property {number} location - 0 to 1
+//  * @property {number} duration - 0 to 1
+//  * @property {number} emr - 0 to 1
+//  * @property {number} province - 0 to 1
+//  * @property {number} speciality - 0 to 1
+//  */
+//
+// /**
+//  * Takes 5 individual 0-1 scores and produces a combined result.
+//  *
+//  * @param {CategoryScores} scores - the 5 individual 0-1 scores
+//  * @returns {{ score: number, breakdown: import('./types.js').ScoreBreakdown }}
+//  */
+// export function stubCombineScores(scores) {
+//   const { WEIGHTS, MAX_SCORE } = SCORING
+//
+//   // Scale each 0-1 score to 0-MAX_SCORE for the breakdown
+//   const location = Math.round(scores.location * MAX_SCORE * 100) / 100
+//   const duration = Math.round(scores.duration * MAX_SCORE * 100) / 100
+//   const emr = Math.round(scores.emr * MAX_SCORE * 100) / 100
+//
+//   // Weighted sum of the scaled values
+//   const score =
+//     Math.round((location * WEIGHTS.LOCATION + duration * WEIGHTS.DURATION + emr * WEIGHTS.EMR) * 100) / 100
+//
+//   return {
+//     score,
+//     breakdown: { location, duration, emr },
+//   }
+// }

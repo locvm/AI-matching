@@ -6,6 +6,8 @@
  */
 
 import { normalizeLocumDuration } from '../../src/normalization/normalizeLocumDuration.js'
+import { normalizeProvince } from '../../src/normalization/normalizeProvince.js'
+import { ensureStringArray, normalizeAddress } from '../../src/normalization/primitives.js'
 
 /** @typedef {any} User */
 /** @typedef {import("../../src/interfaces/core/models.js").Physician} Physician */
@@ -66,10 +68,15 @@ export function parseAvailability(user) {
  * @returns {Physician}
  */
 export function toPhysician(user) {
-  const rawDurations = /** @type {unknown[]} */ (user.preferences?.locumDurations ?? [])
+  const prefs = user.preferences ?? {}
+  const rawDurations = /** @type {unknown[]} */ (prefs.locumDurations ?? [])
   const locumDurations = /** @type {DurationRange[]} */ (
     rawDurations.map((d) => normalizeLocumDuration(typeof d === 'string' ? d : String(d))).filter((d) => d !== null)
   )
+
+  const preferredProvinces = ensureStringArray(prefs.preferredProvinces)
+    .map((p) => normalizeProvince(p))
+    .filter(/** @returns {p is import("../../src/interfaces/core/models.js").ProvinceCode} */ (p) => p !== null)
 
   return /** @type {Physician} */ ({
     _id: user._id,
@@ -77,11 +84,12 @@ export function toPhysician(user) {
     lastName: user.lastName ?? '',
     medProfession: user.medProfession ?? '',
     medSpeciality: user.medSpeciality ?? '',
-    isLookingForLocums: user.preferences?.isLookingForLocums ?? true,
+    isLookingForLocums: prefs.isLookingForLocums ?? true,
     location: null,
-    workAddress: null,
-    preferredProvinces: [],
-    specificRegions: [],
+    workAddress: normalizeAddress(user.workAddress),
+    preferredProvinces,
+    specificRegions: ensureStringArray(prefs.specificRegions),
+    medicalProvince: normalizeProvince(user.medicalProvince) ?? undefined,
     emrSystems: user.emrSystems ?? [],
     languages: [],
     availabilityWindows: parseAvailability(user),

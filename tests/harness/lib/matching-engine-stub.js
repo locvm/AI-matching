@@ -7,14 +7,12 @@ import { filterEligiblePhysicians } from '../../../src/matchingLogic/filterEligi
 // When a real scorer is built, change one import in stub-scorers.js and nothing here changes.
 // The harness doesnt care whats inside. It just calls the function and gets results.
 
-import {
-  stubScoreLocation,
-  stubScoreDuration,
-  stubScoreEMR,
-  stubScoreProvince,
-  stubScoreSpeciality,
-  stubCombineScores,
-} from './stub-scorers.js'
+import { scoreEMR } from '../../../src/scoring/scoreEMR.js'
+import { scoreLocation } from '../../../src/scoring/location/scoreLocation.js'
+import { createDurationScorer } from '../../../src/scoring/duration/scoreDuration.js'
+import { computeWeightedScore } from '../../../src/scoring/combineAndRank.js'
+
+const scoreDuration = createDurationScorer()
 
 /**
  * @typedef {import('./types.js').Physician} Physician
@@ -57,7 +55,7 @@ function collectFlags(physician, job) {
 }
 
 /**
- * Scores a single physician-job pair across all 5 categories and combines.
+ * Scores a single physician-job pair across all 3 categories and combines.
  *
  * @param {Physician} physician
  * @param {LocumJob} job
@@ -65,14 +63,12 @@ function collectFlags(physician, job) {
  */
 function scoreAndBuild(physician, job) {
   const scores = {
-    location: stubScoreLocation(physician, job),
-    duration: stubScoreDuration(physician, job),
-    emr: stubScoreEMR(physician, job),
-    province: stubScoreProvince(physician, job),
-    speciality: stubScoreSpeciality(physician, job),
+    location: scoreLocation(physician, job.location, job.fullAddress),
+    duration: scoreDuration(physician, job.dateRange).score,
+    emr: scoreEMR(physician, job),
   }
 
-  const { score, breakdown } = stubCombineScores(scores)
+  const { totalScore: score, breakdown } = computeWeightedScore(scores)
   const flags = collectFlags(physician, job)
 
   return {
@@ -138,7 +134,7 @@ function isJobAcceptingApplicants(job, reservation) {
  *
  * Pipeline: per-job filter → score each passing pair → sort → return.
  *
- * @type {import('../../../src/interfaces/matching/matching.js').ScorePhysicianFn}
+ * @type {import('../../../src/interfaces/index.js').ScorePhysicianFn}
  */
 export async function searchJobs(physician, jobs, reservations, options) {
   /** @type {SearchResult[]} */

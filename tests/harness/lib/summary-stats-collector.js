@@ -1,7 +1,7 @@
 // @ts-check
 
 /**
- * @typedef {import('./types.js').SearchResult} SearchResult
+ * @typedef {import('../../../src/interfaces/index.js').SearchResult} SearchResult
  * @typedef {import('./types.js').JobSummaryStats} JobSummaryStats
  * @typedef {import('./types.js').PhysicianSummaryStats} PhysicianSummaryStats
  */

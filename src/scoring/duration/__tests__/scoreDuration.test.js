@@ -1,9 +1,9 @@
 // @ts-check
 
 import { describe, it, expect } from 'vitest'
-import { createDurationScorer } from '../../src/scoring/score-duration.js'
-import { DURATION_DEFAULTS } from '../../src/scoring/scoring.config.js'
-import { makePhysician, dateRange } from '../helpers/factories.js'
+import { createDurationScorer } from '../scoreDuration.js'
+import { DURATION_DEFAULTS } from '../../scoring.config.js'
+import { makePhysician, dateRange } from '../../../../tests/helpers/factories.js'
 
 const scoreDuration = createDurationScorer()
 
@@ -88,7 +88,7 @@ describe('bucket fallback', () => {
   it.each([
     {
       name: 'fits preferred bucket',
-      dur: [{ minDays: 1, maxDays: 7 }],
+      dur: [{ minDays: 0, maxDays: 7 }],
       job: dateRange('2025-01-01', '2025-01-04'),
       expected: DURATION_DEFAULTS.bucketMatchScore,
     },
@@ -106,7 +106,7 @@ describe('bucket fallback', () => {
     },
     {
       name: 'outside all preferred buckets',
-      dur: [{ minDays: 1, maxDays: 7 }],
+      dur: [{ minDays: 0, maxDays: 7 }],
       job: dateRange('2025-01-01', '2025-04-01'),
       expected: 0,
     },
@@ -122,7 +122,7 @@ describe('bucket fallback', () => {
     const r = scoreDuration(
       makePhysician({
         availabilityWindows: [{ from: new Date('2025-01-01'), to: new Date('2025-12-31') }],
-        locumDurations: [{ minDays: 1, maxDays: 7 }],
+        locumDurations: [{ minDays: 0, maxDays: 7 }],
       }),
       dateRange('2025-03-01', '2025-03-31')
     )
@@ -167,9 +167,9 @@ describe('output always in [0, 1]', () => {
       dur: [],
       job: dateRange('2025-06-01', '2025-06-30'),
     },
-    { name: 'bucket match', avail: [], dur: [{ minDays: 1, maxDays: 30 }], job: dateRange('2025-01-01', '2025-01-15') },
+    { name: 'bucket match', avail: [], dur: [{ minDays: 0, maxDays: 30 }], job: dateRange('2025-01-01', '2025-01-15') },
     { name: 'no data', avail: [], dur: [], job: dateRange('2025-01-01', '2025-01-15') },
-    { name: 'zero job', avail: [], dur: [{ minDays: 1, maxDays: 7 }], job: dateRange('2025-01-01', '2025-01-01') },
+    { name: 'zero job', avail: [], dur: [{ minDays: 0, maxDays: 7 }], job: dateRange('2025-01-01', '2025-01-01') },
   ])('$name', ({ avail, dur, job }) => {
     const r = scoreDuration(makePhysician({ availabilityWindows: avail, locumDurations: dur }), job)
     expect(r.score).toBeGreaterThanOrEqual(0)
@@ -198,7 +198,7 @@ describe('custom config', () => {
     {
       name: 'bucket match score',
       config: { bucketMatchScore: 0.9 },
-      overrides: { locumDurations: [{ minDays: 1, maxDays: 7 }] },
+      overrides: { locumDurations: [{ minDays: 0, maxDays: 7 }] },
       job: dateRange('2025-01-01', '2025-01-04'),
       expected: 0.9,
     },

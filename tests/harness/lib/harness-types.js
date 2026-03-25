@@ -1,5 +1,7 @@
 // @ts-check
 
+// Test-harness-only JSDoc types. Domain types live in src/interfaces/index.js.
+
 export {}
 
 // ── Domain types (from interfaces) ──────────────────────────────────────────
@@ -111,7 +113,7 @@ export {}
  * @typedef {object} HarnessPhysicianResult
  * @property {import('../../../src/interfaces/index.js').Physician} physician
  * @property {import('../../../src/interfaces/index.js').SearchResult[]} topResults
- * @property {import('./types.js').PhysicianSummaryStats} stats
+ * @property {PhysicianSummaryStats} stats
  */
 
 /**

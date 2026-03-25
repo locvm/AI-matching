@@ -5,6 +5,9 @@
 // These dont care what storage you use, could be JSON files (dev/testing) or MongoDB (production)
 // See README §13.5 for the authoritative spec
 
+/** @typedef {import("./records.js").MatchRun} MatchRun */
+/** @typedef {import("./records.js").MatchRunResult} MatchRunResult */
+
 /**
  * Repository for managing match run records
  *

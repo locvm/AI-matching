@@ -134,6 +134,40 @@
  * Account flags
  * @property {boolean} [isProfileComplete]
  * @property {boolean} [isOnboardingCompleted]
+ * @property {string} _id - MongoDB ObjectId as string
+ *
+ * Medical Info
+ * @property {string} medProfession - "Physician" or "Recruiter". Only Physicians get matched.
+ * @property {string} medSpeciality - Like "Family Medicine", "Emergency Medicine".
+ * @property {ProvinceCode} [medicalProvince] - Province where licensed. Almost everyone is "ON".
+ * @property {string[]} emrSystems - EMR systems the doctor knows. Only 42 out of 410 have this.
+ *
+ * Location
+ * @property {GeoCoordinates | null} location - Always null. User schema has no coordinates.
+ * @property {Address | null} workAddress - Work address.
+ *
+ * Preferences (flattened from UserSchema.preferences)
+ * @property {boolean} isLookingForLocums - Actively looking. If missing we default to true.
+ * @property {ProvinceCode[]} preferredProvinces - Provinces the doctor prefers (stored as full names in DB).
+ * @property {string[]} specificRegions - Free text regions like "downtown toronto", "GTA".
+ * @property {DurationRange[]} [locumDurations] - How long they want to work, as numeric day ranges.
+ * @property {DayOfWeek[]} [availableDays] - Which days they can work. Comes from "Weekdays"/"Weekends".
+ * @property {CommitmentType[]} [commitmentTypes] - Full time, part time, or on call.
+ * @property {AvailabilityWindow[]} [availabilityWindows] - Specific date ranges when they can work. Like "Jan 2025 to Mar 2025".
+ *
+ * Facility
+ * @property {string} [facilityName] - Name of the doctors facility.
+ * @property {string} [facilityEMR] - EMR system at the doctors facility.
+ *
+ * Personal
+ * @property {string} [firstName]
+ * @property {string} [lastName]
+ * @property {string} [role]
+ * @property {string[]} [languages] - Languages spoken, like ["English", "French"]
+ * @property {string[]} [locumDurations] - Preferred locum duration categories like "1-3 months", "1 day to 2 weeks". Flattened from preferences.locumDurations
+ * @property {string[]} [availabilityTypes] - Availability type preferences like "Weekdays", "Weekends", "Evenings". Flattened from preferences.availabilityTypes
+ * @property {boolean} [isProfileComplete] - Whether the doctors profile is complete
+ * @property {boolean} [isOnboardingCompleted] - Whether onboarding is done
  */
 
 // Physician, intentionally omitted (not needed for matching):

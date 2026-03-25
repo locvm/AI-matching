@@ -16,11 +16,11 @@ import fs from 'fs/promises'
 function getByPath(obj, path) {
   if (obj == null) return undefined
   const parts = path.split('.')
-  /** @type {any} */
+  /** @type {object | null | undefined} */
   let currentObj = obj
   for (const p of parts) {
     if (currentObj == null || typeof currentObj !== 'object') return undefined
-    currentObj = /** @type {Record<string, any>} */ (currentObj)[p]
+    currentObj = currentObj[/** @type {keyof object} */ (p)]
   }
   return currentObj
 }
@@ -211,7 +211,7 @@ async function analyzeUsers() {
   const jsonString = await fs.readFile('./fixtures/locum.users.formatted.json', 'utf8')
   const users = JSON.parse(jsonString)
 
-  /** @type {Record<string, { present: number; missing: number }>} */
+  /** @type {Record<string, { present: number, missing: number }>} */
   const results = {}
   for (const { path } of USER_FIELDS) {
     results[path] = { present: 0, missing: 0 }
@@ -233,8 +233,7 @@ async function analyzeUsers() {
   }
 
   const total = users.length
-  /** @param {number} n */
-  const percentageOfTotal = (n) => (total === 0 ? '0.0' : ((n / total) * 100).toFixed(1))
+  const percentageOfTotal = (/** @type {number} */ n) => (total === 0 ? '0.0' : ((n / total) * 100).toFixed(1))
 
   const md = []
 
@@ -272,18 +271,12 @@ async function analyzeUsers() {
   )
   for (const { path } of PREFERENCE_FREQUENCY_FIELDS) {
     const typeCounts = countTypeBreakdown(users, path)
-    const wrongOrWeird = Object.entries(typeCounts).filter(
-      /** @param {[string, number]} entry */
-      ([type]) => !SKIP_TYPES_FOR_WRONG.has(type)
-    )
+    const wrongOrWeird = Object.entries(typeCounts).filter(([type]) => !SKIP_TYPES_FOR_WRONG.has(type))
     if (wrongOrWeird.length === 0) {
       md.push(`- **${path}**: (none - only missing or valid string)\n`)
     } else {
       md.push(`- **${path}**:`)
-      for (const [type, count] of wrongOrWeird.sort(
-        /** @param {[string, number]} a @param {[string, number]} b */
-        (a, b) => b[1] - a[1]
-      )) {
+      for (const [type, count] of wrongOrWeird.sort((a, b) => b[1] - a[1])) {
         md.push(`  - [${type}]: ${count}`)
       }
       md.push('')
@@ -301,15 +294,16 @@ async function analyzeJobs() {
   const jsonString = await fs.readFile('./fixtures/locum.locumjobs.formatted.json', 'utf8')
   const jobs = JSON.parse(jsonString)
 
-  /** @type {Record<string, { present: number; missing: number }>} */
+  /** @type {Record<string, { present: number, missing: number }>} */
   const results = {}
   for (const { path } of JOB_FIELDS) {
     results[path] = { present: 0, missing: 0 }
   }
 
   /**
-   * @param {any} value
+   * @param {*} value
    * @param {string} kind
+   * @returns {boolean}
    */
   function isPresent(value, kind) {
     if (value == null) return false
@@ -329,8 +323,7 @@ async function analyzeJobs() {
   }
 
   const total = jobs.length
-  /** @param {number} n */
-  const percentageOfTotal = (n) => (total === 0 ? '0.0' : ((n / total) * 100).toFixed(1))
+  const percentageOfTotal = (/** @type {number} */ n) => (total === 0 ? '0.0' : ((n / total) * 100).toFixed(1))
 
   const md = []
   const keys = jobs.length > 0 ? Object.keys(jobs[0]).join(', ') : '(none)'
@@ -370,17 +363,13 @@ async function analyzeJobs() {
   for (const { path, kind } of JOB_FIELDS) {
     const typeCounts = countTypeBreakdownScalar(jobs, path)
     const wrongOrWeird = Object.entries(typeCounts).filter(
-      /** @param {[string, number]} entry */
       ([type]) => !SKIP_WRONG.has(type) && !isValidJobType(type, kind)
     )
     if (wrongOrWeird.length === 0) {
       md.push(`- **${path}**: (none - only missing or valid type)\n`)
     } else {
       md.push(`- **${path}**:`)
-      for (const [type, count] of wrongOrWeird.sort(
-        /** @param {[string, number]} a @param {[string, number]} b */
-        (a, b) => b[1] - a[1]
-      )) {
+      for (const [type, count] of wrongOrWeird.sort((a, b) => b[1] - a[1])) {
         md.push(`  - [${type}]: ${count}`)
       }
       md.push('')
@@ -398,15 +387,16 @@ async function analyzeReservations() {
   const jsonString = await fs.readFile('./fixtures/locum.reservations.formatted.json', 'utf8')
   const reservations = JSON.parse(jsonString)
 
-  /** @type {Record<string, { present: number; missing: number }>} */
+  /** @type {Record<string, { present: number, missing: number }>} */
   const results = {}
   for (const { path } of RESERVATION_FIELDS) {
     results[path] = { present: 0, missing: 0 }
   }
 
   /**
-   * @param {any} value
+   * @param {*} value
    * @param {string} kind
+   * @returns {boolean}
    */
   function isPresent(value, kind) {
     if (value == null) return false
@@ -424,8 +414,7 @@ async function analyzeReservations() {
   }
 
   const total = reservations.length
-  /** @param {number} n */
-  const percentageOfTotal = (n) => (total === 0 ? '0.0' : ((n / total) * 100).toFixed(1))
+  const percentageOfTotal = (/** @type {number} */ n) => (total === 0 ? '0.0' : ((n / total) * 100).toFixed(1))
 
   const md = []
   const keys = reservations.length > 0 ? Object.keys(reservations[0]).join(', ') : '(none)'
@@ -462,17 +451,13 @@ async function analyzeReservations() {
   for (const { path, kind } of RESERVATION_FIELDS) {
     const typeCounts = countTypeBreakdownScalar(reservations, path)
     const wrongOrWeird = Object.entries(typeCounts).filter(
-      /** @param {[string, number]} entry */
       ([type]) => !SKIP_WRONG.has(type) && !isValidReservationType(type, kind)
     )
     if (wrongOrWeird.length === 0) {
       md.push(`- **${path}**: (none – only missing or valid type)\n`)
     } else {
       md.push(`- **${path}**:`)
-      for (const [type, count] of wrongOrWeird.sort(
-        /** @param {[string, number]} a @param {[string, number]} b */
-        (a, b) => b[1] - a[1]
-      )) {
+      for (const [type, count] of wrongOrWeird.sort((a, b) => b[1] - a[1])) {
         md.push(`  - [${type}]: ${count}`)
       }
       md.push('')

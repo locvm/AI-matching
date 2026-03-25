@@ -17,9 +17,38 @@
 /** @typedef {import("../../interfaces/core/models.js").Address} Address */
 /** @typedef {import("../../interfaces/core/models.js").ProvinceCode} ProvinceCode */
 
-import { haversineKm } from './haversine.js'
 import { normalizeProvince } from '../../normalization/normalizeProvince.js'
 import { LOCATION_CONFIG } from '../../config/locationConfig.js'
+import { lookupCity } from './canadianCities.js'
+
+// ── Haversine distance ─────────────────────────────────────────────────────
+
+const EARTH_RADIUS_KM = 6371
+
+/** @param {number} deg */
+function toRadians(deg) {
+  return (deg * Math.PI) / 180
+}
+
+/**
+ * Haversine great-circle distance between two points.
+ *
+ * @param {GeoCoordinates} a
+ * @param {GeoCoordinates} b
+ * @returns {number} distance in kilometers
+ */
+export function haversineKm(a, b) {
+  const phi1 = toRadians(a.lat)
+  const phi2 = toRadians(b.lat)
+  const deltaPhi = toRadians(b.lat - a.lat)
+  const deltaLambda = toRadians(b.lng - a.lng)
+
+  const halfChord = Math.sin(deltaPhi / 2) ** 2 + Math.cos(phi1) * Math.cos(phi2) * Math.sin(deltaLambda / 2) ** 2
+
+  const angularDistance = 2 * Math.atan2(Math.sqrt(halfChord), Math.sqrt(1 - halfChord))
+
+  return EARTH_RADIUS_KM * angularDistance
+}
 
 /**
  * @typedef {"gps_distance" | "specific_region" | "preferred_province" | "work_province" | "medical_province" | "no_data"} ScoringMethod
@@ -163,6 +192,43 @@ export function scoreLocationWithDetail(physician, jobLocation, jobAddress, conf
     const granularRegions = physician.specificRegions.filter((r) => !isCoarseRegion(r, config))
 
     if (granularRegions.length > 0) {
+      // When multiple regions exist and job has GPS coords, try distance-based scoring
+      if (granularRegions.length > 1 && isValidCoords(jobLocation)) {
+        const physicianProvince =
+          (physician.preferredProvinces && physician.preferredProvinces.length > 0
+            ? normalizeProvince(physician.preferredProvinces[0])
+            : null) ?? normalizeProvince(physician.workAddress?.province)
+
+        if (physicianProvince) {
+          let closestDistance = Infinity
+          let closestRegion = null
+
+          for (const region of granularRegions) {
+            const coords = lookupCity(region, physicianProvince)
+            if (coords && isValidCoords(coords)) {
+              const dist = haversineKm(coords, /** @type {GeoCoordinates} */ (jobLocation))
+              if (dist < closestDistance) {
+                closestDistance = dist
+                closestRegion = region
+              }
+            }
+          }
+
+          if (closestRegion !== null) {
+            const score = reverseSigmoid(closestDistance, config)
+            detail.score = Math.max(0, Math.min(1, score))
+            detail.method = 'gps_distance'
+            detail.distanceKm = Math.round(closestDistance * 100) / 100
+            detail.distanceBucket = getDistanceBucket(closestDistance, config)
+            detail.matchedRegion = closestRegion
+            detail.resolvedPhysicianProvince = physicianProvince
+            detail.provinceMatch = physicianProvince === jobProvince
+            return detail
+          }
+        }
+      }
+
+      // Fallback: string matching (single region or no regions geocoded)
       const matchedRegion = granularRegions.find((r) => regionMatchesJob(r, jobAddress))
 
       detail.method = 'specific_region'

@@ -82,38 +82,10 @@
  * Loops all jobs, calls IsEligiblePhysicianFn (with args flipped) on each, returns only those that pass
  *
  * @callback FilterJobsForPhysicianFn
- * @param {import("../core/models.js").Physician} physician - the physician to filter jobs for
- * @param {import("../core/models.js").LocumJob[]} jobs - the full pool of active jobs
- * @param {import("../core/models.js").Reservation[]} [reservations] - optional array of reservations (one per job, matched by locumJobId)
- * @returns {import("../core/models.js").LocumJob[]} only the jobs this physician qualifies for
+ * @param {Physician} physician - the physician to filter jobs for
+ * @param {LocumJob[]} jobs - the full pool of active jobs
+ * @param {Reservation[]} [reservations] - optional array of reservations (one per job, matched by locumJobId)
+ * @returns {LocumJob[]} only the jobs this physician qualifies for
  */
-
-// FUTURE FILTERS (not implemented yet, per Eve's feedback March 2026)
-//
-// These are gates that will eventually go inside IsEligiblePhysicianFn.
-// Right now they are all OFF so every doctor can see matches.
-// Turn them on one at a time as the platform matures.
-//
-// 1. CPSOProof.status
-//    When subscriptions launch, require CPSOProof.status === "Confirmed" before matching.
-//    Physicians with "Pending" or "Rejected" would be excluded from results.
-//    Field lives in UserSchema but is currently in the "intentionally omitted" list in models.js.
-//    To enable: add CPSOProof to Physician type, add check in IsEligiblePhysicianFn step 3.5.
-//
-// 2. isProfileComplete
-//    Skip physicians whose profile is not complete.
-//    Already on the Physician type, just not checked anywhere.
-//    To enable: add check in IsEligiblePhysicianFn after isLookingForLocums.
-//
-// 3. isOnboardingCompleted
-//    Skip physicians who havent finished onboarding.
-//    Already on the Physician type, just not checked anywhere.
-//    Eve said this is the most likely first candidate to become a real filter.
-//    To enable: add check in IsEligiblePhysicianFn after isLookingForLocums.
-//
-// 4. Email verification
-//    Eve is building email verification. Once live, add as another gate.
-//    Field does not exist yet in the schema. Will need to be added to Physician type first.
-//    To enable: add field to models.js, add check in IsEligiblePhysicianFn.
 
 export {}

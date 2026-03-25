@@ -1,19 +1,19 @@
 // @ts-check
 
 import { describe, it, expect, beforeAll } from 'vitest'
-import { loadFixtures } from '../harness/lib/fixture-loader.js'
-import { createDurationScorer } from '../../src/scoring/duration/scoreDuration.js'
+import { loadFixtures } from '../../../../tests/harness/lib/fixture-loader.js'
+import { createDurationScorer } from '../scoreDuration.js'
 
 const scoreDuration = createDurationScorer()
 
-/** @type {import('../harness/lib/types.js').FixtureData} */
+/** @type {import('../../../../tests/harness/lib/harness-types.js').FixtureData} */
 let fixtures
 
-/** @type {import('../harness/lib/types.js').LocumJob[]} */
+/** @type {import('../../../../src/interfaces/index.js').LocumJob[]} */
 let validJobs
 
-/** @type {import('../harness/lib/types.js').Physician[]} */
-let physiciansWithRanges
+/** @type {import("../../../../src/interfaces/index.js").Physician[]} */
+let physiciansWithWindows
 
 beforeAll(async () => {
   fixtures = await loadFixtures()
@@ -23,7 +23,7 @@ beforeAll(async () => {
     return j.dateRange.to > j.dateRange.from
   })
 
-  physiciansWithRanges = fixtures.physicians.filter((p) => (p.availabilityWindows?.length ?? 0) > 0)
+  physiciansWithWindows = fixtures.physicians.filter((p) => (p.availabilityWindows?.length ?? 0) > 0)
 })
 
 describe('score-duration harness – sanity', () => {
@@ -44,13 +44,13 @@ describe('score-duration harness – sanity', () => {
 
 describe('score-duration harness – overlap metric', () => {
   it('physicians with availability ranges produce breakdown with overlapPct', () => {
-    if (physiciansWithRanges.length === 0) return
+    if (physiciansWithWindows.length === 0) return
 
     let foundOverlapBreakdown = false
 
-    for (const physician of physiciansWithRanges) {
+    for (const p of physiciansWithWindows) {
       for (const job of validJobs.slice(0, 30)) {
-        const r = scoreDuration(physician, job.dateRange)
+        const r = scoreDuration(p, job.dateRange)
         if (r.breakdown.method === 'overlap' && r.breakdown.overlapPct !== null) {
           foundOverlapBreakdown = true
           expect(r.breakdown.overlapPct).toBeGreaterThanOrEqual(0)
@@ -72,15 +72,15 @@ describe('score-duration harness – contained vs outside', () => {
     let outsideSum = 0,
       outsideN = 0
 
-    for (const physician of physiciansWithRanges) {
-      const windows = physician.availabilityWindows ?? []
+    for (const p of physiciansWithWindows) {
+      const windows = p.availabilityWindows ?? []
       if (windows.length === 0) continue
 
       const earliest = windows.reduce((m, w) => (w.from < m ? w.from : m), windows[0].from)
       const latest = windows.reduce((m, w) => (w.to > m ? w.to : m), windows[0].to)
 
       for (const job of validJobs) {
-        const r = scoreDuration(physician, job.dateRange)
+        const r = scoreDuration(p, job.dateRange)
         const from = job.dateRange.from
         const to = job.dateRange.to
 

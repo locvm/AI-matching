@@ -38,6 +38,7 @@
       "Thu",
       "Fri"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -356,7 +357,7 @@
     ],
     "availabilityYears": [
       2025
-    ],
+    ],    
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -1713,7 +1714,7 @@
     ],
     "availabilityYears": [
       2025
-    ],
+    ],    
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -1934,7 +1935,7 @@
     ],
     "availabilityYears": [
       2025
-    ],
+    ],    
     "isProfileComplete": true,
     "isOnboardingCompleted": true
   },
@@ -2130,6 +2131,7 @@
     "commitmentTypes": [
       "part-time"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -3264,6 +3266,7 @@
       "part-time",
       "on-call"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -3311,6 +3314,7 @@
       "Thu",
       "Fri"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -3451,6 +3455,7 @@
     "commitmentTypes": [
       "full-time"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -3738,6 +3743,7 @@
     "commitmentTypes": [
       "full-time"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -3927,6 +3933,7 @@
       "on-call",
       "part-time"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -4057,6 +4064,7 @@
     "role": "User",
     "languages": [],
     "locumDurations": [],
+
     "availabilityYears": [
       2025,
       2026
@@ -4220,6 +4228,7 @@
     "commitmentTypes": [
       "full-time"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -4370,6 +4379,7 @@
       "part-time",
       "on-call"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -4415,6 +4425,7 @@
       "full-time",
       "part-time"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -4536,6 +4547,7 @@
       "part-time",
       "full-time"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -4797,6 +4809,7 @@
       "full-time",
       "on-call"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -4988,6 +5001,7 @@
       "part-time",
       "on-call"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -5275,6 +5289,7 @@
       "part-time",
       "on-call"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -5364,6 +5379,7 @@
     "commitmentTypes": [
       "part-time"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -5420,6 +5436,7 @@
     "commitmentTypes": [
       "part-time"
     ],
+
     "availabilityYears": [
       2025,
       2026
@@ -5635,6 +5652,7 @@
       "Sat",
       "Sun"
     ],
+
     "availabilityYears": [
       2025,
       2026

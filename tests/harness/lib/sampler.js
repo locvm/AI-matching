@@ -4,8 +4,8 @@ import { createSeededRandom, seededShuffle } from './random-seeder.js'
 import { SAMPLING, JOB_FILTERS } from '../harness.config.js'
 
 /**
- * @typedef {import('./types.js').LocumJob} LocumJob
- * @typedef {import('./types.js').Physician} Physician
+ * @typedef {import('../../../src/interfaces/index.js').LocumJob} LocumJob
+ * @typedef {import('../../../src/interfaces/index.js').Physician} Physician
  * @typedef {import('./types.js').SamplerConfig} SamplerConfig
  */
 
@@ -71,7 +71,6 @@ export class Sampler {
         return days <= JOB_FILTERS.SHORT_TERM_MAX_DAYS
       })
     }
-
     if (key === 'long-term') {
       return jobs.filter((job) => {
         if (!job.dateRange?.from || !job.dateRange?.to) return false

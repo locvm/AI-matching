@@ -7,18 +7,18 @@ import { CsvReportWriter, PhysicianCsvReportWriter } from './csv-report-writer.j
 import { OUTPUT, PATHS } from '../harness.config.js'
 
 /**
- * @typedef {import('./types.js').LocumJob} LocumJob
- * @typedef {import('./types.js').Physician} Physician
- * @typedef {import('./types.js').Reservation} Reservation
- * @typedef {import('./types.js').SearchResult} SearchResult
+ * @typedef {import('../../../src/interfaces/index.js').LocumJob} LocumJob
+ * @typedef {import('../../../src/interfaces/index.js').Physician} Physician
+ * @typedef {import('../../../src/interfaces/index.js').Reservation} Reservation
+ * @typedef {import('../../../src/interfaces/index.js').SearchResult} SearchResult
  * @typedef {import('./types.js').HarnessJobResult} HarnessJobResult
  * @typedef {import('./types.js').HarnessPhysicianResult} HarnessPhysicianResult
  * @typedef {import('./types.js').SamplerConfig} SamplerConfig
  * @typedef {import('./types.js').HarnessConfig} HarnessConfig
  * @typedef {import('./types.js').HarnessRunResult} HarnessRunResult
  * @typedef {import('./types.js').PhysicianHarnessRunResult} PhysicianHarnessRunResult
- * @typedef {import('./types.js').ScoreJobFn} ScoreJobFn
- * @typedef {import('./types.js').ScorePhysicianFn} ScorePhysicianFn
+ * @typedef {import('../../../src/interfaces/index.js').ScoreJobFn} ScoreJobFn
+ * @typedef {import('../../../src/interfaces/index.js').ScorePhysicianFn} ScorePhysicianFn
  */
 
 // ── Job-centric harness (1 job → all physicians) ───────────────────────────
@@ -54,7 +54,7 @@ export class MatchingTestHarness {
     this.#searchPhysicians = data.searchPhysicians ?? searchPhysiciansStub
     this.#config = {
       topK: config.topK ?? OUTPUT.TOP_K,
-      outputDir: config.outputDir ?? PATHS.OUTPUT_DIR,
+      outputDir: config.outputDir ?? PATHS.JOB_OUTPUT_DIR,
       sampling: config.sampling,
     }
   }
@@ -107,7 +107,7 @@ export class MatchingTestHarness {
   }
 }
 
-// ── Physician-centric harness (1 physician → all jobs) ──────────────────────
+// Physician-centric harness (1 physician → all jobs)
 
 export class PhysicianTestHarness {
   /** @type {LocumJob[]} */
@@ -140,7 +140,7 @@ export class PhysicianTestHarness {
     this.#searchJobs = data.searchJobs ?? searchJobsStub
     this.#config = {
       topK: config.topK ?? OUTPUT.TOP_K,
-      outputDir: config.outputDir ?? PATHS.OUTPUT_DIR,
+      outputDir: config.outputDir ?? PATHS.PHYSICIAN_OUTPUT_DIR,
       sampling: config.sampling,
     }
   }

@@ -1,6 +1,4 @@
 // @ts-check
-
-// The en-dash (–) in bucket labels matches what the DB stores.
 export const DURATION_BUCKETS = [
   { label: 'A few days', min: 0, max: 7 },
   { label: 'Less than a month', min: 0, max: 30 },
