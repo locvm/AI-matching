@@ -5,23 +5,38 @@
 // Hard filters and checks that decide if a physician even qualifies before any scoring happens
 
 /**
- * Checks whether a physician passes all hard filters and should be scored
+ * Options the caller can pass to control filter behavior.
+ * Aligns with the SearchCriteria contract from the ClickUp spec.
  *
- * This is the first gate in the pipeline. Only physicians passing this function move on to scoring
+ * @typedef {Object} SearchCriteria
+ * @property {import("../core/models.js").LocumJob} [job] - the job (also passed as a direct arg for convenience)
+ * @property {import("../core/models.js").Reservation} [reservation] - the reservation (also passed as a direct arg)
+ * @property {{ onlyLookingForLocums?: boolean }} [options] - toggles for individual filters
+ */
+
+/**
+ * Checks whether a single physician passes all hard filters for a given job (private helper)
+ *
+ * This is an internal function, not exported. It receives pre-computed values
+ * (applicantIds Set, onlyLooking boolean) so the batch wrapper only does that
+ * work once for the whole list instead of per physician.
  *
  * Steps:
- * 1) Check medProfession: physician.medProfession must match job.medProfession (case-insensitive). If not, return false
- * 2) Check medSpeciality: physician.medSpeciality must match job.medSpeciality (case-insensitive). If not, return false
- * 3) Check isLookingForLocums: if false, return false. (Missing values are cleaned to true before this so its always a boolean)
- * 4) Optionally check for scheduling conflicts: if the physician has an active reservation whose dates overlap with job.dateRange, return false
- * 5) Return true if all checks pass
+ * 1) Check medProfession: physician.medProfession must match job.medProfession (exact). If not, return false
+ * 2) Check medSpeciality: physician.medSpeciality must match job.medSpeciality (case-insensitive, trimmed). If not, return false
+ * 3) Check isLookingForLocums: if onlyLooking is true and physician is not looking, return false. (Missing values default to true)
+ * 4) Check applicants: if physician is already in the applicantIds Set, return false
+ * 5) Check duration: physician's locumDurations must overlap with the job's duration bucket. If not, return false
+ * 6) Check province: physician's preferredProvinces must include the job's province. If not, return false
+ * 7) Return true if all checks pass
  *
- * The isLookingForLocums check should be something you can turn on/off in case we want to match non-looking physicians in the future (per README §7.1)
+ * The isLookingForLocums check can be toggled off via criteria.options.onlyLookingForLocums (per README §7.1)
  *
  * @callback IsEligiblePhysicianFn
  * @param {import("../core/models.js").Physician} physician - the clean physician profile
  * @param {import("../core/models.js").LocumJob} job - the locum job to match against
- * @param {import("../core/models.js").Reservation} [reservation] - optional reservation for scheduling conflict checks
+ * @param {Set<string>} applicantIds - pre-built Set of user IDs who already applied
+ * @param {boolean} onlyLooking - whether to enforce the isLookingForLocums check
  * @returns {boolean} true if the physician should be scored, false if excluded
  */
 
@@ -48,14 +63,16 @@
 /**
  * Filters the full physician pool down to only those eligible for a given job
  *
- * This is the job-centric entry to Stage 1 of the pipeline
- * Loops all physicians, calls IsEligiblePhysicianFn on each, returns only those that pass
+ * This is the job-centric entry to Stage 1 of the pipeline (batch API).
+ * Builds a Set of applicant IDs from the reservation once, derives onlyLooking
+ * from criteria, then loops all physicians through isEligiblePhysician.
  *
  * @callback FilterPhysiciansForJobFn
- * @param {LocumJob} job - the job to filter physicians against
- * @param {Physician[]} physicians - the full pool of physicians
- * @param {Reservation} [reservation] - optional reservation for scheduling conflict checks
- * @returns {Physician[]} only the physicians that pass all hard filters
+ * @param {import("../core/models.js").Physician[]} physicians - the full pool of physicians
+ * @param {import("../core/models.js").LocumJob} job - the job to filter physicians against
+ * @param {import("../core/models.js").Reservation} [reservation] - optional reservation (used to build applicant ID set)
+ * @param {SearchCriteria} [criteria] - optional search criteria with filter toggles
+ * @returns {import("../core/models.js").Physician[]} only the physicians that pass all hard filters
  */
 
 /**

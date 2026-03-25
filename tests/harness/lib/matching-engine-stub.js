@@ -1,5 +1,6 @@
 // @ts-check
 
+import { filterEligiblePhysicians } from '../../../src/matchingLogic/filterEligiblePhysicians.js'
 // Stub implementations of ScoreJobFn and ScorePhysicianFn.
 //
 // Uses modular stub scorers so each category can be swapped independently.
@@ -19,6 +20,9 @@ const scoreDuration = createDurationScorer()
  * @typedef {import('./types.js').Reservation} Reservation
  * @typedef {import('./types.js').SearchResult} SearchResult
  */
+
+/** Reservation statuses that mean the job is still accepting applicants. Others (Completed, Cancelled, Expired) are excluded. */
+const ELIGIBLE_RESERVATION_STATUSES = new Set(['Pending', 'In Progress', 'Ongoing'])
 
 /**
  * Collects data quality flags for a physician-job pair.
@@ -84,32 +88,22 @@ function scoreAndBuild(physician, job) {
  * @type {import('../../../src/interfaces/matching/matching.js').ScoreJobFn}
  */
 export async function searchPhysicians(job, physicians, reservation, options) {
-  const onlyLooking = true
-
-  // Build applicant set from reservation (for scheduling conflict filter)
-  const applicantIds = new Set()
-  if (reservation?.applicants) {
-    for (const a of reservation.applicants) {
-      if (a.userId) applicantIds.add(a.userId)
-    }
+  if (!isJobAcceptingApplicants(job, reservation)) {
+    return []
   }
+
+  const eligible = filterEligiblePhysicians(
+    /** @type {any} */ (physicians),
+    /** @type {any} */ (job),
+    /** @type {any} */ (reservation ?? undefined),
+    /** @type {any} */ ({ job, reservation, options: { onlyLookingForLocums: true } })
+  )
 
   /** @type {SearchResult[]} */
   const results = []
 
-  for (const physician of physicians) {
-    // FILTER (hard filters, pass or fail)
-    if (physician.medProfession !== job.medProfession) continue
-
-    const pSpec = (physician.medSpeciality ?? '').trim().toLowerCase()
-    const jSpec = (job.medSpeciality ?? '').trim().toLowerCase()
-    if (pSpec !== jSpec) continue
-
-    if (onlyLooking && !physician.isLookingForLocums) continue
-    if (applicantIds.has(physician._id)) continue
-
-    // SCORE + BUILD result
-    results.push(scoreAndBuild(physician, job))
+  for (const physician of eligible) {
+    results.push(scoreAndBuild(/** @type {any} */ (physician), job))
   }
 
   results.sort((a, b) => b.score - a.score)
@@ -117,39 +111,50 @@ export async function searchPhysicians(job, physicians, reservation, options) {
 }
 
 /**
+ * True if we should run matching for this job.
+ * @param {LocumJob} job
+ * @param {Reservation | null | undefined} reservation
+ * @returns {boolean}
+ */
+function isJobAcceptingApplicants(job, reservation) {
+  if (!reservation) return true
+  const status = (reservation.status ?? '').trim()
+  return ELIGIBLE_RESERVATION_STATUSES.has(status)
+}
+
+/**
  * Stub ScorePhysicianFn. Physician-centric: 1 physician → find matching jobs.
  *
- * Pipeline: filter → score each pair → combine → sort → return.
+ * Same hard filters as searchPhysicians — both paths go through
+ * filterEligiblePhysicians (IsEligiblePhysicianFn) so any new filter
+ * (duration, province, future gates) is automatically applied here too.
+ *
+ * We wrap the single physician in an array and call filterEligiblePhysicians
+ * per job. If the physician survives the filter, we score; otherwise skip.
+ *
+ * Pipeline: per-job filter → score each passing pair → sort → return.
  *
  * @type {import('../../../src/interfaces/index.js').ScorePhysicianFn}
  */
 export async function searchJobs(physician, jobs, reservations, options) {
-  const onlyLooking = true
-
-  // Early exit: if physician isnt looking, no matches
-  if (onlyLooking && !physician.isLookingForLocums) return []
-
   /** @type {SearchResult[]} */
   const results = []
+  const pool = [physician]
 
   for (const job of jobs) {
-    // FILTER (hard filters, pass or fail)
-    if (job.medProfession !== physician.medProfession) continue
+    const reservation = reservations?.find((r) => r.locumJobId === job._id) ?? undefined
 
-    const jSpec = (job.medSpeciality ?? '').trim().toLowerCase()
-    const pSpec = (physician.medSpeciality ?? '').trim().toLowerCase()
-    if (jSpec !== pSpec) continue
+    if (!isJobAcceptingApplicants(job, reservation ?? null)) continue
 
-    // Check if physician already applied to this job's reservation
-    if (reservations) {
-      const reservation = reservations.find((r) => r.locumJobId === job._id)
-      if (reservation?.applicants) {
-        const alreadyApplied = reservation.applicants.some((a) => a.userId === physician._id)
-        if (alreadyApplied) continue
-      }
-    }
+    const eligible = filterEligiblePhysicians(
+      /** @type {any} */ (pool),
+      /** @type {any} */ (job),
+      /** @type {any} */ (reservation),
+      /** @type {any} */ ({ job, reservation, options: { onlyLookingForLocums: true } })
+    )
 
-    // SCORE + BUILD result
+    if (eligible.length === 0) continue
+
     results.push(scoreAndBuild(physician, job))
   }
 

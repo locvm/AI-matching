@@ -37,6 +37,9 @@
 
 import { EMR_DEFAULTS } from './scoring.config.js'
 
+/** @param {number} n */
+const clamp01 = (n) => Math.max(0, Math.min(1, n))
+
 // Maps every known variant (lowercased) to a single canonical name.
 // Unknown values fall through via the ?? fallback in canonicalize().
 const EMR_ALIASES = /** @type {Record<string, string>} */ ({
@@ -134,7 +137,7 @@ export function scoreEMRWithDetail(physician, job, config = {}) {
 
   if (!jobEMR) {
     return {
-      score: opts.neutralScore,
+      score: clamp01(opts.neutralScore),
       method: 'no_job_emr',
       jobEMR: null,
       physicianEMRs,
@@ -144,7 +147,7 @@ export function scoreEMRWithDetail(physician, job, config = {}) {
 
   if (knownEMRs.size === 0) {
     return {
-      score: opts.neutralScore,
+      score: clamp01(opts.neutralScore),
       method: 'no_physician_emr',
       jobEMR,
       physicianEMRs,
@@ -155,7 +158,7 @@ export function scoreEMRWithDetail(physician, job, config = {}) {
   const matched = knownEMRs.has(jobEMR)
 
   return {
-    score: matched ? opts.matchScore : opts.noMatchScore,
+    score: clamp01(matched ? opts.matchScore : opts.noMatchScore),
     method: matched ? 'match' : 'no_match',
     jobEMR,
     physicianEMRs,
