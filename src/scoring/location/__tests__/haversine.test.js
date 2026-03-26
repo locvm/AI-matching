@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { haversineKm } from '../haversine.js'
+import { haversineKm } from '../scoreLocation.js'
 
 // Known reference points
 const TORONTO = { lat: 43.6532, lng: -79.3832 }
