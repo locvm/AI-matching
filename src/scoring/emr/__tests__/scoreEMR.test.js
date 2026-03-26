@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import { scoreEMR, scoreEMRWithDetail } from '../scoreEMR.js'
 
-/** @typedef {import("../../interfaces/core/models.js").Physician} Physician */
-/** @typedef {import("../../interfaces/core/models.js").LocumJob} LocumJob */
+/** @typedef {import("../../../interfaces/core/models.js").Physician} Physician */
+/** @typedef {import("../../../interfaces/core/models.js").LocumJob} LocumJob */
 
 /** @param {Partial<Physician>} [overrides] */
 function makePhysician(overrides = {}) {
