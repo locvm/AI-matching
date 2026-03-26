@@ -8,7 +8,7 @@
 
 import { describe, it, expect, beforeAll } from 'vitest'
 import { loadFixtures } from '../../../tests/harness/lib/fixture-loader.js'
-import { scoreEMR } from '../scoreEMR.js'
+import { scoreEMR } from '../emr/scoreEMR.js'
 import { scoreLocation } from '../location/scoreLocation.js'
 import { createDurationScorer } from '../duration/scoreDuration.js'
 import { combineAndRank } from '../combineAndRank.js'

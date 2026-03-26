@@ -7,7 +7,7 @@ import { filterEligiblePhysicians } from '../../../src/matchingLogic/filterEligi
 // When a real scorer is built, change one import in stub-scorers.js and nothing here changes.
 // The harness doesnt care whats inside. It just calls the function and gets results.
 
-import { scoreEMR } from '../../../src/scoring/scoreEMR.js'
+import { scoreEMR } from '../../../src/scoring/emr/scoreEMR.js'
 import { scoreLocation } from '../../../src/scoring/location/scoreLocation.js'
 import { createDurationScorer } from '../../../src/scoring/duration/scoreDuration.js'
 import { computeWeightedScore } from '../../../src/scoring/combineAndRank.js'

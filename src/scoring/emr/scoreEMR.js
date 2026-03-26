@@ -31,11 +31,11 @@
 //   Unknown names fall through unchanged — exact match still works for anything
 //   not in the table.
 
-/** @typedef {import("../interfaces/core/models.js").Physician} Physician */
-/** @typedef {import("../interfaces/core/models.js").LocumJob} LocumJob */
-/** @typedef {import("./scoring.config.js").EMRScorerConfig} EMRScorerConfig */
+/** @typedef {import("../../interfaces/core/models.js").Physician} Physician */
+/** @typedef {import("../../interfaces/core/models.js").LocumJob} LocumJob */
+/** @typedef {import("../scoring.config.js").EMRScorerConfig} EMRScorerConfig */
 
-import { EMR_DEFAULTS } from './scoring.config.js'
+import { EMR_DEFAULTS } from '../scoring.config.js'
 
 /** @param {number} n */
 const clamp01 = (n) => Math.max(0, Math.min(1, n))
