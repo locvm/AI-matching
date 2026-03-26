@@ -51,9 +51,10 @@ export const VALID_JOB_FILTERS = ['short-term', 'long-term']
 // test defaults
 export const TEST = {
   SEED: 42,
-  MAX_JOBS: 5,
-  MAX_USERS: 100,
-  // physician-centric: fewer physicians, ALL jobs so they actually find matches
+  // job-centric: few random jobs, ALL physicians
+  JOB_MAX_JOBS: 20,
+  JOB_MAX_USERS: Infinity,
+  // physician-centric: few random physicians, ALL jobs
   PHYSICIAN_MAX_USERS: 20,
   PHYSICIAN_MAX_JOBS: Infinity,
 }

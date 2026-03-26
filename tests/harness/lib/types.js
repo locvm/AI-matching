@@ -53,6 +53,7 @@ export {}
  * @property {number} [topK]
  * @property {string} [outputDir]
  * @property {SamplerConfig} [sampling]
+ * @property {boolean} [skipCsv]
  */
 
 /**

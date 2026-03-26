@@ -16,18 +16,20 @@ beforeAll(async () => {
 // ── Job-centric helpers ─────────────────────────────────────────────────────
 
 /**
- * @param {object} [overrides]
+ * @param {import('../lib/types.js').SamplerConfig & { skipCsv?: boolean }} [overrides]
  * @returns {MatchingTestHarness}
  */
 function createJobHarness(overrides = {}) {
+  const { skipCsv, ...samplingOverrides } = overrides
   return new MatchingTestHarness(fixtures, {
     topK: OUTPUT.TOP_K,
     outputDir: PATHS.JOB_OUTPUT_DIR,
+    skipCsv,
     sampling: {
-      maxJobs: TEST.MAX_JOBS,
-      maxUsers: TEST.MAX_USERS,
+      maxJobs: TEST.JOB_MAX_JOBS,
+      maxUsers: TEST.JOB_MAX_USERS,
       seed: TEST.SEED,
-      ...overrides,
+      ...samplingOverrides,
     },
   })
 }
@@ -35,18 +37,20 @@ function createJobHarness(overrides = {}) {
 // ── Physician-centric helpers ───────────────────────────────────────────────
 
 /**
- * @param {object} [overrides]
+ * @param {import('../lib/types.js').SamplerConfig & { skipCsv?: boolean }} [overrides]
  * @returns {PhysicianTestHarness}
  */
 function createPhysicianHarness(overrides = {}) {
+  const { skipCsv, ...samplingOverrides } = overrides
   return new PhysicianTestHarness(fixtures, {
     topK: OUTPUT.TOP_K,
     outputDir: PATHS.PHYSICIAN_OUTPUT_DIR,
+    skipCsv,
     sampling: {
       maxJobs: TEST.PHYSICIAN_MAX_JOBS,
       maxUsers: TEST.PHYSICIAN_MAX_USERS,
       seed: TEST.SEED,
-      ...overrides,
+      ...samplingOverrides,
     },
   })
 }
@@ -64,7 +68,7 @@ describe('MatchingTestHarness – end-to-end', () => {
   })
 
   it('should process the expected number of sampled jobs', () => {
-    expect(result.jobsProcessed).toBeLessThanOrEqual(TEST.MAX_JOBS)
+    expect(result.jobsProcessed).toBeLessThanOrEqual(TEST.JOB_MAX_JOBS)
     expect(result.jobsProcessed).toBeGreaterThan(0)
   })
 
@@ -133,8 +137,8 @@ describe('MatchingTestHarness – end-to-end', () => {
 
 describe('MatchingTestHarness – determinism', () => {
   it('should produce identical results with the same seed', async () => {
-    const result1 = await createJobHarness({ seed: 999 }).run()
-    const result2 = await createJobHarness({ seed: 999 }).run()
+    const result1 = await createJobHarness({ seed: 999, skipCsv: true }).run()
+    const result2 = await createJobHarness({ seed: 999, skipCsv: true }).run()
 
     expect(result1.jobsProcessed).toBe(result2.jobsProcessed)
     expect(result1.totalMatches).toBe(result2.totalMatches)
@@ -149,8 +153,8 @@ describe('MatchingTestHarness – determinism', () => {
   })
 
   it('should produce different results with different seeds', async () => {
-    const result1 = await createJobHarness({ seed: 111 }).run()
-    const result2 = await createJobHarness({ seed: 222 }).run()
+    const result1 = await createJobHarness({ seed: 111, skipCsv: true }).run()
+    const result2 = await createJobHarness({ seed: 222, skipCsv: true }).run()
 
     const jobs1 = result1.results.map((r) => r.job._id).sort()
     const jobs2 = result2.results.map((r) => r.job._id).sort()
@@ -167,7 +171,7 @@ describe('PhysicianTestHarness – end-to-end', () => {
   })
 
   it('should process the expected number of sampled physicians', () => {
-    expect(result.physiciansProcessed).toBeLessThanOrEqual(TEST.MAX_USERS)
+    expect(result.physiciansProcessed).toBeLessThanOrEqual(TEST.PHYSICIAN_MAX_USERS)
     expect(result.physiciansProcessed).toBeGreaterThan(0)
   })
 
@@ -236,8 +240,8 @@ describe('PhysicianTestHarness – end-to-end', () => {
 
 describe('PhysicianTestHarness – determinism', () => {
   it('should produce identical results with the same seed', async () => {
-    const result1 = await createPhysicianHarness({ seed: 999 }).run()
-    const result2 = await createPhysicianHarness({ seed: 999 }).run()
+    const result1 = await createPhysicianHarness({ seed: 999, skipCsv: true }).run()
+    const result2 = await createPhysicianHarness({ seed: 999, skipCsv: true }).run()
 
     expect(result1.physiciansProcessed).toBe(result2.physiciansProcessed)
     expect(result1.totalMatches).toBe(result2.totalMatches)
@@ -252,8 +256,8 @@ describe('PhysicianTestHarness – determinism', () => {
   })
 
   it('should produce different results with different seeds', async () => {
-    const result1 = await createPhysicianHarness({ seed: 111 }).run()
-    const result2 = await createPhysicianHarness({ seed: 222 }).run()
+    const result1 = await createPhysicianHarness({ seed: 111, skipCsv: true }).run()
+    const result2 = await createPhysicianHarness({ seed: 222, skipCsv: true }).run()
 
     const physicians1 = result1.results.map((r) => r.physician._id).sort()
     const physicians2 = result2.results.map((r) => r.physician._id).sort()

@@ -35,8 +35,8 @@ beforeAll(async () => {
  */
 function runHardFilterWithSampling(sampling = {}) {
   const config = {
-    maxJobs: sampling.maxJobs ?? TEST.MAX_JOBS,
-    maxUsers: sampling.maxUsers ?? TEST.MAX_USERS,
+    maxJobs: sampling.maxJobs ?? TEST.JOB_MAX_JOBS,
+    maxUsers: sampling.maxUsers ?? TEST.JOB_MAX_USERS,
     seed: sampling.seed ?? TEST.SEED,
   }
   const sampler = new Sampler(config)
@@ -67,9 +67,9 @@ describe('Hard filter – harness-backed integration', () => {
   it('uses sampled jobs and users from fixtures', () => {
     const { sampledJobs, sampledPhysicians } = defaultRun
     expect(sampledJobs.length).toBeGreaterThan(0)
-    expect(sampledJobs.length).toBeLessThanOrEqual(TEST.MAX_JOBS)
+    expect(sampledJobs.length).toBeLessThanOrEqual(TEST.JOB_MAX_JOBS)
     expect(sampledPhysicians.length).toBeGreaterThan(0)
-    expect(sampledPhysicians.length).toBeLessThanOrEqual(TEST.MAX_USERS)
+    expect(sampledPhysicians.length).toBeLessThanOrEqual(TEST.JOB_MAX_USERS)
   })
 
   it('returns one result set per sampled job', () => {
