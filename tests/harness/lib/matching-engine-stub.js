@@ -1,16 +1,19 @@
 // @ts-check
 
-import { filterEligiblePhysicians } from '../../../src/matchingLogic/filterEligiblePhysicians.js'
-// Stub implementations of ScoreJobFn and ScorePhysicianFn.
+// Matching Engine Harness
 //
-// Uses modular stub scorers so each category can be swapped independently.
-// When a real scorer is built, change one import in stub-scorers.js and nothing here changes.
-// The harness doesnt care whats inside. It just calls the function and gets results.
+// Full pipeline implementation: Filter → Score → Combine & Rank
+// Uses real scorers and real hard filters — no stubs.
+//
+// Stage 1 (Filter):  filterEligiblePhysicians — profession, specialty, isLooking, applicant check, duration, province
+// Stage 2 (Score):   scoreLocation, scoreDuration, scoreEMR — each returns 0-1
+// Stage 3 (Rank):    combineAndRank — applies weights, threshold, limit, sorts descending
 
+import { filterEligiblePhysicians } from '../../../src/matchingLogic/filterEligiblePhysicians.js'
 import { scoreEMR } from '../../../src/scoring/emr/scoreEMR.js'
 import { scoreLocation } from '../../../src/scoring/location/scoreLocation.js'
 import { createDurationScorer } from '../../../src/scoring/duration/scoreDuration.js'
-import { computeWeightedScore } from '../../../src/scoring/combineAndRank.js'
+import { combineAndRank } from '../../../src/scoring/combineAndRank.js'
 
 const scoreDuration = createDurationScorer()
 
@@ -19,10 +22,14 @@ const scoreDuration = createDurationScorer()
  * @typedef {import('./types.js').LocumJob} LocumJob
  * @typedef {import('./types.js').Reservation} Reservation
  * @typedef {import('./types.js').SearchResult} SearchResult
+ * @typedef {import('../../../src/interfaces/matching/matching.js').ScoredPair} ScoredPair
+ * @typedef {import('../../../src/interfaces/matching/matching.js').SearchOptions} SearchOptions
  */
 
 /** Reservation statuses that mean the job is still accepting applicants. Others (Completed, Cancelled, Expired) are excluded. */
 const ELIGIBLE_RESERVATION_STATUSES = new Set(['Pending', 'In Progress', 'Ongoing'])
+
+// ── Stage 2: Score one pair ──────────────────────────────────────────────
 
 /**
  * Collects data quality flags for a physician-job pair.
@@ -55,40 +62,55 @@ function collectFlags(physician, job) {
 }
 
 /**
- * Scores a single physician-job pair across all 3 categories and combines.
+ * Scores a single physician-job pair across all 3 categories.
+ * Returns a ScoredPair with raw 0-1 scores — no weighting or total yet.
  *
  * @param {Physician} physician
  * @param {LocumJob} job
- * @returns {SearchResult}
+ * @returns {ScoredPair}
  */
-function scoreAndBuild(physician, job) {
-  const scores = {
-    location: scoreLocation(physician, job.location, job.fullAddress),
-    duration: scoreDuration(physician, job.dateRange).score,
-    emr: scoreEMR(physician, job),
-  }
-
-  const { totalScore: score, breakdown } = computeWeightedScore(scores)
-  const flags = collectFlags(physician, job)
-
+function scoreMatch(physician, job) {
   return {
     physicianId: physician._id,
     jobId: job._id,
-    score,
-    breakdown,
-    flags,
+    breakdown: {
+      location: scoreLocation(physician, job.location, job.fullAddress),
+      duration: scoreDuration(physician, job.dateRange).score,
+      emr: scoreEMR(physician, job),
+    },
+    flags: collectFlags(physician, job),
   }
 }
 
+// ── Helpers ──────────────────────────────────────────────────────────────
+
 /**
- * Stub ScoreJobFn. Job-centric: 1 job → find matching physicians.
+ * True if we should run matching for this job.
  *
- * Pipeline: filter → score each pair → combine → sort → return.
+ * @param {Reservation | null | undefined} reservation
+ * @returns {boolean}
+ */
+function isJobAcceptingApplicants(reservation) {
+  if (!reservation) return true
+  const status = (reservation.status ?? '').trim()
+  return ELIGIBLE_RESERVATION_STATUSES.has(status)
+}
+
+// ── Top-level orchestrators ──────────────────────────────────────────────
+
+/**
+ * Job-centric: "A new job was posted, find matching physicians."
+ *
+ * Pipeline:
+ *   1. Check reservation status (skip closed/expired jobs)
+ *   2. Stage 1 — filterEligiblePhysicians (hard filters)
+ *   3. Stage 2 — scoreMatch per eligible physician (raw 0-1 scores)
+ *   4. Stage 3 — combineAndRank (apply weights, threshold, limit, sort)
  *
  * @type {import('../../../src/interfaces/matching/matching.js').ScoreJobFn}
  */
 export async function searchPhysicians(job, physicians, reservation, options) {
-  if (!isJobAcceptingApplicants(job, reservation)) {
+  if (!isJobAcceptingApplicants(reservation)) {
     return []
   }
 
@@ -99,52 +121,37 @@ export async function searchPhysicians(job, physicians, reservation, options) {
     /** @type {any} */ ({ job, reservation, options: { onlyLookingForLocums: true } })
   )
 
-  /** @type {SearchResult[]} */
-  const results = []
-
+  /** @type {ScoredPair[]} */
+  const scoredPairs = []
   for (const physician of eligible) {
-    results.push(scoreAndBuild(/** @type {any} */ (physician), job))
+    scoredPairs.push(scoreMatch(/** @type {any} */ (physician), job))
   }
 
-  results.sort((a, b) => b.score - a.score)
-  return results
+  return combineAndRank(scoredPairs, options)
 }
 
 /**
- * True if we should run matching for this job.
- * @param {LocumJob} job
- * @param {Reservation | null | undefined} reservation
- * @returns {boolean}
- */
-function isJobAcceptingApplicants(job, reservation) {
-  if (!reservation) return true
-  const status = (reservation.status ?? '').trim()
-  return ELIGIBLE_RESERVATION_STATUSES.has(status)
-}
-
-/**
- * Stub ScorePhysicianFn. Physician-centric: 1 physician → find matching jobs.
+ * Physician-centric: "A new physician signed up, find matching jobs."
  *
  * Same hard filters as searchPhysicians — both paths go through
- * filterEligiblePhysicians (IsEligiblePhysicianFn) so any new filter
- * (duration, province, future gates) is automatically applied here too.
+ * filterEligiblePhysicians so any new filter is automatically applied here too.
  *
- * We wrap the single physician in an array and call filterEligiblePhysicians
- * per job. If the physician survives the filter, we score; otherwise skip.
+ * Pipeline:
+ *   1. Per job: check reservation status → hard filter the single physician
+ *   2. Stage 2 — scoreMatch for each passing pair
+ *   3. Stage 3 — combineAndRank (apply weights, threshold, limit, sort)
  *
- * Pipeline: per-job filter → score each passing pair → sort → return.
- *
- * @type {import('../../../src/interfaces/index.js').ScorePhysicianFn}
+ * @type {import('../../../src/interfaces/matching/matching.js').ScorePhysicianFn}
  */
 export async function searchJobs(physician, jobs, reservations, options) {
-  /** @type {SearchResult[]} */
-  const results = []
+  /** @type {ScoredPair[]} */
+  const scoredPairs = []
   const pool = [physician]
 
   for (const job of jobs) {
     const reservation = reservations?.find((r) => r.locumJobId === job._id) ?? undefined
 
-    if (!isJobAcceptingApplicants(job, reservation ?? null)) continue
+    if (!isJobAcceptingApplicants(reservation)) continue
 
     const eligible = filterEligiblePhysicians(
       /** @type {any} */ (pool),
@@ -155,9 +162,8 @@ export async function searchJobs(physician, jobs, reservations, options) {
 
     if (eligible.length === 0) continue
 
-    results.push(scoreAndBuild(physician, job))
+    scoredPairs.push(scoreMatch(physician, job))
   }
 
-  results.sort((a, b) => b.score - a.score)
-  return results
+  return combineAndRank(scoredPairs, options)
 }
