@@ -1,0 +1,21 @@
+{
+  "name": "@locvm/sandbox",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "dependencies": {
+    "@bull-board/api": "^6.20.6",
+    "@bull-board/express": "^6.20.6",
+    "@locvm/orchestration": "*",
+    "@locvm/types": "*",
+    "bullmq": "^5.71.1",
+    "express": "^5.2.1",
+    "ioredis": "^5.10.1"
+  }
+}
