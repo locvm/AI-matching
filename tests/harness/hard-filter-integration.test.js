@@ -69,7 +69,11 @@ describe('Hard filter – harness-backed integration', () => {
     expect(sampledJobs.length).toBeGreaterThan(0)
     expect(sampledJobs.length).toBeLessThanOrEqual(TEST.JOB_MAX_JOBS)
     expect(sampledPhysicians.length).toBeGreaterThan(0)
-    expect(sampledPhysicians.length).toBeLessThanOrEqual(TEST.JOB_MAX_USERS)
+    if (Number.isFinite(TEST.JOB_MAX_USERS)) {
+      expect(sampledPhysicians.length).toBeLessThanOrEqual(TEST.JOB_MAX_USERS)
+    } else {
+      expect(sampledPhysicians.length).toBe(fixtures.physicians.length)
+    }
   })
 
   it('returns one result set per sampled job', () => {
