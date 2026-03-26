@@ -24,11 +24,6 @@
     "radius": 25,
     "name": "Alexandria Area"
   },
-  "Allistion": {
-    "center": [44.1535, -79.8726],
-    "radius": 20,
-    "name": "Allistion Area"
-  },
   "Alliston": {
     "center": [44.1535, -79.8726],
     "radius": 25,
@@ -1365,7 +1360,7 @@
     "name": "Pohénégamook Area"
   },
   "Pont-Rouge": {
-    "center": [45.450001, -73.816666],
+    "center": [46.75, -71.7],
     "radius": 25,
     "name": "Pont-Rouge Area"
   },

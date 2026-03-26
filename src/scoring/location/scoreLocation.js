@@ -43,10 +43,10 @@ const TORONTO_ALIASES = new Set(['north york', 'scarborough', 'etobicoke', 'east
  * Looks up GPS coordinates for a Canadian city.
  *
  * @param {string} city - city name (any case, gets trimmed and lowercased)
- * @param {string} [province] - optional province code (kept for API compat, not used for keying)
+ * @param {string} [_province] - unused, kept for API compat (city-only keying since JSON has no province metadata)
  * @returns {GeoCoordinates | null}
  */
-export function lookupCity(city, province) {
+export function lookupCity(city, _province) {
   if (!city) return null
   const cleanCity = city.trim().toLowerCase()
 

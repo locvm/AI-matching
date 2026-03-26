@@ -5,7 +5,7 @@
 // Geocodes all physicians that have a workAddress but no GPS coordinates.
 // Supports two modes: local lookup (instant) and Nominatim API (1 req/sec).
 //
-// The local lookup uses canadianCities.js and covers ~100 known cities.
+// The local lookup uses scoreLocation.js (backed by canadianCities.json, ~420 cities).
 // Nominatim is the fallback for cities the local table doesnt have.
 
 /** @typedef {import("../interfaces/core/models.js").Physician} Physician */
