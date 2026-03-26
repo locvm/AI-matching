@@ -41,6 +41,7 @@ describe('lookupCity', () => {
   it('finds cities without province', () => {
     const coords = lookupCity('Toronto')
     expect(coords).not.toBeNull()
+    // @ts-expect-error - coords asserted non-null above
     expect(coords.lat).toBeCloseTo(43.65, 1)
   })
 
@@ -90,6 +91,7 @@ describe('lookupAddress', () => {
   it('finds city even when address is missing province', () => {
     const coords = lookupAddress({ city: 'Toronto' })
     expect(coords).not.toBeNull()
+    // @ts-expect-error - coords asserted non-null above
     expect(coords.lat).toBeCloseTo(43.65, 1)
   })
 
