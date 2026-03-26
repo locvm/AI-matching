@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { lookupCity, lookupAddress } from '../canadianCities.js'
+import { lookupCity, lookupAddress } from '../scoreLocation.js'
 
 describe('lookupCity', () => {
   it('finds Toronto with province code ON', () => {
@@ -34,11 +34,15 @@ describe('lookupCity', () => {
 
   it('returns null for empty inputs', () => {
     expect(lookupCity('', 'ON')).toBeNull()
-    expect(lookupCity('Toronto', '')).toBeNull()
     // @ts-expect-error - intentional boundary test: null city
     expect(lookupCity(null, 'ON')).toBeNull()
-    // @ts-expect-error - intentional boundary test: null province
-    expect(lookupCity('Toronto', null)).toBeNull()
+  })
+
+  it('finds cities without province', () => {
+    const coords = lookupCity('Toronto')
+    expect(coords).not.toBeNull()
+    // @ts-expect-error - coords asserted non-null above
+    expect(coords.lat).toBeCloseTo(43.65, 1)
   })
 
   it('resolves Toronto subdivisions to Toronto coords', () => {
@@ -84,10 +88,11 @@ describe('lookupAddress', () => {
     expect(lookupAddress({ city: '', province: 'ON' })).toBeNull()
   })
 
-  it('returns null when address is missing province', () => {
-    expect(lookupAddress({ city: 'Toronto' })).toBeNull()
-    // @ts-expect-error - intentional boundary test: empty province
-    expect(lookupAddress({ city: 'Toronto', province: '' })).toBeNull()
+  it('finds city even when address is missing province', () => {
+    const coords = lookupAddress({ city: 'Toronto' })
+    expect(coords).not.toBeNull()
+    // @ts-expect-error - coords asserted non-null above
+    expect(coords.lat).toBeCloseTo(43.65, 1)
   })
 
   it('returns null for null/undefined address', () => {

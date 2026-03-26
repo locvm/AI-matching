@@ -17,9 +17,11 @@
 /** @typedef {import("../../interfaces/core/models.js").Address} Address */
 /** @typedef {import("../../interfaces/core/models.js").ProvinceCode} ProvinceCode */
 
+import { readFileSync } from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
 import { normalizeProvince } from '../../normalization/normalizeProvince.js'
 import { LOCATION_CONFIG } from '../../config/locationConfig.js'
-import { lookupCity } from './canadianCities.js'
 
 // ── Haversine distance ─────────────────────────────────────────────────────
 
@@ -48,6 +50,54 @@ export function haversineKm(a, b) {
   const angularDistance = 2 * Math.atan2(Math.sqrt(halfChord), Math.sqrt(1 - halfChord))
 
   return EARTH_RADIUS_KM * angularDistance
+}
+
+// ── Canadian Cities JSON lookup (420 cities) ─────────────────────────────
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+/** @type {Record<string, { center: [number, number], radius: number, name: string }>} */
+const CITIES_JSON = JSON.parse(readFileSync(join(__dirname, 'canadianCities.json'), 'utf-8'))
+
+/** @type {Map<string, GeoCoordinates>} */
+const CITIES_BY_NAME = new Map()
+for (const [name, entry] of Object.entries(CITIES_JSON)) {
+  CITIES_BY_NAME.set(name.toLowerCase(), { lat: entry.center[0], lng: entry.center[1] })
+}
+
+const TORONTO_ALIASES = new Set(['north york', 'scarborough', 'etobicoke', 'east york', 'york'])
+
+/**
+ * Looks up GPS coordinates for a Canadian city.
+ *
+ * @param {string} city - city name (any case, gets trimmed and lowercased)
+ * @param {string} [_province] - unused, kept for API compat (city-only keying since JSON has no province metadata)
+ * @returns {GeoCoordinates | null}
+ */
+export function lookupCity(city, _province) {
+  if (!city) return null
+  const cleanCity = city.trim().toLowerCase()
+
+  const direct = CITIES_BY_NAME.get(cleanCity)
+  if (direct) return direct
+
+  if (TORONTO_ALIASES.has(cleanCity)) {
+    return CITIES_BY_NAME.get('toronto') ?? null
+  }
+
+  return null
+}
+
+/**
+ * Looks up GPS coordinates from an Address object.
+ *
+ * @param {import("../../interfaces/core/models.js").Address} address
+ * @returns {GeoCoordinates | null}
+ */
+export function lookupAddress(address) {
+  if (!address?.city) return null
+  return lookupCity(address.city, address.province)
 }
 
 /**
