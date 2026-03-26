@@ -21,13 +21,9 @@ beforeAll(async () => {
 
   jobsWithEMR = fixtures.jobs.filter((j) => j.facilityInfo?.emr?.trim())
 
-  physiciansWithEMR = fixtures.physicians.filter(
-    (p) => (p.emrSystems?.length ?? 0) > 0 || p.facilityEMR
-  )
+  physiciansWithEMR = fixtures.physicians.filter((p) => (p.emrSystems?.length ?? 0) > 0 || p.facilityEMR)
 
-  physiciansWithoutEMR = fixtures.physicians.filter(
-    (p) => (p.emrSystems?.length ?? 0) === 0 && !p.facilityEMR
-  )
+  physiciansWithoutEMR = fixtures.physicians.filter((p) => (p.emrSystems?.length ?? 0) === 0 && !p.facilityEMR)
 })
 
 describe('score-emr harness – sanity', () => {
