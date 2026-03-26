@@ -88,7 +88,8 @@ export class MatchingTestHarness {
       totalMatches += results.length
     }
 
-    let outputPath = ''
+    /** @type {string | null} */
+    let outputPath = null
     if (!this.#config.skipCsv) {
       const writer = new CsvReportWriter(this.#config.outputDir)
       outputPath = await writer.write(harnessResults, {
@@ -176,7 +177,8 @@ export class PhysicianTestHarness {
       totalMatches += results.length
     }
 
-    let outputPath = ''
+    /** @type {string | null} */
+    let outputPath = null
     if (!this.#config.skipCsv) {
       const writer = new PhysicianCsvReportWriter(this.#config.outputDir)
       outputPath = await writer.write(harnessResults, {

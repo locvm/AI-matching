@@ -60,7 +60,7 @@ export {}
  * Return value of MatchingTestHarness.run().
  *
  * @typedef {object} HarnessRunResult
- * @property {string} outputPath
+ * @property {string | null} outputPath
  * @property {number} jobsProcessed
  * @property {number} totalMatches
  * @property {number} seed
@@ -119,7 +119,7 @@ export {}
  * Return value of PhysicianTestHarness.run().
  *
  * @typedef {object} PhysicianHarnessRunResult
- * @property {string} outputPath
+ * @property {string | null} outputPath
  * @property {number} physiciansProcessed
  * @property {number} totalMatches
  * @property {number} seed
