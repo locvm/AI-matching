@@ -364,10 +364,10 @@
     "radius": 20,
     "name": "Clarington Area"
   },
-  "Clermont,-Capitale-Nationale": {
+  "Clermont": {
     "center": [47.695621, -70.220268],
     "radius": 25,
-    "name": "Clermont,-Capitale-Nationale Area"
+    "name": "Clermont Area"
   },
   "Coaticook": {
     "center": [45.132519, -71.80529],
