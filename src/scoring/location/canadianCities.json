@@ -1,0 +1,3362 @@
+{
+  "Abbotsford": {
+    "center": [
+      49.0504,
+      -122.3045
+    ],
+    "radius": 30,
+    "name": "Abbotsford Area"
+  },
+  "Acton Vale": {
+    "center": [
+      45.650002,
+      -72.566666
+    ],
+    "radius": 25,
+    "name": "Acton Vale Area"
+  },
+  "Airdrie": {
+    "center": [
+      51.291668,
+      -114.014442
+    ],
+    "radius": 25,
+    "name": "Airdrie Area"
+  },
+  "Ajax": {
+    "center": [
+      43.85,
+      -79.0167
+    ],
+    "radius": 20,
+    "name": "Ajax Area"
+  },
+  "Alexandria": {
+    "center": [
+      45.3168,
+      -74.6447
+    ],
+    "radius": 25,
+    "name": "Alexandria Area"
+  },
+  "Allistion": {
+    "center": [
+      44.1535,
+      -79.8726
+    ],
+    "radius": 20,
+    "name": "Allistion Area"
+  },
+  "Alliston": {
+    "center": [
+      44.1535,
+      -79.8726
+    ],
+    "radius": 25,
+    "name": "Alliston Area"
+  },
+  "Alton": {
+    "center": [
+      43.8595,
+      -80.0675
+    ],
+    "radius": 15,
+    "name": "Alton Area"
+  },
+  "Armstrong": {
+    "center": [
+      50.448334,
+      -119.196114
+    ],
+    "radius": 25,
+    "name": "Armstrong Area"
+  },
+  "Arnprior": {
+    "center": [
+      45.4333,
+      -76.35
+    ],
+    "radius": 20,
+    "name": "Arnprior Area"
+  },
+  "Aurora": {
+    "center": [
+      44,
+      -79.4667
+    ],
+    "radius": 15,
+    "name": "Aurora Area"
+  },
+  "Baie-Saint-Paul": {
+    "center": [
+      47.450001,
+      -70.5
+    ],
+    "radius": 25,
+    "name": "Baie-Saint-Paul Area"
+  },
+  "Bancroft": {
+    "center": [
+      45.0667,
+      -77.85
+    ],
+    "radius": 25,
+    "name": "Bancroft Area"
+  },
+  "Barkmere": {
+    "center": [
+      46,
+      -74.583336
+    ],
+    "radius": 25,
+    "name": "Barkmere Area"
+  },
+  "Barrie": {
+    "center": [
+      44.3894,
+      -79.6903
+    ],
+    "radius": 30,
+    "name": "Barrie Area"
+  },
+  "Bathurst": {
+    "center": [
+      47.619999,
+      -65.650002
+    ],
+    "radius": 25,
+    "name": "Bathurst Area"
+  },
+  "Beaconsfield": {
+    "center": [
+      45.433334,
+      -73.866669
+    ],
+    "radius": 25,
+    "name": "Beaconsfield Area"
+  },
+  "Beauceville": {
+    "center": [
+      46.200001,
+      -70.783333
+    ],
+    "radius": 25,
+    "name": "Beauceville Area"
+  },
+  "Beauharnois": {
+    "center": [
+      45.32,
+      -73.870003
+    ],
+    "radius": 25,
+    "name": "Beauharnois Area"
+  },
+  "Beaumont": {
+    "center": [
+      53.357224,
+      -113.414719
+    ],
+    "radius": 25,
+    "name": "Beaumont Area"
+  },
+  "Beaupré": {
+    "center": [
+      47.049999,
+      -70.900002
+    ],
+    "radius": 25,
+    "name": "Beaupré Area"
+  },
+  "Bedford": {
+    "center": [
+      45.116669,
+      -72.98333
+    ],
+    "radius": 25,
+    "name": "Bedford Area"
+  },
+  "Belleterre": {
+    "center": [
+      47.389259,
+      -78.703987
+    ],
+    "radius": 25,
+    "name": "Belleterre Area"
+  },
+  "Belleville": {
+    "center": [
+      44.1628,
+      -77.3832
+    ],
+    "radius": 25,
+    "name": "Belleville Area"
+  },
+  "Beloeil": {
+    "center": [
+      45.567924,
+      -73.203949
+    ],
+    "radius": 25,
+    "name": "Beloeil Area"
+  },
+  "Berthierville": {
+    "center": [
+      46.081161,
+      -73.180878
+    ],
+    "radius": 25,
+    "name": "Berthierville Area"
+  },
+  "Blainville": {
+    "center": [
+      45.668896,
+      -73.872871
+    ],
+    "radius": 25,
+    "name": "Blainville Area"
+  },
+  "Bois-Des-Filion": {
+    "center": [
+      45.667992,
+      -73.756699
+    ],
+    "radius": 25,
+    "name": "Bois-Des-Filion Area"
+  },
+  "Boisbriand": {
+    "center": [
+      45.61311,
+      -73.838768
+    ],
+    "radius": 25,
+    "name": "Boisbriand Area"
+  },
+  "Bonaventure": {
+    "center": [
+      48.04446,
+      -65.491669
+    ],
+    "radius": 25,
+    "name": "Bonaventure Area"
+  },
+  "Boucherville": {
+    "center": [
+      45.60429,
+      -73.453583
+    ],
+    "radius": 25,
+    "name": "Boucherville Area"
+  },
+  "Bowmanville": {
+    "center": [
+      43.9167,
+      -78.6833
+    ],
+    "radius": 15,
+    "name": "Bowmanville Area"
+  },
+  "Bracebridge": {
+    "center": [
+      45.0333,
+      -79.3167
+    ],
+    "radius": 20,
+    "name": "Bracebridge Area"
+  },
+  "Brampton": {
+    "center": [
+      43.6833,
+      -79.7667
+    ],
+    "radius": 25,
+    "name": "Brampton Area"
+  },
+  "Brandon": {
+    "center": [
+      49.848331,
+      -99.949997
+    ],
+    "radius": 25,
+    "name": "Brandon Area"
+  },
+  "Brantford": {
+    "center": [
+      43.1394,
+      -80.2644
+    ],
+    "radius": 25,
+    "name": "Brantford Area"
+  },
+  "Brighton": {
+    "center": [
+      44.0333,
+      -77.7333
+    ],
+    "radius": 15,
+    "name": "Brighton Area"
+  },
+  "Brock": {
+    "center": [
+      44.3,
+      -79.0833
+    ],
+    "radius": 15,
+    "name": "Brock Area"
+  },
+  "Brockville": {
+    "center": [
+      44.5833,
+      -75.6833
+    ],
+    "radius": 25,
+    "name": "Brockville Area"
+  },
+  "Bromont": {
+    "center": [
+      45.319649,
+      -72.648338
+    ],
+    "radius": 25,
+    "name": "Bromont Area"
+  },
+  "Brooks": {
+    "center": [
+      50.564167,
+      -111.898888
+    ],
+    "radius": 25,
+    "name": "Brooks Area"
+  },
+  "Brossard": {
+    "center": [
+      45.455151,
+      -73.465439
+    ],
+    "radius": 25,
+    "name": "Brossard Area"
+  },
+  "Brownsburg-Chatham": {
+    "center": [
+      45.6759,
+      -74.407372
+    ],
+    "radius": 25,
+    "name": "Brownsburg-Chatham Area"
+  },
+  "Burlington": {
+    "center": [
+      43.3255,
+      -79.799
+    ],
+    "radius": 20,
+    "name": "Burlington Area"
+  },
+  "Burnaby": {
+    "center": [
+      49.2488,
+      -122.9805
+    ],
+    "radius": 30,
+    "name": "Burnaby Area"
+  },
+  "Bécancour": {
+    "center": [
+      46.333332,
+      -72.433334
+    ],
+    "radius": 25,
+    "name": "Bécancour Area"
+  },
+  "Caledon": {
+    "center": [
+      43.8668,
+      -79.8667
+    ],
+    "radius": 25,
+    "name": "Caledon Area"
+  },
+  "Calgary": {
+    "center": [
+      51.0447,
+      -114.0719
+    ],
+    "radius": 50,
+    "name": "Calgary Area"
+  },
+  "Cambridge": {
+    "center": [
+      43.3616,
+      -80.3144
+    ],
+    "radius": 20,
+    "name": "Cambridge Area"
+  },
+  "Campbell River": {
+    "center": [
+      50.024445,
+      -125.247498
+    ],
+    "radius": 25,
+    "name": "Campbell River Area"
+  },
+  "Campbellton": {
+    "center": [
+      48.005001,
+      -66.673058
+    ],
+    "radius": 25,
+    "name": "Campbellton Area"
+  },
+  "Camrose": {
+    "center": [
+      53.016666,
+      -112.833336
+    ],
+    "radius": 25,
+    "name": "Camrose Area"
+  },
+  "Candiac": {
+    "center": [
+      45.392399,
+      -73.516579
+    ],
+    "radius": 25,
+    "name": "Candiac Area"
+  },
+  "Cap-Chat": {
+    "center": [
+      49.09771,
+      -66.686783
+    ],
+    "radius": 25,
+    "name": "Cap-Chat Area"
+  },
+  "Cap-Santé": {
+    "center": [
+      46.670872,
+      -71.784027
+    ],
+    "radius": 25,
+    "name": "Cap-Santé Area"
+  },
+  "Carignan": {
+    "center": [
+      45.452,
+      -73.310867
+    ],
+    "radius": 25,
+    "name": "Carignan Area"
+  },
+  "Carleton Place": {
+    "center": [
+      45.1333,
+      -76.1333
+    ],
+    "radius": 20,
+    "name": "Carleton Place Area"
+  },
+  "Carleton-Sur-Mer": {
+    "center": [
+      48.10463,
+      -66.127121
+    ],
+    "radius": 25,
+    "name": "Carleton-Sur-Mer Area"
+  },
+  "Castlegar": {
+    "center": [
+      49.325558,
+      -117.666115
+    ],
+    "radius": 25,
+    "name": "Castlegar Area"
+  },
+  "Causapscal": {
+    "center": [
+      48.365391,
+      -67.233917
+    ],
+    "radius": 25,
+    "name": "Causapscal Area"
+  },
+  "Chandler": {
+    "center": [
+      48.354259,
+      -64.681107
+    ],
+    "radius": 25,
+    "name": "Chandler Area"
+  },
+  "Chapais": {
+    "center": [
+      49.781811,
+      -74.854492
+    ],
+    "radius": 25,
+    "name": "Chapais Area"
+  },
+  "Chapleau": {
+    "center": [
+      47.8399,
+      -83.3989
+    ],
+    "radius": 25,
+    "name": "Chapleau Area"
+  },
+  "Charlemagne": {
+    "center": [
+      45.721001,
+      -73.486168
+    ],
+    "radius": 25,
+    "name": "Charlemagne Area"
+  },
+  "Charlottetown": {
+    "center": [
+      46.2382,
+      -63.1311
+    ],
+    "radius": 25,
+    "name": "Charlottetown Area"
+  },
+  "Chatham": {
+    "center": [
+      42.4032,
+      -82.1832
+    ],
+    "radius": 25,
+    "name": "Chatham Area"
+  },
+  "Chestermere": {
+    "center": [
+      51.049999,
+      -113.822502
+    ],
+    "radius": 25,
+    "name": "Chestermere Area"
+  },
+  "Chesterville": {
+    "center": [
+      45.0833,
+      -75.2167
+    ],
+    "radius": 15,
+    "name": "Chesterville Area"
+  },
+  "Chibougamau": {
+    "center": [
+      49.913231,
+      -74.369202
+    ],
+    "radius": 25,
+    "name": "Chibougamau Area"
+  },
+  "Chilliwack": {
+    "center": [
+      49.15794,
+      -121.951469
+    ],
+    "radius": 25,
+    "name": "Chilliwack Area"
+  },
+  "Château-Richer": {
+    "center": [
+      46.967319,
+      -71.022614
+    ],
+    "radius": 25,
+    "name": "Château-Richer Area"
+  },
+  "Châteauguay": {
+    "center": [
+      45.363209,
+      -73.738533
+    ],
+    "radius": 25,
+    "name": "Châteauguay Area"
+  },
+  "Clarence-Rockland": {
+    "center": [
+      45.483334,
+      -75.199997
+    ],
+    "radius": 25,
+    "name": "Clarence-Rockland Area"
+  },
+  "Clarington": {
+    "center": [
+      43.9333,
+      -78.6
+    ],
+    "radius": 20,
+    "name": "Clarington Area"
+  },
+  "Clermont,-Capitale-Nationale": {
+    "center": [
+      47.695621,
+      -70.220268
+    ],
+    "radius": 25,
+    "name": "Clermont,-Capitale-Nationale Area"
+  },
+  "Coaticook": {
+    "center": [
+      45.132519,
+      -71.80529
+    ],
+    "radius": 25,
+    "name": "Coaticook Area"
+  },
+  "Cobourg": {
+    "center": [
+      43.9667,
+      -78.1667
+    ],
+    "radius": 20,
+    "name": "Cobourg Area"
+  },
+  "Colborne": {
+    "center": [
+      44.0167,
+      -77.8833
+    ],
+    "radius": 15,
+    "name": "Colborne Area"
+  },
+  "Cold Lake": {
+    "center": [
+      54.464169,
+      -110.182503
+    ],
+    "radius": 25,
+    "name": "Cold Lake Area"
+  },
+  "Collingwood": {
+    "center": [
+      44.5,
+      -80.2167
+    ],
+    "radius": 20,
+    "name": "Collingwood Area"
+  },
+  "Colwood": {
+    "center": [
+      48.423611,
+      -123.495834
+    ],
+    "radius": 25,
+    "name": "Colwood Area"
+  },
+  "Contrecœur": {
+    "center": [
+      45.85751,
+      -73.238708
+    ],
+    "radius": 25,
+    "name": "Contrecœur Area"
+  },
+  "Coquitlam": {
+    "center": [
+      49.283764,
+      -122.793205
+    ],
+    "radius": 25,
+    "name": "Coquitlam Area"
+  },
+  "Corner Brook": {
+    "center": [
+      48.950001,
+      -57.950001
+    ],
+    "radius": 25,
+    "name": "Corner Brook Area"
+  },
+  "Cornwall": {
+    "center": [
+      45.0181,
+      -74.7281
+    ],
+    "radius": 25,
+    "name": "Cornwall Area"
+  },
+  "Coteau-Du-Lac": {
+    "center": [
+      45.296394,
+      -74.1782
+    ],
+    "radius": 25,
+    "name": "Coteau-Du-Lac Area"
+  },
+  "Courtenay": {
+    "center": [
+      49.687778,
+      -124.994446
+    ],
+    "radius": 25,
+    "name": "Courtenay Area"
+  },
+  "Cowansville": {
+    "center": [
+      45.207615,
+      -72.747917
+    ],
+    "radius": 25,
+    "name": "Cowansville Area"
+  },
+  "Cranbrook": {
+    "center": [
+      49.509724,
+      -115.76667
+    ],
+    "radius": 25,
+    "name": "Cranbrook Area"
+  },
+  "Côte-Saint-Luc": {
+    "center": [
+      45.467548,
+      -73.652573
+    ],
+    "radius": 25,
+    "name": "Côte-Saint-Luc Area"
+  },
+  "Danville": {
+    "center": [
+      45.785278,
+      -72.015854
+    ],
+    "radius": 25,
+    "name": "Danville Area"
+  },
+  "Dartmouth": {
+    "center": [
+      44.6709,
+      -63.5765
+    ],
+    "radius": 25,
+    "name": "Dartmouth Area"
+  },
+  "Dauphin": {
+    "center": [
+      51.149445,
+      -100.049446
+    ],
+    "radius": 25,
+    "name": "Dauphin Area"
+  },
+  "Daveluyville": {
+    "center": [
+      46.204311,
+      -72.137604
+    ],
+    "radius": 25,
+    "name": "Daveluyville Area"
+  },
+  "Dawson Creek": {
+    "center": [
+      55.760555,
+      -120.235558
+    ],
+    "radius": 25,
+    "name": "Dawson Creek Area"
+  },
+  "Deep River": {
+    "center": [
+      46.0983,
+      -77.4969
+    ],
+    "radius": 25,
+    "name": "Deep River Area"
+  },
+  "Delson": {
+    "center": [
+      45.369999,
+      -73.550003
+    ],
+    "radius": 25,
+    "name": "Delson Area"
+  },
+  "Delta": {
+    "center": [
+      49.084721,
+      -123.058609
+    ],
+    "radius": 25,
+    "name": "Delta Area"
+  },
+  "Desbiens": {
+    "center": [
+      48.416668,
+      -71.949997
+    ],
+    "radius": 25,
+    "name": "Desbiens Area"
+  },
+  "Disraeli": {
+    "center": [
+      45.900002,
+      -71.349998
+    ],
+    "radius": 25,
+    "name": "Disraeli Area"
+  },
+  "Dolbeau-Mistassini": {
+    "center": [
+      48.883331,
+      -72.23333
+    ],
+    "radius": 25,
+    "name": "Dolbeau-Mistassini Area"
+  },
+  "Dollard-Des-Ormeaux": {
+    "center": [
+      45.483334,
+      -73.816666
+    ],
+    "radius": 25,
+    "name": "Dollard-Des-Ormeaux Area"
+  },
+  "Donnacona": {
+    "center": [
+      46.674721,
+      -71.729446
+    ],
+    "radius": 25,
+    "name": "Donnacona Area"
+  },
+  "Dorval": {
+    "center": [
+      45.450001,
+      -73.75
+    ],
+    "radius": 25,
+    "name": "Dorval Area"
+  },
+  "Drummondville": {
+    "center": [
+      45.883331,
+      -72.48333
+    ],
+    "radius": 25,
+    "name": "Drummondville Area"
+  },
+  "Dryden": {
+    "center": [
+      49.7697,
+      -92.8377
+    ],
+    "radius": 30,
+    "name": "Dryden Area"
+  },
+  "Duncan": {
+    "center": [
+      48.778694,
+      -123.707863
+    ],
+    "radius": 25,
+    "name": "Duncan Area"
+  },
+  "Dundas": {
+    "center": [
+      43.2669,
+      -79.9583
+    ],
+    "radius": 20,
+    "name": "Dundas Area"
+  },
+  "Dunham": {
+    "center": [
+      45.133331,
+      -72.800003
+    ],
+    "radius": 25,
+    "name": "Dunham Area"
+  },
+  "Duparquet": {
+    "center": [
+      48.5,
+      -79.23333
+    ],
+    "radius": 25,
+    "name": "Duparquet Area"
+  },
+  "Dégelis": {
+    "center": [
+      47.549999,
+      -68.650002
+    ],
+    "radius": 25,
+    "name": "Dégelis Area"
+  },
+  "East Angus": {
+    "center": [
+      45.483334,
+      -71.666664
+    ],
+    "radius": 25,
+    "name": "East Angus Area"
+  },
+  "East Gwillimbury": {
+    "center": [
+      44.1333,
+      -79.4167
+    ],
+    "radius": 15,
+    "name": "East Gwillimbury Area"
+  },
+  "Edmonton": {
+    "center": [
+      53.4723,
+      -113.4504
+    ],
+    "radius": 50,
+    "name": "Edmonton Area"
+  },
+  "Edmundston": {
+    "center": [
+      47.376499,
+      -68.325348
+    ],
+    "radius": 25,
+    "name": "Edmundston Area"
+  },
+  "Elliot Lake": {
+    "center": [
+      46.383331,
+      -82.650002
+    ],
+    "radius": 25,
+    "name": "Elliot Lake Area"
+  },
+  "Enderby": {
+    "center": [
+      50.550835,
+      -119.139725
+    ],
+    "radius": 25,
+    "name": "Enderby Area"
+  },
+  "Estevan": {
+    "center": [
+      49.13673,
+      -102.990959
+    ],
+    "radius": 25,
+    "name": "Estevan Area"
+  },
+  "Estérel": {
+    "center": [
+      46.049999,
+      -74.019997
+    ],
+    "radius": 25,
+    "name": "Estérel Area"
+  },
+  "Etobicoke": {
+    "center": [
+      43.6308,
+      -79.5757
+    ],
+    "radius": 25,
+    "name": "Etobicoke Area"
+  },
+  "Farnham": {
+    "center": [
+      45.283333,
+      -72.98333
+    ],
+    "radius": 25,
+    "name": "Farnham Area"
+  },
+  "Fermont": {
+    "center": [
+      52.783333,
+      -67.083336
+    ],
+    "radius": 25,
+    "name": "Fermont Area"
+  },
+  "Fernie": {
+    "center": [
+      49.504166,
+      -115.062775
+    ],
+    "radius": 25,
+    "name": "Fernie Area"
+  },
+  "Forestville": {
+    "center": [
+      48.733334,
+      -69.083336
+    ],
+    "radius": 25,
+    "name": "Forestville Area"
+  },
+  "Fort McMurray": {
+    "center": [
+      56.7268,
+      -111.3803
+    ],
+    "radius": 35,
+    "name": "Fort McMurray Area"
+  },
+  "Fort Saskatchewan": {
+    "center": [
+      53.712776,
+      -113.213333
+    ],
+    "radius": 25,
+    "name": "Fort Saskatchewan Area"
+  },
+  "Fort St. John": {
+    "center": [
+      56.246464,
+      -120.847633
+    ],
+    "radius": 25,
+    "name": "Fort St. John Area"
+  },
+  "Fossambault-Sur-Le-Lac": {
+    "center": [
+      46.866669,
+      -71.616669
+    ],
+    "radius": 25,
+    "name": "Fossambault-Sur-Le-Lac Area"
+  },
+  "Frankford": {
+    "center": [
+      44.2,
+      -77.6
+    ],
+    "radius": 15,
+    "name": "Frankford Area"
+  },
+  "Fredericton": {
+    "center": [
+      45.9636,
+      -66.6431
+    ],
+    "radius": 25,
+    "name": "Fredericton Area"
+  },
+  "Gananoque": {
+    "center": [
+      44.3333,
+      -76.1667
+    ],
+    "radius": 15,
+    "name": "Gananoque Area"
+  },
+  "Gaspé": {
+    "center": [
+      48.833332,
+      -64.48333
+    ],
+    "radius": 25,
+    "name": "Gaspé Area"
+  },
+  "Gatineau": {
+    "center": [
+      45.4765,
+      -75.7013
+    ],
+    "radius": 35,
+    "name": "Gatineau Area"
+  },
+  "Georgina": {
+    "center": [
+      44.3,
+      -79.4333
+    ],
+    "radius": 20,
+    "name": "Georgina Area"
+  },
+  "Gloucester": {
+    "center": [
+      45.3579,
+      -75.5118
+    ],
+    "radius": 25,
+    "name": "Gloucester Area"
+  },
+  "Gracefield": {
+    "center": [
+      46.099998,
+      -76.050003
+    ],
+    "radius": 25,
+    "name": "Gracefield Area"
+  },
+  "Grafton": {
+    "center": [
+      44.0167,
+      -78.0167
+    ],
+    "radius": 15,
+    "name": "Grafton Area"
+  },
+  "Granby": {
+    "center": [
+      45.400002,
+      -72.73333
+    ],
+    "radius": 25,
+    "name": "Granby Area"
+  },
+  "Grand Forks": {
+    "center": [
+      49.033333,
+      -118.440002
+    ],
+    "radius": 25,
+    "name": "Grand Forks Area"
+  },
+  "Grande Prairie": {
+    "center": [
+      55.170834,
+      -118.794724
+    ],
+    "radius": 25,
+    "name": "Grande Prairie Area"
+  },
+  "Grande-Rivière": {
+    "center": [
+      48.400002,
+      -64.5
+    ],
+    "radius": 25,
+    "name": "Grande-Rivière Area"
+  },
+  "Gravenhurst": {
+    "center": [
+      44.9167,
+      -79.3667
+    ],
+    "radius": 20,
+    "name": "Gravenhurst Area"
+  },
+  "Greater Sudbury": {
+    "center": [
+      46.490002,
+      -81.010002
+    ],
+    "radius": 25,
+    "name": "Greater Sudbury Area"
+  },
+  "Greenwood": {
+    "center": [
+      49.09111,
+      -118.676941
+    ],
+    "radius": 25,
+    "name": "Greenwood Area"
+  },
+  "Guelph": {
+    "center": [
+      43.5448,
+      -80.2482
+    ],
+    "radius": 25,
+    "name": "Guelph Area"
+  },
+  "Haliburton": {
+    "center": [
+      45.05,
+      -78.5167
+    ],
+    "radius": 25,
+    "name": "Haliburton Area"
+  },
+  "Halifax": {
+    "center": [
+      44.6488,
+      -63.5752
+    ],
+    "radius": 40,
+    "name": "Halifax Area"
+  },
+  "Hamilton": {
+    "center": [
+      43.2557,
+      -79.8711
+    ],
+    "radius": 30,
+    "name": "Hamilton Area"
+  },
+  "Hampstead": {
+    "center": [
+      45.483334,
+      -73.633331
+    ],
+    "radius": 25,
+    "name": "Hampstead Area"
+  },
+  "Hawkesbury": {
+    "center": [
+      45.6086,
+      -74.6058
+    ],
+    "radius": 25,
+    "name": "Hawkesbury Area"
+  },
+  "Hearst": {
+    "center": [
+      49.6853,
+      -83.6791
+    ],
+    "radius": 30,
+    "name": "Hearst Area"
+  },
+  "High River": {
+    "center": [
+      50.584435,
+      -113.873505
+    ],
+    "radius": 25,
+    "name": "High River Area"
+  },
+  "Houston": {
+    "center": [
+      54.400745,
+      -126.641975
+    ],
+    "radius": 25,
+    "name": "Houston Area"
+  },
+  "Humboldt": {
+    "center": [
+      52.201942,
+      -105.123055
+    ],
+    "radius": 25,
+    "name": "Humboldt Area"
+  },
+  "Huntingdon": {
+    "center": [
+      45.080002,
+      -74.169998
+    ],
+    "radius": 25,
+    "name": "Huntingdon Area"
+  },
+  "Huntsville": {
+    "center": [
+      45.3333,
+      -79.2167
+    ],
+    "radius": 25,
+    "name": "Huntsville Area"
+  },
+  "Iqaluit": {
+    "center": [
+      63.7467,
+      -68.517
+    ],
+    "radius": 25,
+    "name": "Iqaluit Area"
+  },
+  "Joliette": {
+    "center": [
+      46.016666,
+      -73.449997
+    ],
+    "radius": 25,
+    "name": "Joliette Area"
+  },
+  "Kaladar": {
+    "center": [
+      44.65,
+      -77.1167
+    ],
+    "radius": 15,
+    "name": "Kaladar Area"
+  },
+  "Kamloops": {
+    "center": [
+      50.6745,
+      -120.3273
+    ],
+    "radius": 30,
+    "name": "Kamloops Area"
+  },
+  "Kawartha Lakes": {
+    "center": [
+      44.349998,
+      -78.75
+    ],
+    "radius": 25,
+    "name": "Kawartha Lakes Area"
+  },
+  "Kelowna": {
+    "center": [
+      49.888,
+      -119.496
+    ],
+    "radius": 35,
+    "name": "Kelowna Area"
+  },
+  "Kemptville": {
+    "center": [
+      45.0167,
+      -75.6333
+    ],
+    "radius": 20,
+    "name": "Kemptville Area"
+  },
+  "Kenora": {
+    "center": [
+      49.7669,
+      -94.5026
+    ],
+    "radius": 35,
+    "name": "Kenora Area"
+  },
+  "Kimberley": {
+    "center": [
+      49.669724,
+      -115.977501
+    ],
+    "radius": 25,
+    "name": "Kimberley Area"
+  },
+  "King": {
+    "center": [
+      43.95,
+      -79.6167
+    ],
+    "radius": 15,
+    "name": "King Area"
+  },
+  "Kingsey Falls": {
+    "center": [
+      45.849998,
+      -72.066666
+    ],
+    "radius": 25,
+    "name": "Kingsey Falls Area"
+  },
+  "Kingston": {
+    "center": [
+      44.2312,
+      -76.486
+    ],
+    "radius": 30,
+    "name": "Kingston Area"
+  },
+  "Kirkland": {
+    "center": [
+      45.450001,
+      -73.866669
+    ],
+    "radius": 25,
+    "name": "Kirkland Area"
+  },
+  "Kitchener": {
+    "center": [
+      43.4501,
+      -80.4829
+    ],
+    "radius": 30,
+    "name": "Kitchener-Waterloo Area"
+  },
+  "La Malbaie": {
+    "center": [
+      47.650002,
+      -70.150002
+    ],
+    "radius": 25,
+    "name": "La Malbaie Area"
+  },
+  "La Pocatière": {
+    "center": [
+      47.366669,
+      -70.033333
+    ],
+    "radius": 25,
+    "name": "La Pocatière Area"
+  },
+  "La Prairie": {
+    "center": [
+      45.419998,
+      -73.5
+    ],
+    "radius": 25,
+    "name": "La Prairie Area"
+  },
+  "La Sarre": {
+    "center": [
+      48.799999,
+      -79.199997
+    ],
+    "radius": 25,
+    "name": "La Sarre Area"
+  },
+  "La Tuque": {
+    "center": [
+      47.433334,
+      -72.783333
+    ],
+    "radius": 25,
+    "name": "La Tuque Area"
+  },
+  "Lac-Delage": {
+    "center": [
+      46.966667,
+      -71.400002
+    ],
+    "radius": 25,
+    "name": "Lac-Delage Area"
+  },
+  "Lac-Sergent": {
+    "center": [
+      46.849998,
+      -71.73333
+    ],
+    "radius": 25,
+    "name": "Lac-Sergent Area"
+  },
+  "Lachute": {
+    "center": [
+      45.650002,
+      -74.333336
+    ],
+    "radius": 25,
+    "name": "Lachute Area"
+  },
+  "Lacombe": {
+    "center": [
+      52.468334,
+      -113.736946
+    ],
+    "radius": 25,
+    "name": "Lacombe Area"
+  },
+  "Langford": {
+    "center": [
+      48.450558,
+      -123.505836
+    ],
+    "radius": 25,
+    "name": "Langford Area"
+  },
+  "Laval": {
+    "center": [
+      45.6066,
+      -73.7124
+    ],
+    "radius": 30,
+    "name": "Laval Area"
+  },
+  "Laval, Montreal": {
+    "center": [
+      45.612499,
+      -73.707092
+    ],
+    "radius": 25,
+    "name": "Laval, Montreal Area"
+  },
+  "Lavaltrie": {
+    "center": [
+      45.883331,
+      -73.283333
+    ],
+    "radius": 25,
+    "name": "Lavaltrie Area"
+  },
+  "Leamington": {
+    "center": [
+      42.0537,
+      -82.5998
+    ],
+    "radius": 25,
+    "name": "Leamington Area"
+  },
+  "Lebel-Sur-Quévillon": {
+    "center": [
+      49.049999,
+      -76.98333
+    ],
+    "radius": 25,
+    "name": "Lebel-Sur-Quévillon Area"
+  },
+  "Leduc": {
+    "center": [
+      53.259445,
+      -113.549164
+    ],
+    "radius": 25,
+    "name": "Leduc Area"
+  },
+  "Lethbridge": {
+    "center": [
+      49.6942,
+      -112.8328
+    ],
+    "radius": 30,
+    "name": "Lethbridge Area"
+  },
+  "Lloydminster": {
+    "center": [
+      53.278332,
+      -110.004997
+    ],
+    "radius": 25,
+    "name": "Lloydminster Area"
+  },
+  "London": {
+    "center": [
+      42.9849,
+      -81.2453
+    ],
+    "radius": 35,
+    "name": "London Area"
+  },
+  "Longueuil": {
+    "center": [
+      45.5312,
+      -73.5185
+    ],
+    "radius": 25,
+    "name": "Longueuil Area"
+  },
+  "Lorraine": {
+    "center": [
+      45.683334,
+      -73.783333
+    ],
+    "radius": 25,
+    "name": "Lorraine Area"
+  },
+  "Louiseville": {
+    "center": [
+      46.25,
+      -72.949997
+    ],
+    "radius": 25,
+    "name": "Louiseville Area"
+  },
+  "Lévis": {
+    "center": [
+      46.738228,
+      -71.24646
+    ],
+    "radius": 25,
+    "name": "Lévis Area"
+  },
+  "Macamic": {
+    "center": [
+      48.75,
+      -79
+    ],
+    "radius": 25,
+    "name": "Macamic Area"
+  },
+  "Madoc": {
+    "center": [
+      44.5,
+      -77.95
+    ],
+    "radius": 15,
+    "name": "Madoc Area"
+  },
+  "Malartic": {
+    "center": [
+      48.133331,
+      -78.133331
+    ],
+    "radius": 25,
+    "name": "Malartic Area"
+  },
+  "Maniwaki": {
+    "center": [
+      46.375,
+      -75.966667
+    ],
+    "radius": 25,
+    "name": "Maniwaki Area"
+  },
+  "Manotick": {
+    "center": [
+      45.2339,
+      -75.6746
+    ],
+    "radius": 20,
+    "name": "Manotick Area"
+  },
+  "Maple": {
+    "center": [
+      43.8528,
+      -79.5059
+    ],
+    "radius": 25,
+    "name": "Maple Area"
+  },
+  "Maple Ridge": {
+    "center": [
+      49.216667,
+      -122.599998
+    ],
+    "radius": 25,
+    "name": "Maple Ridge Area"
+  },
+  "Marieville": {
+    "center": [
+      45.433334,
+      -73.166664
+    ],
+    "radius": 25,
+    "name": "Marieville Area"
+  },
+  "Markham": {
+    "center": [
+      43.8668,
+      -79.2663
+    ],
+    "radius": 25,
+    "name": "Markham Area"
+  },
+  "Marmora": {
+    "center": [
+      44.4833,
+      -77.6833
+    ],
+    "radius": 15,
+    "name": "Marmora Area"
+  },
+  "Martensville": {
+    "center": [
+      52.289722,
+      -106.666664
+    ],
+    "radius": 25,
+    "name": "Martensville Area"
+  },
+  "Matagami": {
+    "center": [
+      49.75,
+      -77.633331
+    ],
+    "radius": 25,
+    "name": "Matagami Area"
+  },
+  "Matane": {
+    "center": [
+      48.849998,
+      -67.533333
+    ],
+    "radius": 25,
+    "name": "Matane Area"
+  },
+  "Meaford": {
+    "center": [
+      44.6058,
+      -80.593
+    ],
+    "radius": 25,
+    "name": "Meaford Area"
+  },
+  "Medicine Hat": {
+    "center": [
+      50.041668,
+      -110.677498
+    ],
+    "radius": 25,
+    "name": "Medicine Hat Area"
+  },
+  "Melfort": {
+    "center": [
+      52.856388,
+      -104.610001
+    ],
+    "radius": 25,
+    "name": "Melfort Area"
+  },
+  "Melville": {
+    "center": [
+      50.930557,
+      -102.807777
+    ],
+    "radius": 25,
+    "name": "Melville Area"
+  },
+  "Merrickville": {
+    "center": [
+      44.9167,
+      -75.8333
+    ],
+    "radius": 15,
+    "name": "Merrickville Area"
+  },
+  "Merritt": {
+    "center": [
+      50.112778,
+      -120.789719
+    ],
+    "radius": 25,
+    "name": "Merritt Area"
+  },
+  "Midland": {
+    "center": [
+      44.75,
+      -79.8833
+    ],
+    "radius": 20,
+    "name": "Midland Area"
+  },
+  "Milton": {
+    "center": [
+      43.5183,
+      -79.8774
+    ],
+    "radius": 20,
+    "name": "Milton Area"
+  },
+  "Mirabel": {
+    "center": [
+      45.650002,
+      -74.083336
+    ],
+    "radius": 25,
+    "name": "Mirabel Area"
+  },
+  "Mississauga": {
+    "center": [
+      43.589,
+      -79.6441
+    ],
+    "radius": 25,
+    "name": "Mississauga Area"
+  },
+  "Moncton": {
+    "center": [
+      46.0878,
+      -64.7782
+    ],
+    "radius": 30,
+    "name": "Moncton Area"
+  },
+  "Mont-Joli": {
+    "center": [
+      48.580002,
+      -68.18
+    ],
+    "radius": 25,
+    "name": "Mont-Joli Area"
+  },
+  "Mont-Saint-Hilaire": {
+    "center": [
+      45.562222,
+      -73.191666
+    ],
+    "radius": 25,
+    "name": "Mont-Saint-Hilaire Area"
+  },
+  "Mont-Tremblant": {
+    "center": [
+      46.116669,
+      -74.599998
+    ],
+    "radius": 25,
+    "name": "Mont-Tremblant Area"
+  },
+  "Montmagny": {
+    "center": [
+      46.983334,
+      -70.550003
+    ],
+    "radius": 25,
+    "name": "Montmagny Area"
+  },
+  "Montreal": {
+    "center": [
+      45.5017,
+      -73.5673
+    ],
+    "radius": 50,
+    "name": "Montreal Area"
+  },
+  "Montreal West": {
+    "center": [
+      45.453609,
+      -73.647224
+    ],
+    "radius": 25,
+    "name": "Montreal West Area"
+  },
+  "Montréal-Est,-Montreal": {
+    "center": [
+      45.630001,
+      -73.519997
+    ],
+    "radius": 25,
+    "name": "Montréal-Est,-Montreal Area"
+  },
+  "Moose Jaw": {
+    "center": [
+      50.393333,
+      -105.551941
+    ],
+    "radius": 25,
+    "name": "Moose Jaw Area"
+  },
+  "Morden": {
+    "center": [
+      49.191944,
+      -98.100555
+    ],
+    "radius": 25,
+    "name": "Morden Area"
+  },
+  "Morrisburg": {
+    "center": [
+      44.9,
+      -75.1833
+    ],
+    "radius": 15,
+    "name": "Morrisburg Area"
+  },
+  "Morriston": {
+    "center": [
+      43.4551,
+      -80.2044
+    ],
+    "radius": 25,
+    "name": "Morriston Area"
+  },
+  "Mount Pearl": {
+    "center": [
+      47.51889,
+      -52.805832
+    ],
+    "radius": 25,
+    "name": "Mount Pearl Area"
+  },
+  "Mount Royal": {
+    "center": [
+      45.516109,
+      -73.643059
+    ],
+    "radius": 25,
+    "name": "Mount Royal Area"
+  },
+  "Murdochville": {
+    "center": [
+      48.966667,
+      -65.5
+    ],
+    "radius": 25,
+    "name": "Murdochville Area"
+  },
+  "Muskoka": {
+    "center": [
+      45,
+      -79.5
+    ],
+    "radius": 30,
+    "name": "Muskoka Area"
+  },
+  "Métis-Sur-Mer": {
+    "center": [
+      48.669998,
+      -68
+    ],
+    "radius": 25,
+    "name": "Métis-Sur-Mer Area"
+  },
+  "Nanaimo": {
+    "center": [
+      49.165882,
+      -123.940063
+    ],
+    "radius": 25,
+    "name": "Nanaimo Area"
+  },
+  "Nelson": {
+    "center": [
+      49.5,
+      -117.283333
+    ],
+    "radius": 25,
+    "name": "Nelson Area"
+  },
+  "Neuville": {
+    "center": [
+      46.700001,
+      -71.583336
+    ],
+    "radius": 25,
+    "name": "Neuville Area"
+  },
+  "New Richmond": {
+    "center": [
+      48.166668,
+      -65.866669
+    ],
+    "radius": 25,
+    "name": "New Richmond Area"
+  },
+  "New Westminster": {
+    "center": [
+      49.206944,
+      -122.91111
+    ],
+    "radius": 25,
+    "name": "New Westminster Area"
+  },
+  "Newcastle": {
+    "center": [
+      43.9167,
+      -78.5833
+    ],
+    "radius": 15,
+    "name": "Newcastle Area"
+  },
+  "Newmarket": {
+    "center": [
+      44.05,
+      -79.4667
+    ],
+    "radius": 20,
+    "name": "Newmarket Area"
+  },
+  "Niagara Falls": {
+    "center": [
+      43.089806,
+      -79.08638
+    ],
+    "radius": 25,
+    "name": "Niagara Falls Area"
+  },
+  "Nicolet": {
+    "center": [
+      46.216667,
+      -72.616669
+    ],
+    "radius": 25,
+    "name": "Nicolet Area"
+  },
+  "Nobleton": {
+    "center": [
+      43.9001,
+      -79.6519
+    ],
+    "radius": 15,
+    "name": "Nobleton Area"
+  },
+  "Normandin": {
+    "center": [
+      48.833332,
+      -72.533333
+    ],
+    "radius": 25,
+    "name": "Normandin Area"
+  },
+  "North Battleford": {
+    "center": [
+      52.7575,
+      -108.28611
+    ],
+    "radius": 25,
+    "name": "North Battleford Area"
+  },
+  "North Bay": {
+    "center": [
+      46.3092,
+      -79.4608
+    ],
+    "radius": 30,
+    "name": "North Bay Area"
+  },
+  "North Vancouver": {
+    "center": [
+      49.316666,
+      -123.066666
+    ],
+    "radius": 25,
+    "name": "North Vancouver Area"
+  },
+  "North York": {
+    "center": [
+      43.7615,
+      -79.4111
+    ],
+    "radius": 25,
+    "name": "North York Area"
+  },
+  "Notre-Dame-Des-Prairies": {
+    "center": [
+      46.049999,
+      -73.433334
+    ],
+    "radius": 25,
+    "name": "Notre-Dame-Des-Prairies Area"
+  },
+  "Oakville": {
+    "center": [
+      43.4675,
+      -79.6877
+    ],
+    "radius": 20,
+    "name": "Oakville Area"
+  },
+  "Orangeville": {
+    "center": [
+      43.9208,
+      -80.0947
+    ],
+    "radius": 20,
+    "name": "Orangeville Area"
+  },
+  "Orillia": {
+    "center": [
+      44.6,
+      -79.4167
+    ],
+    "radius": 20,
+    "name": "Orillia Area"
+  },
+  "Osgoode": {
+    "center": [
+      45.1878,
+      -75.5894
+    ],
+    "radius": 25,
+    "name": "Osgoode Area"
+  },
+  "Oshawa": {
+    "center": [
+      43.8971,
+      -78.8658
+    ],
+    "radius": 25,
+    "name": "Oshawa Area"
+  },
+  "Ottawa": {
+    "center": [
+      45.4215,
+      -75.6972
+    ],
+    "radius": 40,
+    "name": "National Capital Region"
+  },
+  "Otterburn Park": {
+    "center": [
+      45.533333,
+      -73.216667
+    ],
+    "radius": 25,
+    "name": "Otterburn Park Area"
+  },
+  "Owen Sound": {
+    "center": [
+      44.5667,
+      -80.9333
+    ],
+    "radius": 25,
+    "name": "Owen Sound Area"
+  },
+  "Palmerston": {
+    "center": [
+      43.8347,
+      -80.8358
+    ],
+    "radius": 20,
+    "name": "Palmerston Area"
+  },
+  "Parksville": {
+    "center": [
+      49.314999,
+      -124.311996
+    ],
+    "radius": 25,
+    "name": "Parksville Area"
+  },
+  "Parry Sound": {
+    "center": [
+      45.35,
+      -80.0333
+    ],
+    "radius": 25,
+    "name": "Parry Sound Area"
+  },
+  "Paspébiac": {
+    "center": [
+      48.033333,
+      -65.25
+    ],
+    "radius": 25,
+    "name": "Paspébiac Area"
+  },
+  "Pembroke": {
+    "center": [
+      45.8167,
+      -77.1167
+    ],
+    "radius": 25,
+    "name": "Pembroke Area"
+  },
+  "Penetanguishene": {
+    "center": [
+      44.7667,
+      -79.9333
+    ],
+    "radius": 15,
+    "name": "Penetanguishene Area"
+  },
+  "Penticton": {
+    "center": [
+      49.489536,
+      -119.589615
+    ],
+    "radius": 25,
+    "name": "Penticton Area"
+  },
+  "Percé": {
+    "center": [
+      48.533333,
+      -64.216667
+    ],
+    "radius": 25,
+    "name": "Percé Area"
+  },
+  "Perth": {
+    "center": [
+      44.9,
+      -76.25
+    ],
+    "radius": 20,
+    "name": "Perth Area"
+  },
+  "Petawawa": {
+    "center": [
+      45.8964,
+      -77.2808
+    ],
+    "radius": 25,
+    "name": "Petawawa Area"
+  },
+  "Peterborough": {
+    "center": [
+      44.3091,
+      -78.3202
+    ],
+    "radius": 25,
+    "name": "Peterborough Area"
+  },
+  "Pickering": {
+    "center": [
+      43.8361,
+      -79.0863
+    ],
+    "radius": 20,
+    "name": "Pickering Area"
+  },
+  "Pincourt": {
+    "center": [
+      45.383331,
+      -73.98333
+    ],
+    "radius": 25,
+    "name": "Pincourt Area"
+  },
+  "Pitt Meadows": {
+    "center": [
+      49.233334,
+      -122.683334
+    ],
+    "radius": 25,
+    "name": "Pitt Meadows Area"
+  },
+  "Plessisville": {
+    "center": [
+      46.216667,
+      -71.783333
+    ],
+    "radius": 25,
+    "name": "Plessisville Area"
+  },
+  "Pohénégamook": {
+    "center": [
+      47.466667,
+      -69.216667
+    ],
+    "radius": 25,
+    "name": "Pohénégamook Area"
+  },
+  "Pont-Rouge": {
+    "center": [
+      45.450001,
+      -73.816666
+    ],
+    "radius": 25,
+    "name": "Pont-Rouge Area"
+  },
+  "Port Alberni": {
+    "center": [
+      49.233891,
+      -124.805
+    ],
+    "radius": 25,
+    "name": "Port Alberni Area"
+  },
+  "Port Colborne": {
+    "center": [
+      42.891411,
+      -79.252075
+    ],
+    "radius": 25,
+    "name": "Port Colborne Area"
+  },
+  "Port Coquitlam": {
+    "center": [
+      49.262501,
+      -122.781113
+    ],
+    "radius": 25,
+    "name": "Port Coquitlam Area"
+  },
+  "Port Hope": {
+    "center": [
+      43.95,
+      -78.2833
+    ],
+    "radius": 15,
+    "name": "Port Hope Area"
+  },
+  "Port Moody": {
+    "center": [
+      49.283054,
+      -122.831665
+    ],
+    "radius": 25,
+    "name": "Port Moody Area"
+  },
+  "Port-Cartier": {
+    "center": [
+      50.033333,
+      -66.866669
+    ],
+    "radius": 25,
+    "name": "Port-Cartier Area"
+  },
+  "Portage La Prairie": {
+    "center": [
+      49.972778,
+      -98.291946
+    ],
+    "radius": 25,
+    "name": "Portage La Prairie Area"
+  },
+  "Portneuf": {
+    "center": [
+      46.700001,
+      -71.883331
+    ],
+    "radius": 25,
+    "name": "Portneuf Area"
+  },
+  "Powell River": {
+    "center": [
+      49.835278,
+      -124.524719
+    ],
+    "radius": 25,
+    "name": "Powell River Area"
+  },
+  "Prescott": {
+    "center": [
+      44.7167,
+      -75.5167
+    ],
+    "radius": 15,
+    "name": "Prescott Area"
+  },
+  "Prince George": {
+    "center": [
+      53.9171,
+      -122.7497
+    ],
+    "radius": 35,
+    "name": "Prince George Area"
+  },
+  "Prince Rupert": {
+    "center": [
+      54.312195,
+      -130.327087
+    ],
+    "radius": 25,
+    "name": "Prince Rupert Area"
+  },
+  "Princeville": {
+    "center": [
+      46.166668,
+      -71.883331
+    ],
+    "radius": 25,
+    "name": "Princeville Area"
+  },
+  "Prévost": {
+    "center": [
+      45.869999,
+      -74.080002
+    ],
+    "radius": 25,
+    "name": "Prévost Area"
+  },
+  "Quebec City": {
+    "center": [
+      46.8139,
+      -71.208
+    ],
+    "radius": 40,
+    "name": "Quebec City Area"
+  },
+  "Quesnel": {
+    "center": [
+      52.978443,
+      -122.492668
+    ],
+    "radius": 25,
+    "name": "Quesnel Area"
+  },
+  "Quinte West": {
+    "center": [
+      44.102524,
+      -77.581596
+    ],
+    "radius": 25,
+    "name": "Quinte West Area"
+  },
+  "Red Deer": {
+    "center": [
+      52.2681,
+      -113.8111
+    ],
+    "radius": 30,
+    "name": "Red Deer Area"
+  },
+  "Regina": {
+    "center": [
+      50.4452,
+      -104.6189
+    ],
+    "radius": 40,
+    "name": "Regina Area"
+  },
+  "Renfrew": {
+    "center": [
+      45.4667,
+      -76.6833
+    ],
+    "radius": 20,
+    "name": "Renfrew Area"
+  },
+  "Richelieu": {
+    "center": [
+      45.450001,
+      -73.25
+    ],
+    "radius": 25,
+    "name": "Richelieu Area"
+  },
+  "Richmond": {
+    "center": [
+      49.1666,
+      -123.1336
+    ],
+    "radius": 30,
+    "name": "Richmond Area"
+  },
+  "Richmond Hill": {
+    "center": [
+      43.8828,
+      -79.4403
+    ],
+    "radius": 20,
+    "name": "Richmond Hill Area"
+  },
+  "Rivière-Du-Loup": {
+    "center": [
+      47.833332,
+      -69.533333
+    ],
+    "radius": 25,
+    "name": "Rivière-Du-Loup Area"
+  },
+  "Rivière-Rouge": {
+    "center": [
+      46.416668,
+      -74.866669
+    ],
+    "radius": 25,
+    "name": "Rivière-Rouge Area"
+  },
+  "Roberval": {
+    "center": [
+      48.52,
+      -72.230003
+    ],
+    "radius": 25,
+    "name": "Roberval Area"
+  },
+  "Rosemère": {
+    "center": [
+      45.636944,
+      -73.800003
+    ],
+    "radius": 25,
+    "name": "Rosemère Area"
+  },
+  "Rouyn-Noranda": {
+    "center": [
+      48.233334,
+      -79.01667
+    ],
+    "radius": 25,
+    "name": "Rouyn-Noranda Area"
+  },
+  "Saguenay": {
+    "center": [
+      48.416668,
+      -71.066666
+    ],
+    "radius": 25,
+    "name": "Saguenay Area"
+  },
+  "Saint John": {
+    "center": [
+      45.2733,
+      -66.0633
+    ],
+    "radius": 30,
+    "name": "Saint John Area"
+  },
+  "Saint-Augustin-De-Desmaures": {
+    "center": [
+      46.733334,
+      -71.466667
+    ],
+    "radius": 25,
+    "name": "Saint-Augustin-De-Desmaures Area"
+  },
+  "Saint-Basile": {
+    "center": [
+      46.75,
+      -71.816666
+    ],
+    "radius": 25,
+    "name": "Saint-Basile Area"
+  },
+  "Saint-Basile-Le-Grand": {
+    "center": [
+      45.533333,
+      -73.283333
+    ],
+    "radius": 25,
+    "name": "Saint-Basile-Le-Grand Area"
+  },
+  "Saint-Bruno-De-Montarville": {
+    "center": [
+      45.533333,
+      -73.349998
+    ],
+    "radius": 25,
+    "name": "Saint-Bruno-De-Montarville Area"
+  },
+  "Saint-Colomban": {
+    "center": [
+      45.73,
+      -74.129997
+    ],
+    "radius": 25,
+    "name": "Saint-Colomban Area"
+  },
+  "Saint-Constant": {
+    "center": [
+      45.369999,
+      -73.57
+    ],
+    "radius": 25,
+    "name": "Saint-Constant Area"
+  },
+  "Saint-Césaire": {
+    "center": [
+      45.416668,
+      -73
+    ],
+    "radius": 25,
+    "name": "Saint-Césaire Area"
+  },
+  "Saint-Eustache": {
+    "center": [
+      45.57,
+      -73.900002
+    ],
+    "radius": 25,
+    "name": "Saint-Eustache Area"
+  },
+  "Saint-Félicien": {
+    "center": [
+      48.650002,
+      -72.449997
+    ],
+    "radius": 25,
+    "name": "Saint-Félicien Area"
+  },
+  "Saint-Georges": {
+    "center": [
+      46.116669,
+      -70.666664
+    ],
+    "radius": 25,
+    "name": "Saint-Georges Area"
+  },
+  "Saint-Hyacinthe": {
+    "center": [
+      45.616669,
+      -72.949997
+    ],
+    "radius": 25,
+    "name": "Saint-Hyacinthe Area"
+  },
+  "Saint-Jean-Sur-Richelieu": {
+    "center": [
+      45.316666,
+      -73.26667
+    ],
+    "radius": 25,
+    "name": "Saint-Jean-Sur-Richelieu Area"
+  },
+  "Saint-Joseph-De-Beauce": {
+    "center": [
+      46.299999,
+      -70.883331
+    ],
+    "radius": 25,
+    "name": "Saint-Joseph-De-Beauce Area"
+  },
+  "Saint-Jérôme": {
+    "center": [
+      45.783333,
+      -74
+    ],
+    "radius": 25,
+    "name": "Saint-Jérôme Area"
+  },
+  "Saint-Lambert": {
+    "center": [
+      45.5,
+      -73.51667
+    ],
+    "radius": 25,
+    "name": "Saint-Lambert Area"
+  },
+  "Saint-Lazare": {
+    "center": [
+      45.400002,
+      -74.133331
+    ],
+    "radius": 25,
+    "name": "Saint-Lazare Area"
+  },
+  "Saint-Lin–laurentides": {
+    "center": [
+      45.849998,
+      -73.76667
+    ],
+    "radius": 25,
+    "name": "Saint-Lin–laurentides Area"
+  },
+  "Saint-Ours": {
+    "center": [
+      45.883331,
+      -73.150002
+    ],
+    "radius": 25,
+    "name": "Saint-Ours Area"
+  },
+  "Saint-Pamphile": {
+    "center": [
+      46.966667,
+      -69.783333
+    ],
+    "radius": 25,
+    "name": "Saint-Pamphile Area"
+  },
+  "Saint-Pascal": {
+    "center": [
+      47.533333,
+      -69.800003
+    ],
+    "radius": 25,
+    "name": "Saint-Pascal Area"
+  },
+  "Saint-Pie": {
+    "center": [
+      45.5,
+      -72.900002
+    ],
+    "radius": 25,
+    "name": "Saint-Pie Area"
+  },
+  "Saint-Raymond": {
+    "center": [
+      46.900002,
+      -71.833336
+    ],
+    "radius": 25,
+    "name": "Saint-Raymond Area"
+  },
+  "Saint-Rémi": {
+    "center": [
+      45.266666,
+      -73.616669
+    ],
+    "radius": 25,
+    "name": "Saint-Rémi Area"
+  },
+  "Saint-Sauveur": {
+    "center": [
+      45.900002,
+      -74.169998
+    ],
+    "radius": 25,
+    "name": "Saint-Sauveur Area"
+  },
+  "Sainte-Adèle": {
+    "center": [
+      45.950001,
+      -74.129997
+    ],
+    "radius": 25,
+    "name": "Sainte-Adèle Area"
+  },
+  "Sainte-Agathe-Des-Monts": {
+    "center": [
+      46.049999,
+      -74.279999
+    ],
+    "radius": 25,
+    "name": "Sainte-Agathe-Des-Monts Area"
+  },
+  "Sainte-Anne-De-Beaupré": {
+    "center": [
+      47.016666,
+      -70.933334
+    ],
+    "radius": 25,
+    "name": "Sainte-Anne-De-Beaupré Area"
+  },
+  "Sainte-Anne-De-Bellevue": {
+    "center": [
+      45.403889,
+      -73.952499
+    ],
+    "radius": 25,
+    "name": "Sainte-Anne-De-Bellevue Area"
+  },
+  "Sainte-Anne-Des-Plaines": {
+    "center": [
+      45.766666,
+      -73.816666
+    ],
+    "radius": 25,
+    "name": "Sainte-Anne-Des-Plaines Area"
+  },
+  "Sainte-Catherine": {
+    "center": [
+      45.400002,
+      -73.580002
+    ],
+    "radius": 25,
+    "name": "Sainte-Catherine Area"
+  },
+  "Sainte-Catherine-De-La-Jacques-Cartier": {
+    "center": [
+      46.849998,
+      -71.616669
+    ],
+    "radius": 25,
+    "name": "Sainte-Catherine-De-La-Jacques-Cartier Area"
+  },
+  "Sainte-Julie": {
+    "center": [
+      45.583332,
+      -73.333336
+    ],
+    "radius": 25,
+    "name": "Sainte-Julie Area"
+  },
+  "Sainte-Marguerite-Du-Lac-Masson": {
+    "center": [
+      46.029999,
+      -74.050003
+    ],
+    "radius": 25,
+    "name": "Sainte-Marguerite-Du-Lac-Masson Area"
+  },
+  "Sainte-Marie": {
+    "center": [
+      46.450001,
+      -71.033333
+    ],
+    "radius": 25,
+    "name": "Sainte-Marie Area"
+  },
+  "Sainte-Marthe-Sur-Le-Lac": {
+    "center": [
+      45.529999,
+      -73.93
+    ],
+    "radius": 25,
+    "name": "Sainte-Marthe-Sur-Le-Lac Area"
+  },
+  "Sainte-Thérèse": {
+    "center": [
+      45.633331,
+      -73.849998
+    ],
+    "radius": 25,
+    "name": "Sainte-Thérèse Area"
+  },
+  "Salaberry-De-Valleyfield": {
+    "center": [
+      45.25,
+      -74.129997
+    ],
+    "radius": 25,
+    "name": "Salaberry-De-Valleyfield Area"
+  },
+  "Salmon Arm": {
+    "center": [
+      50.702221,
+      -119.272224
+    ],
+    "radius": 25,
+    "name": "Salmon Arm Area"
+  },
+  "Sarnia": {
+    "center": [
+      42.9991,
+      -82.3089
+    ],
+    "radius": 25,
+    "name": "Sarnia Area"
+  },
+  "Saskatoon": {
+    "center": [
+      52.1332,
+      -106.67
+    ],
+    "radius": 40,
+    "name": "Saskatoon Area"
+  },
+  "Sault Ste Marie": {
+    "center": [
+      46.5218,
+      -84.3461
+    ],
+    "radius": 35,
+    "name": "Sault Ste Marie Area"
+  },
+  "Sault Ste. Marie": {
+    "center": [
+      46.533333,
+      -84.349998
+    ],
+    "radius": 25,
+    "name": "Sault Ste. Marie Area"
+  },
+  "Scarborough": {
+    "center": [
+      43.7731,
+      -79.2577
+    ],
+    "radius": 25,
+    "name": "Scarborough Area"
+  },
+  "Scotstown": {
+    "center": [
+      45.529999,
+      -71.279999
+    ],
+    "radius": 25,
+    "name": "Scotstown Area"
+  },
+  "Scugog": {
+    "center": [
+      44.1,
+      -78.9667
+    ],
+    "radius": 15,
+    "name": "Scugog Area"
+  },
+  "Selkirk": {
+    "center": [
+      50.143612,
+      -96.883888
+    ],
+    "radius": 25,
+    "name": "Selkirk Area"
+  },
+  "Senneterre": {
+    "center": [
+      48.383331,
+      -77.23333
+    ],
+    "radius": 25,
+    "name": "Senneterre Area"
+  },
+  "Sept-Îles": {
+    "center": [
+      50.216667,
+      -66.383331
+    ],
+    "radius": 25,
+    "name": "Sept-Îles Area"
+  },
+  "Sharbot Lake": {
+    "center": [
+      44.7667,
+      -76.6833
+    ],
+    "radius": 15,
+    "name": "Sharbot Lake Area"
+  },
+  "Shawinigan": {
+    "center": [
+      46.566666,
+      -72.75
+    ],
+    "radius": 25,
+    "name": "Shawinigan Area"
+  },
+  "Shelburne": {
+    "center": [
+      44.076,
+      -80.2003
+    ],
+    "radius": 20,
+    "name": "Shelburne Area"
+  },
+  "Sherbrooke": {
+    "center": [
+      45.4042,
+      -71.8929
+    ],
+    "radius": 30,
+    "name": "Sherbrooke Area"
+  },
+  "Smiths Falls": {
+    "center": [
+      44.9,
+      -76.0167
+    ],
+    "radius": 20,
+    "name": "Smiths Falls Area"
+  },
+  "Sorel-Tracy": {
+    "center": [
+      46.033333,
+      -73.116669
+    ],
+    "radius": 25,
+    "name": "Sorel-Tracy Area"
+  },
+  "Spruce Grove": {
+    "center": [
+      53.544998,
+      -113.900803
+    ],
+    "radius": 25,
+    "name": "Spruce Grove Area"
+  },
+  "St. Albert": {
+    "center": [
+      53.63028,
+      -113.625832
+    ],
+    "radius": 25,
+    "name": "St. Albert Area"
+  },
+  "St. Catharines": {
+    "center": [
+      43.0824,
+      -79.2803
+    ],
+    "radius": 30,
+    "name": "St. Catharines Area"
+  },
+  "St. John's": {
+    "center": [
+      47.5615,
+      -52.7126
+    ],
+    "radius": 35,
+    "name": "St. John's Area"
+  },
+  "St. Thomas": {
+    "center": [
+      42.778828,
+      -81.175369
+    ],
+    "radius": 25,
+    "name": "St. Thomas Area"
+  },
+  "Stanstead": {
+    "center": [
+      45.016666,
+      -72.099998
+    ],
+    "radius": 25,
+    "name": "Stanstead Area"
+  },
+  "Stoney Creek": {
+    "center": [
+      43.2173,
+      -79.7672
+    ],
+    "radius": 25,
+    "name": "Stoney Creek Area"
+  },
+  "Stouffville": {
+    "center": [
+      43.9667,
+      -79.25
+    ],
+    "radius": 15,
+    "name": "Stouffville Area"
+  },
+  "Stratford": {
+    "center": [
+      43.351,
+      -81.0059
+    ],
+    "radius": 25,
+    "name": "Stratford Area"
+  },
+  "Strathroy": {
+    "center": [
+      42.9576,
+      -81.6161
+    ],
+    "radius": 25,
+    "name": "Strathroy Area"
+  },
+  "Sudbury": {
+    "center": [
+      46.4919,
+      -80.993
+    ],
+    "radius": 40,
+    "name": "Sudbury Area"
+  },
+  "Sundridge": {
+    "center": [
+      45.7734,
+      -79.3867
+    ],
+    "radius": 20,
+    "name": "Sundridge Area"
+  },
+  "Surrey": {
+    "center": [
+      49.1913,
+      -122.849
+    ],
+    "radius": 35,
+    "name": "Surrey Area"
+  },
+  "Swift Current": {
+    "center": [
+      50.288055,
+      -107.793892
+    ],
+    "radius": 25,
+    "name": "Swift Current Area"
+  },
+  "Sydney": {
+    "center": [
+      46.1368,
+      -60.1942
+    ],
+    "radius": 25,
+    "name": "Sydney Area"
+  },
+  "Temiskaming Shores": {
+    "center": [
+      47.516666,
+      -79.683334
+    ],
+    "radius": 25,
+    "name": "Temiskaming Shores Area"
+  },
+  "Terrace": {
+    "center": [
+      54.515102,
+      -128.610764
+    ],
+    "radius": 25,
+    "name": "Terrace Area"
+  },
+  "Terrebonne": {
+    "center": [
+      45.700001,
+      -73.633331
+    ],
+    "radius": 25,
+    "name": "Terrebonne Area"
+  },
+  "Thetford Mines": {
+    "center": [
+      46.099998,
+      -71.300003
+    ],
+    "radius": 25,
+    "name": "Thetford Mines Area"
+  },
+  "Thompson": {
+    "center": [
+      55.743332,
+      -97.855278
+    ],
+    "radius": 25,
+    "name": "Thompson Area"
+  },
+  "Thornhill": {
+    "center": [
+      43.8159,
+      -79.452
+    ],
+    "radius": 20,
+    "name": "Thornhill Area"
+  },
+  "Thorold": {
+    "center": [
+      43.116669,
+      -79.199997
+    ],
+    "radius": 25,
+    "name": "Thorold Area"
+  },
+  "Thunder Bay": {
+    "center": [
+      48.3809,
+      -89.2477
+    ],
+    "radius": 45,
+    "name": "Thunder Bay Area"
+  },
+  "Thurso": {
+    "center": [
+      45.599998,
+      -75.25
+    ],
+    "radius": 25,
+    "name": "Thurso Area"
+  },
+  "Tilbury": {
+    "center": [
+      42.263,
+      -82.4371
+    ],
+    "radius": 20,
+    "name": "Tilbury Area"
+  },
+  "Toronto": {
+    "center": [
+      43.6532,
+      -79.3832
+    ],
+    "radius": 50,
+    "name": "Greater Toronto Area"
+  },
+  "Trail": {
+    "center": [
+      49.095001,
+      -117.709999
+    ],
+    "radius": 25,
+    "name": "Trail Area"
+  },
+  "Trenton": {
+    "center": [
+      44.1,
+      -77.5833
+    ],
+    "radius": 20,
+    "name": "Trenton Area"
+  },
+  "Trois-Pistoles": {
+    "center": [
+      48.119999,
+      -69.18
+    ],
+    "radius": 25,
+    "name": "Trois-Pistoles Area"
+  },
+  "Trois-Rivières": {
+    "center": [
+      46.3432,
+      -72.5428
+    ],
+    "radius": 25,
+    "name": "Trois-Rivières Area"
+  },
+  "Tweed": {
+    "center": [
+      44.4833,
+      -77.3167
+    ],
+    "radius": 15,
+    "name": "Tweed Area"
+  },
+  "Témiscaming": {
+    "center": [
+      46.716667,
+      -79.099998
+    ],
+    "radius": 25,
+    "name": "Témiscaming Area"
+  },
+  "Témiscouata-Sur-Le-Lac": {
+    "center": [
+      47.68,
+      -68.879997
+    ],
+    "radius": 25,
+    "name": "Témiscouata-Sur-Le-Lac Area"
+  },
+  "Uxbridge": {
+    "center": [
+      44.1,
+      -79.1167
+    ],
+    "radius": 15,
+    "name": "Uxbridge Area"
+  },
+  "Valcourt": {
+    "center": [
+      45.5,
+      -72.316666
+    ],
+    "radius": 25,
+    "name": "Valcourt Area"
+  },
+  "Vancouver": {
+    "center": [
+      49.2827,
+      -123.1207
+    ],
+    "radius": 50,
+    "name": "Vancouver Area"
+  },
+  "Varennes": {
+    "center": [
+      45.683334,
+      -73.433334
+    ],
+    "radius": 25,
+    "name": "Varennes Area"
+  },
+  "Vaudreuil-Dorion": {
+    "center": [
+      45.400002,
+      -74.033333
+    ],
+    "radius": 25,
+    "name": "Vaudreuil-Dorion Area"
+  },
+  "Vaughan": {
+    "center": [
+      43.8361,
+      -79.4983
+    ],
+    "radius": 25,
+    "name": "Vaughan Area"
+  },
+  "Victoria": {
+    "center": [
+      48.4284,
+      -123.3656
+    ],
+    "radius": 40,
+    "name": "Victoria Area"
+  },
+  "Victoriaville": {
+    "center": [
+      46.049999,
+      -71.966667
+    ],
+    "radius": 25,
+    "name": "Victoriaville Area"
+  },
+  "Ville-Marie": {
+    "center": [
+      47.333332,
+      -79.433334
+    ],
+    "radius": 25,
+    "name": "Ville-Marie Area"
+  },
+  "Warman": {
+    "center": [
+      52.321945,
+      -106.584167
+    ],
+    "radius": 25,
+    "name": "Warman Area"
+  },
+  "Waterloo": {
+    "center": [
+      43.4643,
+      -80.5204
+    ],
+    "radius": 20,
+    "name": "Waterloo Area"
+  },
+  "Waterville": {
+    "center": [
+      45.266666,
+      -71.900002
+    ],
+    "radius": 25,
+    "name": "Waterville Area"
+  },
+  "Wawa": {
+    "center": [
+      48.0008,
+      -84.7722
+    ],
+    "radius": 30,
+    "name": "Wawa Area"
+  },
+  "Welland": {
+    "center": [
+      42.992157,
+      -79.248253
+    ],
+    "radius": 25,
+    "name": "Welland Area"
+  },
+  "Westmount": {
+    "center": [
+      45.484531,
+      -73.597023
+    ],
+    "radius": 25,
+    "name": "Westmount Area"
+  },
+  "Westport": {
+    "center": [
+      44.6833,
+      -76.4
+    ],
+    "radius": 15,
+    "name": "Westport Area"
+  },
+  "Wetaskiwin": {
+    "center": [
+      52.969444,
+      -113.376945
+    ],
+    "radius": 25,
+    "name": "Wetaskiwin Area"
+  },
+  "Whitby": {
+    "center": [
+      43.8975,
+      -78.9428
+    ],
+    "radius": 20,
+    "name": "Whitby Area"
+  },
+  "White Rock": {
+    "center": [
+      49.019917,
+      -122.802612
+    ],
+    "radius": 25,
+    "name": "White Rock Area"
+  },
+  "Whitehorse": {
+    "center": [
+      60.7212,
+      -135.0568
+    ],
+    "radius": 30,
+    "name": "Whitehorse Area"
+  },
+  "Williams Lake": {
+    "center": [
+      52.128429,
+      -122.130203
+    ],
+    "radius": 25,
+    "name": "Williams Lake Area"
+  },
+  "Winchester": {
+    "center": [
+      45.0833,
+      -75.35
+    ],
+    "radius": 15,
+    "name": "Winchester Area"
+  },
+  "Windsor": {
+    "center": [
+      42.3149,
+      -83.0364
+    ],
+    "radius": 25,
+    "name": "Windsor Area"
+  },
+  "Winkler": {
+    "center": [
+      49.181667,
+      -97.93972
+    ],
+    "radius": 25,
+    "name": "Winkler Area"
+  },
+  "Winnipeg": {
+    "center": [
+      49.8951,
+      -97.1384
+    ],
+    "radius": 50,
+    "name": "Winnipeg Area"
+  },
+  "Woodbridge": {
+    "center": [
+      43.7765,
+      -79.5932
+    ],
+    "radius": 25,
+    "name": "Woodbridge Area"
+  },
+  "Woodstock": {
+    "center": [
+      43.130554,
+      -80.746666
+    ],
+    "radius": 25,
+    "name": "Woodstock Area"
+  },
+  "Yellowknife": {
+    "center": [
+      62.454,
+      -114.3718
+    ],
+    "radius": 30,
+    "name": "Yellowknife Area"
+  },
+  "Yorkton": {
+    "center": [
+      51.21389,
+      -102.462776
+    ],
+    "radius": 25,
+    "name": "Yorkton Area"
+  }
+}
