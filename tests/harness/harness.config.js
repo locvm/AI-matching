@@ -53,4 +53,7 @@ export const TEST = {
   SEED: 42,
   MAX_JOBS: 5,
   MAX_USERS: 100,
+  // physician-centric: fewer physicians, ALL jobs so they actually find matches
+  PHYSICIAN_MAX_USERS: 20,
+  PHYSICIAN_MAX_JOBS: Infinity,
 }

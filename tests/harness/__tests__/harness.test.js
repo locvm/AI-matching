@@ -43,8 +43,8 @@ function createPhysicianHarness(overrides = {}) {
     topK: OUTPUT.TOP_K,
     outputDir: PATHS.PHYSICIAN_OUTPUT_DIR,
     sampling: {
-      maxJobs: TEST.MAX_JOBS,
-      maxUsers: TEST.MAX_USERS,
+      maxJobs: TEST.PHYSICIAN_MAX_JOBS,
+      maxUsers: TEST.PHYSICIAN_MAX_USERS,
       seed: TEST.SEED,
       ...overrides,
     },
