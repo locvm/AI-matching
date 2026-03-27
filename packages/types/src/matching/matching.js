@@ -26,7 +26,7 @@
  * @property {string} physicianId - Matched physicians ID
  * @property {string} jobId - The job that was matched against
  * @property {number} score - Total match score, 0-5 range. Higher = better
- * @property {import("../../interfaces/matching/matching.js").ScoreBreakdown} breakdown - Score breakdown by category
+ * @property {ScoreBreakdown} breakdown - Score breakdown by category
  * @property {string[]} [flags] - Data quality flags, e.g. "missing_physician_location", "missing_emr_data"
  */
 

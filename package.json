@@ -9,6 +9,7 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "test": "turbo test",
+    "typecheck": "turbo typecheck",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky"
