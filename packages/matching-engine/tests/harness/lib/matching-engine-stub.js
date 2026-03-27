@@ -22,8 +22,8 @@ const scoreDuration = createDurationScorer()
  * @typedef {import('./types.js').LocumJob} LocumJob
  * @typedef {import('./types.js').Reservation} Reservation
  * @typedef {import('./types.js').SearchResult} SearchResult
- * @typedef {import('../../../src/interfaces/matching/matching.js').ScoredPair} ScoredPair
- * @typedef {import('../../../src/interfaces/matching/matching.js').SearchOptions} SearchOptions
+ * @typedef {import('@locvm/types').ScoredPair} ScoredPair
+ * @typedef {import('@locvm/types').SearchOptions} SearchOptions
  */
 
 /** Reservation statuses that mean the job is still accepting applicants. Others (Completed, Cancelled, Expired) are excluded. */
