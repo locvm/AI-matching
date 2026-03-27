@@ -1,11 +1,14 @@
 // @ts-check
 
 import { resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const PROJECT_ROOT = resolve(fileURLToPath(import.meta.url), '../../../../..')
 
 // paths
 const FIXTURES_DIR = resolve('fixtures')
 
-const OUTPUT_ROOT = resolve('artificats')
+const OUTPUT_ROOT = resolve(PROJECT_ROOT, 'artifacts')
 
 export const PATHS = {
   FIXTURES_DIR,

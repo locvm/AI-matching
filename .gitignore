@@ -25,7 +25,6 @@ Thumbs.db
 
 # Test output
 coverage/
-harness-output/
 
 # Docs (keep placeholder)
 docs/*

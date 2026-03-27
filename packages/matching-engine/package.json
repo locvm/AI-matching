@@ -15,8 +15,8 @@
   },
   "scripts": {
     "analyze-data": "node scripts/analyzeTestData.js",
-    "clean": "rimraf artificats ./*.tsbuildinfo",
-    "clean:all": "rimraf node_modules harness_output ./*.tsbuildinfo",
+    "clean": "rimraf artifacts/* ./*.tsbuildinfo",
+    "clean:all": "rimraf node_modules artifacts/* ./*.tsbuildinfo",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:harness": "node scripts/matching-harness.js",
