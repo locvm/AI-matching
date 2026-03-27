@@ -6,11 +6,16 @@
   "engines": {
     "node": ">=22.0.0"
   },
+  "exports": {
+    ".": "./src/index.js",
+    "./src/*": "./src/*"
+  },
   "scripts": {
     "dev": "node src/index.js",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@locvm/database": "*",
     "@locvm/matching-engine": "*",
     "@locvm/types": "*",
     "bullmq": "^5.71.1",
