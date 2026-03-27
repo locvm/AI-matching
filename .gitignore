@@ -5,6 +5,9 @@ node_modules/
 dist/
 build/
 artifacts/
+
+# JSON store runtime data
+data/
 *.tsbuildinfo
 
 # Turbo
@@ -25,16 +28,9 @@ Thumbs.db
 
 # Test output
 coverage/
-<<<<<<< HEAD
-=======
-harness-output/
->>>>>>> d665912 (feat: restructure into turborepo monorepo)
 
 # Docs (keep placeholder)
 docs/*
 !docs/.gitkeep
-<<<<<<< HEAD
 
 data/*
-=======
->>>>>>> d665912 (feat: restructure into turborepo monorepo)

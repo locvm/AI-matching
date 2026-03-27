@@ -19,9 +19,10 @@
  *
  * @typedef {Object} MatchRun
  * @property {string} id
- * @property {"SHORT_TERM" | "WEEKLY_DIGEST"} type - What triggered it
+ * @property {"JOB_POSTED" | "PHYSICIAN_UPDATED" | "WEEKLY_DIGEST"} type - What triggered it
  * @property {"PENDING" | "RUNNING" | "COMPLETED" | "FAILED"} status - Where its at right now
- * @property {string} [jobId] - The job this run is for (SHORT_TERM only). Null for WEEKLY_DIGEST
+ * @property {string} [jobId] - Set for JOB_POSTED runs
+ * @property {string} [physicianId] - Set for PHYSICIAN_UPDATED runs
  * @property {Date} createdAt
  * @property {Date} [startedAt]
  * @property {Date} [completedAt]
@@ -39,7 +40,8 @@
  * @property {number} score
  * @property {Record<string, number>} breakdown - Per-category breakdown
  * @property {Date} computedAt
- * @property {Date} [notifiedAt] - When the physician was notified about this match. Null = not yet notified. Replaces the old OutboxItem table
+ * @property {boolean} isActive - false when superseded by a newer run for this physician
+ * @property {Date} [notifiedAt] - When the physician was notified about this match. Null = not yet notified
  */
 
 export {}
