@@ -56,6 +56,7 @@ export class MatchingTestHarness {
       topK: config.topK ?? OUTPUT.TOP_K,
       outputDir: config.outputDir ?? PATHS.JOB_OUTPUT_DIR,
       sampling: config.sampling,
+      skipCsv: config.skipCsv ?? false,
     }
   }
 
@@ -87,15 +88,19 @@ export class MatchingTestHarness {
       totalMatches += results.length
     }
 
-    const writer = new CsvReportWriter(this.#config.outputDir)
-    const outputPath = await writer.write(harnessResults, {
-      seed: sampler.seed,
-      maxJobs: this.#config.sampling?.maxJobs,
-      maxUsers: this.#config.sampling?.maxUsers,
-    })
+    /** @type {string | null} */
+    let outputPath = null
+    if (!this.#config.skipCsv) {
+      const writer = new CsvReportWriter(this.#config.outputDir)
+      outputPath = await writer.write(harnessResults, {
+        seed: sampler.seed,
+        maxJobs: this.#config.sampling?.maxJobs,
+        maxUsers: this.#config.sampling?.maxUsers,
+      })
+      console.log(`[Harness:Job] Output: ${outputPath}`)
+    }
 
     console.log(`[Harness:Job] Processed ${jobs.length} jobs, ${totalMatches} total matches`)
-    console.log(`[Harness:Job] Output: ${outputPath}`)
 
     return {
       outputPath,
@@ -142,6 +147,7 @@ export class PhysicianTestHarness {
       topK: config.topK ?? OUTPUT.TOP_K,
       outputDir: config.outputDir ?? PATHS.PHYSICIAN_OUTPUT_DIR,
       sampling: config.sampling,
+      skipCsv: config.skipCsv ?? false,
     }
   }
 
@@ -171,15 +177,19 @@ export class PhysicianTestHarness {
       totalMatches += results.length
     }
 
-    const writer = new PhysicianCsvReportWriter(this.#config.outputDir)
-    const outputPath = await writer.write(harnessResults, {
-      seed: sampler.seed,
-      maxJobs: this.#config.sampling?.maxJobs,
-      maxUsers: this.#config.sampling?.maxUsers,
-    })
+    /** @type {string | null} */
+    let outputPath = null
+    if (!this.#config.skipCsv) {
+      const writer = new PhysicianCsvReportWriter(this.#config.outputDir)
+      outputPath = await writer.write(harnessResults, {
+        seed: sampler.seed,
+        maxJobs: this.#config.sampling?.maxJobs,
+        maxUsers: this.#config.sampling?.maxUsers,
+      })
+      console.log(`[Harness:Physician] Output: ${outputPath}`)
+    }
 
     console.log(`[Harness:Physician] Processed ${physicians.length} physicians, ${totalMatches} total matches`)
-    console.log(`[Harness:Physician] Output: ${outputPath}`)
 
     return {
       outputPath,
