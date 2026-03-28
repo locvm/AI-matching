@@ -1,6 +1,33 @@
-harness-output/
+# Dependencies
 node_modules/
+
+# Build outputs
+dist/
+build/
+artifacts/
 *.tsbuildinfo
+
+# Turbo
+.turbo/
+
+# Env
 .env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test output
+coverage/
+
+# Docs (keep placeholder)
 docs/*
 !docs/.gitkeep
+
+data/*
