@@ -14,13 +14,10 @@ export class IdempotencyService {
   /** @param {string} key @param {number} [ttl] @returns {Promise<boolean>} */
   async check(key, ttl) {
     const full = `${this.prefix}:${key}`
-    try {
-      if (await this.redis.exists(full)) return true
-      await this.redis.setex(full, Math.floor((ttl ?? this.ttl) / 1000), '1')
-      return false
-    } catch {
-      return false
-    }
+    const ttlSeconds = Math.floor((ttl ?? this.ttl) / 1000)
+    // SET NX EX is atomic: returns null if key already existed (duplicate)
+    const result = await this.redis.set(full, '1', 'EX', ttlSeconds, 'NX')
+    return result === null
   }
 
   /**

@@ -13,8 +13,9 @@ export class JsonStore {
   async read() {
     try {
       return JSON.parse(await readFile(this.filePath, 'utf-8'))
-    } catch {
-      return []
+    } catch (err) {
+      if (/** @type {NodeJS.ErrnoException} */ (err).code === 'ENOENT') return []
+      throw err
     }
   }
 

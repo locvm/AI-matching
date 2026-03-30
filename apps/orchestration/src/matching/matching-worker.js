@@ -28,10 +28,10 @@ export class MatchingWorker extends BaseWorker {
    * @param {(msg: string) => void} log
    */
   async processJob(jobType, payload, log = () => {}) {
-    const key = IdempotencyService.jobKey(
-      jobType,
-      /** @type {any} */ (payload).jobId ?? /** @type {any} */ (payload).physicianId
-    )
+    const p = /** @type {any} */ (payload)
+    const entityId = p.jobId ?? p.physicianId
+    if (!entityId) throw new Error(`Missing jobId/physicianId in payload for job type: ${jobType}`)
+    const key = IdempotencyService.jobKey(jobType, entityId)
     if (await this.idempotency.check(key, WORKER_CONFIG.idempotency.ttl)) {
       log('Skipped — duplicate job (idempotency hit)')
       return
