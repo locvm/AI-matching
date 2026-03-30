@@ -18,6 +18,9 @@
   "lint-staged": {
     "*.{js,json,md}": "prettier --write"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.0.0"
+  },
   "devDependencies": {
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
