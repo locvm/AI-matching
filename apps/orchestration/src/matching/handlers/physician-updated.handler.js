@@ -39,7 +39,10 @@ export class PhysicianUpdatedHandler {
     })
 
     try {
-      await results.updateWhere((r) => r.physicianId === physicianId && r.isActive, { isActive: false })
+      await results.updateWhere((r) => r.physicianId === physicianId && r.isActive, {
+        isActive: false,
+        deprecatedAt: new Date(),
+      })
       log(`Previous active results deprecated`)
 
       const resultDocs = []
