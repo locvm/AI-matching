@@ -14,17 +14,20 @@ const redis = new Redis(process.env.REDIS_URL ?? 'redis://localhost:6379', {
 
 const matchingQueue = new Queue(QUEUE_NAME, { connection: redis })
 
-const boardAdapter = new ExpressAdapter()
-boardAdapter.setBasePath('/admin')
-
-createBullBoard({
-  queues: [new BullMQAdapter(matchingQueue)],
-  serverAdapter: boardAdapter,
-})
-
 const app = express()
 app.use(express.json())
-app.use('/admin', boardAdapter.getRouter())
+
+// TODO: Before any non-sandbox deployment, replace this env-flag gate with
+// proper authentication (e.g. token middleware or IP allowlist).
+if (process.env.BULL_BOARD_ENABLED === 'true') {
+  const boardAdapter = new ExpressAdapter()
+  boardAdapter.setBasePath('/admin')
+  createBullBoard({
+    queues: [new BullMQAdapter(matchingQueue)],
+    serverAdapter: boardAdapter,
+  })
+  app.use('/admin', boardAdapter.getRouter())
+}
 
 app.post('/trigger/job-posted', async (req, res) => {
   const { jobId } = req.body
