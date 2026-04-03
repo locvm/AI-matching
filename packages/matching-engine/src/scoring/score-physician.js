@@ -10,9 +10,6 @@ import { combineAndRank } from './combineAndRank.js'
 /** @typedef {import('@locvm/types').SearchOptions} SearchOptions */
 /** @typedef {import('@locvm/types').SearchResult} SearchResult */
 
-/** Default number of top results to return. */
-const DEFAULT_LIMIT = 10
-
 /**
  * Full pipeline for a physician: filter → score each pair → combine + rank.
  *
@@ -35,5 +32,5 @@ export async function scorePhysician(physician, jobs, reservations, options = {}
     scoredPairs.push(scoreMatch(physician, job))
   }
 
-  return combineAndRank(scoredPairs, { limit: DEFAULT_LIMIT, ...options })
+  return combineAndRank(scoredPairs, options)
 }
