@@ -43,6 +43,7 @@
  * @property {Date} computedAt
  * @property {boolean} isActive - false when superseded by a newer run for this physician
  * @property {Date | null} [notifiedAt] - When the physician was notified about this match. Null = not yet notified
+ * @property {Date} [deprecatedAt] - When this result was superseded; unset while isActive is true
  */
 
 export {}
