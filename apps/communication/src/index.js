@@ -15,7 +15,7 @@ if (physicianId) {
 
   console.log(`Fetching top matches for physician ${physicianId}...\n`)
 
-  const topMatches = await getTopMatchesForPhysician(physicianId, {
+  const { topMatches, totalOpenMatches } = await getTopMatchesForPhysician(physicianId, {
     resultsStore,
     reservations,
   })
@@ -23,12 +23,12 @@ if (physicianId) {
   if (topMatches.length === 0) {
     console.log('No matches found.')
   } else {
-    console.log(`Top ${topMatches.length} matches:\n`)
+    console.log(`Top ${topMatches.length} of ${totalOpenMatches} open matches:\n`)
     for (const m of topMatches) {
       console.log(`  #${m.rank ?? '-'}  job=${m.jobId}  score=${m.score}  breakdown=${JSON.stringify(m.breakdown)}`)
     }
 
-    const payload = buildEmailPayload(physicianId, topMatches, { physicians, jobs })
+    const payload = buildEmailPayload(physicianId, topMatches, totalOpenMatches, { physicians, jobs })
     console.log('\n--- Email Payload ---\n')
     console.log(JSON.stringify(payload, null, 2))
   }
