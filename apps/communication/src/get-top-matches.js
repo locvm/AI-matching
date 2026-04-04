@@ -37,10 +37,9 @@ const TOP_K = 10
  * @returns {Promise<StoredMatchResult[]>}
  */
 export async function getTopMatchesForPhysician(physicianId, { resultsStore, reservations }) {
-  // Build a set of jobIds that are still open
+  // Only keep the open jobs
   const openJobIds = new Set(reservations.filter((r) => OPEN_STATUSES.has(r.status)).map((r) => r.locumJobId))
 
-  // Pull all active results for this physician
   const allResults = /** @type {StoredMatchResult[]} */ (
     await resultsStore.findMany((r) => r.physicianId === physicianId && r.isActive === true)
   )
