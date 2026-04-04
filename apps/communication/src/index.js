@@ -1,9 +1,13 @@
 // @ts-check
 
+import { exec } from 'node:child_process'
+import { fileURLToPath } from 'node:url'
+import { join, dirname } from 'node:path'
 import { loadFixtures, JsonStore, STORE_PATHS } from '@locvm/database'
 import { getTopMatchesForPhysician, buildEmailPayload } from './get-top-matches.js'
+import { renderEmailToFile } from './render-email.js'
 
-export { getTopMatchesForPhysician, buildEmailPayload }
+export { getTopMatchesForPhysician, buildEmailPayload, renderEmailToFile }
 
 // --- CLI runner: node src/index.js <physicianId> ---
 
@@ -31,5 +35,11 @@ if (physicianId) {
     const payload = buildEmailPayload(physicianId, topMatches, totalOpenMatches, { physicians, jobs })
     console.log('\n--- Email Payload ---\n')
     console.log(JSON.stringify(payload, null, 2))
+
+    const __dirname = dirname(fileURLToPath(import.meta.url))
+    const outputPath = join(__dirname, 'emailTemplateHTML', `email-preview-${physicianId}.html`)
+    await renderEmailToFile(payload, outputPath)
+    console.log(`\nEmail preview written to: ${outputPath}`)
+    exec(`open "${outputPath}"`)
   }
 }
