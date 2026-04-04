@@ -36,7 +36,7 @@ const BASE_URL = 'https://locvm.ca/jobs'
  *
  * @param {string} physicianId
  * @param {{ resultsStore: JsonStore, reservations: Reservation[] }} deps
- * @returns {Promise<StoredMatchResult[]>}
+ * @returns {Promise<{ topMatches: StoredMatchResult[], totalOpenMatches: number }>}
  */
 export async function getTopMatchesForPhysician(physicianId, { resultsStore, reservations }) {
   // Only keep the open jobs
@@ -48,7 +48,7 @@ export async function getTopMatchesForPhysician(physicianId, { resultsStore, res
 
   const filtered = allResults.filter((r) => openJobIds.has(r.jobId))
   filtered.sort((a, b) => b.score - a.score || a.jobId.localeCompare(b.jobId))
-  return filtered.slice(0, TOP_K)
+  return { topMatches: filtered.slice(0, TOP_K), totalOpenMatches: filtered.length }
 }
 
 /**
@@ -70,10 +70,11 @@ function formatDate(date) {
  *
  * @param {string} physicianId
  * @param {StoredMatchResult[]} topMatches - output from getTopMatchesForPhysician
+ * @param {number} totalOpenMatches - total open matches before truncation
  * @param {{ physicians: Physician[], jobs: LocumJob[] }} data
- * @returns {{ physician: object, jobs: object[] }}
+ * @returns {{ physician: object, jobs: object[], totalOpenMatches: number }}
  */
-export function buildEmailPayload(physicianId, topMatches, { physicians, jobs }) {
+export function buildEmailPayload(physicianId, topMatches, totalOpenMatches, { physicians, jobs }) {
   const physician = physicians.find((p) => p._id === physicianId)
 
   const physicianPayload = {
@@ -107,5 +108,5 @@ export function buildEmailPayload(physicianId, topMatches, { physicians, jobs })
     }
   })
 
-  return { physician: physicianPayload, jobs: jobsPayload }
+  return { physician: physicianPayload, jobs: jobsPayload, totalOpenMatches }
 }
