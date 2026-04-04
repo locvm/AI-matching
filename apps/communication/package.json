@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@locvm/types": "*"
+    "@locvm/types": "*",
+    "@locvm/database": "*"
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
