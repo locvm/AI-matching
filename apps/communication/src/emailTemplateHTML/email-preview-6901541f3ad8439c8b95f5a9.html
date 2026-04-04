@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOCVM Email Digest Preview</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #f0ede8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      padding: 40px 20px 80px;
+    }
+
+    /* Page header */
+    .page-header {
+      max-width: 660px;
+      margin: 0 auto 32px;
+    }
+    .page-header p {
+      font-size: 12px;
+      color: #888;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .page-header h1 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    /* Tab row */
+    .tab-row {
+      max-width: 660px;
+      margin: 0 auto 24px;
+      display: flex;
+      gap: 8px;
+    }
+    .tab {
+      padding: 7px 18px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 13px;
+      cursor: pointer;
+      background: #fff;
+      color: #555;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+    .tab:hover { border-color: #999; color: #111; }
+    .tab.active {
+      background: #0f2d47;
+      color: #fff;
+      border-color: #0f2d47;
+      font-weight: 500;
+    }
+
+    /* Email shell */
+    .email-shell {
+      max-width: 660px;
+      margin: 0 auto;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.10);
+    }
+
+    /* Browser chrome bar */
+    .browser-bar {
+      background: #e8e5e0;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #d0ccc6;
+    }
+    .dot { width: 11px; height: 11px; border-radius: 50%; }
+    .dot.r { background: #ff5f57; }
+    .dot.y { background: #ffbd2e; }
+    .dot.g { background: #28c840; }
+    .browser-url {
+      flex: 1;
+      background: #fff;
+      border-radius: 5px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: #888;
+      border: 1px solid #d0ccc6;
+    }
+
+    /* Email client header */
+    .client-bar {
+      background: #f7f5f2;
+      padding: 14px 24px;
+      border-bottom: 1px solid #e8e4de;
+    }
+    .client-row {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      margin-bottom: 5px;
+    }
+    .client-row:last-child { margin-bottom: 0; }
+    .client-label { font-size: 11px; color: #999; min-width: 56px; }
+    .client-val { font-size: 13px; font-weight: 600; color: #111; }
+    .preheader-val { font-size: 12px; color: #666; }
+
+    /* Email body */
+    .email-body {
+      background: #ffffff;
+      padding: 32px 32px 28px;
+    }
+
+    /* Logo */
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .logo-pill {
+      background: #0f2d47;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 6px 14px;
+      border-radius: 5px;
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: #aaa;
+      letter-spacing: 0.2px;
+    }
+
+    /* Typography */
+    .greeting {
+      font-size: 15px;
+      color: #111;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .hook {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .section-label {
+      font-size: 10px;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    /* Job cards */
+    .job-card {
+      border: 1px solid #e8e4de;
+      border-radius: 10px;
+      padding: 15px 17px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .job-card.top {
+      border-color: #1a6faf;
+      border-width: 1.5px;
+    }
+    .top-badge {
+      position: absolute;
+      top: -1px;
+      right: 14px;
+      background: #1a6faf;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 0 0 5px 5px;
+      letter-spacing: 0.3px;
+    }
+    .job-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 3px;
+    }
+    .job-facility {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+    .job-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 11px;
+    }
+    .pill {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 1px solid #e0dbd4;
+      color: #555;
+      background: #faf9f7;
+    }
+    .pill.pay {
+      background: #edf7ed;
+      color: #2a7a2a;
+      border-color: #c3e6c3;
+      font-weight: 600;
+    }
+    .job-cta {
+      font-size: 12px;
+      color: #1a6faf;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .job-cta:hover { text-decoration: underline; }
+
+    /* See all */
+    .see-all {
+      display: inline-block;
+      font-size: 12px;
+      color: #777;
+      text-decoration: none;
+      margin-bottom: 4px;
+    }
+
+    /* Market pulse */
+    .pulse {
+      background: #f7f5f2;
+      border-radius: 8px;
+      padding: 11px 14px;
+      margin: 18px 0;
+    }
+    .pulse-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #aaa;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .pulse p { font-size: 12px; color: #555; line-height: 1.55; }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: #f0ece6;
+      margin: 20px 0;
+    }
+
+    /* Placeholder */
+    .placeholder {
+      border: 1.5px dashed #d0ccc6;
+      border-radius: 8px;
+      padding: 11px 15px;
+      margin-bottom: 18px;
+      background: #fdfcfb;
+    }
+    .ph-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #bbb;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .ph-text {
+      font-size: 12px;
+      color: #bbb;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* Trust line */
+    .trust {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    /* Testimonial */
+    .testimonial {
+      border-left: 3px solid #e0dbd4;
+      padding: 10px 15px;
+      margin: 18px 0;
+    }
+    .testimonial p {
+      font-size: 13px;
+      color: #555;
+      font-style: italic;
+      line-height: 1.65;
+      margin-bottom: 5px;
+    }
+    .testimonial cite {
+      font-size: 11px;
+      color: #aaa;
+      font-style: normal;
+    }
+
+    /* Identity close */
+    .identity {
+      font-size: 15px;
+      color: #111;
+      line-height: 1.65;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    /* CTA button */
+    .cta-btn {
+      display: inline-block;
+      padding: 11px 22px;
+      background: #0f2d47;
+      color: #fff;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 22px;
+      letter-spacing: 0.2px;
+    }
+    .cta-btn:hover { background: #1a4a6e; }
+
+    .sub-note {
+      font-size: 11px;
+      color: #bbb;
+      margin-top: -16px;
+      margin-bottom: 22px;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid #f0ece6;
+      padding-top: 16px;
+      margin-top: 4px;
+    }
+    .badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .badge {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      border: 1px solid #e0dbd4;
+      color: #aaa;
+      background: #faf9f7;
+    }
+    .footer-links {
+      font-size: 11px;
+      color: #bbb;
+      line-height: 1.7;
+    }
+    .footer-links a { color: #aaa; text-decoration: underline; }
+
+    /* Hidden */
+    .hidden { display: none; }
+
+    /* Cadence label */
+    .cadence-note {
+      max-width: 660px;
+      margin: 16px auto 0;
+      font-size: 11px;
+      color: #aaa;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <p>LOCVM · Email digest preview</p>
+    <h1>Matched job notifications</h1>
+  </div>
+
+  <div class="tab-row">
+    <button class="tab active" onclick="showTab('weekly')">Weekly</button>
+    <button class="tab" onclick="showTab('daily')">Daily</button>
+    <button class="tab" onclick="showTab('monthly')">Monthly</button>
+  </div>
+
+  <!-- ───────────── WEEKLY ───────────── -->
+  <div id="tab-weekly" class="email-shell">
+    <div class="browser-bar">
+      <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+      <div class="browser-url">mail.google.com</div>
+    </div>
+    <div class="client-bar">
+      <div class="client-row"><span class="client-label">From</span><span class="client-val">LOCVM &lt;matches@locvm.ca&gt;</span></div>
+      <div class="client-row"><span class="client-label">Subject</span><span class="client-val">Dr. Russell, 5 Family Medicine matches this week</span></div>
+      <div class="client-row"><span class="client-label">Preview</span><span class="preheader-val">Top pick: $1 · Toronto · starts Jan 1, 2026</span></div>
+    </div>
+    <div class="email-body">
+      <div class="logo-row">
+        <span class="logo-pill">LOCVM</span>
+        <span class="logo-sub">Canada's locum physician marketplace</span>
+      </div>
+
+      <p class="greeting">Dr. Russell,</p>
+      <p class="hook">
+        Most physicians who do locum work did not plan to. They got tired of a schedule that was never really theirs.<br><br>
+        This week, 5 family medicine assignments match your profile:
+      </p>
+
+      <p class="section-label">Your matches: week of April 4</p>
+
+            <div class="job-card top">
+        <div class="top-badge">Best match</div>
+        <div class="job-title">Downtown Toronto (Maternity Leave Coverage - Flexible Duration)</div>
+        <div class="job-facility">Women's Health In Women's Hands CHC · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$1</span>
+          <span class="pill">Jan 1, 2026 – Dec 31, 2026</span>
+          <span class="pill">- FTE 0.6, days of the week ar…</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/o5p-9GO">→ View assignment, starts Jan 1, 2026</a>
+      </div>
+      <div class="job-card">
+        
+        <div class="job-title">Downtown Toronto (Maternity Leave Coverage - Flexible Duration)</div>
+        <div class="job-facility">Women's Health In Women's Hands CHC · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$175419</span>
+          <span class="pill">Jan 1, 2026 – Jan 1, 2027</span>
+          <span class="pill">RESPONSIBILITIES:
+• Provides f…</span>
+          <span class="pill">PS Suite EMR</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/zn7Kf-e">→ View assignment</a>
+      </div>
+      <div class="job-card">
+        
+        <div class="job-title">Family Physician</div>
+        <div class="job-facility">Medcan · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$600000</span>
+          <span class="pill">Dec 1, 2025 – Dec 1, 2026</span>
+          <span class="pill">Please contact for details. We…</span>
+          <span class="pill">Accuro EMR</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/NdQL9C9">→ View assignment</a>
+      </div>
+      <div class="job-card">
+        
+        <div class="job-title">Locum Physician (12 Month Contract)</div>
+        <div class="job-facility">Medcan · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$220000</span>
+          <span class="pill">Feb 23, 2026 – Feb 22, 2027</span>
+          <span class="pill">Please contact for details. Sc…</span>
+          <span class="pill">Accuro EMR</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/NtDz_25">→ View assignment</a>
+      </div>
+      <div class="job-card">
+        
+        <div class="job-title">Looking For 4 Half Days Over The Week Of August (flexible)</div>
+        <div class="job-facility">Bloom Family Practice · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$2400</span>
+          <span class="pill">Aug 4, 2026 – Aug 11, 2026</span>
+          <span class="pill">Looking for 4 half days over t…</span>
+          <span class="pill">PS Suite EMR</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/vT2AhVB">→ View assignment</a>
+      </div>
+
+      <a class="see-all" href="#">See all 36 matches &rarr;</a>
+
+      <div class="pulse">
+        <div class="pulse-label">Market pulse</div>
+        <p>Family Medicine listings in ON are trending upward. Most are filling within days of posting.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="placeholder">
+        <div class="ph-label">Placeholder</div>
+        <div class="ph-text">[Fee/pricing model statement. Confirm exact claim before sending.]</div>
+      </div>
+
+      <p class="trust">Most assignments starting within 6 weeks require credentialing to begin this week.</p>
+
+      <div class="testimonial">
+        <p>"My first LOCVM shift paid more in one week than two weeks at my current practice."</p>
+        <cite>Dr. K.M., Family Medicine, Ontario</cite>
+      </div>
+
+      <p class="identity">You trained for years to practise medicine on your terms.<br>This is what that looks like.</p>
+
+      <a class="cta-btn" href="#">View your matches</a>
+
+      <div class="footer">
+        <div class="badges">
+          <span class="badge">OMA Partner</span>
+          <span class="badge">Physician-verified listings</span>
+        </div>
+        <div class="footer-links">
+          You are receiving this because you opted into weekly Family Medicine matches.
+          &nbsp;&middot;&nbsp; <a href="#">Manage preferences</a>
+          &nbsp;&middot;&nbsp; <a href="#">Unsubscribe</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────── DAILY ───────────── -->
+  <div id="tab-daily" class="email-shell hidden">
+    <div class="browser-bar">
+      <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+      <div class="browser-url">mail.google.com</div>
+    </div>
+    <div class="client-bar">
+      <div class="client-row"><span class="client-label">From</span><span class="client-val">LOCVM &lt;matches@locvm.ca&gt;</span></div>
+      <div class="client-row"><span class="client-label">Subject</span><span class="client-val">Dr. Russell, 5 Family Medicine matches today</span></div>
+      <div class="client-row"><span class="client-label">Preview</span><span class="preheader-val">Top pick: $1 · Toronto · starts Jan 1, 2026</span></div>
+    </div>
+    <div class="email-body">
+      <div class="logo-row">
+        <span class="logo-pill">LOCVM</span>
+        <span class="logo-sub">Canada's locum physician marketplace</span>
+      </div>
+
+      <p class="greeting" style="margin-bottom: 16px;">Dr. Russell, 5 family medicine assignments match your profile today.</p>
+
+            <div class="job-card top">
+        <div class="top-badge">Best match</div>
+        <div class="job-title">Downtown Toronto (Maternity Leave Coverage - Flexible Duration)</div>
+        <div class="job-facility">Women's Health In Women's Hands CHC · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$1</span>
+          <span class="pill">Jan 1, 2026 – Dec 31, 2026</span>
+          <span class="pill">- FTE 0.6, days of the week ar…</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/o5p-9GO">→ View assignment, starts Jan 1, 2026</a>
+      </div>
+      <div class="job-card">
+        
+        <div class="job-title">Downtown Toronto (Maternity Leave Coverage - Flexible Duration)</div>
+        <div class="job-facility">Women's Health In Women's Hands CHC · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$175419</span>
+          <span class="pill">Jan 1, 2026 – Jan 1, 2027</span>
+          <span class="pill">RESPONSIBILITIES:
+• Provides f…</span>
+          <span class="pill">PS Suite EMR</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/zn7Kf-e">→ View assignment</a>
+      </div>
+      <div class="job-card">
+        
+        <div class="job-title">Family Physician</div>
+        <div class="job-facility">Medcan · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$600000</span>
+          <span class="pill">Dec 1, 2025 – Dec 1, 2026</span>
+          <span class="pill">Please contact for details. We…</span>
+          <span class="pill">Accuro EMR</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/NdQL9C9">→ View assignment</a>
+      </div>
+      <div class="job-card">
+        
+        <div class="job-title">Locum Physician (12 Month Contract)</div>
+        <div class="job-facility">Medcan · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$220000</span>
+          <span class="pill">Feb 23, 2026 – Feb 22, 2027</span>
+          <span class="pill">Please contact for details. Sc…</span>
+          <span class="pill">Accuro EMR</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/NtDz_25">→ View assignment</a>
+      </div>
+      <div class="job-card">
+        
+        <div class="job-title">Looking For 4 Half Days Over The Week Of August (flexible)</div>
+        <div class="job-facility">Bloom Family Practice · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$2400</span>
+          <span class="pill">Aug 4, 2026 – Aug 11, 2026</span>
+          <span class="pill">Looking for 4 half days over t…</span>
+          <span class="pill">PS Suite EMR</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/vT2AhVB">→ View assignment</a>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="placeholder">
+        <div class="ph-label">Placeholder</div>
+        <div class="ph-text">[Fee/pricing model statement. Confirm exact claim before sending.]</div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-links">
+          <a href="#">Adjust preferences</a> &nbsp;&middot;&nbsp; <a href="#">Unsubscribe</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────── MONTHLY ───────────── -->
+  <div id="tab-monthly" class="email-shell hidden">
+    <div class="browser-bar">
+      <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+      <div class="browser-url">mail.google.com</div>
+    </div>
+    <div class="client-bar">
+      <div class="client-row"><span class="client-label">From</span><span class="client-val">LOCVM &lt;matches@locvm.ca&gt;</span></div>
+      <div class="client-row"><span class="client-label">Subject</span><span class="client-val">Dr. Russell, what does family medicine locum look like right now?</span></div>
+      <div class="client-row"><span class="client-label">Preview</span><span class="preheader-val">36 matches in ON &middot; rates shown upfront</span></div>
+    </div>
+    <div class="email-body">
+      <div class="logo-row">
+        <span class="logo-pill">LOCVM</span>
+        <span class="logo-sub">Canada's locum physician marketplace</span>
+      </div>
+
+      <p class="greeting">Dr. Russell,</p>
+      <p class="hook">
+        There is a version of your career where you decide when you work, where you work, and what you are paid.<br><br>
+        For most Canadian physicians, that still feels out of reach. It does not have to be.
+      </p>
+
+      <p class="trust" style="margin-bottom: 22px;">
+        Physicians who do locum work are not a different kind of doctor. They are family physicians with two kids. Emergency physicians six years in. Internists who wanted one month back. They started with one week.<br><br>
+        This month, 5 family medicine assignments in ON match your profile:
+      </p>
+
+      <p class="section-label">Your matches: April 2026</p>
+
+            <div class="job-card top">
+        <div class="top-badge">Best match</div>
+        <div class="job-title">Downtown Toronto (Maternity Leave Coverage - Flexible Duration)</div>
+        <div class="job-facility">Women's Health In Women's Hands CHC · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$1</span>
+          <span class="pill">Jan 1, 2026 – Dec 31, 2026</span>
+          <span class="pill">- FTE 0.6, days of the week ar…</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/o5p-9GO">→ View assignment, starts Jan 1, 2026</a>
+      </div>
+      <div class="job-card">
+        
+        <div class="job-title">Downtown Toronto (Maternity Leave Coverage - Flexible Duration)</div>
+        <div class="job-facility">Women's Health In Women's Hands CHC · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$175419</span>
+          <span class="pill">Jan 1, 2026 – Jan 1, 2027</span>
+          <span class="pill">RESPONSIBILITIES:
+• Provides f…</span>
+          <span class="pill">PS Suite EMR</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/zn7Kf-e">→ View assignment</a>
+      </div>
+      <div class="job-card">
+        
+        <div class="job-title">Family Physician</div>
+        <div class="job-facility">Medcan · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$600000</span>
+          <span class="pill">Dec 1, 2025 – Dec 1, 2026</span>
+          <span class="pill">Please contact for details. We…</span>
+          <span class="pill">Accuro EMR</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/NdQL9C9">→ View assignment</a>
+      </div>
+      <div class="job-card">
+        
+        <div class="job-title">Locum Physician (12 Month Contract)</div>
+        <div class="job-facility">Medcan · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$220000</span>
+          <span class="pill">Feb 23, 2026 – Feb 22, 2027</span>
+          <span class="pill">Please contact for details. Sc…</span>
+          <span class="pill">Accuro EMR</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/NtDz_25">→ View assignment</a>
+      </div>
+      <div class="job-card">
+        
+        <div class="job-title">Looking For 4 Half Days Over The Week Of August (flexible)</div>
+        <div class="job-facility">Bloom Family Practice · Toronto, ON</div>
+        <div class="job-meta">
+          <span class="pill pay">$2400</span>
+          <span class="pill">Aug 4, 2026 – Aug 11, 2026</span>
+          <span class="pill">Looking for 4 half days over t…</span>
+          <span class="pill">PS Suite EMR</span>
+        </div>
+        <a class="job-cta" href="https://locvm.ca/jobs/vT2AhVB">→ View assignment</a>
+      </div>
+
+      <a class="see-all" href="#">See all 36 matches &rarr;</a>
+
+      <div class="divider"></div>
+
+      <div class="placeholder">
+        <div class="ph-label">Placeholder</div>
+        <div class="ph-text">[Fee/pricing model statement. Old way vs. LOCVM way. Confirm exact claim before sending.]</div>
+      </div>
+
+      <div class="testimonial">
+        <p>"I spent months trying to find coverage for one week off. LOCVM had it confirmed in four days."</p>
+        <cite>Dr. S.T., Family Medicine, North York</cite>
+      </div>
+
+      <p class="trust">LOCVM is OMA-partnered, built by Canadian physicians, and growing every week.</p>
+
+      <p class="identity">
+        You became a physician to practise medicine on your own terms.<br>
+        This is what that looks like.
+      </p>
+
+      <a class="cta-btn" href="#">See all 36 matched assignments</a>
+      <p class="sub-note">No commitment. Takes 2 minutes.</p>
+
+      <div class="footer">
+        <div class="badges">
+          <span class="badge">OMA Partner</span>
+          <span class="badge">Physician-verified listings</span>
+        </div>
+        <div class="footer-links">
+          <a href="#">Switch to weekly</a>
+          &nbsp;&middot;&nbsp; <a href="#">Manage preferences</a>
+          &nbsp;&middot;&nbsp; <a href="#">Unsubscribe</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="cadence-note">Toggle between Daily, Weekly, and Monthly above to screenshot each cadence separately.</p>
+
+  <script>
+    function showTab(name) {
+      ['weekly','daily','monthly'].forEach(function(t, i) {
+        document.getElementById('tab-' + t).classList.add('hidden');
+        document.querySelectorAll('.tab')[i].classList.remove('active');
+      });
+      document.getElementById('tab-' + name).classList.remove('hidden');
+      ['weekly','daily','monthly'].forEach(function(t, i) {
+        if (t === name) document.querySelectorAll('.tab')[i].classList.add('active');
+      });
+    }
+  </script>
+
+</body>
+</html>
