@@ -1,16 +1,16 @@
 // @ts-check
 
 import { loadFixtures, JsonStore, STORE_PATHS } from '@locvm/database'
-import { getTopMatchesForPhysician } from './get-top-matches.js'
+import { getTopMatchesForPhysician, buildEmailPayload } from './get-top-matches.js'
 
-export { getTopMatchesForPhysician }
+export { getTopMatchesForPhysician, buildEmailPayload }
 
 // --- CLI runner: node src/index.js <physicianId> ---
 
 const physicianId = process.argv[2]
 
 if (physicianId) {
-  const { reservations } = await loadFixtures()
+  const { jobs, physicians, reservations } = await loadFixtures()
   const resultsStore = new JsonStore(STORE_PATHS.matchRunResults)
 
   console.log(`Fetching top matches for physician ${physicianId}...\n`)
@@ -27,5 +27,9 @@ if (physicianId) {
     for (const m of topMatches) {
       console.log(`  #${m.rank ?? '-'}  job=${m.jobId}  score=${m.score}  breakdown=${JSON.stringify(m.breakdown)}`)
     }
+
+    const payload = buildEmailPayload(physicianId, topMatches, { physicians, jobs })
+    console.log('\n--- Email Payload ---\n')
+    console.log(JSON.stringify(payload, null, 2))
   }
 }
