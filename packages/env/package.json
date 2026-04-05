@@ -1,0 +1,16 @@
+{
+  "name": "@locvm/env",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@t3-oss/env-core": "^0.13.11",
+    "zod": "^4.3.6"
+  }
+}

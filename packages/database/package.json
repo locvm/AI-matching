@@ -1,0 +1,17 @@
+{
+  "name": "@locvm/database",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@locvm/env": "*",
+    "@locvm/matching-engine": "*",
+    "mongodb": "^7.1.0"
+  }
+}

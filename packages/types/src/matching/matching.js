@@ -132,4 +132,16 @@
  * @returns {Promise<SearchResult[]>} ranked job matches for this physician
  */
 
+/**
+ * @typedef {Object} MatchCacheMatchEntry
+ * @property {string} jobId
+ * @property {number} score
+ * @property {number} percent
+ * @property {number} maxScore
+ * @property {string[]} matchDetails
+ * @property {string} status
+ * @property {boolean} expired
+ * @property {Date} lastUpdated
+ */
+
 export {}
