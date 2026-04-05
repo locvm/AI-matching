@@ -21,6 +21,7 @@
 
 // ── Matching (src/interfaces/matching/matching.js) ───────────────────────────
 /** @typedef {import("./matching/matching.js").ScoreBreakdown} ScoreBreakdown */
+/** @typedef {import("./matching/matching.js").MatchCacheMatchEntry} MatchCacheMatchEntry */
 /** @typedef {import("./matching/matching.js").SearchResult} SearchResult */
 /** @typedef {import("./matching/matching.js").SearchOptions} SearchOptions */
 /** @typedef {import("./matching/matching.js").ScoredPair} ScoredPair */
