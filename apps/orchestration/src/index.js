@@ -1,15 +1,21 @@
 // @ts-check
 
-import { Redis } from 'ioredis'
-import { MatchingWorker } from './matching/matching-worker.js'
+import { connect, disconnect } from '@locvm/database'
+import { MatchingQueue } from './queue/index.js'
+import { createMatchingServer, startServer } from './http/server.js'
+import { startRecovery } from './queue/recovery.js'
 
-const redis = new Redis(process.env.REDIS_URL ?? 'redis://localhost:6379', {
-  maxRetriesPerRequest: null,
-})
+await connect()
 
-const matchingWorker = new MatchingWorker(redis)
+const queue = new MatchingQueue()
+const server = createMatchingServer(queue)
+
+const recoveryTimer = startRecovery(queue)
+await startServer(server)
 
 process.on('SIGTERM', async () => {
-  await matchingWorker.worker.close()
-  redis.disconnect()
+  clearInterval(recoveryTimer)
+  await new Promise((resolve) => server.close(resolve))
+  await queue.waitForDrain()
+  await disconnect()
 })

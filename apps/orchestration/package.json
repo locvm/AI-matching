@@ -11,17 +11,18 @@
     "./src/*": "./src/*"
   },
   "scripts": {
-    "dev": "node src/index.js",
+    "dev": "node --env-file=../../.env src/index.js",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@locvm/database": "*",
+    "@locvm/env": "*",
     "@locvm/matching-engine": "*",
     "@locvm/types": "*",
-    "bullmq": "^5.71.1",
-    "ioredis": "^5.10.1"
+    "ejs": "^3.1.10"
   },
   "devDependencies": {
+    "@types/ejs": "^3.1.5",
     "@types/node": "^25.5.0",
     "typescript": "^5.9.3"
   }
