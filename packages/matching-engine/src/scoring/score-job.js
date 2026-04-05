@@ -9,9 +9,17 @@ import { combineAndRank } from './combineAndRank.js'
 /** @typedef {import('@locvm/types').Reservation} Reservation */
 /** @typedef {import('@locvm/types').SearchOptions} SearchOptions */
 /** @typedef {import('@locvm/types').SearchResult} SearchResult */
+/** @typedef {import('@locvm/types').ScoredPair} ScoredPair */
+
+const CHUNK_SIZE = 50
+
+/** @returns {Promise<void>} */
+const yieldToEventLoop = () => new Promise((resolve) => setImmediate(resolve))
 
 /**
- * Full pipeline for a job: filter → score each pair → combine + rank.
+ * Full pipeline for a job: filter → score each pair in chunks → combine + rank.
+ *
+ * Scoring is chunked to avoid blocking the event loop on large physician lists.
  *
  * @param {LocumJob} job
  * @param {Physician[]} physicians
@@ -21,6 +29,15 @@ import { combineAndRank } from './combineAndRank.js'
  */
 export async function scoreJob(job, physicians, reservation, options = {}) {
   const eligible = filterEligiblePhysicians(physicians, job, reservation ?? null)
-  const scoredPairs = eligible.map((p) => scoreMatch(/** @type {Physician} */ (p), job))
+
+  /** @type {ScoredPair[]} */
+  const scoredPairs = []
+
+  for (let i = 0; i < eligible.length; i += CHUNK_SIZE) {
+    const chunk = eligible.slice(i, i + CHUNK_SIZE)
+    scoredPairs.push(...chunk.map((p) => scoreMatch(/** @type {Physician} */ (p), job)))
+    await yieldToEventLoop()
+  }
+
   return combineAndRank(scoredPairs, options)
 }
