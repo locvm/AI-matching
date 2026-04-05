@@ -3,7 +3,7 @@
 import { fileURLToPath } from 'node:url'
 import { join } from 'node:path'
 
-const ROOT = fileURLToPath(new URL('../../../', import.meta.url))
+const ROOT = fileURLToPath(new URL('../../../../', import.meta.url))
 
 export const FIXTURES_DIR = join(ROOT, 'fixtures')
 export const DATA_DIR = join(ROOT, 'data')

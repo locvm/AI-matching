@@ -10,6 +10,8 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
-    "@locvm/matching-engine": "^0.1.0"
+    "@locvm/env": "*",
+    "@locvm/matching-engine": "*",
+    "mongodb": "^7.1.0"
   }
 }
