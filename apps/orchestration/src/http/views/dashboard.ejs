@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matching Service</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      padding: 4rem;
+    }
+
+    h1 { font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 1.75rem; }
+    h2 { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #555; margin-bottom: 0.65rem; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat {
+      background: #1a1a1a;
+      border: 1px solid #242424;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+
+    .stat-value { font-size: 1.75rem; font-weight: 700; color: #fff; line-height: 1; }
+    .stat-label { font-size: 0.7rem; color: #555; margin-top: 0.35rem; }
+
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.8rem; min-width: 520px; }
+
+    thead th {
+      text-align: left;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #444;
+      padding: 0 0.875rem 0.6rem;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    tbody tr { border-bottom: 1px solid #161616; }
+    tbody tr:hover { background: #141414; }
+    td { padding: 0.65rem 0.875rem; color: #aaa; white-space: nowrap; }
+
+    td.mono { font-family: monospace; font-size: 0.72rem; color: #666; max-width: 160px; overflow: hidden; text-overflow: ellipsis; }
+
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-COMPLETED { background: #0d2b1a; color: #34d17a; }
+    .badge-FAILED    { background: #2b0d0d; color: #f87171; }
+    .badge-RUNNING   { background: #1a1a0d; color: #facc15; }
+    .badge-RETRIED   { background: #1a1030; color: #a78bfa; }
+    .badge-PENDING   { background: #1a1a1a; color: #555; }
+
+    .type-tag {
+      font-size: 0.68rem;
+      color: #777;
+      background: #1e1e1e;
+      padding: 0.1rem 0.45rem;
+      border-radius: 4px;
+    }
+
+    .meta { font-size: 0.72rem; color: #444; margin-bottom: 0.65rem; }
+    .empty { padding: 2.5rem; text-align: center; color: #3a3a3a; font-size: 0.8rem; }
+
+    @media (max-width: 480px) {
+      body { padding: 1rem; }
+      .stat-value { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Matching Service</h1>
+
+  <h2>Queue</h2>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-value"><%= queue.active %></div>
+      <div class="stat-label">Active workers</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value"><%= queue.pending %></div>
+      <div class="stat-label">Pending</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value"><%= runs.filter(r => r.status === 'COMPLETED').length %></div>
+      <div class="stat-label">Completed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value"><%= runs.filter(r => r.status === 'FAILED').length %></div>
+      <div class="stat-label">Failed</div>
+    </div>
+  </div>
+
+  <h2>Recent Runs</h2>
+  <p class="meta">Last <%= runs.length %> runs — refresh to update</p>
+
+  <% if (runs.length === 0) { %>
+    <div class="empty">No runs yet.</div>
+  <% } else { %>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Type</th>
+          <th>Entity</th>
+          <th>Results</th>
+          <th>Started</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% runs.forEach(run => {
+          const started = run.startedAt ? new Date(run.startedAt) : null
+          const completed = run.completedAt ? new Date(run.completedAt) : null
+          const duration = started && completed ? ((completed - started) / 1000).toFixed(1) + 's' : '—'
+          const entity = run.jobId || run.physicianId || '—'
+          const startedStr = started ? started.toLocaleString() : '—'
+        %>
+        <tr>
+          <td><span class="badge badge-<%= run.status %>"><%= run.status %></span></td>
+          <td><span class="type-tag"><%= run.type %></span></td>
+          <td class="mono"><%= entity %></td>
+          <td><%= run.resultCount != null ? run.resultCount : '—' %></td>
+          <td><%= startedStr %></td>
+          <td><%= duration %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <% } %>
+
+</body>
+</html>

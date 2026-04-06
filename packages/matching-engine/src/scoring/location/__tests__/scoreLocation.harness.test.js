@@ -29,7 +29,7 @@ function toJobLocation(/** @type {any} */ raw) {
 }
 
 beforeAll(() => {
-  const fixtureDir = resolve(import.meta.dirname, '../../../../fixtures')
+  const fixtureDir = resolve(import.meta.dirname, '../../../../../../fixtures')
   rawUsers = JSON.parse(readFileSync(resolve(fixtureDir, 'locum.users.formatted.json'), 'utf-8'))
   rawJobs = JSON.parse(readFileSync(resolve(fixtureDir, 'locum.locumjobs.formatted.json'), 'utf-8'))
 })

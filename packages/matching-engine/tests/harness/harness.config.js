@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url'
 const PROJECT_ROOT = resolve(fileURLToPath(import.meta.url), '../../../../..')
 
 // paths
-const FIXTURES_DIR = resolve('fixtures')
+const FIXTURES_DIR = fileURLToPath(new URL('../../../../fixtures', import.meta.url))
 
 const OUTPUT_ROOT = resolve(PROJECT_ROOT, 'artifacts')
 
