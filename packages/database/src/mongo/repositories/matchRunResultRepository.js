@@ -33,6 +33,22 @@ export async function saveMany(runId, results) {
 }
 
 /**
+ * Returns all active (current) match results for a physician, highest score first.
+ *
+ * @param {string} physicianId
+ * @returns {Promise<Array<{ runId: string, physicianId: string, jobId: string, rank: number, score: number, breakdown: Record<string, number>, flags: string[], isActive: boolean, computedAt: Date }>>}
+ */
+export async function findActiveForPhysician(physicianId) {
+  const db = await getDb()
+  const docs = await db
+    .collection(COLLECTIONS.MATCH_RUN_RESULTS)
+    .find({ physicianId, isActive: true })
+    .sort({ score: -1 })
+    .toArray()
+  return /** @type {any} */ (docs)
+}
+
+/**
  * Marks all active results for a physician as inactive (deprecated).
  * Call this before writing a fresh set of results for the same physician.
  *

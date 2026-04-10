@@ -2,11 +2,15 @@
 
 /**
  * Communication Layer: Get Top Matches for a Physician
+ *
+ * Reads scored pairs from the `matchrunresults` collection (written by the
+ * orchestration layer), keeps only active rows whose jobs are still open, and
+ * returns the top-K by score. Enrichment for the email payload pulls the
+ * physician and matched jobs straight from mongo.
  */
 
-import { JsonStore } from '@locvm/database'
+import { dataRepository, matchRunResultRepository } from '@locvm/database'
 
-/** @typedef {import('@locvm/types').Reservation} Reservation */
 /** @typedef {import('@locvm/types').Physician} Physician */
 /** @typedef {import('@locvm/types').LocumJob} LocumJob */
 
@@ -20,7 +24,7 @@ import { JsonStore } from '@locvm/database'
  * @property {Record<string, number>} breakdown
  * @property {string[]} flags
  * @property {boolean} isActive
- * @property {string} computedAt
+ * @property {Date} computedAt
  */
 
 /** Reservation statuses that mean the job is still open and accepting matches */
@@ -29,24 +33,18 @@ const TOP_K = 5
 const BASE_URL = 'https://locvm.ca/jobs'
 
 /**
- * Returns the top-K best job matches for a given physician.
- *
- * Reads from the stored match-run results (populated by the orchestration layer),
- * keeps only active results whose jobs are still open, then ranks and truncates.
+ * Returns the top-K best job matches for a given physician from MongoDB.
  *
  * @param {string} physicianId
- * @param {{ resultsStore: JsonStore, reservations: Reservation[] }} deps
  * @returns {Promise<{ topMatches: StoredMatchResult[], totalOpenMatches: number }>}
  */
-export async function getTopMatchesForPhysician(physicianId, { resultsStore, reservations }) {
-  // Only keep the open jobs
+export async function getTopMatchesForPhysician(physicianId) {
+  const reservations = await dataRepository.findOpenReservations()
   const openJobIds = new Set(reservations.filter((r) => OPEN_STATUSES.has(r.status)).map((r) => r.locumJobId))
 
-  const allResults = /** @type {StoredMatchResult[]} */ (
-    await resultsStore.findMany((r) => r.physicianId === physicianId && r.isActive === true)
-  )
+  const active = /** @type {StoredMatchResult[]} */ (await matchRunResultRepository.findActiveForPhysician(physicianId))
 
-  const filtered = allResults.filter((r) => openJobIds.has(r.jobId))
+  const filtered = active.filter((r) => openJobIds.has(r.jobId))
   filtered.sort((a, b) => b.score - a.score || a.jobId.localeCompare(b.jobId))
   return { topMatches: filtered.slice(0, TOP_K), totalOpenMatches: filtered.length }
 }
@@ -65,17 +63,18 @@ function formatDate(date) {
 /**
  * Builds the JSON payload for a physician's email notification.
  *
- * Takes the top matches (from getTopMatchesForPhysician) and enriches them
- * with job details and physician info so an email provider can render the email.
+ * Fetches the physician and matched jobs from mongo and shapes them into the
+ * structure the email renderer consumes.
  *
  * @param {string} physicianId
  * @param {StoredMatchResult[]} topMatches - output from getTopMatchesForPhysician
  * @param {number} totalOpenMatches - total open matches before truncation
- * @param {{ physicians: Physician[], jobs: LocumJob[] }} data
- * @returns {{ physician: object, jobs: object[], totalOpenMatches: number }}
+ * @returns {Promise<{ physician: object, jobs: object[], totalOpenMatches: number }>}
  */
-export function buildEmailPayload(physicianId, topMatches, totalOpenMatches, { physicians, jobs }) {
-  const physician = physicians.find((p) => p._id === physicianId)
+export async function buildEmailPayload(physicianId, topMatches, totalOpenMatches) {
+  const physician = await dataRepository.findPhysicianById(physicianId)
+  const jobs = await dataRepository.findJobsByIds(topMatches.map((m) => m.jobId))
+  const jobsById = new Map(jobs.map((j) => [j._id, j]))
 
   const physicianPayload = {
     firstName: physician?.firstName ?? '',
@@ -90,7 +89,7 @@ export function buildEmailPayload(physicianId, topMatches, totalOpenMatches, { p
   }
 
   const jobsPayload = topMatches.map((match, i) => {
-    const job = jobs.find((j) => j._id === match.jobId)
+    const job = jobsById.get(match.jobId)
 
     return {
       rank: i + 1,

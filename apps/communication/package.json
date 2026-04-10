@@ -7,12 +7,14 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "dev": "node src/index.js",
+    "dev": "node --env-file=../../.env src/index.js",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@locvm/types": "*",
-    "@locvm/database": "*"
+    "@locvm/database": "*",
+    "@locvm/env": "*",
+    "@locvm/matching-engine": "*"
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
