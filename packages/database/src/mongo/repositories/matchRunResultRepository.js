@@ -38,7 +38,7 @@ export async function saveMany(runId, results) {
  * @param {string} physicianId
  * @returns {Promise<Array<{ runId: string, physicianId: string, jobId: string, rank: number, score: number, breakdown: Record<string, number>, flags: string[], isActive: boolean, computedAt: Date }>>}
  */
-export async function findActiveForPhysician(physicianId) {
+export async function findActiveResultsByPhysicianId(physicianId) {
   const db = await getDb()
   const docs = await db
     .collection(COLLECTIONS.MATCH_RUN_RESULTS)

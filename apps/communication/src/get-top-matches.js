@@ -42,7 +42,9 @@ export async function getTopMatchesForPhysician(physicianId) {
   const reservations = await dataRepository.findOpenReservations()
   const openJobIds = new Set(reservations.filter((r) => OPEN_STATUSES.has(r.status)).map((r) => r.locumJobId))
 
-  const active = /** @type {StoredMatchResult[]} */ (await matchRunResultRepository.findActiveForPhysician(physicianId))
+  const active = /** @type {StoredMatchResult[]} */ (
+    await matchRunResultRepository.findActiveResultsByPhysicianId(physicianId)
+  )
 
   const filtered = active.filter((r) => openJobIds.has(r.jobId))
   filtered.sort((a, b) => b.score - a.score || a.jobId.localeCompare(b.jobId))
