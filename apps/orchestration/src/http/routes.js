@@ -5,6 +5,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import ejs from 'ejs'
 import { matchRunRepository } from '@locvm/database'
+import { getTopMatchesForPhysician, buildEmailPayload } from '@locvm/communication'
 import { JOB_TYPES } from '../config/index.js'
 import { readBody } from './middleware.js'
 
@@ -48,3 +49,23 @@ function makeEnqueueRoute(field, jobType) {
 
 export const jobPostedRoute = makeEnqueueRoute('jobId', JOB_TYPES.JOB_POSTED)
 export const physicianUpdatedRoute = makeEnqueueRoute('physicianId', JOB_TYPES.PHYSICIAN_UPDATED)
+
+/**
+ * Returns a ready-to-send email payload for one physician. Synchronous: reads
+ * from `matchrunresults`, filters to open jobs, and shapes the top matches plus
+ * physician into JSON. Returns `{ physician, jobs: [], totalOpenMatches: 0 }`
+ * when the physician has no active matches — caller decides whether to skip.
+ *
+ * @param {import('node:http').IncomingMessage} req
+ * @param {import('node:http').ServerResponse} res
+ */
+export async function emailPayloadRoute(req, res) {
+  const body = /** @type {any} */ (await readBody(req))
+  if (!body.physicianId || typeof body.physicianId !== 'string') {
+    res.writeHead(400).end('physicianId required')
+    return
+  }
+  const { topMatches, totalOpenMatches } = await getTopMatchesForPhysician(body.physicianId)
+  const payload = await buildEmailPayload(body.physicianId, topMatches, totalOpenMatches)
+  res.writeHead(200, { 'Content-Type': 'application/json' }).end(JSON.stringify(payload))
+}
