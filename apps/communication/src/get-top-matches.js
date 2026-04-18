@@ -106,8 +106,8 @@ export async function buildEmailPayload(physicianId, topMatches, totalOpenMatche
       emr: job?.facilityInfo?.emr ?? '',
       score: match.score,
       viewUrl: job?.jobId ? `${BASE_URL}/${job.jobId}` : '',
-      jobID: match.jobId,
-      runID: match.runId,
+      jobId: match.jobId,
+      matchRunResultId: match.runId,
     }
   })
 
