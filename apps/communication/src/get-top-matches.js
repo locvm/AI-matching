@@ -63,6 +63,22 @@ function formatDate(date) {
 }
 
 /**
+ * Returns a display-ready pay string. Values <= $10 are placeholders posters
+ * use to bypass the required-pay field (e.g. fee-for-service where pay depends
+ * on patient volume), so surface them as "To Confirm" rather than a dollar
+ * amount.
+ * @param {string | number | null | undefined} raw
+ * @returns {string}
+ */
+function formatLocumPay(raw) {
+  if (raw === null || raw === undefined || raw === '') return ''
+  const n = Number(raw)
+  if (!Number.isFinite(n)) return String(raw)
+  if (n <= 10) return 'To Confirm'
+  return `$${n}`
+}
+
+/**
  * Builds the JSON payload for a physician's email notification.
  *
  * Fetches the physician and matched jobs from mongo and shapes them into the
@@ -102,9 +118,9 @@ export async function buildEmailPayload(physicianId, topMatches, totalOpenMatche
       dateFrom: formatDate(job?.dateRange?.from),
       dateTo: formatDate(job?.dateRange?.to),
       schedule: job?.schedule ?? '',
-      locumPay: job?.locumPay ?? '',
+      locumPay: formatLocumPay(job?.locumPay),
       emr: job?.facilityInfo?.emr ?? '',
-      score: match.score,
+      score: Math.round(match.score * 20),
       viewUrl: job?.jobId ? `${BASE_URL}/${job.jobId}` : '',
       jobId: match.jobId,
       matchRunResultId: match.runId,
