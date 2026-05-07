@@ -4,7 +4,7 @@ import { createServer } from 'node:http'
 import { env } from '@locvm/env'
 import { applySecurityHeaders, isAuthorized } from './middleware.js'
 import { PARSE_BASE } from '../config/index.js'
-import { dashboardRoute, jobPostedRoute, physicianUpdatedRoute } from './routes.js'
+import { dashboardRoute, jobPostedRoute, physicianUpdatedRoute, emailPayloadRoute } from './routes.js'
 
 /**
  * @param {import('../queue/index.js').MatchingQueue} queue
@@ -37,6 +37,10 @@ export function createMatchingServer(queue) {
         }
         if (pathname === '/physician-updated') {
           await physicianUpdatedRoute(req, res, queue)
+          return
+        }
+        if (pathname === '/email-payload') {
+          await emailPayloadRoute(req, res)
           return
         }
       }
