@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/api/dashboard"
+    },
+    {
+      "source": "/job-posted",
+      "destination": "/api/job-posted"
+    },
+    {
+      "source": "/physician-updated",
+      "destination": "/api/physician-updated"
+    },
+    {
+      "source": "/email-payload",
+      "destination": "/api/email-payload"
+    }
+  ]
+}
