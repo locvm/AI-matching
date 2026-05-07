@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "buildCommand": "npm install",
+  "outputDirectory": "public",
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/api/dashboard"
+    },
+    {
+      "source": "/job-posted",
+      "destination": "/api/job-posted"
+    },
+    {
+      "source": "/physician-updated",
+      "destination": "/api/physician-updated"
+    },
+    {
+      "source": "/email-payload",
+      "destination": "/api/email-payload"
+    }
+  ]
+}
