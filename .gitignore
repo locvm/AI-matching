@@ -17,7 +17,7 @@ data/
 .env
 .env.local
 .env.*.local
-
+.env.development
 # Logs
 *.log
 npm-debug.log*
