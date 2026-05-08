@@ -61,3 +61,31 @@ export async function deprecateForPhysician(physicianId) {
     .collection(COLLECTIONS.MATCH_RUN_RESULTS)
     .updateMany({ physicianId, isActive: true }, { $set: { isActive: false, deprecatedAt: new Date() } })
 }
+
+/**
+ * Counts active match results grouped by job, for a list of job IDs.
+ *
+ * Returns a record keyed by jobId. Jobs with zero active matches are included
+ * with a count of 0, so callers can render UI without a follow-up lookup.
+ *
+ * @param {string[]} jobIds
+ * @returns {Promise<Record<string, number>>}
+ */
+export async function countActiveByJobIds(jobIds) {
+  /** @type {Record<string, number>} */
+  const counts = {}
+  for (const id of jobIds) counts[id] = 0
+  if (jobIds.length === 0) return counts
+
+  const db = await getDb()
+  const rows = await db
+    .collection(COLLECTIONS.MATCH_RUN_RESULTS)
+    .aggregate([
+      { $match: { isActive: true, jobId: { $in: jobIds } } },
+      { $group: { _id: '$jobId', count: { $sum: 1 } } },
+    ])
+    .toArray()
+
+  for (const row of rows) counts[row._id] = row.count
+  return counts
+}
