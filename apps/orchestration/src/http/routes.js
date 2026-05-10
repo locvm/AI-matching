@@ -92,7 +92,7 @@ const ACTIVE_MATCH_COUNTS_MAX_BATCH = 100
  */
 export async function activeMatchCountsRoute(req, res) {
   const body = /** @type {any} */ (await readBody(req))
-  if (!Array.isArray(body.jobIds) || !body.jobIds.every((id) => typeof id === 'string')) {
+  if (!Array.isArray(body.jobIds) || !body.jobIds.every((/** @type {unknown} */ id) => typeof id === 'string')) {
     res.writeHead(400).end('jobIds must be a string[]')
     return
   }
