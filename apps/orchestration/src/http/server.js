@@ -9,9 +9,8 @@ import {
   jobPostedRoute,
   physicianUpdatedRoute,
   emailPayloadRoute,
-  previewJobRoute,
-  previewPhysicianRoute,
   activeMatchCountsRoute,
+  activeMatchesForJobRoute,
 } from './routes.js'
 
 /**
@@ -51,16 +50,12 @@ export function createMatchingServer(queue) {
           await emailPayloadRoute(req, res)
           return
         }
-        if (pathname === '/preview-job') {
-          await previewJobRoute(req, res)
-          return
-        }
-        if (pathname === '/preview-physician') {
-          await previewPhysicianRoute(req, res)
-          return
-        }
         if (pathname === '/active-match-counts') {
           await activeMatchCountsRoute(req, res)
+          return
+        }
+        if (pathname === '/active-matches-for-job') {
+          await activeMatchesForJobRoute(req, res)
           return
         }
       }

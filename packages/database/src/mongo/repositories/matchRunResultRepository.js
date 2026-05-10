@@ -49,6 +49,22 @@ export async function findActiveResultsByPhysicianId(physicianId) {
 }
 
 /**
+ * Returns all active (current) match results for a job, highest score first.
+ *
+ * @param {string} jobId
+ * @returns {Promise<Array<{ runId: string, physicianId: string, jobId: string, rank: number, score: number, breakdown: Record<string, number>, flags: string[], isActive: boolean, computedAt: Date }>>}
+ */
+export async function findActiveResultsByJobId(jobId) {
+  const db = await getDb()
+  const docs = await db
+    .collection(COLLECTIONS.MATCH_RUN_RESULTS)
+    .find({ jobId, isActive: true })
+    .sort({ score: -1 })
+    .toArray()
+  return /** @type {any} */ (docs)
+}
+
+/**
  * Marks all active results for a physician as inactive (deprecated).
  * Call this before writing a fresh set of results for the same physician.
  *

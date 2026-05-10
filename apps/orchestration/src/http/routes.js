@@ -4,8 +4,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import ejs from 'ejs'
-import { matchRunRepository, matchRunResultRepository, dataRepository } from '@locvm/database'
-import { scoreJob, scorePhysician } from '@locvm/matching-engine'
+import { matchRunRepository, matchRunResultRepository } from '@locvm/database'
 import { getTopMatchesForPhysician, buildEmailPayload } from '@locvm/communication'
 import { JOB_TYPES } from '../config/index.js'
 import { readBody } from './middleware.js'
@@ -79,79 +78,6 @@ export async function emailPayloadRoute(req, res) {
   res.writeHead(200, { 'Content-Type': 'application/json' }).end(JSON.stringify(payload))
 }
 
-/**
- * Preview-only: score a job against all eligible physicians and return ranked
- * results with IDs + 0-100 scores + per-category breakdown. No persistence.
- *
- * @param {import('node:http').IncomingMessage} req
- * @param {import('node:http').ServerResponse} res
- */
-export async function previewJobRoute(req, res) {
-  const body = /** @type {any} */ (await readBody(req))
-  if (!body.jobId || typeof body.jobId !== 'string') {
-    res.writeHead(400).end('jobId required')
-    return
-  }
-
-  const [job, physicians, reservation] = await Promise.all([
-    dataRepository.findJobById(body.jobId),
-    dataRepository.findEligiblePhysicians(),
-    dataRepository.findReservationByJobId(body.jobId),
-  ])
-
-  if (!job) {
-    res.writeHead(404).end(`Job ${body.jobId} not found`)
-    return
-  }
-
-  const results = await scoreJob(job, physicians, reservation)
-  const matches = results.map((r) => ({
-    physicianId: r.physicianId,
-    score: toHundred(r.score),
-    matchDetails: r.breakdown,
-  }))
-
-  res.writeHead(200, { 'Content-Type': 'application/json' }).end(JSON.stringify({ matches }))
-}
-
-/**
- * Preview-only: score a physician against all open jobs and return ranked
- * results with IDs + 0-100 scores + per-category breakdown. No persistence.
- *
- * @param {import('node:http').IncomingMessage} req
- * @param {import('node:http').ServerResponse} res
- */
-export async function previewPhysicianRoute(req, res) {
-  const body = /** @type {any} */ (await readBody(req))
-  if (!body.physicianId || typeof body.physicianId !== 'string') {
-    res.writeHead(400).end('physicianId required')
-    return
-  }
-
-  const [physician, openReservations] = await Promise.all([
-    dataRepository.findPhysicianById(body.physicianId),
-    dataRepository.findOpenReservations(),
-  ])
-
-  if (!physician) {
-    res.writeHead(404).end(`Physician ${body.physicianId} not found`)
-    return
-  }
-
-  const openJobIds = [...new Set(openReservations.map((r) => r.locumJobId))]
-  const openJobs = await dataRepository.findJobsByIds(openJobIds)
-
-  // limit:null overrides scorePhysician's default-10 cap so all scored jobs are returned.
-  const results = await scorePhysician(physician, openJobs, openReservations, { limit: null })
-  const matches = results.map((r) => ({
-    jobId: r.jobId,
-    score: toHundred(r.score),
-    matchDetails: r.breakdown,
-  }))
-
-  res.writeHead(200, { 'Content-Type': 'application/json' }).end(JSON.stringify({ matches }))
-}
-
 /** Max number of jobIds the caller may send in one batch request. */
 const ACTIVE_MATCH_COUNTS_MAX_BATCH = 100
 
@@ -177,4 +103,30 @@ export async function activeMatchCountsRoute(req, res) {
 
   const counts = await matchRunResultRepository.countActiveByJobIds(body.jobIds)
   res.writeHead(200, { 'Content-Type': 'application/json' }).end(JSON.stringify({ counts }))
+}
+
+/**
+ * Returns the stored active match results for a job (same source as the count
+ * badge on /active-match-counts), so the candidates list and the badge agree.
+ *
+ * Response body uses { error } JSON for 4xx so callers can branch on a single
+ * shape regardless of which validation path fired.
+ *
+ * @param {import('node:http').IncomingMessage} req
+ * @param {import('node:http').ServerResponse} res
+ */
+export async function activeMatchesForJobRoute(req, res) {
+  const body = /** @type {any} */ (await readBody(req))
+  if (!body.jobId || typeof body.jobId !== 'string') {
+    res.writeHead(400, { 'Content-Type': 'application/json' }).end(JSON.stringify({ error: 'jobId required' }))
+    return
+  }
+
+  const rows = await matchRunResultRepository.findActiveResultsByJobId(body.jobId)
+  const matches = rows.map((r) => ({
+    physicianId: r.physicianId,
+    score: toHundred(r.score),
+    matchDetails: r.breakdown,
+  }))
+  res.writeHead(200, { 'Content-Type': 'application/json' }).end(JSON.stringify({ matches }))
 }
