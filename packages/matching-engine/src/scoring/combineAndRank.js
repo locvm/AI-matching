@@ -27,7 +27,8 @@ function round2(n) {
 /**
  * Compute the weighted score for a single pair with re-normalization for missing categories.
  *
- * Returns totalScore in [0, 5] and breakdown with each category's raw 0-1 score.
+ * Returns totalScore in [0, 5] and a breakdown carrying each category's raw 0-1
+ * score plus any `<category>Detail` blob the scorer produced.
  *
  * @param {ScoreBreakdown} breakdown - per-category 0-1 scores (undefined = not scored)
  * @returns {{ totalScore: number, breakdown: ScoreBreakdown }}
@@ -42,9 +43,8 @@ export function computeWeightedScore(breakdown) {
     const score = breakdown[category]
     if (score === undefined || score === null) continue
 
-    const weight = WEIGHTS[category]
-    weightSum += weight
-    weightedSum += score * weight
+    weightSum += WEIGHTS[category]
+    weightedSum += score * WEIGHTS[category]
     outBreakdown[category] = round2(score)
   }
 
@@ -52,12 +52,28 @@ export function computeWeightedScore(breakdown) {
     return { totalScore: 0, breakdown: {} }
   }
 
-  // Re-normalize: divide by the sum of available weights (not 1.0)
-  // This redistributes missing categories' weights proportionally
-  // Scale to 0-5 range
+  copyScorerDetails(breakdown, outBreakdown)
+
+  // Re-normalize by the *available* weight sum (not 1.0) so missing categories
+  // don't drag the score down — their weight is redistributed proportionally.
+  // Final score is scaled to the 0-5 product range.
   const totalScore = Math.min(5, Math.max(0, round2((weightedSum / weightSum) * 5)))
 
   return { totalScore, breakdown: outBreakdown }
+}
+
+/**
+ * Carry over the `*Detail` blobs from input to output untouched. These are
+ * informational only (no math) — they're preserved so the UI and analytics
+ * can explain *why* each category scored what it did.
+ *
+ * @param {ScoreBreakdown} from
+ * @param {ScoreBreakdown} to
+ */
+function copyScorerDetails(from, to) {
+  if (from.locationDetail) to.locationDetail = from.locationDetail
+  if (from.durationDetail) to.durationDetail = from.durationDetail
+  if (from.emrDetail) to.emrDetail = from.emrDetail
 }
 
 /**
