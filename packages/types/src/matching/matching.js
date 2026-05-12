@@ -8,13 +8,39 @@
 // SearchResult = what comes back
 
 /**
- * Per-category score breakdown. Each field is the score for that category.
- * undefined = that category wasnt scored (different from 0)
+ * Per-category 0-1 score plus an optional `*Detail` object explaining how that
+ * score was produced. `undefined` means the category was not scored (different from 0).
+ *
+ * The `*Detail` shapes are intentionally loose at this layer the scorers own the
+ * concrete fields, and consumers (UI, analytics) read them as plain JSON.
+ *
+ * @typedef {Object} LocationDetail
+ * @property {'gps_distance'|'specific_region'|'preferred_province'|'work_province'|'medical_province'|'no_data'} method
+ * @property {number | null} distanceKm
+ * @property {'same_city'|'nearby'|'regional'|'far'|'very_far'|'unknown'} distanceBucket
+ * @property {string | null} matchedRegion
+ * @property {string | null} physicianProvince
+ * @property {string | null} jobProvince
+ * @property {boolean} provinceMatch
+ *
+ * @typedef {Object} EMRDetail
+ * @property {'match'|'no_match'|'no_job_emr'|'no_physician_emr'} method
+ * @property {string | null} jobEMR
+ * @property {string[]} physicianEMRs
+ * @property {boolean} matched
+ *
+ * @typedef {Object} DurationDetail
+ * @property {'overlap'|'bucket'|'neutral'} method
+ * @property {number | null} overlapPct
+ * @property {boolean} usedBucketFallback
  *
  * @typedef {Object} ScoreBreakdown
  * @property {number} [location]
  * @property {number} [duration]
  * @property {number} [emr]
+ * @property {LocationDetail} [locationDetail]
+ * @property {DurationDetail} [durationDetail]
+ * @property {EMRDetail} [emrDetail]
  */
 
 /**
@@ -27,7 +53,7 @@
  * @property {string} jobId - The job that was matched against
  * @property {number} score - Total match score, 0-5 range. Higher = better
  * @property {ScoreBreakdown} breakdown - Score breakdown by category
- * @property {string[]} [flags] - Data quality flags, e.g. "missing_physician_location", "missing_emr_data"
+ * @property {string[]} [flags] - Data quality / signal flags, e.g. "no_location_data", "emr_mismatch", "low_date_overlap"
  */
 
 /**
@@ -53,7 +79,7 @@
  * @property {string} physicianId
  * @property {string} jobId
  * @property {ScoreBreakdown} breakdown - individual 0-1 scores (location, duration, emr)
- * @property {string[]} flags - Data quality flags, e.g. "missing_physician_location", "missing_emr_data"
+ * @property {string[]} flags - Data quality / signal flags, e.g. "no_location_data", "emr_mismatch", "low_date_overlap"
  */
 
 /**

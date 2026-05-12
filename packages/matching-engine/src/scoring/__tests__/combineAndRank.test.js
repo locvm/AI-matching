@@ -139,6 +139,37 @@ describe('breakdown keys', () => {
     const { breakdown } = computeWeightedScore({ location: 0.8, emr: 0.3 })
     expect(Object.keys(breakdown).sort()).toEqual(['emr', 'location'])
   })
+
+  it('passes through *Detail blobs unchanged', () => {
+    /** @type {import('@locvm/types').LocationDetail} */
+    const locationDetail = {
+      method: 'gps_distance',
+      distanceKm: 12.5,
+      distanceBucket: 'nearby',
+      matchedRegion: null,
+      physicianProvince: 'ON',
+      jobProvince: 'ON',
+      provinceMatch: true,
+    }
+    /** @type {import('@locvm/types').EMRDetail} */
+    const emrDetail = {
+      method: 'match',
+      jobEMR: 'ps suite',
+      physicianEMRs: ['ps suite'],
+      matched: true,
+    }
+
+    const { breakdown } = computeWeightedScore({
+      location: 0.9,
+      emr: 1,
+      locationDetail,
+      emrDetail,
+    })
+
+    expect(breakdown.locationDetail).toEqual(locationDetail)
+    expect(breakdown.emrDetail).toEqual(emrDetail)
+    expect(breakdown.durationDetail).toBeUndefined()
+  })
 })
 
 // ─── combineAndRank ────────────────────────────────────────────────────────

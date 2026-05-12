@@ -12,6 +12,8 @@
   },
   "scripts": {
     "dev": "node --env-file=../../.env src/index.js",
+    "requeue": "node --env-file=../../.env scripts/requeue-all.js",
+    "check-detail": "node --env-file=../../.env scripts/check-detail.js",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
