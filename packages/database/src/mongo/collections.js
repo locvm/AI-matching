@@ -15,4 +15,5 @@ export const COLLECTIONS = Object.freeze({
   // AI-matching-owned collections (no Mongoose model in locvm-app)
   MATCH_RUNS: 'matchruns',
   MATCH_RUN_RESULTS: 'matchrunresults',
+  SCANNER_STATE: 'scannerstate',
 })

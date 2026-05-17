@@ -79,6 +79,45 @@ export async function findReservationByJobId(jobId) {
 }
 
 /**
+ * Returns the _id strings of physicians whose profile was created or modified
+ * after the given timestamp. Used by the scanner to find work since the last pass.
+ *
+ * @param {Date} since
+ * @returns {Promise<string[]>}
+ */
+export async function findChangedPhysicianIds(since) {
+  const db = await getDb()
+  const docs = await db
+    .collection(COLLECTIONS.USERS)
+    .find(
+      {
+        medProfession: 'Physician',
+        isOnboardingCompleted: true,
+        $or: [{ createdAt: { $gt: since } }, { modifiedAt: { $gt: since } }],
+      },
+      { projection: { _id: 1 } }
+    )
+    .toArray()
+  return docs.map((d) => d._id.toString())
+}
+
+/**
+ * Returns the _id strings of locum jobs that were created or modified
+ * after the given timestamp. Used by the scanner to find work since the last pass.
+ *
+ * @param {Date} since
+ * @returns {Promise<string[]>}
+ */
+export async function findChangedJobIds(since) {
+  const db = await getDb()
+  const docs = await db
+    .collection(COLLECTIONS.LOCUM_JOBS)
+    .find({ $or: [{ createdAt: { $gt: since } }, { modifiedAt: { $gt: since } }] }, { projection: { _id: 1 } })
+    .toArray()
+  return docs.map((d) => d._id.toString())
+}
+
+/**
  * Fetches all reservations that are currently open (accepting applicants).
  *
  * @returns {Promise<import('@locvm/types').Reservation[]>}
