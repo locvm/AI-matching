@@ -17,7 +17,8 @@ export const SERVER = /** @type {const} */ ({
 export const QUEUE = /** @type {const} */ ({
   CONCURRENCY: 3,
   RECOVERY_INTERVAL_MS: 60 * 60 * 1000,
-  SCAN_INTERVAL_MS: 60 * 60 * 1000,
+  // Default lookback for the very first scan, when no scannerstate doc exists.
+  SCAN_WINDOW_MS: 60 * 60 * 1000,
 })
 
 /** @typedef {import('@locvm/types').MatchRun['type']} MatchRunType */

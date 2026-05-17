@@ -7,6 +7,7 @@ import ejs from 'ejs'
 import { matchRunRepository } from '@locvm/database'
 import { getTopMatchesForPhysician, buildEmailPayload } from '@locvm/communication'
 import { JOB_TYPES } from '../config/index.js'
+import { runScanner } from '../queue/scanner.js'
 import { readBody } from './middleware.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -49,6 +50,19 @@ function makeEnqueueRoute(field, jobType) {
 
 export const jobPostedRoute = makeEnqueueRoute('jobId', JOB_TYPES.JOB_POSTED)
 export const physicianUpdatedRoute = makeEnqueueRoute('physicianId', JOB_TYPES.PHYSICIAN_UPDATED)
+
+/**
+ * Runs one scanner pass: finds physicians and jobs changed since the last scan
+ * and enqueues a scoring job for each. Intended to be invoked on a schedule
+ * (e.g. Vercel cron from locvm-app).
+ *
+ * @param {import('node:http').ServerResponse} res
+ * @param {import('../queue/index.js').MatchingQueue} queue
+ */
+export async function scanRoute(res, queue) {
+  const result = await runScanner(queue)
+  res.writeHead(200, { 'Content-Type': 'application/json' }).end(JSON.stringify(result))
+}
 
 /**
  * Returns a ready-to-send email payload for one physician. Synchronous: reads
